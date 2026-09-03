@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Certifications | Med Imaging Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #172033;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      padding: 24px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eef1f5;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 700;
+      color: #172033;
+      letter-spacing: -0.4px;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #5b6472;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      position: relative;
+      text-align: center;
+      padding: 90px 8% 85px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(37, 99, 235, 0.08), transparent 42%);
+    }
+
+    .page-label {
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 18px;
+    }
+
+    .page-header h1 {
+      font-size: 54px;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      color: #172033;
+      margin-bottom: 22px;
+    }
+
+    .page-header p {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 17px;
+      color: #687386;
+      line-height: 1.8;
+    }
+
+    /* MAIN */
+    .certifications {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 80px 8% 90px;
+    }
+
+    .section-intro {
+      margin-bottom: 48px;
+    }
+
+    .section-intro h2 {
+      font-size: 28px;
+      letter-spacing: -0.7px;
+      color: #172033;
+      margin-bottom: 10px;
+    }
+
+    .section-intro p {
+      color: #737d8d;
+      font-size: 15px;
+    }
+
+    /* RESOURCE CATEGORY */
+    .resource-category {
+      margin-bottom: 55px;
+    }
+
+    .category-heading {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .category-heading h2 {
+      font-size: 25px;
+      letter-spacing: -0.5px;
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    .category-number {
+      min-width: 58px;
+      font-size: 38px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #93c5fd;
+    }
+
+    /* RESOURCE ITEM */
+    .resource-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      padding: 22px 0;
+      border-bottom: 1px solid #edf0f4;
+    }
+
+    .resource-item:first-of-type {
+      border-top: 1px solid #edf0f4;
+    }
+
+    .resource-info h3 {
+      font-size: 17px;
+      color: #202a3b;
+      margin-bottom: 5px;
+    }
+
+    .resource-info p {
+      font-size: 14px;
+      color: #737d8d;
+      line-height: 1.6;
+    }
+
+    .resource-action {
+      flex-shrink: 0;
+      text-align: right;
+      max-width: 190px;
+    }
+
+    .access {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      margin-bottom: 6px;
+    }
+
+    .free {
+      color: #16845b;
+    }
+
+    .mixed {
+      color: #b7791f;
+    }
+
+    .resource-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .resource-link:hover {
+      color: #1747b5;
+    }
+
+    /* NOTE */
+    .note {
+      margin-top: 15px;
+      padding: 20px 22px;
+      background: #f8fafc;
+      border-left: 3px solid #93c5fd;
+      color: #687386;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #eef1f5;
+      padding: 28px 7%;
+      text-align: center;
+      color: #8a93a1;
+      font-size: 13px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 760px) {
+      header {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .page-header {
+        padding: 70px 7% 65px;
+      }
+
+      .page-header h1 {
+        font-size: 42px;
+      }
+
+      .certifications {
+        padding: 65px 7% 75px;
+      }
+
+      .resource-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .resource-action {
+        text-align: left;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      Med Imaging <span>Hub</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="insights.html">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+
+    <div class="page-label">
+      COURSES • CREDENTIALS • PROFESSIONAL DEVELOPMENT
+    </div>
+
+    <h1>Certifications</h1>
+
+    <p>
+      Explore courses and certification opportunities that can help you
+      build useful skills, strengthen your knowledge, and support your
+      professional development.
+    </p>
+
+  </section>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="certifications">
+
+    <div class="section-intro">
+      <h2>Learn & Get Certified</h2>
+
+      <p>
+        A selection of learning platforms and organizations offering
+        courses, certificates, badges, and professional development opportunities.
+      </p>
+    </div>
+
+
+    <!-- 01 -->
+    <section class="resource-category">
+
+      <div class="category-heading">
+        <div class="category-number">01</div>
+        <h2>Certification Platforms</h2>
+      </div>
+
+
+      <!-- Coursera -->
+      <div class="resource-item">
+
+        <div class="resource-info">
+          <h3>Coursera</h3>
+
+          <p>
+            University and industry courses covering healthcare, AI,
+            technology, business, and many other professional fields.
+          </p>
+        </div>
+
+        <div class="resource-action">
+          <span class="access mixed">
+            FREE + PAID
+          </span>
+
+          <a
+            href="https://www.coursera.org/"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- Alison -->
+      <div class="resource-item">
+
+        <div class="resource-info">
+          <h3>Alison</h3>
+
+          <p>
+            Self-paced courses across health, technology, business,
+            and other areas. Learning is free, while certificates
+            are generally available as a paid option.
+          </p>
+        </div>
+
+        <div class="resource-action">
+          <span class="access mixed">
+            FREE LEARNING • CERTIFICATE PAID
+          </span>
+
+          <a
+            href="https://alison.com/"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- IAEA -->
+      <div class="resource-item">
+
+        <div class="resource-info">
+          <h3>IAEA</h3>
+
+          <p>
+            Online learning resources and training related to radiation,
+            nuclear medicine, medical imaging, radiation protection,
+            and other healthcare topics.
+          </p>
+        </div>
+
+        <div class="resource-action">
+          <span class="access free">
+            FREE • COURSE-DEPENDENT
+          </span>
+
+          <a
+            href="https://www.iaea.org/"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- ISRRT -->
+      <div class="resource-item">
+
+        <div class="resource-info">
+          <h3>ISRRT</h3>
+
+          <p>
+            Educational opportunities and professional development
+            resources relevant to radiographers and medical imaging
+            professionals.
+          </p>
+        </div>
+
+        <div class="resource-action">
+          <span class="access free">
+            FREE • COURSE-DEPENDENT
+          </span>
+
+          <a
+            href="https://www.isrrt.org/"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- UNICEF Agora -->
+      <div class="resource-item">
+
+        <div class="resource-info">
+          <h3>UNICEF Agora</h3>
+
+          <p>
+            A global learning platform offering courses and development
+            opportunities, with many activities providing certificates
+            or digital badges upon completion.
+          </p>
+        </div>
+
+        <div class="resource-action">
+          <span class="access free">
+            FREE • COURSE-DEPENDENT
+          </span>
+
+          <a
+            href="https://agora.unicef.org/"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- NOTE -->
+    <div class="note">
+      Certificate availability, eligibility, and fees may vary by course
+      or program. Always check the individual course details before enrolling.
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Med Imaging Hub · Created & curated by Zara Ashraf
+  </footer>
+
+</body>
+</html>
