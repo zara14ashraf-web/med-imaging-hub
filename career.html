@@ -20,6 +20,8 @@
       line-height: 1.6;
     }
 
+    /* HEADER */
+
     header {
       display: flex;
       justify-content: space-between;
@@ -100,11 +102,11 @@
     .career {
       max-width: 920px;
       margin: auto;
-      padding: 45px 8% 90px;
+      padding: 55px 8% 90px;
     }
 
     .intro {
-      margin-bottom: 55px;
+      margin-bottom: 45px;
     }
 
     .intro h2 {
@@ -121,20 +123,37 @@
     }
 
 
-    /* RESOURCE CATEGORY */
+    /* CATEGORY CARDS */
 
-    .resource-category {
-      margin-bottom: 75px;
+    .opportunity-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 35px;
+      padding: 32px 30px;
+      margin-bottom: 22px;
+      border: 1px solid #e8edf5;
+      border-radius: 12px;
+      background: #ffffff;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.25s ease;
     }
 
-    .category-heading {
+    .opportunity-card:hover {
+      transform: translateY(-3px);
+      border-color: #cbdcfb;
+      box-shadow: 0 12px 30px rgba(23, 32, 51, 0.07);
+    }
+
+    .opportunity-left {
       display: flex;
       align-items: flex-start;
-      gap: 20px;
-      margin-bottom: 28px;
+      gap: 24px;
+      flex: 1;
     }
 
-    .category-number {
+    .opportunity-number {
       min-width: 58px;
       font-size: 38px;
       line-height: 1;
@@ -143,89 +162,31 @@
       color: #93c5fd;
     }
 
-    .category-heading h2 {
-      font-size: 25px;
-      letter-spacing: -0.5px;
+    .opportunity-content h3 {
+      font-size: 21px;
+      letter-spacing: -0.4px;
       color: #2563eb;
-      font-weight: 700;
-      margin-bottom: 5px;
+      margin-bottom: 7px;
     }
 
-    .category-heading p {
-      color: #667085;
-      font-size: 14px;
-      max-width: 700px;
-    }
-
-
-    /* RESOURCE ITEM */
-
-    .resource-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-      padding: 24px 0;
-      border-bottom: 1px solid #edf0f5;
-    }
-
-    .resource-info {
-      flex: 1;
-    }
-
-    .resource-info h3 {
-      font-size: 17px;
-      margin-bottom: 3px;
-      color: #172033;
-    }
-
-    .resource-info > p:not(.resource-description) {
-      font-size: 13px;
-      color: #2563eb;
-      margin-bottom: 8px;
-    }
-
-    .resource-description {
+    .opportunity-content p {
       font-size: 14px;
       color: #667085;
-      max-width: 650px;
-      line-height: 1.6;
+      max-width: 600px;
     }
 
-
-    /* ACTION */
-
-    .resource-action {
-      min-width: 170px;
-      text-align: right;
-    }
-
-    .access {
-      display: block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      color: #667085;
-      margin-bottom: 6px;
-    }
-
-    .resource-link {
-      text-decoration: none;
-      color: #2563eb;
+    .opportunity-arrow {
+      white-space: nowrap;
       font-size: 13px;
       font-weight: 700;
-    }
-
-    .resource-link:hover {
-      text-decoration: underline;
+      color: #2563eb;
     }
 
 
     /* NOTE */
 
     .note {
-      margin-top: 25px;
+      margin-top: 30px;
       padding: 18px 20px;
       background: #f8fafc;
       border-left: 3px solid #93c5fd;
@@ -278,31 +239,29 @@
       }
 
       .career {
-        padding: 35px 7% 70px;
+        padding: 40px 7% 70px;
       }
 
-      .category-heading {
-        gap: 14px;
-      }
-
-      .category-number {
-        min-width: 45px;
-        font-size: 30px;
-      }
-
-      .category-heading h2 {
-        font-size: 22px;
-      }
-
-      .resource-item {
-        flex-direction: column;
+      .opportunity-card {
+        padding: 26px 22px;
         align-items: flex-start;
+      }
+
+      .opportunity-left {
         gap: 15px;
       }
 
-      .resource-action {
-        min-width: auto;
-        text-align: left;
+      .opportunity-number {
+        min-width: 42px;
+        font-size: 30px;
+      }
+
+      .opportunity-content h3 {
+        font-size: 18px;
+      }
+
+      .opportunity-arrow {
+        display: none;
       }
     }
   </style>
@@ -313,6 +272,7 @@
   <!-- HEADER -->
 
   <header>
+
     <div class="logo">
       Med Imaging <span>Hub</span>
     </div>
@@ -325,6 +285,7 @@
       <a href="resources.html">Resources</a>
       <a href="about.html">About</a>
     </nav>
+
   </header>
 
 
@@ -333,573 +294,110 @@
   <section class="page-hero">
 
     <div class="page-label">
-      SCHOLARSHIPS • INTERNSHIPS • OPPORTUNITIES
+      SCHOLARSHIPS • INTERNSHIPS • STUDENT OPPORTUNITIES
     </div>
 
     <h1>Scholarships & Internships</h1>
 
     <p>
-      A collection of scholarship opportunities and clinical
-      training options to help Medical Imaging students explore
-      further study and gain practical experience.
+      A focused collection of scholarship opportunities and
+      clinical training options for students exploring
+      Medical Imaging and related fields.
     </p>
 
   </section>
 
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
 
   <main class="career">
 
     <div class="intro">
+
       <h2>Explore Opportunities</h2>
 
       <p>
-        Carefully selected opportunities relevant to students
-        interested in Medical Imaging, Medical Technology,
-        healthcare, and related fields.
+        Choose a category to explore opportunities, eligibility
+        requirements, and useful information before applying.
       </p>
+
     </div>
 
 
-    <!-- 01 — SCHOLARSHIPS -->
+    <!-- SCHOLARSHIPS -->
 
-    <section class="resource-category">
+    <a href="scholarships.html" class="opportunity-card">
 
-      <div class="category-heading">
+      <div class="opportunity-left">
 
-        <span class="category-number">01</span>
+        <span class="opportunity-number">
+          01
+        </span>
 
-        <div>
-          <h2>Scholarships & Study Opportunities</h2>
+        <div class="opportunity-content">
+
+          <h3>
+            Scholarships & Study Opportunities
+          </h3>
 
           <p>
-            Explore major international scholarship programmes
-            that can support postgraduate study in Medical Imaging,
+            Explore international scholarship programmes that
+            can support postgraduate study in Medical Imaging,
             Medical Technology, Medical Physics, Biomedical
             Engineering, and related healthcare fields.
           </p>
+
         </div>
 
       </div>
 
+      <span class="opportunity-arrow">
+        View Scholarships →
+      </span>
 
-      <!-- ERASMUS -->
+    </a>
 
-      <div class="resource-item">
 
-        <div class="resource-info">
+    <!-- INTERNSHIPS -->
 
-          <h3>Erasmus Mundus Joint Masters</h3>
+    <a href="internships.html" class="opportunity-card">
+
+      <div class="opportunity-left">
+
+        <span class="opportunity-number">
+          02
+        </span>
+
+        <div class="opportunity-content">
+
+          <h3>
+            Internships & Clinical Exposure
+          </h3>
 
           <p>
-            Europe · Fully Funded Opportunities
-          </p>
-
-          <p class="resource-description">
-            Joint master's programmes offered by international
-            university partnerships. Students from around the
-            world can apply, and full scholarships are available
-            for selected students. Relevant programmes should be
-            checked individually for field eligibility.
-          </p>
-
-        </div>
-
-        <div class="resource-action">
-
-          <span class="access">
-            Fully Funded Scholarships Available
-          </span>
-
-          <a
-            href="https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters"
-            target="_blank"
-            class="resource-link"
-          >
-            Explore Erasmus Mundus →
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- COMMONWEALTH -->
-
-      <div class="resource-item">
-
-        <div class="resource-info">
-
-          <h3>Commonwealth Master's Scholarships</h3>
-
-          <p>
-            United Kingdom · Master's Study
-          </p>
-
-          <p class="resource-description">
-            Scholarships for eligible citizens of Commonwealth
-            countries to pursue full-time taught master's study
-            in the UK. Applicants should check the current
-            eligibility criteria and approved subject areas.
-          </p>
-
-        </div>
-
-        <div class="resource-action">
-
-          <span class="access">
-            Fully Funded
-          </span>
-
-          <a
-            href="https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/"
-            target="_blank"
-            class="resource-link"
-          >
-            View Scholarship →
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- CHEVENING -->
-
-      <div class="resource-item">
-
-        <div class="resource-info">
-
-          <h3>Chevening Scholarships</h3>
-
-          <p>
-            United Kingdom · One-Year Master's
-          </p>
-
-          <p class="resource-description">
-            A UK government scholarship for eligible applicants
-            seeking a one-year master's degree. Applicants must
-            meet Chevening's work-experience requirement and other
-            eligibility criteria. Relevant degree programmes should
-            be checked individually.
-          </p>
-
-        </div>
-
-        <div class="resource-action">
-
-          <span class="access">
-            Work Experience Required
-          </span>
-
-          <a
-            href="https://www.chevening.org/scholarships/"
-            target="_blank"
-            class="resource-link"
-          >
-            View Scholarship →
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- CSC -->
-
-      <div class="resource-item">
-
-        <div class="resource-info">
-
-          <h3>Chinese Government Scholarship</h3>
-
-          <p>
-            China · Master's & Doctoral Study
-          </p>
-
-          <p class="resource-description">
-            Government-funded scholarship opportunities for
-            international students studying at participating
-            Chinese universities. Programme availability,
-            university requirements, and eligibility vary.
-          </p>
-
-        </div>
-
-        <div class="resource-action">
-
-          <span class="access">
-            Scholarship Opportunities
-          </span>
-
-          <a
-            href="https://www.campuschina.org/"
-            target="_blank"
-            class="resource-link"
-          >
-            Explore Scholarship →
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- DAAD -->
-
-      <div class="resource-item">
-
-        <div class="resource-info">
-
-          <h3>DAAD</h3>
-
-          <p>
-            Germany · Study & Scholarship Opportunities
-          </p>
-
-          <p class="resource-description">
-            The German Academic Exchange Service provides
-            scholarship opportunities and a programme database
-            for international students. Relevant master's
-            programmes in Medical Technology and related fields
-            can be searched through the official database.
-          </p>
-
-        </div>
-
-        <div class="resource-action">
-
-          <span class="access">
-            Programme-Dependent
-          </span>
-
-          <a
-            href="https://www.daad.de/en/studying-in-germany/"
-            target="_blank"
-            class="resource-link"
-          >
-            Explore DAAD →
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <p class="note">
-        Scholarship eligibility, deadlines, funding, and programme
-        requirements can change from year to year. Always check
-        the official scholarship website and the individual
-        programme requirements before applying.
-      </p>
-
-    </section>
-
-
-    <!-- 02 — INTERNSHIPS -->
-
-    <section class="resource-category">
-
-      <div class="category-heading">
-
-        <span class="category-number">02</span>
-
-        <div>
-
-          <h2>Internships & Clinical Exposure</h2>
-
-          <p>
-            Opportunities for Medical Imaging students to gain
-            practical experience and explore clinical environments.
+            Explore hospitals and diagnostic centres where
+            Medical Imaging students can look for practical
+            training and clinical exposure opportunities.
           </p>
 
         </div>
 
       </div>
 
+      <span class="opportunity-arrow">
+        View Internships →
+      </span>
 
-      <!-- PINUM -->
+    </a>
 
-      <div class="resource-item">
 
-        <div class="resource-info">
+    <!-- NOTE -->
 
-          <h3>PINUM Cancer Hospital</h3>
-
-          <p>
-            Faisalabad · Radiology & Nuclear Medicine
-          </p>
-
-          <p class="resource-description">
-            A relevant option for Medical Imaging students seeking
-            clinical exposure in radiology and nuclear medicine.
-            Students should confirm current internship availability
-            and requirements directly with the institution.
-          </p>
-
-        </div>
-
-        <div class="resource-action">
-
-          <span class="access">
-            Check Availability
-          </span>
-
-          <a
-            href="https://www.pinum.org.pk/"
-            target="_blank"
-            class="resource-link"
-          >
-            Visit Website →
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- SHaukat KHANUM -->
-
-      <div class="resource-item">
-
-        <div class="resource-info">
-
-          <h3>Shaukat Khanum Memorial Cancer Hospital</h3>
-
-          <p>
-            Lahore / Peshawar · Radiology
-          </p>
-
-          <p class="resource-description">
-            Radiology elective and rotation opportunities for
-            eligible final-year Medical Imaging Technology students.
-            Ancillary health students may also be eligible for
-            selected rotations, subject to availability.
-          </p>
-
-        </div>
-
-        <div class="resource-action">
-
-          <span class="access">
-            Check Availability
-          </span>
-
-          <a
-            href="https://shaukatkhanum.org.pk/join-us/electives/"
-            target="_blank"
-            class="resource-link"
-          >
-            View Opportunities →
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- AGA KHAN -->
-
-      <div class="resource-item">
-
-        <div class="resource-info">
-
-          <h3>Aga Khan University Hospital</h3>
-
-          <p>
-            Karachi · Medical Imaging
-          </p>
-
-          <p class="resource-description">
-            Structured training opportunities for eligible Medical
-            Imaging graduates, including exposure to radiography,
-            CT, MRI, ultrasound, mammography, nuclear medicine,
-            and other imaging areas.
-          </p>
-
-        </div>
-
-        <div class="resource-action">
-
-          <span class="access">
-            Graduate Training
-          </span>
-
-          <a
-            href="https://www.aku.edu/vacancies/Pages/job-detail.aspx?JobID=8322&Title=Trainee+Radiographer"
-            target="_blank"
-            class="resource-link"
-          >
-            View Opportunity →
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- IDC -->
-
-      <div class="resource-item">
-
-        <div class="resource-info">
-
-          <h3>Islamabad Diagnostic Centre (IDC)</h3>
-
-          <p>
-            Pakistan · Diagnostic Imaging
-          </p>
-
-          <p class="resource-description">
-            A diagnostic imaging network where students can enquire
-            about current internship or clinical training
-            opportunities.
-          </p>
-
-        </div>
-
-        <div class="resource-action">
-
-          <span class="access">
-            Check Availability
-          </span>
-
-          <a
-            href="https://idc.net.pk/available-jobs/"
-            target="_blank"
-            class="resource-link"
-          >
-            Check Opportunities →
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- FAISAL HOSPITAL -->
-
-      <div class="resource-item">
-
-        <div class="resource-info">
-
-          <h3>Faisal Hospital</h3>
-
-          <p>
-            Faisalabad · Diagnostic Imaging
-          </p>
-
-          <p class="resource-description">
-            A local clinical setting where Medical Imaging students
-            can enquire about practical training and hospital-based
-            learning opportunities.
-          </p>
-
-        </div>
-
-        <div class="resource-action">
-
-          <span class="access">
-            Check Availability
-          </span>
-
-          <a
-            href="#"
-            class="resource-link"
-          >
-            Contact Hospital →
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- MUJAHID HOSPITAL -->
-
-      <div class="resource-item">
-
-        <div class="resource-info">
-
-          <h3>Mujahid Hospital</h3>
-
-          <p>
-            Faisalabad · Radiology & Imaging Technology
-          </p>
-
-          <p class="resource-description">
-            Offers training and internship opportunities in
-            Radiology & Imaging Technology for students seeking
-            practical clinical experience.
-          </p>
-
-        </div>
-
-        <div class="resource-action">
-
-          <span class="access">
-            Internship
-          </span>
-
-          <a
-            href="https://mujahidhospital.org.pk/training-internship/"
-            target="_blank"
-            class="resource-link"
-          >
-            View Internship →
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- NATIONAL HOSPITAL -->
-
-      <div class="resource-item">
-
-        <div class="resource-info">
-
-          <h3>National Hospital</h3>
-
-          <p>
-            Faisalabad · Clinical Training
-          </p>
-
-          <p class="resource-description">
-            A Faisalabad-based hospital where students can enquire
-            about current clinical training and Medical Imaging
-            internship opportunities.
-          </p>
-
-        </div>
-
-        <div class="resource-action">
-
-          <span class="access">
-            Check Availability
-          </span>
-
-          <a
-            href="#"
-            class="resource-link"
-          >
-            Contact Hospital →
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <p class="note">
-        Internship and training availability may change. Always
-        confirm current eligibility, requirements, duration, and
-        availability with the respective organisation.
-      </p>
-
-    </section>
+    <p class="note">
+      Opportunity details, eligibility requirements, deadlines,
+      and availability may change. Always check the official
+      organisation or scholarship website before applying.
+    </p>
 
   </main>
 
