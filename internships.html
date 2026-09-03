@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Internships & Clinical Exposure | Med Imaging Hub</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #172033;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 7%;
+      border-bottom: 1px solid #eef1f6;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #172033;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #172033;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+
+    /* HERO */
+
+    .page-hero {
+      text-align: center;
+      padding: 90px 8% 75px;
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          rgba(147, 197, 253, 0.18),
+          transparent 55%
+        );
+    }
+
+    .page-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #2563eb;
+      margin-bottom: 18px;
+    }
+
+    .page-hero h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+      color: #172033;
+    }
+
+    .page-hero p {
+      max-width: 680px;
+      margin: auto;
+      font-size: 17px;
+      color: #667085;
+    }
+
+
+    /* MAIN */
+
+    .internships {
+      max-width: 920px;
+      margin: auto;
+      padding: 55px 8% 90px;
+    }
+
+    .intro {
+      margin-bottom: 45px;
+    }
+
+    .intro h2 {
+      font-size: 28px;
+      letter-spacing: -0.7px;
+      margin-bottom: 10px;
+      color: #172033;
+    }
+
+    .intro p {
+      color: #667085;
+      font-size: 15px;
+      max-width: 720px;
+    }
+
+
+    /* CATEGORY */
+
+    .resource-category {
+      margin-bottom: 30px;
+    }
+
+    .category-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .category-number {
+      min-width: 58px;
+      font-size: 38px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #93c5fd;
+    }
+
+    .category-heading h2 {
+      font-size: 25px;
+      letter-spacing: -0.5px;
+      color: #2563eb;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .category-heading p {
+      color: #667085;
+      font-size: 14px;
+      max-width: 700px;
+    }
+
+
+    /* RESOURCE ITEM */
+
+    .resource-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      padding: 25px 0;
+      border-bottom: 1px solid #edf0f5;
+    }
+
+    .resource-info {
+      flex: 1;
+    }
+
+    .resource-info h3 {
+      font-size: 17px;
+      margin-bottom: 3px;
+      color: #172033;
+    }
+
+    .location {
+      font-size: 13px;
+      color: #2563eb;
+      margin-bottom: 8px;
+    }
+
+    .resource-description {
+      font-size: 14px;
+      color: #667085;
+      max-width: 650px;
+      line-height: 1.6;
+    }
+
+
+    /* ACTION */
+
+    .resource-action {
+      min-width: 180px;
+      text-align: right;
+    }
+
+    .access {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #667085;
+      margin-bottom: 6px;
+    }
+
+    .resource-link {
+      text-decoration: none;
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .resource-link:hover {
+      text-decoration: underline;
+    }
+
+
+    /* NOTE */
+
+    .note {
+      margin-top: 30px;
+      padding: 18px 20px;
+      background: #f8fafc;
+      border-left: 3px solid #93c5fd;
+      color: #667085;
+      font-size: 13px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #eef1f6;
+      padding: 28px 7%;
+      text-align: center;
+      color: #98a2b3;
+      font-size: 13px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 760px) {
+
+      header {
+        flex-direction: column;
+        gap: 18px;
+        padding: 22px 6%;
+      }
+
+      nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .page-hero {
+        padding: 70px 7% 60px;
+      }
+
+      .page-hero h1 {
+        font-size: 40px;
+      }
+
+      .page-hero p {
+        font-size: 15px;
+      }
+
+      .internships {
+        padding: 40px 7% 70px;
+      }
+
+      .category-heading {
+        gap: 14px;
+      }
+
+      .category-number {
+        min-width: 45px;
+        font-size: 30px;
+      }
+
+      .category-heading h2 {
+        font-size: 22px;
+      }
+
+      .resource-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .resource-action {
+        min-width: auto;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      Med Imaging <span>Hub</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="insights.html">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="page-hero">
+
+    <div class="page-label">
+      CLINICAL EXPOSURE • TRAINING • INTERNSHIPS
+    </div>
+
+    <h1>Internships & Clinical Exposure</h1>
+
+    <p>
+      A collection of hospitals and diagnostic centres where
+      Medical Imaging students can explore practical training
+      and clinical exposure opportunities.
+    </p>
+
+  </section>
+
+
+  <!-- MAIN -->
+
+  <main class="internships">
+
+    <div class="intro">
+
+      <h2>Explore Internships</h2>
+
+      <p>
+        Explore clinical training opportunities and check the
+        eligibility, requirements, and current availability
+        directly with each organisation.
+      </p>
+
+    </div>
+
+
+    <!-- 01 — INTERNSHIPS -->
+
+    <section class="resource-category">
+
+      <div class="category-heading">
+
+        <span class="category-number">01</span>
+
+        <div>
+
+          <h2>Clinical Training Opportunities</h2>
+
+          <p>
+            Opportunities relevant to Medical Imaging,
+            Radiology, and related clinical fields.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- PINUM -->
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>PINUM Cancer Hospital</h3>
+
+          <p class="location">
+            Faisalabad · Radiology & Nuclear Medicine
+          </p>
+
+          <p class="resource-description">
+            A relevant option for Medical Imaging students
+            seeking clinical exposure in radiology and
+            nuclear medicine. Students should confirm
+            current internship availability and requirements.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            Check Availability
+          </span>
+
+          <a
+            href="https://www.pinum.org.pk/"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Website →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- SHaukat KHANUM -->
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>Shaukat Khanum Memorial Cancer Hospital</h3>
+
+          <p class="location">
+            Lahore / Peshawar · Radiology
+          </p>
+
+          <p class="resource-description">
+            Radiology elective and rotation opportunities
+            for eligible final-year Medical Imaging Technology
+            students. Selected ancillary health rotations
+            may also be available.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            Check Availability
+          </span>
+
+          <a
+            href="https://shaukatkhanum.org.pk/join-us/electives/"
+            target="_blank"
+            class="resource-link"
+          >
+            View Opportunities →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- AGA KHAN -->
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>Aga Khan University Hospital</h3>
+
+          <p class="location">
+            Karachi · Medical Imaging
+          </p>
+
+          <p class="resource-description">
+            Structured training opportunities for eligible
+            Medical Imaging graduates, including exposure to
+            radiography, CT, MRI, ultrasound, mammography,
+            nuclear medicine, and interventional radiology.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            Graduate Training
+          </span>
+
+          <a
+            href="https://www.aku.edu/vacancies/Pages/job-detail.aspx?JobID=8322&Title=Trainee+Radiographer"
+            target="_blank"
+            class="resource-link"
+          >
+            View Opportunity →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- IDC -->
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>Islamabad Diagnostic Centre (IDC)</h3>
+
+          <p class="location">
+            Pakistan · Diagnostic Imaging
+          </p>
+
+          <p class="resource-description">
+            A diagnostic imaging network where students can
+            enquire about current internship or clinical
+            training opportunities.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            Check Availability
+          </span>
+
+          <a
+            href="https://idc.net.pk/available-jobs/"
+            target="_blank"
+            class="resource-link"
+          >
+            Check Opportunities →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- FAISAL HOSPITAL -->
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>Faisal Hospital</h3>
+
+          <p class="location">
+            Faisalabad · Diagnostic Imaging
+          </p>
+
+          <p class="resource-description">
+            A local clinical setting where Medical Imaging
+            students can enquire about practical training
+            and hospital-based learning opportunities.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            Check Availability
+          </span>
+
+          <a
+            href="#"
+            class="resource-link"
+          >
+            Contact Hospital →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- MUJAHID HOSPITAL -->
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>Mujahid Hospital</h3>
+
+          <p class="location">
+            Faisalabad · Radiology & Imaging Technology
+          </p>
+
+          <p class="resource-description">
+            Offers training and internship opportunities
+            in Radiology & Imaging Technology for students
+            seeking practical clinical experience.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            Internship
+          </span>
+
+          <a
+            href="https://mujahidhospital.org.pk/training-internship/"
+            target="_blank"
+            class="resource-link"
+          >
+            View Internship →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- NATIONAL HOSPITAL -->
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>National Hospital</h3>
+
+          <p class="location">
+            Faisalabad · Clinical Training
+          </p>
+
+          <p class="resource-description">
+            A Faisalabad-based hospital where students can
+            enquire about current clinical training and
+            Medical Imaging internship opportunities.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            Check Availability
+          </span>
+
+          <a
+            href="#"
+            class="resource-link"
+          >
+            Contact Hospital →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- NOTE -->
+
+      <p class="note">
+        Internship and training availability may change.
+        Always confirm current eligibility, requirements,
+        duration, and availability directly with the
+        respective organisation.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Med Imaging Hub · Created & curated by Zara Ashraf
+  </footer>
+
+
+</body>
+</html>
