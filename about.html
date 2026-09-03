@@ -52,9 +52,12 @@
       color: #2563eb;
     }
 
+
+    /* ================= PAGE HEADER ================= */
+
     .page-header {
       text-align: center;
-      padding: 85px 8% 65px;
+      padding: 90px 8% 70px;
       background: #f8fafc;
     }
 
@@ -64,31 +67,36 @@
       font-weight: 700;
       color: #2563eb;
       letter-spacing: 1.5px;
-      margin-bottom: 14px;
+      margin-bottom: 15px;
     }
 
     .page-header h1 {
-      font-size: 46px;
+      font-size: 48px;
       line-height: 1.15;
       letter-spacing: -1.5px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      color: #17202a;
     }
 
     .page-header p {
-      max-width: 680px;
+      max-width: 700px;
       margin: auto;
       color: #667085;
       font-size: 17px;
+      line-height: 1.7;
     }
+
+
+    /* ================= ABOUT CONTENT ================= */
 
     .about {
       max-width: 900px;
       margin: auto;
-      padding: 80px 8%;
+      padding: 85px 8%;
     }
 
     .about-block {
-      margin-bottom: 55px;
+      margin-bottom: 70px;
     }
 
     .about-block:last-child {
@@ -96,33 +104,51 @@
     }
 
     .about-block h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-      letter-spacing: -0.5px;
+      font-size: 29px;
+      margin-bottom: 18px;
+      letter-spacing: -0.6px;
+      color: #17202a;
     }
 
     .about-block p {
       color: #667085;
       font-size: 16px;
-      line-height: 1.8;
+      line-height: 1.85;
+      margin-bottom: 17px;
     }
 
+    .about-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-block strong {
+      color: #374151;
+    }
+
+
+    /* ================= CREATOR ================= */
+
     .creator-box {
-      margin-top: 30px;
-      padding: 30px;
+      margin-top: 28px;
+      padding: 32px;
       border: 1px solid #e6eaf0;
       border-radius: 14px;
       background: #f8fafc;
     }
 
     .creator-box h3 {
-      font-size: 20px;
+      font-size: 21px;
       margin-bottom: 10px;
+      color: #17202a;
     }
 
     .creator-box p {
       font-size: 15px;
+      margin-bottom: 0;
     }
+
+
+    /* ================= FOOTER ================= */
 
     footer {
       text-align: center;
@@ -135,6 +161,9 @@
     footer strong {
       color: #4b5563;
     }
+
+
+    /* ================= MOBILE ================= */
 
     @media (max-width: 700px) {
 
@@ -159,15 +188,40 @@
         font-size: 36px;
       }
 
+      .page-header p {
+        font-size: 16px;
+      }
+
       .about {
         padding: 60px 7%;
       }
 
+      .about-block {
+        margin-bottom: 55px;
+      }
+
+      .about-block h2 {
+        font-size: 26px;
+      }
+
+      .about-block p {
+        font-size: 15px;
+      }
+
+      .creator-box {
+        padding: 25px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
+
+
+  <!-- ================= HEADER ================= -->
 
   <header>
 
@@ -187,6 +241,9 @@
   </header>
 
 
+
+  <!-- ================= PAGE HEADER ================= -->
+
   <section class="page-header">
 
     <div class="page-label">
@@ -196,33 +253,75 @@
     <h1>About Med Imaging Hub</h1>
 
     <p>
-      A student-led learning space exploring medical imaging,
-      artificial intelligence, and healthcare technology.
+      A student-led initiative created to make medical imaging,
+      artificial intelligence, and healthcare technology easier
+      to explore and understand.
     </p>
 
   </section>
 
 
+
+  <!-- ================= ABOUT CONTENT ================= -->
+
   <main class="about">
+
 
     <section class="about-block">
 
-      <h2>Why Med Imaging Hub?</h2>
+      <h2>Why I Started Med Imaging Hub</h2>
 
       <p>
-        Medical imaging is constantly evolving. New imaging technologies,
-        artificial intelligence, and digital healthcare tools are changing
-        the way we understand and work with medical images.
+        Med Imaging Hub started with a simple thought:
+        <strong>learning medical imaging should not have to feel
+        harder than it needs to be.</strong>
       </p>
 
       <p>
-        Med Imaging Hub was created to bring these ideas together in one
-        simple and accessible space — especially for students and beginners
-        who want to learn, explore, and understand how technology connects
-        with medical imaging.
+        As a Medical Imaging Technology student, I have often come
+        across concepts that were difficult to understand from
+        textbooks alone. Finding a clear and simple explanation
+        sometimes meant going through multiple sources, watching
+        several videos, or trying to connect pieces of information
+        on my own.
+      </p>
+
+      <p>
+        I realised that if I was facing this difficulty as a student,
+        there were probably many others going through the same thing.
+      </p>
+
+      <p>
+        So I decided to create something I would have wanted to have
+        during my own learning journey — a space where complex ideas
+        could be explained simply, useful resources could be found
+        in one place, and students could explore how medical imaging
+        connects with technology and artificial intelligence.
       </p>
 
     </section>
+
+
+
+    <section class="about-block">
+
+      <h2>What Is Med Imaging Hub?</h2>
+
+      <p>
+        Med Imaging Hub is a student-led learning initiative focused
+        on Medical Imaging, Artificial Intelligence, technology,
+        and the ideas shaping the future of healthcare.
+      </p>
+
+      <p>
+        The goal is simple: to make learning more approachable.
+        Concepts are explored in a clear, practical, and
+        student-friendly way so that difficult ideas can feel easier
+        to understand and more interesting to explore.
+      </p>
+
+    </section>
+
 
 
     <section class="about-block">
@@ -230,12 +329,48 @@
       <h2>What You'll Find Here</h2>
 
       <p>
-        The Hub brings together educational articles, practical AI projects,
-        useful learning resources, and insights into emerging technologies
-        in medical imaging and healthcare.
+        The Hub brings together four main areas:
+        Medical Imaging education, AI and Medical Imaging,
+        practical projects, and useful student resources.
+      </p>
+
+      <p>
+        From simplified imaging concepts to practical AI projects
+        and useful learning opportunities, the aim is to create
+        a space that students can actually return to throughout
+        their learning journey.
       </p>
 
     </section>
+
+
+
+    <section class="about-block">
+
+      <h2>Built From a Student's Perspective</h2>
+
+      <p>
+        Med Imaging Hub is built from a student's perspective.
+        I am not creating this space because I have everything
+        figured out. I am learning, experimenting, building projects,
+        and discovering new things too.
+      </p>
+
+      <p>
+        The idea is to share that learning journey in a way that
+        can also help someone else. If a concept took me hours to
+        understand, maybe the next student can understand it
+        a little faster.
+      </p>
+
+      <p>
+        And if something I learn can save another student some
+        searching, confusion, or frustration, then this initiative
+        has already served its purpose.
+      </p>
+
+    </section>
+
 
 
     <section class="about-block">
@@ -247,8 +382,8 @@
         <h3>Zara Ashraf</h3>
 
         <p>
-          Med Imaging Hub is created and curated by Zara Ashraf,
-          a Medical Imaging Technology student interested in the
+          Med Imaging Hub was founded and is curated by Zara Ashraf,
+          a Medical Imaging Technology student exploring the
           intersection of medical imaging, artificial intelligence,
           and healthcare technology.
         </p>
@@ -257,12 +392,20 @@
 
     </section>
 
+
   </main>
 
 
+
+  <!-- ================= FOOTER ================= -->
+
   <footer>
-    © 2026 Med Imaging Hub · Created & curated by <strong>Zara Ashraf</strong>
+
+    © 2026 Med Imaging Hub · Created & curated by
+    <strong>Zara Ashraf</strong>
+
   </footer>
+
 
 </body>
 </html>
