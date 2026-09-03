@@ -55,26 +55,38 @@
     /* HERO */
 
     .project-hero {
-      text-align: center;
-      padding: 90px 8% 75px;
-      background: #f8fafc;
-    }
+  position: relative;
+  text-align: center;
+  padding: 95px 8% 80px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(37, 99, 235, 0.10),
+      transparent 48%
+    ),
+    #f8fafc;
+}
 
     .project-label {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      color: #2563eb;
-      letter-spacing: 1.5px;
-      margin-bottom: 16px;
-    }
-
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  padding: 7px 13px;
+  border: 1px solid #dbeafe;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.8);
+}
     .project-hero h1 {
-      font-size: 48px;
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-      margin-bottom: 18px;
-    }
+  font-size: 52px;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  color: #17202a;
+}
 
     .project-hero p {
       max-width: 760px;
