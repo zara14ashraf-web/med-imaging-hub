@@ -1,1 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Resources | Med Imaging Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #17202a;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b5563;
+      margin-left: 27px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+   .page-header {
+  position: relative;
+  text-align: center;
+  padding: 95px 8% 80px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(37, 99, 235, 0.10),
+      transparent 48%
+    ),
+    #f8fafc;
+}
+
+    .page-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  padding: 7px 13px;
+  border: 1px solid #dbeafe;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+   .page-header h1 {
+  font-size: 52px;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  color: #17202a;
+}
+    .page-header p {
+      max-width: 690px;
+      margin: auto;
+      color: #667085;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* RESOURCES */
+
+    .resources {
+      max-width: 1080px;
+      margin: auto;
+      padding: 85px 8% 90px;
+    }
+
+    .resource-intro {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .resource-intro h2 {
+      font-size: 28px;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .resource-intro p {
+      color: #667085;
+      font-size: 15px;
+    }
+
+    /* CATEGORY GRID */
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .category-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #e5eaf1;
+      border-radius: 16px;
+      padding: 30px;
+      background: #ffffff;
+      min-height: 245px;
+      position: relative;
+      overflow: hidden;
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .category-card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #f3f7ff;
+      right: -55px;
+      bottom: -55px;
+      transition: transform 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+      border-color: #d7e1ef;
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.08);
+    }
+
+    .category-card:hover::after {
+      transform: scale(1.25);
+    }
+
+    /* ICON */
+
+    .category-icon {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 11px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 20px;
+      margin-bottom: 23px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .category-number {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #a0a9b5;
+      letter-spacing: 1.5px;
+    }
+
+    .category-card h2 {
+      font-size: 20px;
+      letter-spacing: -0.4px;
+      margin-bottom: 11px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .category-card p {
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 21px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .category-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: #2563eb;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* BOTTOM MESSAGE */
+
+    .coming-soon {
+      margin-top: 58px;
+      padding: 28px 30px;
+      text-align: center;
+      border: 1px solid #e8edf2;
+      border-radius: 13px;
+      background: #fafbfc;
+    }
+
+    .coming-soon h3 {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .coming-soon p {
+      color: #7b8491;
+      font-size: 13px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 1px solid #e5e7eb;
+      color: #8a94a3;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #4b5563;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 850px) {
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .page-header h1 {
+        font-size: 44px;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .page-header {
+        padding: 70px 7% 55px;
+      }
+
+      .page-header h1 {
+        font-size: 38px;
+      }
+
+      .page-header p {
+        font-size: 16px;
+      }
+
+      .resources {
+        padding: 60px 7% 70px;
+      }
+
+      .resource-intro {
+        margin-bottom: 35px;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      Med Imaging <span>Hub</span>
+    </div>
+
+    <nav>
+     <a href="../index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="insights.html">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <!-- PAGE HEADER -->
+
+  <section class="page-header">
+
+    <div class="page-label">
+      LEARNING • TOOLS • OPPORTUNITIES
+    </div>
+
+    <h1>Resources</h1>
+
+    <p>
+      A growing collection of useful resources for students
+      exploring Medical Imaging, Artificial Intelligence,
+      healthcare technology, and career opportunities.
+    </p>
+
+  </section>
+
+
+  <!-- RESOURCE CONTENT -->
+
+  <main class="resources">
+
+    <div class="resource-intro">
+
+      <h2>Explore by Category</h2>
+
+      <p>
+        Find the right resources without having to search through everything at once.
+      </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+
+      <!-- LEARNING -->
+
+     <a href="learning.html" class="category-card">
+
+        <div class="category-icon">
+          📚
+        </div>
+
+        <div class="category-number">
+          01
+        </div>
+
+        <h2>Learning</h2>
+
+        <p>
+          Courses, tutorials, educational platforms, and learning
+          materials to build knowledge and practical skills.
+        </p>
+
+        <div class="category-link">
+          Explore Learning →
+        </div>
+
+      </a>
+
+
+      <!-- MEDICAL IMAGING -->
+
+     <a href="medical-imaging.html" class="category-card">
+
+        <div class="category-icon">
+          🩻
+        </div>
+
+        <div class="category-number">
+          02
+        </div>
+
+        <h2>Medical Imaging</h2>
+
+        <p>
+          Educational websites, organizations, and resources
+          related to Medical Imaging and radiological practice.
+        </p>
+
+        <div class="category-link">
+          Explore Imaging →
+        </div>
+
+      </a>
+
+
+      <!-- AI -->
+
+      <a href="ai-technology.html" class="category-card">
+
+        <div class="category-icon">
+          🤖
+        </div>
+
+        <div class="category-number">
+          03
+        </div>
+
+        <h2>AI & Technology</h2>
+
+        <p>
+          Platforms, frameworks, tutorials, and resources for
+          exploring Artificial Intelligence and healthcare technology.
+        </p>
+
+        <div class="category-link">
+          Explore AI →
+        </div>
+
+      </a>
+
+
+      <!-- CERTIFICATIONS -->
+
+      <a href="certifications.html" class="category-card">
+
+        <div class="category-icon">
+          🎓
+        </div>
+
+        <div class="category-number">
+          04
+        </div>
+
+        <h2>Certifications</h2>
+
+        <p>
+          Courses, certificates, professional learning opportunities,
+          and credentials worth exploring.
+        </p>
+
+        <div class="category-link">
+          Explore Certifications →
+        </div>
+
+      </a>
+
+
+      <!-- CAREER -->
+
+     <a href="career.html" class="category-card">
+
+        <div class="category-icon">
+          🌍
+        </div>
+
+        <div class="category-number">
+          05
+        </div>
+
+        <h2>Career & Opportunities</h2>
+
+        <p>
+           Explore scholarships, study opportunities, and clinical
+  internship options relevant to Medical Imaging students.
+        </p>
+
+        <div class="category-link">
+          Explore Opportunities →
+        </div>
+
+      </a>
+
+
+      <!-- TOOLS -->
+
+     <a href="tools-datasets.html" class="category-card">
+
+        <div class="category-icon">
+          🛠️
+        </div>
+
+        <div class="category-number">
+          06
+        </div>
+
+        <h2>Tools & Datasets</h2>
+
+        <p>
+          Useful software, datasets, research tools, and platforms
+          for building projects and exploring Medical Imaging AI.
+        </p>
+
+        <div class="category-link">
+          Explore Tools →
+        </div>
+
+      </a>
+
+    </div>
+
+
+    <!-- COMING SOON -->
+
+    <div class="coming-soon">
+
+      <h3>More resources are on the way.</h3>
+
+      <p>
+        This collection will continue to grow as I discover
+        useful resources worth sharing with other students.
+      </p>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Med Imaging Hub · Created & curated by
+    <strong>Zara Ashraf</strong>
+  </footer>
+
+</body>
+</html>
