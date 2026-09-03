@@ -52,22 +52,32 @@
       color: #2563eb;
     }
 
-    /* PAGE HEADER */
-
     .page-header {
-      text-align: center;
-      padding: 90px 8% 70px;
-      background: #f8fafc;
-    }
+  position: relative;
+  text-align: center;
+  padding: 95px 8% 80px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(37, 99, 235, 0.10),
+      transparent 48%
+    ),
+    #f8fafc;
+}
 
     .page-label {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      color: #2563eb;
-      letter-spacing: 1.5px;
-      margin-bottom: 14px;
-    }
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  padding: 7px 13px;
+  border: 1px solid #dbeafe;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.75);
+}
 
     .page-header h1 {
       font-size: 48px;
