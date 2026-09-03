@@ -7,6 +7,9 @@
   <title>About | Med Imaging Hub</title>
 
   <style>
+
+    /* ================= RESET ================= */
+
     * {
       margin: 0;
       padding: 0;
@@ -19,6 +22,9 @@
       background: #ffffff;
       line-height: 1.6;
     }
+
+
+    /* ================= HEADER ================= */
 
     header {
       display: flex;
@@ -45,7 +51,7 @@
       color: #4b5563;
       margin-left: 27px;
       font-size: 14px;
-      transition: 0.2s;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
@@ -56,25 +62,37 @@
     /* ================= PAGE HEADER ================= */
 
     .page-header {
+      position: relative;
       text-align: center;
-      padding: 90px 8% 70px;
-      background: #f8fafc;
+      padding: 95px 8% 80px;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 50% 10%,
+          rgba(37, 99, 235, 0.10),
+          transparent 48%
+        ),
+        #f8fafc;
     }
 
     .page-label {
       display: inline-block;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       color: #2563eb;
-      letter-spacing: 1.5px;
-      margin-bottom: 15px;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      padding: 7px 13px;
+      border: 1px solid #dbeafe;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.8);
     }
 
     .page-header h1 {
-      font-size: 48px;
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-      margin-bottom: 18px;
+      font-size: 52px;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
       color: #17202a;
     }
 
@@ -83,7 +101,7 @@
       margin: auto;
       color: #667085;
       font-size: 17px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
 
@@ -92,11 +110,11 @@
     .about {
       max-width: 900px;
       margin: auto;
-      padding: 85px 8%;
+      padding: 90px 8%;
     }
 
     .about-block {
-      margin-bottom: 70px;
+      margin-bottom: 72px;
     }
 
     .about-block:last-child {
@@ -105,9 +123,22 @@
 
     .about-block h2 {
       font-size: 29px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       letter-spacing: -0.6px;
       color: #17202a;
+      position: relative;
+    }
+
+    /* small visual marker */
+
+    .about-block h2::before {
+      content: "";
+      display: block;
+      width: 34px;
+      height: 3px;
+      background: #2563eb;
+      border-radius: 3px;
+      margin-bottom: 13px;
     }
 
     .about-block p {
@@ -126,24 +157,59 @@
     }
 
 
+    /* ================= STUDENT PERSPECTIVE ================= */
+
+    .about-block:nth-child(4) {
+      padding: 42px 40px;
+      border: 1px solid #e6eaf0;
+      border-radius: 16px;
+      background:
+        radial-gradient(
+          circle at 100% 0%,
+          rgba(37, 99, 235, 0.06),
+          transparent 45%
+        ),
+        #f8fafc;
+    }
+
+    .about-block:nth-child(4) h2 {
+      margin-bottom: 20px;
+    }
+
+
     /* ================= CREATOR ================= */
 
     .creator-box {
       margin-top: 28px;
-      padding: 32px;
-      border: 1px solid #e6eaf0;
-      border-radius: 14px;
-      background: #f8fafc;
+      padding: 34px;
+      border: 1px solid #e1e7ef;
+      border-radius: 16px;
+      background: #ffffff;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .creator-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: #2563eb;
     }
 
     .creator-box h3 {
-      font-size: 21px;
+      font-size: 22px;
       margin-bottom: 10px;
       color: #17202a;
+      letter-spacing: -0.4px;
     }
 
     .creator-box p {
       font-size: 15px;
+      line-height: 1.8;
       margin-bottom: 0;
     }
 
@@ -160,6 +226,17 @@
 
     footer strong {
       color: #4b5563;
+    }
+
+
+    /* ================= TABLET ================= */
+
+    @media (max-width: 900px) {
+
+      .page-header h1 {
+        font-size: 46px;
+      }
+
     }
 
 
@@ -181,11 +258,12 @@
       }
 
       .page-header {
-        padding: 65px 7% 50px;
+        padding: 65px 7% 55px;
       }
 
       .page-header h1 {
-        font-size: 36px;
+        font-size: 37px;
+        letter-spacing: -1.2px;
       }
 
       .page-header p {
@@ -193,11 +271,11 @@
       }
 
       .about {
-        padding: 60px 7%;
+        padding: 65px 7%;
       }
 
       .about-block {
-        margin-bottom: 55px;
+        margin-bottom: 58px;
       }
 
       .about-block h2 {
@@ -208,8 +286,12 @@
         font-size: 15px;
       }
 
+      .about-block:nth-child(4) {
+        padding: 30px 25px;
+      }
+
       .creator-box {
-        padding: 25px;
+        padding: 28px 25px;
       }
 
     }
@@ -241,7 +323,6 @@
   </header>
 
 
-
   <!-- ================= PAGE HEADER ================= -->
 
   <section class="page-header">
@@ -259,7 +340,6 @@
     </p>
 
   </section>
-
 
 
   <!-- ================= ABOUT CONTENT ================= -->
@@ -302,7 +382,6 @@
     </section>
 
 
-
     <section class="about-block">
 
       <h2>What Is Med Imaging Hub?</h2>
@@ -323,7 +402,6 @@
     </section>
 
 
-
     <section class="about-block">
 
       <h2>What You'll Find Here</h2>
@@ -342,7 +420,6 @@
       </p>
 
     </section>
-
 
 
     <section class="about-block">
@@ -372,7 +449,6 @@
     </section>
 
 
-
     <section class="about-block">
 
       <h2>Behind the Hub</h2>
@@ -394,7 +470,6 @@
 
 
   </main>
-
 
 
   <!-- ================= FOOTER ================= -->
