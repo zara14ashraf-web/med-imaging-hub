@@ -52,9 +52,11 @@
       color: #2563eb;
     }
 
+    /* PAGE HEADER */
+
     .page-header {
       text-align: center;
-      padding: 85px 8% 65px;
+      padding: 90px 8% 70px;
       background: #f8fafc;
     }
 
@@ -68,45 +70,109 @@
     }
 
     .page-header h1 {
-      font-size: 46px;
+      font-size: 48px;
       line-height: 1.15;
       letter-spacing: -1.5px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .page-header p {
-      max-width: 680px;
+      max-width: 700px;
       margin: auto;
       color: #667085;
       font-size: 17px;
+      line-height: 1.7;
     }
+
+    /* RESOURCES */
 
     .resources {
-      padding: 75px 8%;
-      max-width: 1150px;
+      max-width: 1100px;
       margin: auto;
+      padding: 80px 8%;
     }
 
-    .resource-placeholder {
-      max-width: 760px;
-      margin: auto;
-      padding: 35px;
-      text-align: center;
-      border: 1px solid #e6eaf0;
-      border-radius: 14px;
-      background: #f8fafc;
+    .resource-section {
+      margin-bottom: 65px;
     }
 
-    .resource-placeholder h2 {
-      font-size: 22px;
+    .resource-section h2 {
+      font-size: 27px;
+      letter-spacing: -0.5px;
       margin-bottom: 10px;
     }
 
-    .resource-placeholder p {
+    .resource-section > p {
       color: #667085;
       font-size: 15px;
+      margin-bottom: 28px;
+      max-width: 720px;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .resource-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #e6eaf0;
+      border-radius: 13px;
+      padding: 27px;
+      background: #ffffff;
+      transition: transform 0.25s ease,
+                  box-shadow 0.25s ease,
+                  border-color 0.25s ease;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-5px);
+      border-color: #d8e0eb;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.07);
+    }
+
+    .resource-number {
+      font-size: 11px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+
+    .resource-card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .resource-card p {
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .resource-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: #2563eb;
+    }
+
+    /* NOTE */
+
+    .resource-note {
+      text-align: center;
+      max-width: 680px;
+      margin: 10px auto 0;
+      color: #8a94a3;
+      font-size: 13px;
       line-height: 1.7;
     }
+
+    /* FOOTER */
 
     footer {
       text-align: center;
@@ -120,7 +186,20 @@
       color: #4b5563;
     }
 
-    @media (max-width: 700px) {
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .page-header h1 {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 650px) {
 
       header {
         flex-direction: column;
@@ -144,14 +223,19 @@
       }
 
       .resources {
-        padding: 55px 7%;
+        padding: 60px 7%;
       }
 
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- HEADER -->
 
   <header>
 
@@ -171,6 +255,8 @@
   </header>
 
 
+  <!-- PAGE HEADER -->
+
   <section class="page-header">
 
     <div class="page-label">
@@ -180,31 +266,267 @@
     <h1>Resources</h1>
 
     <p>
-      Useful learning materials, tools, courses, and opportunities
-      for students exploring medical imaging and healthcare technology.
+      Useful learning platforms, tools, courses, and opportunities
+      for students exploring Medical Imaging, AI, and healthcare technology.
     </p>
 
   </section>
 
 
+  <!-- RESOURCES -->
+
   <main class="resources">
 
-    <div class="resource-placeholder">
 
-      <h2>Resources coming soon</h2>
+    <!-- LEARNING -->
+
+    <section class="resource-section">
+
+      <h2>Learning Platforms</h2>
 
       <p>
-        Useful courses, tools, learning materials, and opportunities
-        will be collected here to support your learning journey.
+        Places to learn new concepts, strengthen technical skills,
+        and explore areas beyond the classroom.
       </p>
+
+      <div class="resource-grid">
+
+        <a href="https://www.coursera.org/"
+           target="_blank"
+           class="resource-card">
+
+          <div class="resource-number">01</div>
+
+          <h3>Coursera</h3>
+
+          <p>
+            Online courses and programs covering healthcare,
+            technology, AI, data science, and many other fields.
+          </p>
+
+          <div class="resource-link">
+            Visit Platform →
+          </div>
+
+        </a>
+
+
+        <a href="https://www.edx.org/"
+           target="_blank"
+           class="resource-card">
+
+          <div class="resource-number">02</div>
+
+          <h3>edX</h3>
+
+          <p>
+            University-level courses covering technology,
+            healthcare, computer science, and related subjects.
+          </p>
+
+          <div class="resource-link">
+            Visit Platform →
+          </div>
+
+        </a>
+
+
+        <a href="https://www.khanacademy.org/"
+           target="_blank"
+           class="resource-card">
+
+          <div class="resource-number">03</div>
+
+          <h3>Khan Academy</h3>
+
+          <p>
+            Free educational resources for building strong
+            foundations in science, mathematics, and related areas.
+          </p>
+
+          <div class="resource-link">
+            Visit Platform →
+          </div>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- AI -->
+
+    <section class="resource-section">
+
+      <h2>AI & Technical Resources</h2>
+
+      <p>
+        Useful platforms for students who want to explore
+        artificial intelligence and practical project development.
+      </p>
+
+      <div class="resource-grid">
+
+        <a href="https://www.kaggle.com/"
+           target="_blank"
+           class="resource-card">
+
+          <div class="resource-number">01</div>
+
+          <h3>Kaggle</h3>
+
+          <p>
+            Datasets, notebooks, competitions, and practical
+            resources for learning machine learning and data science.
+          </p>
+
+          <div class="resource-link">
+            Explore Kaggle →
+          </div>
+
+        </a>
+
+
+        <a href="https://huggingface.co/"
+           target="_blank"
+           class="resource-card">
+
+          <div class="resource-number">02</div>
+
+          <h3>Hugging Face</h3>
+
+          <p>
+            A platform for exploring models, datasets, demos,
+            and tools across modern machine learning.
+          </p>
+
+          <div class="resource-link">
+            Explore Platform →
+          </div>
+
+        </a>
+
+
+        <a href="https://pytorch.org/"
+           target="_blank"
+           class="resource-card">
+
+          <div class="resource-number">03</div>
+
+          <h3>PyTorch</h3>
+
+          <p>
+            An open-source machine learning framework widely used
+            for deep learning and AI research.
+          </p>
+
+          <div class="resource-link">
+            Visit PyTorch →
+          </div>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- MEDICAL IMAGING -->
+
+    <section class="resource-section">
+
+      <h2>Medical Imaging Resources</h2>
+
+      <p>
+        Helpful resources for understanding imaging technology,
+        professional development, and the wider field of Medical Imaging.
+      </p>
+
+      <div class="resource-grid">
+
+        <a href="https://www.iaea.org/"
+           target="_blank"
+           class="resource-card">
+
+          <div class="resource-number">01</div>
+
+          <h3>IAEA</h3>
+
+          <p>
+            Educational and professional resources related to
+            radiation, medical imaging, nuclear medicine, and healthcare.
+          </p>
+
+          <div class="resource-link">
+            Explore IAEA →
+          </div>
+
+        </a>
+
+
+        <a href="https://www.isrrt.org/"
+           target="_blank"
+           class="resource-card">
+
+          <div class="resource-number">02</div>
+
+          <h3>ISRRT</h3>
+
+          <p>
+            An international professional organization for
+            radiographers and radiological technologists.
+          </p>
+
+          <div class="resource-link">
+            Visit ISRRT →
+          </div>
+
+        </a>
+
+
+        <a href="https://www.radiologyinfo.org/"
+           target="_blank"
+           class="resource-card">
+
+          <div class="resource-number">03</div>
+
+          <h3>RadiologyInfo</h3>
+
+          <p>
+            Patient-friendly educational information about
+            medical imaging procedures and examinations.
+          </p>
+
+          <div class="resource-link">
+            Explore Resource →
+          </div>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- NOTE -->
+
+    <div class="resource-note">
+
+      This page will continue to grow as I discover useful
+      resources, courses, tools, and opportunities worth sharing
+      with other students.
 
     </div>
 
   </main>
 
 
+  <!-- FOOTER -->
+
   <footer>
-    © 2026 Med Imaging Hub · Created & curated by <strong>Zara Ashraf</strong>
+    © 2026 Med Imaging Hub · Created & curated by
+    <strong>Zara Ashraf</strong>
   </footer>
 
 </body>
