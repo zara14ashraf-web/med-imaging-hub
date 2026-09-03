@@ -14,9 +14,9 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, sans-serif;
+      color: #17202a;
       background: #ffffff;
-      color: #1f2937;
       line-height: 1.6;
     }
 
@@ -25,343 +25,373 @@
     ========================= */
 
     header {
-      width: 100%;
-      padding: 24px 7%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #eeeeee;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
       background: #ffffff;
     }
 
     .logo {
-      font-size: 22px;
+      font-size: 23px;
       font-weight: 700;
-      color: #111827;
-      letter-spacing: -0.4px;
+      letter-spacing: -0.5px;
+      color: #17202a;
     }
 
     .logo span {
-      color: #6b7280;
-    }
-
-    nav {
-      display: flex;
-      gap: 28px;
+      color: #2563eb;
     }
 
     nav a {
       text-decoration: none;
-      color: #555555;
+      color: #4b5563;
+      margin-left: 27px;
       font-size: 14px;
-      transition: 0.2s ease;
+      transition: 0.2s;
     }
 
     nav a:hover {
-      color: #111827;
+      color: #2563eb;
     }
+
 
     /* =========================
-       HERO
+       PAGE HEADER
     ========================= */
 
-    .hero {
-      padding: 85px 7% 70px;
-      max-width: 1100px;
-      margin: auto;
+    .page-header {
+      text-align: center;
+      padding: 95px 8% 80px;
+      background:
+        radial-gradient(circle at 50% 0%, #eef5ff 0, #f8fafc 38%, #f8fafc 100%);
     }
 
-    .hero-label {
+    .page-label {
+      display: inline-block;
       font-size: 12px;
-      letter-spacing: 2px;
-      color: #777777;
-      margin-bottom: 18px;
-      font-weight: 600;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1.6px;
+      margin-bottom: 16px;
     }
 
-    .hero h1 {
-      font-size: 58px;
-      line-height: 1.08;
+    .page-header h1 {
+      font-size: 52px;
+      line-height: 1.1;
       letter-spacing: -2px;
-      color: #111827;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
-    .hero p {
-      max-width: 650px;
+    .page-header p {
+      max-width: 700px;
+      margin: auto;
+      color: #667085;
       font-size: 17px;
-      color: #6b7280;
-      line-height: 1.8;
+      line-height: 1.75;
     }
+
 
     /* =========================
-       MAIN CONTENT
+       LEARNING CONTENT
     ========================= */
 
-    .learning-content {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 10px 7% 100px;
+    .learning {
+      max-width: 920px;
+      margin: auto;
+      padding: 85px 8% 90px;
     }
 
-    .content-intro {
-      margin-bottom: 70px;
+    .intro {
+      text-align: center;
+      margin-bottom: 65px;
     }
 
-    .content-intro h2 {
-      font-size: 25px;
-      color: #111827;
-      margin-bottom: 8px;
+    .intro h2 {
+      font-size: 29px;
       letter-spacing: -0.5px;
+      margin-bottom: 10px;
     }
 
-    .content-intro p {
-      color: #777777;
+    .intro p {
+      color: #667085;
       font-size: 15px;
     }
 
-    /* =========================
-       CATEGORY SECTION
-    ========================= */
-
-    .learning-section {
-      margin-bottom: 78px;
-    }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      gap: 22px;
-      align-items: start;
-      padding-bottom: 25px;
-      border-bottom: 1px solid #e9e9e9;
-      margin-bottom: 8px;
-    }
-
-    .section-number {
-      font-size: 48px;
-      line-height: 1;
-      font-weight: 700;
-      color: #e5e7eb;
-      letter-spacing: -2px;
-    }
-
-    .section-title h2 {
-      font-size: 28px;
-      line-height: 1.2;
-      color: #111827;
-      letter-spacing: -0.7px;
-      margin-bottom: 7px;
-    }
-
-    .section-title p {
-      color: #7a7a7a;
-      font-size: 14px;
-    }
 
     /* =========================
-       RESOURCE ROW
+       RESOURCE CATEGORY
     ========================= */
 
-    .resource-list {
-      margin-left: 112px;
+    .resource-category {
+      margin-bottom: 62px;
     }
 
-    .resource-item {
+    /*
+       Section heading is intentionally
+       more prominent than before.
+    */
+
+    .category-heading {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-      padding: 23px 0;
-      border-bottom: 1px solid #eeeeee;
-      text-decoration: none;
-      transition: 0.2s ease;
+      gap: 18px;
+      margin-bottom: 21px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e7ebf0;
     }
 
-    .resource-item:hover {
-      padding-left: 8px;
+    .category-number {
+      min-width: 58px;
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #dbe7f8;
     }
 
-    .resource-info {
-      min-width: 0;
+    .category-heading h2 {
+      font-size: 22px;
+      letter-spacing: -0.4px;
+      color: #17202a;
     }
 
-    .resource-name {
-      font-size: 17px;
-      font-weight: 600;
-      color: #222222;
-      margin-bottom: 4px;
-    }
-
-    .resource-description {
+    .category-description {
+      margin: -7px 0 18px 76px;
+      color: #7a8491;
       font-size: 13px;
-      color: #777777;
       line-height: 1.6;
     }
 
-    .resource-meta {
-      flex-shrink: 0;
+
+    /* =========================
+       RESOURCE ITEM
+    ========================= */
+
+    .resource-item {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 15px;
+      gap: 30px;
+      padding: 23px 0;
+      border-top: 1px solid #edf0f3;
     }
 
-    .status {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
+    .resource-info {
+      flex: 1;
+    }
+
+    .resource-info h3 {
+      font-size: 17px;
+      margin-bottom: 5px;
+      color: #17202a;
+      letter-spacing: -0.2px;
+    }
+
+    .resource-info p {
+      color: #667085;
+      font-size: 13px;
+      line-height: 1.65;
+      max-width: 650px;
+    }
+
+
+    /* =========================
+       RESOURCE ACTION
+    ========================= */
+
+    .resource-action {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-shrink: 0;
+    }
+
+    .access {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 5px 9px;
+      border-radius: 20px;
+      letter-spacing: 0.4px;
       white-space: nowrap;
     }
 
     .free {
-      color: #4f8a62;
+      color: #166534;
+      background: #f0fdf4;
+      border: 1px solid #dcfce7;
     }
 
-    .free-paid {
-      color: #b4863c;
+    .resource-link {
+      text-decoration: none;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: 0.2s;
     }
 
-    .paid {
-      color: #777777;
+    .resource-link:hover {
+      transform: translateX(3px);
     }
 
-    .arrow {
-      font-size: 18px;
-      color: #999999;
-      transition: 0.2s ease;
+
+    /* =========================
+       NOTE
+    ========================= */
+
+    .note {
+      margin-top: 20px;
+      padding: 24px 26px;
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
+      background: #fafbfc;
+      text-align: center;
     }
 
-    .resource-item:hover .arrow {
-      transform: translateX(4px);
-      color: #222222;
+    .note p {
+      color: #7b8491;
+      font-size: 12px;
+      line-height: 1.7;
     }
+
 
     /* =========================
        FOOTER
     ========================= */
 
     footer {
-      border-top: 1px solid #eeeeee;
-      padding: 28px 7%;
       text-align: center;
-      color: #888888;
+      padding: 32px 20px;
+      border-top: 1px solid #e5e7eb;
+      color: #8a94a3;
       font-size: 13px;
     }
 
+    footer strong {
+      color: #4b5563;
+    }
+
+
     /* =========================
-       RESPONSIVE
+       TABLET
     ========================= */
 
-    @media (max-width: 800px) {
+    @media (max-width: 700px) {
 
       header {
-        padding: 22px 5%;
         flex-direction: column;
-        gap: 18px;
+        gap: 15px;
       }
 
       nav {
-        gap: 17px;
-        flex-wrap: wrap;
-        justify-content: center;
+        text-align: center;
       }
 
-      .hero {
-        padding: 65px 5% 55px;
+      nav a {
+        margin: 0 7px;
       }
 
-      .hero h1 {
-        font-size: 43px;
+      .page-header {
+        padding: 70px 7% 55px;
       }
 
-      .learning-content {
-        padding-left: 5%;
-        padding-right: 5%;
+      .page-header h1 {
+        font-size: 40px;
       }
 
-      .section-heading {
-        grid-template-columns: 65px 1fr;
-        gap: 15px;
-      }
-
-      .section-number {
-        font-size: 38px;
-      }
-
-      .section-title h2 {
-        font-size: 23px;
-      }
-
-      .resource-list {
-        margin-left: 80px;
-      }
-
-      .resource-item {
-        align-items: flex-start;
-      }
-
-      .resource-meta {
-        flex-direction: column;
-        gap: 5px;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .section-heading {
-        grid-template-columns: 55px 1fr;
-      }
-
-      .section-number {
-        font-size: 32px;
-      }
-
-      .section-title h2 {
-        font-size: 21px;
-      }
-
-      .resource-list {
-        margin-left: 0;
-      }
-
-      .resource-item {
-        gap: 15px;
-      }
-
-      .resource-name {
+      .page-header p {
         font-size: 16px;
       }
 
-      .resource-description {
-        font-size: 12px;
+      .learning {
+        padding: 60px 7% 70px;
       }
 
-      .resource-meta {
-        align-items: flex-end;
+      .intro {
+        margin-bottom: 50px;
       }
 
-      .status {
-        font-size: 10px;
+      .category-heading {
+        gap: 14px;
       }
+
+      .category-number {
+        min-width: 50px;
+        font-size: 30px;
+      }
+
+      .category-heading h2 {
+        font-size: 21px;
+      }
+
+      .category-description {
+        margin-left: 64px;
+      }
+
+      .resource-item {
+        display: block;
+      }
+
+      .resource-action {
+        margin-top: 14px;
+        justify-content: flex-start;
+      }
+
     }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 450px) {
+
+      .page-header h1 {
+        font-size: 36px;
+      }
+
+      .category-heading {
+        gap: 11px;
+      }
+
+      .category-number {
+        min-width: 44px;
+        font-size: 27px;
+      }
+
+      .category-heading h2 {
+        font-size: 19px;
+      }
+
+      .category-description {
+        margin-left: 55px;
+      }
+
+      .resource-info h3 {
+        font-size: 16px;
+      }
+
+      .resource-action {
+        gap: 14px;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
+
 
   <!-- =========================
        HEADER
   ========================= -->
 
   <header>
+
     <div class="logo">
       Med Imaging <span>Hub</span>
     </div>
@@ -374,27 +404,26 @@
       <a href="resources.html">Resources</a>
       <a href="about.html">About</a>
     </nav>
+
   </header>
 
 
   <!-- =========================
-       HERO
+       PAGE HEADER
   ========================= -->
 
-  <section class="hero">
+  <section class="page-header">
 
-    <div class="hero-label">
-      LEARNING • KNOWLEDGE • EXPLORATION
+    <div class="page-label">
+      LEARNING • KNOWLEDGE • STUDY
     </div>
 
-    <h1>
-      Learning
-    </h1>
+    <h1>Learning</h1>
 
     <p>
-      A curated collection of useful learning resources to help
-      students build strong foundations, understand medical imaging,
-      and explore healthcare and technology at their own pace.
+      A collection of reliable educational resources to help
+      students build knowledge, strengthen fundamentals, and
+      explore Medical Imaging.
     </p>
 
   </section>
@@ -404,102 +433,115 @@
        LEARNING CONTENT
   ========================= -->
 
-  <main class="learning-content">
+  <main class="learning">
 
-    <div class="content-intro">
-      <h2>Explore by Topic</h2>
+
+    <div class="intro">
+
+      <h2>Learn &amp; Explore</h2>
+
       <p>
-        Start with the area you want to learn and explore resources
-        that can support your understanding.
+        Carefully selected resources that are useful throughout
+        different stages of your learning journey.
       </p>
+
     </div>
 
 
     <!-- =========================
-         01 ANATOMY & PHYSIOLOGY
+         01 — ANATOMY & PHYSIOLOGY
     ========================= -->
 
-    <section class="learning-section">
+    <section class="resource-category">
 
-      <div class="section-heading">
+      <div class="category-heading">
 
-        <div class="section-number">
+        <span class="category-number">
           01
+        </span>
+
+        <h2>
+          Anatomy &amp; Physiology
+        </h2>
+
+      </div>
+
+      <p class="category-description">
+        Build a strong understanding of the human body, its structures,
+        and how different systems function.
+      </p>
+
+
+      <!-- OpenStax -->
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>
+            OpenStax — Anatomy &amp; Physiology 2e
+          </h3>
+
+          <p>
+            A comprehensive open textbook covering human anatomy,
+            physiology, body systems, and foundational concepts.
+          </p>
+
         </div>
 
-        <div class="section-title">
-          <h2>Anatomy &amp; Physiology</h2>
-          <p>
-            Build a strong understanding of the human body and its
-            normal structure and function.
-          </p>
+        <div class="resource-action">
+
+          <span class="access free">
+            FREE
+          </span>
+
+          <a
+            href="https://openstax.org/books/anatomy-and-physiology-2e/pages/1-introduction"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
+
         </div>
 
       </div>
 
 
-      <div class="resource-list">
+      <!-- MedlinePlus -->
 
-        <a
-          href="https://openstax.org/books/anatomy-and-physiology-2e/pages/1-introduction"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="resource-item"
-        >
+      <div class="resource-item">
 
-          <div class="resource-info">
-            <div class="resource-name">
-              OpenStax — Anatomy &amp; Physiology 2e
-            </div>
+        <div class="resource-info">
 
-            <div class="resource-description">
-              A comprehensive, peer-reviewed textbook covering
-              anatomy, physiology, body systems, and core concepts.
-            </div>
-          </div>
+          <h3>
+            MedlinePlus — Anatomy
+          </h3>
 
-          <div class="resource-meta">
-            <span class="status free">
-              🟢 FREE
-            </span>
+          <p>
+            Anatomy information, images, videos, and tutorials
+            provided by the U.S. National Library of Medicine.
+          </p>
 
-            <span class="arrow">
-              →
-            </span>
-          </div>
+        </div>
 
-        </a>
+        <div class="resource-action">
 
+          <span class="access free">
+            FREE
+          </span>
 
-        <a
-          href="https://medlineplus.gov/anatomy.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="resource-item"
-        >
+          <a
+            href="https://medlineplus.gov/anatomy.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
 
-          <div class="resource-info">
-            <div class="resource-name">
-              MedlinePlus — Anatomy
-            </div>
-
-            <div class="resource-description">
-              Reliable anatomy information with illustrations,
-              videos, tutorials, and links to trusted health resources.
-            </div>
-          </div>
-
-          <div class="resource-meta">
-            <span class="status free">
-              🟢 FREE
-            </span>
-
-            <span class="arrow">
-              →
-            </span>
-          </div>
-
-        </a>
+        </div>
 
       </div>
 
@@ -507,90 +549,101 @@
 
 
     <!-- =========================
-         02 RADIOLOGY & MEDICAL IMAGING
+         02 — RADIOLOGY & IMAGING
     ========================= -->
 
-    <section class="learning-section">
+    <section class="resource-category">
 
-      <div class="section-heading">
+      <div class="category-heading">
 
-        <div class="section-number">
+        <span class="category-number">
           02
+        </span>
+
+        <h2>
+          Radiology &amp; Imaging
+        </h2>
+
+      </div>
+
+      <p class="category-description">
+        Explore imaging concepts, radiology cases, tutorials,
+        and visual learning resources.
+      </p>
+
+
+      <!-- Radiopaedia -->
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>
+            Radiopaedia
+          </h3>
+
+          <p>
+            A radiology learning and reference platform featuring
+            educational articles, imaging cases, and multiple-choice
+            questions across many areas of radiology.
+          </p>
+
         </div>
 
-        <div class="section-title">
-          <h2>Radiology &amp; Medical Imaging</h2>
-          <p>
-            Explore imaging modalities, radiology concepts, cases,
-            and visual learning resources.
-          </p>
+        <div class="resource-action">
+
+          <span class="access free">
+            FREE
+          </span>
+
+          <a
+            href="https://radiopaedia.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
+
         </div>
 
       </div>
 
 
-      <div class="resource-list">
+      <!-- LearningRadiology -->
 
-        <a
-          href="https://radiopaedia.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="resource-item"
-        >
+      <div class="resource-item">
 
-          <div class="resource-info">
-            <div class="resource-name">
-              Radiopaedia
-            </div>
+        <div class="resource-info">
 
-            <div class="resource-description">
-              An extensive educational radiology resource featuring
-              articles, cases, imaging examples, and learning materials.
-            </div>
-          </div>
+          <h3>
+            LearningRadiology
+          </h3>
 
-          <div class="resource-meta">
-            <span class="status free">
-              🟢 FREE
-            </span>
+          <p>
+            A beginner-friendly resource with radiology tutorials,
+            lectures, image-based cases, quizzes, and learning
+            materials for students and healthcare professionals.
+          </p>
 
-            <span class="arrow">
-              →
-            </span>
-          </div>
+        </div>
 
-        </a>
+        <div class="resource-action">
 
+          <span class="access free">
+            FREE
+          </span>
 
-        <a
-          href="https://learningradiology.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="resource-item"
-        >
+          <a
+            href="https://learningradiology.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
 
-          <div class="resource-info">
-            <div class="resource-name">
-              LearningRadiology
-            </div>
-
-            <div class="resource-description">
-              Free radiology lectures, tutorials, cases, and quizzes
-              designed around learning the basics of image interpretation.
-            </div>
-          </div>
-
-          <div class="resource-meta">
-            <span class="status free">
-              🟢 FREE
-            </span>
-
-            <span class="arrow">
-              →
-            </span>
-          </div>
-
-        </a>
+        </div>
 
       </div>
 
@@ -598,42 +651,41 @@
 
 
     <!-- =========================
-         03 STUDY & ACADEMIC SKILLS
+         03 — STUDY & ACADEMIC SKILLS
     ========================= -->
 
-    <section class="learning-section">
+    <section class="resource-category">
 
-      <div class="section-heading">
+      <div class="category-heading">
 
-        <div class="section-number">
+        <span class="category-number">
           03
-        </div>
+        </span>
 
-        <div class="section-title">
-          <h2>Study &amp; Academic Skills</h2>
-          <p>
-            Resources that can help with studying, understanding
-            information, and developing academic skills.
-          </p>
-        </div>
+        <h2>
+          Study &amp; Academic Skills
+        </h2>
 
       </div>
 
+      <p class="category-description">
+        Useful resources for studying effectively, understanding
+        academic information, and developing research-related skills.
+      </p>
 
-      <div class="resource-list">
 
-        <div class="resource-item">
+      <div class="resource-item">
 
-          <div class="resource-info">
-            <div class="resource-name">
-              More resources coming soon
-            </div>
+        <div class="resource-info">
 
-            <div class="resource-description">
-              Carefully selected study and academic learning resources
-              will be added here.
-            </div>
-          </div>
+          <h3>
+            Resources coming soon
+          </h3>
+
+          <p>
+            Carefully selected study and academic resources will be
+            added here as the collection grows.
+          </p>
 
         </div>
 
@@ -643,48 +695,63 @@
 
 
     <!-- =========================
-         04 GENERAL HEALTHCARE LEARNING
+         04 — GENERAL HEALTHCARE
     ========================= -->
 
-    <section class="learning-section">
+    <section class="resource-category">
 
-      <div class="section-heading">
+      <div class="category-heading">
 
-        <div class="section-number">
+        <span class="category-number">
           04
-        </div>
+        </span>
 
-        <div class="section-title">
-          <h2>General Healthcare Learning</h2>
-          <p>
-            Broader healthcare and science resources that can
-            complement your medical imaging education.
-          </p>
-        </div>
+        <h2>
+          General Healthcare Learning
+        </h2>
 
       </div>
 
+      <p class="category-description">
+        Broader healthcare and science resources that can complement
+        your medical imaging education.
+      </p>
 
-      <div class="resource-list">
 
-        <div class="resource-item">
+      <div class="resource-item">
 
-          <div class="resource-info">
-            <div class="resource-name">
-              More resources coming soon
-            </div>
+        <div class="resource-info">
 
-            <div class="resource-description">
-              Useful healthcare and science learning resources
-              will be added as the collection grows.
-            </div>
-          </div>
+          <h3>
+            Resources coming soon
+          </h3>
+
+          <p>
+            Useful healthcare and science learning resources will be
+            added here as the collection develops.
+          </p>
 
         </div>
 
       </div>
 
     </section>
+
+
+    <!-- =========================
+         NOTE
+    ========================= -->
+
+    <div class="note">
+
+      <p>
+        Resources are selected for educational value and accessibility.
+        Availability and access conditions may change over time.
+        Always use current professional guidance for clinical decision-making.
+      </p>
+
+    </div>
+
 
   </main>
 
@@ -694,8 +761,12 @@
   ========================= -->
 
   <footer>
-    © 2026 Med Imaging Hub · Created &amp; curated by Zara Ashraf
+
+    © 2026 Med Imaging Hub · Created &amp; curated by
+    <strong>Zara Ashraf</strong>
+
   </footer>
+
 
 </body>
 </html>
