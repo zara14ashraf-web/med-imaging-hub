@@ -56,8 +56,9 @@
 
     .page-header {
       text-align: center;
-      padding: 90px 8% 70px;
-      background: #f8fafc;
+      padding: 95px 8% 80px;
+      background:
+        radial-gradient(circle at 50% 0%, #eef5ff 0, #f8fafc 38%, #f8fafc 100%);
     }
 
     .page-label {
@@ -65,32 +66,50 @@
       font-size: 12px;
       font-weight: 700;
       color: #2563eb;
-      letter-spacing: 1.5px;
-      margin-bottom: 14px;
+      letter-spacing: 1.6px;
+      margin-bottom: 16px;
     }
 
     .page-header h1 {
-      font-size: 48px;
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-      margin-bottom: 18px;
+      font-size: 52px;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
     }
 
     .page-header p {
-      max-width: 700px;
+      max-width: 690px;
       margin: auto;
       color: #667085;
       font-size: 17px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
-    /* RESOURCE CATEGORIES */
+    /* RESOURCES */
 
     .resources {
-      max-width: 1050px;
+      max-width: 1080px;
       margin: auto;
-      padding: 85px 8%;
+      padding: 85px 8% 90px;
     }
+
+    .resource-intro {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .resource-intro h2 {
+      font-size: 28px;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .resource-intro p {
+      color: #667085;
+      font-size: 15px;
+    }
+
+    /* CATEGORY GRID */
 
     .category-grid {
       display: grid;
@@ -102,11 +121,11 @@
       display: block;
       text-decoration: none;
       color: inherit;
-      border: 1px solid #e6eaf0;
-      border-radius: 14px;
-      padding: 32px 28px;
+      border: 1px solid #e5eaf1;
+      border-radius: 16px;
+      padding: 30px;
       background: #ffffff;
-      min-height: 220px;
+      min-height: 245px;
       position: relative;
       overflow: hidden;
       transition:
@@ -115,59 +134,99 @@
         border-color 0.25s ease;
     }
 
-    .category-card::before {
+    .category-card::after {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: #2563eb;
-      opacity: 0.9;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #f3f7ff;
+      right: -55px;
+      bottom: -55px;
+      transition: transform 0.3s ease;
     }
 
     .category-card:hover {
-      transform: translateY(-5px);
-      border-color: #d8e0eb;
-      box-shadow: 0 15px 32px rgba(15, 23, 42, 0.07);
+      transform: translateY(-6px);
+      border-color: #d7e1ef;
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.08);
+    }
+
+    .category-card:hover::after {
+      transform: scale(1.25);
+    }
+
+    /* ICON */
+
+    .category-icon {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 11px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 20px;
+      margin-bottom: 23px;
+      position: relative;
+      z-index: 2;
     }
 
     .category-number {
-      font-size: 12px;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 11px;
       font-weight: 700;
-      color: #2563eb;
+      color: #a0a9b5;
       letter-spacing: 1.5px;
-      margin-bottom: 25px;
     }
 
     .category-card h2 {
-      font-size: 21px;
+      font-size: 20px;
       letter-spacing: -0.4px;
-      margin-bottom: 12px;
+      margin-bottom: 11px;
+      position: relative;
+      z-index: 2;
     }
 
     .category-card p {
       color: #667085;
       font-size: 14px;
       line-height: 1.75;
-      margin-bottom: 20px;
+      margin-bottom: 21px;
+      position: relative;
+      z-index: 2;
     }
 
     .category-link {
       font-size: 13px;
       font-weight: 600;
       color: #2563eb;
+      position: relative;
+      z-index: 2;
     }
 
-    /* BOTTOM NOTE */
+    /* BOTTOM MESSAGE */
 
-    .resource-note {
+    .coming-soon {
+      margin-top: 58px;
+      padding: 28px 30px;
       text-align: center;
-      max-width: 680px;
-      margin: 60px auto 5px;
-      color: #8a94a3;
+      border: 1px solid #e8edf2;
+      border-radius: 13px;
+      background: #fafbfc;
+    }
+
+    .coming-soon h3 {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .coming-soon p {
+      color: #7b8491;
       font-size: 13px;
-      line-height: 1.7;
     }
 
     /* FOOTER */
@@ -193,7 +252,7 @@
       }
 
       .page-header h1 {
-        font-size: 40px;
+        font-size: 44px;
       }
     }
 
@@ -215,15 +274,23 @@
       }
 
       .page-header {
-        padding: 65px 7% 50px;
+        padding: 70px 7% 55px;
       }
 
       .page-header h1 {
-        font-size: 36px;
+        font-size: 38px;
+      }
+
+      .page-header p {
+        font-size: 16px;
       }
 
       .resources {
-        padding: 60px 7%;
+        padding: 60px 7% 70px;
+      }
+
+      .resource-intro {
+        margin-bottom: 35px;
       }
 
       .category-grid {
@@ -275,16 +342,31 @@
   </section>
 
 
-  <!-- RESOURCE CATEGORIES -->
+  <!-- RESOURCE CONTENT -->
 
   <main class="resources">
+
+    <div class="resource-intro">
+
+      <h2>Explore by Category</h2>
+
+      <p>
+        Find the right resources without having to search through everything at once.
+      </p>
+
+    </div>
+
 
     <div class="category-grid">
 
 
-      <!-- 01 -->
+      <!-- LEARNING -->
 
       <a href="#" class="category-card">
+
+        <div class="category-icon">
+          📚
+        </div>
 
         <div class="category-number">
           01
@@ -294,7 +376,7 @@
 
         <p>
           Courses, tutorials, educational platforms, and learning
-          materials to help build knowledge and practical skills.
+          materials to build knowledge and practical skills.
         </p>
 
         <div class="category-link">
@@ -304,9 +386,13 @@
       </a>
 
 
-      <!-- 02 -->
+      <!-- MEDICAL IMAGING -->
 
       <a href="#" class="category-card">
+
+        <div class="category-icon">
+          🩻
+        </div>
 
         <div class="category-number">
           02
@@ -315,8 +401,8 @@
         <h2>Medical Imaging</h2>
 
         <p>
-          Useful websites, organizations, educational resources,
-          and materials related to Medical Imaging.
+          Educational websites, organizations, and resources
+          related to Medical Imaging and radiological practice.
         </p>
 
         <div class="category-link">
@@ -326,9 +412,13 @@
       </a>
 
 
-      <!-- 03 -->
+      <!-- AI -->
 
       <a href="#" class="category-card">
+
+        <div class="category-icon">
+          🤖
+        </div>
 
         <div class="category-number">
           03
@@ -348,9 +438,13 @@
       </a>
 
 
-      <!-- 04 -->
+      <!-- CERTIFICATIONS -->
 
       <a href="#" class="category-card">
+
+        <div class="category-icon">
+          🎓
+        </div>
 
         <div class="category-number">
           04
@@ -359,8 +453,8 @@
         <h2>Certifications</h2>
 
         <p>
-          Valuable courses, certificates, professional learning
-          opportunities, and credentials worth exploring.
+          Courses, certificates, professional learning opportunities,
+          and credentials worth exploring.
         </p>
 
         <div class="category-link">
@@ -370,9 +464,13 @@
       </a>
 
 
-      <!-- 05 -->
+      <!-- CAREER -->
 
       <a href="#" class="category-card">
+
+        <div class="category-icon">
+          💼
+        </div>
 
         <div class="category-number">
           05
@@ -392,9 +490,13 @@
       </a>
 
 
-      <!-- 06 -->
+      <!-- TOOLS -->
 
       <a href="#" class="category-card">
+
+        <div class="category-icon">
+          🛠️
+        </div>
 
         <div class="category-number">
           06
@@ -416,13 +518,16 @@
     </div>
 
 
-    <!-- NOTE -->
+    <!-- COMING SOON -->
 
-    <div class="resource-note">
+    <div class="coming-soon">
 
-      This collection will continue to grow as I discover useful
-      resources, opportunities, and tools worth sharing with other
-      students.
+      <h3>More resources are on the way.</h3>
+
+      <p>
+        This collection will continue to grow as I discover
+        useful resources worth sharing with other students.
+      </p>
 
     </div>
 
