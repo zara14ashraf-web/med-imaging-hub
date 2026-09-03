@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,9 +53,11 @@
       color: #2563eb;
     }
 
+    /* PAGE HEADER */
+
     .page-header {
       text-align: center;
-      padding: 85px 8% 65px;
+      padding: 85px 8% 70px;
       background: #f8fafc;
     }
 
@@ -71,42 +74,168 @@
       font-size: 46px;
       line-height: 1.15;
       letter-spacing: -1.5px;
-      margin-bottom: 16px;
+      margin-bottom: 17px;
+      color: #17202a;
     }
 
     .page-header p {
-      max-width: 680px;
+      max-width: 700px;
       margin: auto;
       color: #667085;
       font-size: 17px;
-    }
-
-    .projects {
-      padding: 75px 8%;
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .project-placeholder {
-      max-width: 760px;
-      margin: auto;
-      padding: 35px;
-      text-align: center;
-      border: 1px solid #e6eaf0;
-      border-radius: 14px;
-      background: #f8fafc;
-    }
-
-    .project-placeholder h2 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .project-placeholder p {
-      color: #667085;
-      font-size: 15px;
       line-height: 1.7;
     }
+
+    /* PROJECTS */
+
+    .projects {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 8%;
+    }
+
+    .project-card {
+      border: 1px solid #e3e8ef;
+      border-radius: 16px;
+      padding: 38px;
+      margin-bottom: 30px;
+      background: #ffffff;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.07);
+    }
+
+    .project-number {
+      font-size: 12px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1.5px;
+      margin-bottom: 13px;
+    }
+
+    .project-card h2 {
+      font-size: 29px;
+      letter-spacing: -0.7px;
+      margin-bottom: 7px;
+      color: #17202a;
+    }
+
+    .project-type {
+      color: #667085;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .project-card h3 {
+      font-size: 17px;
+      margin-bottom: 9px;
+      color: #17202a;
+    }
+
+    .project-card p {
+      color: #667085;
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 23px;
+    }
+
+    .project-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* PROJECT INFO */
+
+    .project-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 28px 0;
+    }
+
+    .info-box {
+      background: #f8fafc;
+      border: 1px solid #edf0f4;
+      border-radius: 10px;
+      padding: 17px;
+    }
+
+    .info-box span {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #8a94a3;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 5px;
+    }
+
+    .info-box strong {
+      font-size: 14px;
+      color: #374151;
+      font-weight: 600;
+    }
+
+    /* RESULTS */
+
+    .results {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+      margin-bottom: 25px;
+    }
+
+    .result {
+      min-width: 125px;
+      padding: 15px 18px;
+      border: 1px solid #e6eaf0;
+      border-radius: 10px;
+      background: #ffffff;
+    }
+
+    .result strong {
+      display: block;
+      font-size: 21px;
+      color: #2563eb;
+      margin-bottom: 2px;
+    }
+
+    .result span {
+      font-size: 12px;
+      color: #7a8492;
+    }
+
+    /* TAGS */
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      padding: 6px 11px;
+      border-radius: 20px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* PROJECT DIVIDER */
+
+    .project-note {
+      text-align: center;
+      color: #8a94a3;
+      font-size: 13px;
+      margin-top: 50px;
+    }
+
+    /* FOOTER */
 
     footer {
       text-align: center;
@@ -120,7 +249,9 @@
       color: #4b5563;
     }
 
-    @media (max-width: 700px) {
+    /* MOBILE */
+
+    @media (max-width: 800px) {
 
       header {
         flex-direction: column;
@@ -147,11 +278,37 @@
         padding: 55px 7%;
       }
 
+      .project-card {
+        padding: 28px;
+      }
+
+      .project-info {
+        grid-template-columns: 1fr;
+      }
     }
+
+    @media (max-width: 500px) {
+
+      .project-card h2 {
+        font-size: 25px;
+      }
+
+      .results {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .result {
+        min-width: 0;
+      }
+    }
+
   </style>
 </head>
 
 <body>
+
+  <!-- HEADER -->
 
   <header>
 
@@ -171,6 +328,8 @@
   </header>
 
 
+  <!-- PAGE HEADER -->
+
   <section class="page-header">
 
     <div class="page-label">
@@ -180,33 +339,258 @@
     <h1>Projects</h1>
 
     <p>
-      <p>
-  Explore the medical imaging and AI projects I have developed
-  as part of my learning, experimentation, and curiosity to explore new ideas.
+      A collection of medical imaging and AI projects I have developed
+      while learning, experimenting, and exploring how artificial
+      intelligence can be applied to medical images.
     </p>
 
   </section>
 
 
+  <!-- PROJECTS -->
+
   <main class="projects">
 
-    <div class="project-placeholder">
 
-      <h2>Projects coming soon</h2>
+    <!-- PROJECT 01 -->
+
+    <article class="project-card">
+
+      <div class="project-number">
+        PROJECT 01
+      </div>
+
+      <h2>X-ray Quality Control Classifier</h2>
+
+      <div class="project-type">
+        Vision Transformer (ViT) • X-ray Image Quality Assessment
+      </div>
+
+      <h3>What was the idea?</h3>
 
       <p>
-        Practical medical imaging and AI projects will be
-        showcased here as they are developed and explored.
+        This project explored whether artificial intelligence could
+        help identify the quality of X-ray images before they are
+        used for further interpretation or analysis.
       </p>
 
+      <p>
+        I developed a Vision Transformer-based classifier to
+        distinguish between acceptable and poor-quality X-ray images.
+        The project helped me explore how deep learning can be applied
+        to an important part of the medical imaging workflow:
+        image quality control.
+      </p>
+
+
+      <div class="project-info">
+
+        <div class="info-box">
+          <span>Model</span>
+          <strong>Vision Transformer</strong>
+        </div>
+
+        <div class="info-box">
+          <span>Dataset</span>
+          <strong>1,866 X-ray Images</strong>
+        </div>
+
+        <div class="info-box">
+          <span>Focus</span>
+          <strong>Image Quality Control</strong>
+        </div>
+
+      </div>
+
+
+      <h3>Results</h3>
+
+      <div class="results">
+
+        <div class="result">
+          <strong>96.08%</strong>
+          <span>Validation Accuracy</span>
+        </div>
+
+        <div class="result">
+          <strong>92.31%</strong>
+          <span>Test Accuracy</span>
+        </div>
+
+      </div>
+
+
+      <p>
+        This was one of my first projects exploring the connection
+        between medical imaging and artificial intelligence, and it
+        gave me a practical understanding of how a deep learning model
+        can be trained to assess medical image quality.
+      </p>
+
+
+      <div class="tags">
+        <span class="tag">Medical Imaging</span>
+        <span class="tag">X-ray</span>
+        <span class="tag">Deep Learning</span>
+        <span class="tag">Vision Transformer</span>
+        <span class="tag">Quality Control</span>
+      </div>
+
+    </article>
+
+
+    <!-- PROJECT 02 -->
+
+    <article class="project-card">
+
+      <div class="project-number">
+        PROJECT 02
+      </div>
+
+      <h2>Breast Ultrasound AI Analysis</h2>
+
+      <div class="project-type">
+        BUS-BRA • EfficientNet-B3 • Grad-CAM++
+      </div>
+
+      <h3>What was the idea?</h3>
+
+      <p>
+        This project explored whether deep learning could assist in
+        classifying breast ultrasound images as benign or malignant,
+        while also providing a visual indication of where the model
+        was focusing.
+      </p>
+
+      <p>
+        I developed an EfficientNet-B3 based classifier using the
+        BUS-BRA breast ultrasound dataset. Alongside classification,
+        I used Grad-CAM++ to explore the model's attention and compare
+        it with the actual lesion region.
+      </p>
+
+
+      <div class="project-info">
+
+        <div class="info-box">
+          <span>Dataset</span>
+          <strong>BUS-BRA</strong>
+        </div>
+
+        <div class="info-box">
+          <span>Model</span>
+          <strong>EfficientNet-B3</strong>
+        </div>
+
+        <div class="info-box">
+          <span>Explainability</span>
+          <strong>Grad-CAM++</strong>
+        </div>
+
+      </div>
+
+
+      <h3>Image-Level Results</h3>
+
+      <div class="results">
+
+        <div class="result">
+          <strong>88.35%</strong>
+          <span>Accuracy</span>
+        </div>
+
+        <div class="result">
+          <strong>81.90%</strong>
+          <span>Precision</span>
+        </div>
+
+        <div class="result">
+          <strong>83.50%</strong>
+          <span>Recall</span>
+        </div>
+
+        <div class="result">
+          <strong>82.69%</strong>
+          <span>F1-Score</span>
+        </div>
+
+        <div class="result">
+          <strong>0.9364</strong>
+          <span>ROC-AUC</span>
+        </div>
+
+      </div>
+
+
+      <h3>Case-Level Results</h3>
+
+      <div class="results">
+
+        <div class="result">
+          <strong>90.00%</strong>
+          <span>Accuracy</span>
+        </div>
+
+        <div class="result">
+          <strong>81.67%</strong>
+          <span>Precision</span>
+        </div>
+
+        <div class="result">
+          <strong>89.09%</strong>
+          <span>Recall</span>
+        </div>
+
+        <div class="result">
+          <strong>85.22%</strong>
+          <span>F1-Score</span>
+        </div>
+
+        <div class="result">
+          <strong>0.9505</strong>
+          <span>ROC-AUC</span>
+        </div>
+
+      </div>
+
+
+      <h3>Why explainability?</h3>
+
+      <p>
+        A prediction alone does not tell us what the model was looking
+        at. Grad-CAM++ was therefore used to visualize the areas that
+        contributed to the model's prediction and compare its attention
+        with the annotated lesion regions.
+      </p>
+
+
+      <div class="tags">
+        <span class="tag">Breast Ultrasound</span>
+        <span class="tag">BUS-BRA</span>
+        <span class="tag">EfficientNet-B3</span>
+        <span class="tag">Grad-CAM++</span>
+        <span class="tag">Explainable AI</span>
+        <span class="tag">Deep Learning</span>
+      </div>
+
+    </article>
+
+
+    <div class="project-note">
+      More projects will be added as I continue learning, building,
+      and exploring new ideas in medical imaging and AI.
     </div>
 
   </main>
 
 
+  <!-- FOOTER -->
+
   <footer>
-    © 2026 Med Imaging Hub · Created & curated by <strong>Zara Ashraf</strong>
+    © 2026 Med Imaging Hub · Created & curated by
+    <strong>Zara Ashraf</strong>
   </footer>
 
 </body>
 </html>
+```
