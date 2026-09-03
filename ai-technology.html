@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI & Technology | Med Imaging Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #172033;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      padding: 24px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eef1f5;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 700;
+      color: #172033;
+      letter-spacing: -0.4px;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #5b6472;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      position: relative;
+      text-align: center;
+      padding: 90px 8% 85px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(37, 99, 235, 0.08), transparent 42%);
+    }
+
+    .page-label {
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 18px;
+    }
+
+    .page-header h1 {
+      font-size: 54px;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      color: #172033;
+      margin-bottom: 22px;
+    }
+
+    .page-header p {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 17px;
+      color: #687386;
+      line-height: 1.8;
+    }
+
+    /* MAIN */
+    .ai-technology {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 80px 8% 90px;
+    }
+
+    .section-intro {
+      margin-bottom: 48px;
+    }
+
+    .section-intro h2 {
+      font-size: 28px;
+      letter-spacing: -0.7px;
+      color: #172033;
+      margin-bottom: 10px;
+    }
+
+    .section-intro p {
+      color: #737d8d;
+      font-size: 15px;
+    }
+
+    /* RESOURCE CATEGORY */
+    .resource-category {
+      margin-bottom: 55px;
+    }
+
+    .category-heading {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .category-heading h2 {
+      font-size: 25px;
+      letter-spacing: -0.5px;
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    .category-number {
+      min-width: 58px;
+      font-size: 38px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #93c5fd;
+    }
+
+    /* RESOURCE ITEM */
+    .resource-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      padding: 22px 0;
+      border-bottom: 1px solid #edf0f4;
+    }
+
+    .resource-item:first-of-type {
+      border-top: 1px solid #edf0f4;
+    }
+
+    .resource-info h3 {
+      font-size: 17px;
+      color: #202a3b;
+      margin-bottom: 5px;
+    }
+
+    .resource-info p {
+      font-size: 14px;
+      color: #737d8d;
+      line-height: 1.6;
+    }
+
+    .resource-action {
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    .access {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+    }
+
+    .free {
+      color: #16845b;
+    }
+
+    .resource-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .resource-link:hover {
+      color: #1747b5;
+    }
+
+    /* NOTE */
+    .note {
+      margin-top: 15px;
+      padding: 20px 22px;
+      background: #f8fafc;
+      border-left: 3px solid #93c5fd;
+      color: #687386;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #eef1f5;
+      padding: 28px 7%;
+      text-align: center;
+      color: #8a93a1;
+      font-size: 13px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 760px) {
+      header {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .page-header {
+        padding: 70px 7% 65px;
+      }
+
+      .page-header h1 {
+        font-size: 42px;
+      }
+
+      .ai-technology {
+        padding: 65px 7% 75px;
+      }
+
+      .resource-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .resource-action {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      Med Imaging <span>Hub</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="insights.html">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+
+    <div class="page-label">
+      AI • MACHINE LEARNING • TECHNOLOGY
+    </div>
+
+    <h1>AI & Technology</h1>
+
+    <p>
+      Explore practical resources for learning artificial intelligence,
+      machine learning, deep learning, and the technologies shaping
+      modern healthcare.
+    </p>
+
+  </section>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="ai-technology">
+
+    <div class="section-intro">
+      <h2>Learn AI & Technology</h2>
+
+      <p>
+        Explore resources that can help you build technical skills,
+        understand AI concepts, and work on practical projects.
+      </p>
+    </div>
+
+
+    <!-- 01 -->
+    <section class="resource-category">
+
+      <div class="category-heading">
+        <div class="category-number">01</div>
+        <h2>AI & Technology Resources</h2>
+      </div>
+
+
+      <!-- Kaggle -->
+      <div class="resource-item">
+
+        <div class="resource-info">
+          <h3>Kaggle Learn</h3>
+
+          <p>
+            Short, practical courses covering Python, machine learning,
+            deep learning, computer vision, and other essential AI skills.
+          </p>
+        </div>
+
+        <div class="resource-action">
+          <span class="access free">FREE</span>
+
+          <a
+            href="https://www.kaggle.com/learn"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- PyTorch -->
+      <div class="resource-item">
+
+        <div class="resource-info">
+          <h3>PyTorch Tutorials</h3>
+
+          <p>
+            Official tutorials for learning deep learning with PyTorch,
+            including model building, training, computer vision,
+            transfer learning, and more.
+          </p>
+        </div>
+
+        <div class="resource-action">
+          <span class="access free">FREE</span>
+
+          <a
+            href="https://docs.pytorch.org/tutorials/"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- MONAI -->
+      <div class="resource-item">
+
+        <div class="resource-info">
+          <h3>MONAI Tutorials</h3>
+
+          <p>
+            Open-source tutorials focused on deep learning for healthcare,
+            including medical image classification, segmentation,
+            3D imaging, and other medical AI workflows.
+          </p>
+        </div>
+
+        <div class="resource-action">
+          <span class="access free">FREE</span>
+
+          <a
+            href="https://github.com/Project-MONAI/Tutorials"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- NOTE -->
+    <div class="note">
+      These resources are intended for learning and educational purposes.
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Med Imaging Hub · Created & curated by Zara Ashraf
+  </footer>
+
+</body>
+</html>
