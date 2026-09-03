@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Learning | Med Imaging Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #17202a;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b5563;
+      margin-left: 27px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 90px 8% 75px;
+      background:
+        radial-gradient(circle at top right, #eff6ff 0, transparent 32%),
+        #f8fafc;
+    }
+
+    .page-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+    }
+
+    .page-header h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .page-header p {
+      max-width: 700px;
+      margin: auto;
+      color: #667085;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .resources {
+      max-width: 1120px;
+      margin: auto;
+      padding: 80px 8%;
+    }
+
+    .section-intro {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-intro h2 {
+      font-size: 30px;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .section-intro p {
+      color: #667085;
+      font-size: 15px;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .resource-card {
+      position: relative;
+      background: #ffffff;
+      border: 1px solid #e5e9ef;
+      border-radius: 14px;
+      padding: 30px;
+      min-height: 245px;
+      overflow: hidden;
+      transition: transform 0.25s ease,
+                  box-shadow 0.25s ease,
+                  border-color 0.25s ease;
+    }
+
+    .resource-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #2563eb;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-5px);
+      border-color: #d8e0eb;
+      box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+    }
+
+    .resource-number {
+      font-size: 12px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+
+    .resource-card h3 {
+      font-size: 21px;
+      letter-spacing: -0.4px;
+      margin-bottom: 10px;
+      color: #17202a;
+    }
+
+    .resource-card p {
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .resource-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .access {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    .free {
+      color: #166534;
+      background: #f0fdf4;
+      border: 1px solid #dcfce7;
+    }
+
+    .resource-link {
+      text-decoration: none;
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .resource-link:hover {
+      text-decoration: underline;
+    }
+
+    .note {
+      text-align: center;
+      max-width: 680px;
+      margin: 55px auto 5px;
+      color: #8a94a3;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 1px solid #e5e7eb;
+      color: #8a94a3;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #4b5563;
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .page-header {
+        padding: 65px 7% 50px;
+      }
+
+      .page-header h1 {
+        font-size: 38px;
+      }
+
+      .resources {
+        padding: 60px 7%;
+      }
+
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <div class="logo">
+      Med Imaging <span>Hub</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="insights.html">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <section class="page-header">
+
+    <div class="page-label">
+      LEARNING • KNOWLEDGE • STUDY
+    </div>
+
+    <h1>Learning</h1>
+
+    <p>
+      A collection of reliable educational resources to help
+      students build knowledge, strengthen fundamentals, and
+      explore Medical Imaging.
+    </p>
+
+  </section>
+
+
+  <main class="resources">
+
+    <div class="section-intro">
+
+      <h2>Learn & Explore</h2>
+
+      <p>
+        Carefully selected resources that are useful for students
+        at different stages of their learning journey.
+      </p>
+
+    </div>
+
+
+    <div class="resource-grid">
+
+
+      <!-- RESOURCE 01 -->
+
+      <div class="resource-card">
+
+        <div class="resource-number">
+          01
+        </div>
+
+        <h3>OpenStax — Anatomy & Physiology 2e</h3>
+
+        <p>
+          A comprehensive open textbook covering human anatomy,
+          physiology, body systems, and foundational concepts.
+          It also introduces medical imaging in the context of
+          understanding the human body.
+        </p>
+
+        <div class="resource-footer">
+
+          <span class="access free">
+            FREE
+          </span>
+
+          <a
+            href="https://openstax.org/books/anatomy-and-physiology-2e/pages/1-introduction"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- RESOURCE 02 -->
+
+      <div class="resource-card">
+
+        <div class="resource-number">
+          02
+        </div>
+
+        <h3>Radiopaedia</h3>
+
+        <p>
+          A large radiology learning and reference platform with
+          educational articles, imaging cases, and multiple-choice
+          questions covering a wide range of radiology topics.
+        </p>
+
+        <div class="resource-footer">
+
+          <span class="access free">
+            FREE
+          </span>
+
+          <a
+            href="https://radiopaedia.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- RESOURCE 03 -->
+
+      <div class="resource-card">
+
+        <div class="resource-number">
+          03
+        </div>
+
+        <h3>LearningRadiology</h3>
+
+        <p>
+          A beginner-friendly radiology education website with
+          lectures, image-based cases, quizzes, tutorials, and
+          learning modules designed for students and healthcare
+          professionals.
+        </p>
+
+        <div class="resource-footer">
+
+          <span class="access free">
+            FREE
+          </span>
+
+          <a
+            href="https://learningradiology.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- RESOURCE 04 -->
+
+      <div class="resource-card">
+
+        <div class="resource-number">
+          04
+        </div>
+
+        <h3>MedlinePlus — Anatomy</h3>
+
+        <p>
+          An anatomy reference from the U.S. National Library
+          of Medicine featuring information, images, videos,
+          tutorials, and links covering different parts and
+          systems of the human body.
+        </p>
+
+        <div class="resource-footer">
+
+          <span class="access free">
+            FREE
+          </span>
+
+          <a
+            href="https://medlineplus.gov/anatomy.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="resource-link"
+          >
+            Visit Resource →
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="note">
+      Resources are selected for educational value and accessibility.
+      Always use professional guidance and current clinical resources
+      when learning about patient care and clinical decision-making.
+    </div>
+
+  </main>
+
+
+  <footer>
+
+    © 2026 Med Imaging Hub · Created & curated by
+    <strong>Zara Ashraf</strong>
+
+  </footer>
+
+</body>
+</html>
