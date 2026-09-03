@@ -52,12 +52,14 @@
       color: #2563eb;
     }
 
+
+    /* PAGE HEADER */
+
     .page-header {
       text-align: center;
-      padding: 90px 8% 75px;
+      padding: 95px 8% 80px;
       background:
-        radial-gradient(circle at top right, #eff6ff 0, transparent 32%),
-        #f8fafc;
+        radial-gradient(circle at 50% 0%, #eef5ff 0, #f8fafc 38%, #f8fafc 100%);
     }
 
     .page-label {
@@ -65,15 +67,15 @@
       font-size: 12px;
       font-weight: 700;
       color: #2563eb;
-      letter-spacing: 1.5px;
-      margin-bottom: 14px;
+      letter-spacing: 1.6px;
+      margin-bottom: 16px;
     }
 
     .page-header h1 {
-      font-size: 48px;
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-      margin-bottom: 18px;
+      font-size: 52px;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
     }
 
     .page-header p {
@@ -81,102 +83,107 @@
       margin: auto;
       color: #667085;
       font-size: 17px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
-    .resources {
-      max-width: 1120px;
+
+    /* LEARNING CONTENT */
+
+    .learning {
+      max-width: 920px;
       margin: auto;
-      padding: 80px 8%;
+      padding: 85px 8% 90px;
     }
 
-    .section-intro {
+    .intro {
       text-align: center;
-      margin-bottom: 45px;
+      margin-bottom: 65px;
     }
 
-    .section-intro h2 {
-      font-size: 30px;
+    .intro h2 {
+      font-size: 29px;
       letter-spacing: -0.5px;
       margin-bottom: 10px;
     }
 
-    .section-intro p {
+    .intro p {
       color: #667085;
       font-size: 15px;
     }
 
-    .resource-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+
+    /* RESOURCE CATEGORY */
+
+    .resource-category {
+      margin-bottom: 58px;
     }
 
-    .resource-card {
-      position: relative;
-      background: #ffffff;
-      border: 1px solid #e5e9ef;
-      border-radius: 14px;
-      padding: 30px;
-      min-height: 245px;
-      overflow: hidden;
-      transition: transform 0.25s ease,
-                  box-shadow 0.25s ease,
-                  border-color 0.25s ease;
+    .category-heading {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 17px;
     }
 
-    .resource-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: #2563eb;
-    }
-
-    .resource-card:hover {
-      transform: translateY(-5px);
-      border-color: #d8e0eb;
-      box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
-    }
-
-    .resource-number {
-      font-size: 12px;
+    .category-heading span {
+      font-size: 11px;
       font-weight: 700;
       color: #2563eb;
       letter-spacing: 1.5px;
-      margin-bottom: 20px;
     }
 
-    .resource-card h3 {
+    .category-heading h2 {
       font-size: 21px;
-      letter-spacing: -0.4px;
-      margin-bottom: 10px;
-      color: #17202a;
+      letter-spacing: -0.3px;
     }
 
-    .resource-card p {
-      color: #667085;
-      font-size: 14px;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
 
-    .resource-footer {
+    /* RESOURCE ITEM */
+
+    .resource-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 15px;
+      gap: 30px;
+      padding: 23px 0;
+      border-top: 1px solid #e7ebf0;
+    }
+
+    .resource-info {
+      flex: 1;
+    }
+
+    .resource-info h3 {
+      font-size: 17px;
+      margin-bottom: 5px;
+      color: #17202a;
+      letter-spacing: -0.2px;
+    }
+
+    .resource-info p {
+      color: #667085;
+      font-size: 13px;
+      line-height: 1.65;
+      max-width: 650px;
+    }
+
+
+    /* RESOURCE ACTION */
+
+    .resource-action {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-shrink: 0;
     }
 
     .access {
-      display: inline-block;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
-      padding: 5px 10px;
+      padding: 5px 9px;
       border-radius: 20px;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.4px;
+      white-space: nowrap;
     }
 
     .free {
@@ -188,22 +195,36 @@
     .resource-link {
       text-decoration: none;
       color: #2563eb;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
+      white-space: nowrap;
+      transition: 0.2s;
     }
 
     .resource-link:hover {
-      text-decoration: underline;
+      transform: translateX(3px);
     }
 
+
+    /* NOTE */
+
     .note {
+      margin-top: 15px;
+      padding: 24px 26px;
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
+      background: #fafbfc;
       text-align: center;
-      max-width: 680px;
-      margin: 55px auto 5px;
-      color: #8a94a3;
-      font-size: 13px;
+    }
+
+    .note p {
+      color: #7b8491;
+      font-size: 12px;
       line-height: 1.7;
     }
+
+
+    /* FOOTER */
 
     footer {
       text-align: center;
@@ -216,6 +237,9 @@
     footer strong {
       color: #4b5563;
     }
+
+
+    /* TABLET */
 
     @media (max-width: 700px) {
 
@@ -233,25 +257,67 @@
       }
 
       .page-header {
-        padding: 65px 7% 50px;
+        padding: 70px 7% 55px;
       }
 
       .page-header h1 {
-        font-size: 38px;
+        font-size: 40px;
       }
 
-      .resources {
-        padding: 60px 7%;
+      .page-header p {
+        font-size: 16px;
       }
 
-      .resource-grid {
-        grid-template-columns: 1fr;
+      .learning {
+        padding: 60px 7% 70px;
       }
+
+      .intro {
+        margin-bottom: 50px;
+      }
+
+      .resource-item {
+        display: block;
+      }
+
+      .resource-action {
+        margin-top: 14px;
+        justify-content: flex-start;
+      }
+
     }
+
+
+    /* MOBILE */
+
+    @media (max-width: 450px) {
+
+      .page-header h1 {
+        font-size: 36px;
+      }
+
+      .category-heading h2 {
+        font-size: 19px;
+      }
+
+      .resource-info h3 {
+        font-size: 16px;
+      }
+
+      .resource-action {
+        gap: 14px;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
+
+
+  <!-- HEADER -->
 
   <header>
 
@@ -271,6 +337,8 @@
   </header>
 
 
+  <!-- PAGE HEADER -->
+
   <section class="page-header">
 
     <div class="page-label">
@@ -288,41 +356,47 @@
   </section>
 
 
-  <main class="resources">
+  <!-- LEARNING CONTENT -->
 
-    <div class="section-intro">
+  <main class="learning">
+
+
+    <div class="intro">
 
       <h2>Learn & Explore</h2>
 
       <p>
-        Carefully selected resources that are useful for students
-        at different stages of their learning journey.
+        Carefully selected resources that are useful throughout
+        different stages of your learning journey.
       </p>
 
     </div>
 
 
-    <div class="resource-grid">
+    <!-- ANATOMY & FOUNDATIONS -->
+
+    <section class="resource-category">
+
+      <div class="category-heading">
+        <span>01</span>
+        <h2>Anatomy & Foundations</h2>
+      </div>
 
 
-      <!-- RESOURCE 01 -->
+      <div class="resource-item">
 
-      <div class="resource-card">
+        <div class="resource-info">
 
-        <div class="resource-number">
-          01
+          <h3>OpenStax — Anatomy & Physiology 2e</h3>
+
+          <p>
+            A comprehensive open textbook covering human anatomy,
+            physiology, body systems, and foundational concepts.
+          </p>
+
         </div>
 
-        <h3>OpenStax — Anatomy & Physiology 2e</h3>
-
-        <p>
-          A comprehensive open textbook covering human anatomy,
-          physiology, body systems, and foundational concepts.
-          It also introduces medical imaging in the context of
-          understanding the human body.
-        </p>
-
-        <div class="resource-footer">
+        <div class="resource-action">
 
           <span class="access free">
             FREE
@@ -341,24 +415,34 @@
 
       </div>
 
+    </section>
 
-      <!-- RESOURCE 02 -->
 
-      <div class="resource-card">
+    <!-- RADIOLOGY & IMAGING -->
 
-        <div class="resource-number">
-          02
+    <section class="resource-category">
+
+      <div class="category-heading">
+        <span>02</span>
+        <h2>Radiology & Imaging</h2>
+      </div>
+
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>Radiopaedia</h3>
+
+          <p>
+            A radiology learning and reference platform featuring
+            educational articles, imaging cases, and multiple-choice
+            questions across many areas of radiology.
+          </p>
+
         </div>
 
-        <h3>Radiopaedia</h3>
-
-        <p>
-          A large radiology learning and reference platform with
-          educational articles, imaging cases, and multiple-choice
-          questions covering a wide range of radiology topics.
-        </p>
-
-        <div class="resource-footer">
+        <div class="resource-action">
 
           <span class="access free">
             FREE
@@ -378,24 +462,21 @@
       </div>
 
 
-      <!-- RESOURCE 03 -->
+      <div class="resource-item">
 
-      <div class="resource-card">
+        <div class="resource-info">
 
-        <div class="resource-number">
-          03
+          <h3>LearningRadiology</h3>
+
+          <p>
+            A beginner-friendly resource with radiology tutorials,
+            lectures, image-based cases, quizzes, and learning
+            materials for students and healthcare professionals.
+          </p>
+
         </div>
 
-        <h3>LearningRadiology</h3>
-
-        <p>
-          A beginner-friendly radiology education website with
-          lectures, image-based cases, quizzes, tutorials, and
-          learning modules designed for students and healthcare
-          professionals.
-        </p>
-
-        <div class="resource-footer">
+        <div class="resource-action">
 
           <span class="access free">
             FREE
@@ -414,25 +495,33 @@
 
       </div>
 
+    </section>
 
-      <!-- RESOURCE 04 -->
 
-      <div class="resource-card">
+    <!-- ANATOMY REFERENCE -->
 
-        <div class="resource-number">
-          04
+    <section class="resource-category">
+
+      <div class="category-heading">
+        <span>03</span>
+        <h2>Anatomy Reference</h2>
+      </div>
+
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>MedlinePlus — Anatomy</h3>
+
+          <p>
+            Anatomy information, images, videos, and tutorials
+            provided by the U.S. National Library of Medicine.
+          </p>
+
         </div>
 
-        <h3>MedlinePlus — Anatomy</h3>
-
-        <p>
-          An anatomy reference from the U.S. National Library
-          of Medicine featuring information, images, videos,
-          tutorials, and links covering different parts and
-          systems of the human body.
-        </p>
-
-        <div class="resource-footer">
+        <div class="resource-action">
 
           <span class="access free">
             FREE
@@ -451,18 +540,26 @@
 
       </div>
 
+    </section>
 
-    </div>
 
+    <!-- NOTE -->
 
     <div class="note">
-      Resources are selected for educational value and accessibility.
-      Always use professional guidance and current clinical resources
-      when learning about patient care and clinical decision-making.
+
+      <p>
+        Resources are selected for educational value and accessibility.
+        Availability and access conditions may change over time.
+        Always use current professional guidance for clinical decision-making.
+      </p>
+
     </div>
+
 
   </main>
 
+
+  <!-- FOOTER -->
 
   <footer>
 
@@ -470,6 +567,7 @@
     <strong>Zara Ashraf</strong>
 
   </footer>
+
 
 </body>
 </html>
