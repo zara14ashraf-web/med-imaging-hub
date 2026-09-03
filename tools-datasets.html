@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tools & Datasets | Med Imaging Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #172033;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 7%;
+      border-bottom: 1px solid #eef1f5;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #667085;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.25s ease;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 95px 8% 90px;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 50% 20%,
+          rgba(37, 99, 235, 0.08),
+          transparent 42%
+        );
+    }
+
+    .hero-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #2563eb;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+      font-size: 17px;
+      color: #667085;
+    }
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    .tools {
+      max-width: 920px;
+      margin: auto;
+      padding: 85px 8% 100px;
+    }
+
+    .intro {
+      margin-bottom: 55px;
+    }
+
+    .intro h2 {
+      font-size: 30px;
+      letter-spacing: -0.8px;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      color: #667085;
+      font-size: 15px;
+      max-width: 680px;
+    }
+
+    /* =========================
+       CATEGORY
+    ========================= */
+
+    .resource-category {
+      margin-bottom: 65px;
+    }
+
+    .category-heading {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .category-number {
+      min-width: 58px;
+      font-size: 38px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #93c5fd;
+    }
+
+    .category-heading h2 {
+      font-size: 25px;
+      letter-spacing: -0.5px;
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    /* =========================
+       RESOURCE ITEM
+    ========================= */
+
+    .resource-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      padding: 24px 0;
+      border-bottom: 1px solid #edf0f4;
+    }
+
+    .resource-info {
+      flex: 1;
+    }
+
+    .resource-info h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      letter-spacing: -0.2px;
+    }
+
+    .resource-info p {
+      color: #667085;
+      font-size: 14px;
+      max-width: 650px;
+    }
+
+    .resource-action {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      white-space: nowrap;
+    }
+
+    .access {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      padding: 6px 10px;
+      border-radius: 20px;
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    .resource-link {
+      text-decoration: none;
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .resource-link:hover {
+      transform: translateX(3px);
+    }
+
+    /* =========================
+       NOTE
+    ========================= */
+
+    .note {
+      margin-top: 30px;
+      padding: 18px 20px;
+      border-left: 3px solid #93c5fd;
+      background: #f8fafc;
+      color: #667085;
+      font-size: 13px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      text-align: center;
+      padding: 30px 8%;
+      border-top: 1px solid #eef1f5;
+      color: #98a2b3;
+      font-size: 13px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      header {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .hero {
+        padding: 75px 7% 70px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .tools {
+        padding: 65px 7% 80px;
+      }
+
+      .resource-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .resource-action {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .category-heading {
+        gap: 14px;
+      }
+
+      .category-number {
+        min-width: 45px;
+        font-size: 30px;
+      }
+
+      .category-heading h2 {
+        font-size: 21px;
+      }
+
+      .resource-action {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      Med Imaging <span>Hub</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="insights.html">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-label">
+      TOOLS • DATASETS • PRACTICAL RESOURCES
+    </div>
+
+    <h1>
+      Tools & Datasets
+    </h1>
+
+    <p>
+      Explore practical tools, datasets, and open resources that can
+      support medical imaging projects, research, image analysis,
+      and hands-on learning.
+    </p>
+
+  </section>
+
+
+  <!-- MAIN -->
+
+  <main class="tools">
+
+    <div class="intro">
+
+      <h2>
+        Build & Explore
+      </h2>
+
+      <p>
+        Useful resources for students who want to work with medical
+        images, experiment with AI, explore datasets, and develop
+        practical skills beyond the classroom.
+      </p>
+
+    </div>
+
+
+    <!-- 01 -->
+
+    <section class="resource-category">
+
+      <div class="category-heading">
+
+        <span class="category-number">
+          01
+        </span>
+
+        <h2>
+          Medical Imaging Tools
+        </h2>
+
+      </div>
+
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>
+            3D Slicer
+          </h3>
+
+          <p>
+            An open-source platform for visualization, image analysis,
+            segmentation, and working with medical imaging data.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            FREE
+          </span>
+
+          <a
+            href="https://www.slicer.org/"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Tool →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>
+            OHIF Viewer
+          </h3>
+
+          <p>
+            An open-source web-based medical imaging viewer designed
+            for viewing and working with DICOM imaging studies.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            FREE
+          </span>
+
+          <a
+            href="https://ohif.org/"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Tool →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>
+            MicroDicom
+          </h3>
+
+          <p>
+            A Windows-based DICOM viewer useful for opening,
+            viewing, and managing medical imaging studies.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            FREE
+          </span>
+
+          <a
+            href="https://www.microdicom.com/"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Tool →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 02 -->
+
+    <section class="resource-category">
+
+      <div class="category-heading">
+
+        <span class="category-number">
+          02
+        </span>
+
+        <h2>
+          Image Annotation
+        </h2>
+
+      </div>
+
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>
+            CVAT
+          </h3>
+
+          <p>
+            An open-source annotation platform for creating labels
+            and annotations for computer vision datasets.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            FREE
+          </span>
+
+          <a
+            href="https://www.cvat.ai/"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Tool →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>
+            Label Studio
+          </h3>
+
+          <p>
+            An open-source data labeling platform that can be used
+            for image annotation and machine learning workflows.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            FREE
+          </span>
+
+          <a
+            href="https://labelstud.io/"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Tool →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>
+            Roboflow
+          </h3>
+
+          <p>
+            A computer vision platform offering tools for dataset
+            preparation, annotation, training, and deployment.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            FREE + PAID
+          </span>
+
+          <a
+            href="https://roboflow.com/"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Tool →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 03 -->
+
+    <section class="resource-category">
+
+      <div class="category-heading">
+
+        <span class="category-number">
+          03
+        </span>
+
+        <h2>
+          Medical Imaging Datasets
+        </h2>
+
+      </div>
+
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>
+            The Cancer Imaging Archive (TCIA)
+          </h3>
+
+          <p>
+            A public resource providing access to cancer imaging
+            datasets for research and educational use.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            FREE
+          </span>
+
+          <a
+            href="https://www.cancerimagingarchive.net/"
+            target="_blank"
+            class="resource-link"
+          >
+            Explore Dataset →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>
+            PhysioNet
+          </h3>
+
+          <p>
+            An open research resource providing datasets and tools
+            for computational analysis of biomedical data.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            FREE
+          </span>
+
+          <a
+            href="https://physionet.org/"
+            target="_blank"
+            class="resource-link"
+          >
+            Explore Dataset →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>
+            Zenodo
+          </h3>
+
+          <p>
+            An open research repository where researchers can share
+            datasets, software, publications, and other research outputs.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            FREE
+          </span>
+
+          <a
+            href="https://zenodo.org/"
+            target="_blank"
+            class="resource-link"
+          >
+            Explore Repository →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 04 -->
+
+    <section class="resource-category">
+
+      <div class="category-heading">
+
+        <span class="category-number">
+          04
+        </span>
+
+        <h2>
+          AI & Research Tools
+        </h2>
+
+      </div>
+
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>
+            MONAI
+          </h3>
+
+          <p>
+            An open-source framework designed for deep learning
+            workflows in medical imaging.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            FREE
+          </span>
+
+          <a
+            href="https://monai.io/"
+            target="_blank"
+            class="resource-link"
+          >
+            Visit Tool →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="resource-item">
+
+        <div class="resource-info">
+
+          <h3>
+            GitHub
+          </h3>
+
+          <p>
+            A platform for discovering, sharing, and collaborating
+            on open-source code, projects, and software.
+          </p>
+
+        </div>
+
+        <div class="resource-action">
+
+          <span class="access">
+            FREE + PAID
+          </span>
+
+          <a
+            href="https://github.com/"
+            target="_blank"
+            class="resource-link"
+          >
+            Explore GitHub →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- NOTE -->
+
+    <div class="note">
+
+      These tools and datasets may have different usage terms,
+      access requirements, or licensing conditions. Always check
+      the official website and dataset licence before using
+      resources in projects, research, or publications.
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Med Imaging Hub · Created & curated by Zara Ashraf
+
+  </footer>
+
+</body>
+</html>
