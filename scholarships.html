@@ -62,32 +62,39 @@
 
     /* HERO */
 
-    .page-hero {
-      text-align: center;
-      padding: 90px 8% 75px;
-      background:
-        radial-gradient(
-          circle at 50% 35%,
-          rgba(147, 197, 253, 0.18),
-          transparent 55%
-        );
-    }
+   .page-hero {
+  position: relative;
+  text-align: center;
+  padding: 95px 8% 80px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(37, 99, 235, 0.10),
+      transparent 48%
+    ),
+    #f8fafc;
+}
 
     .page-label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: #2563eb;
-      margin-bottom: 18px;
-    }
-
-    .page-hero h1 {
-      font-size: 52px;
-      line-height: 1.1;
-      letter-spacing: -2px;
-      margin-bottom: 22px;
-      color: #172033;
-    }
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  padding: 7px 13px;
+  border: 1px solid #dbeafe;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.8);
+}
+   .page-hero h1 {
+  font-size: 52px;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  color: #172033;
+}
 
     .page-hero p {
       max-width: 680px;
