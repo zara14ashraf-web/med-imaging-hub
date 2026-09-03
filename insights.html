@@ -52,28 +52,40 @@
       color: #2563eb;
     }
 
-    .page-header {
-      text-align: center;
-      padding: 85px 8% 65px;
-      background: #f8fafc;
-    }
+   .page-header {
+  position: relative;
+  text-align: center;
+  padding: 95px 8% 80px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(37, 99, 235, 0.10),
+      transparent 48%
+    ),
+    #f8fafc;
+}
 
-    .page-label {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      color: #2563eb;
-      letter-spacing: 1.5px;
-      margin-bottom: 14px;
-    }
+.page-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  padding: 7px 13px;
+  border: 1px solid #dbeafe;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.8);
+}
 
-    .page-header h1 {
-      font-size: 46px;
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-      margin-bottom: 16px;
-    }
-
+.page-header h1 {
+  font-size: 52px;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  color: #17202a;
+}
     .page-header p {
       max-width: 680px;
       margin: auto;
