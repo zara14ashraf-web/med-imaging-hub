@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Med Imaging Hub</title>
+  <title>Med Imaging Hub | Medical Imaging, AI & Technology</title>
 
   <style>
     * {
@@ -13,61 +13,96 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      color: #1f2933;
+      color: #17202a;
       background: #ffffff;
       line-height: 1.6;
     }
 
-    /* Navigation */
+    /* ================= HEADER ================= */
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 22px 8%;
-      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
+      background: #ffffff;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 23px;
       font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #17202a;
+    }
+
+    .logo span {
+      color: #2563eb;
     }
 
     nav a {
       text-decoration: none;
-      color: #374151;
-      margin-left: 25px;
-      font-size: 15px;
+      color: #4b5563;
+      margin-left: 27px;
+      font-size: 14px;
+      transition: 0.2s;
     }
 
     nav a:hover {
       color: #2563eb;
     }
 
-    /* Hero Section */
+
+    /* ================= HERO ================= */
+
     .hero {
       text-align: center;
-      padding: 110px 10% 90px;
-      max-width: 1000px;
+      padding: 115px 8% 100px;
+      max-width: 1050px;
       margin: auto;
     }
 
+    .hero-label {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #2563eb;
+      background: #eff6ff;
+      padding: 7px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      letter-spacing: 0.3px;
+    }
+
     .hero h1 {
-      font-size: 52px;
-      line-height: 1.15;
-      margin-bottom: 22px;
+      font-size: 56px;
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: #2563eb;
     }
 
     .hero p {
-      font-size: 19px;
-      color: #6b7280;
+      font-size: 18px;
+      color: #667085;
       max-width: 720px;
-      margin: 0 auto 30px;
+      margin: 0 auto 32px;
     }
 
-    .hero span {
-      color: #2563eb;
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .button {
@@ -78,17 +113,46 @@
       border-radius: 7px;
       text-decoration: none;
       font-size: 15px;
+      transition: 0.2s;
     }
 
-    /* Sections */
-    section {
-      padding: 80px 10%;
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      display: inline-block;
+      color: #374151;
+      border: 1px solid #d8dee6;
+      padding: 13px 24px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .founder {
+      margin-top: 28px;
+      font-size: 14px;
+      color: #8a94a3;
+    }
+
+    .founder strong {
+      color: #4b5563;
+    }
+
+
+    /* ================= EXPLORE ================= */
+
+    .explore {
+      background: #f8fafc;
+      padding: 85px 8%;
     }
 
     .section-title {
       text-align: center;
       font-size: 34px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
     }
 
     .section-subtitle {
@@ -96,48 +160,102 @@
       color: #6b7280;
       max-width: 650px;
       margin: 0 auto 45px;
+      font-size: 16px;
     }
 
-    /* Cards */
+
+    /* ================= CARDS ================= */
+
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 22px;
-      max-width: 1100px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1120px;
       margin: auto;
     }
 
     .card {
-      border: 1px solid #e5e7eb;
-      padding: 28px;
+      background: #ffffff;
+      border: 1px solid #e5e9ef;
+      padding: 28px 24px;
       border-radius: 10px;
       transition: 0.2s;
     }
 
     .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+    }
+
+    .card-number {
+      font-size: 13px;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 18px;
     }
 
     .card h3 {
-      margin-bottom: 12px;
+      font-size: 19px;
+      margin-bottom: 10px;
     }
 
     .card p {
       color: #6b7280;
-      font-size: 15px;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 30px;
-      border-top: 1px solid #e5e7eb;
-      color: #6b7280;
       font-size: 14px;
     }
 
-    /* Mobile */
+
+    /* ================= ABOUT STRIP ================= */
+
+    .about-strip {
+      text-align: center;
+      padding: 80px 8%;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .about-strip h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .about-strip p {
+      color: #667085;
+      font-size: 16px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 1px solid #e5e7eb;
+      color: #8a94a3;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #4b5563;
+    }
+
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 900px) {
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+    }
+
+
     @media (max-width: 700px) {
 
       header {
@@ -145,31 +263,52 @@
         gap: 15px;
       }
 
+      nav {
+        text-align: center;
+      }
+
       nav a {
-        margin: 0 8px;
+        margin: 0 7px;
       }
 
       .hero {
-        padding: 75px 7% 60px;
+        padding: 80px 7% 70px;
       }
 
       .hero h1 {
         font-size: 38px;
       }
 
-      section {
-        padding: 60px 7%;
+      .hero p {
+        font-size: 16px;
       }
 
+      .explore {
+        padding: 65px 7%;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 29px;
+      }
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- Navigation -->
+  <!-- ================= HEADER ================= -->
+
   <header>
-    <div class="logo">Med Imaging Hub</div>
+
+    <div class="logo">
+      Med Imaging <span>Hub</span>
+    </div>
 
     <nav>
       <a href="#">Home</a>
@@ -179,62 +318,117 @@
       <a href="#">Resources</a>
       <a href="#">About</a>
     </nav>
+
   </header>
 
 
-  <!-- Hero -->
+  <!-- ================= HERO ================= -->
+
   <section class="hero">
+
+    <div class="hero-label">
+      MEDICAL IMAGING • AI • TECHNOLOGY
+    </div>
+
     <h1>
       Exploring the Future of
       <span>Medical Imaging</span>
     </h1>
 
     <p>
-      A space for students and curious minds to explore Medical Imaging,
-      Artificial Intelligence, research, and healthcare technology.
+      A learning space for students, professionals, and curious minds
+      to explore medical imaging, artificial intelligence, research,
+      and emerging healthcare technology.
     </p>
 
-    <a href="#explore" class="button">Explore the Hub</a>
+    <div class="hero-buttons">
+
+      <a href="#explore" class="button">
+        Explore the Hub
+      </a>
+
+      <a href="#about" class="button-secondary">
+        About the Hub
+      </a>
+
+    </div>
+
+    <div class="founder">
+      Founded and curated by <strong>Zara Ashraf</strong>
+    </div>
+
   </section>
 
 
-  <!-- Explore -->
-  <section id="explore">
+  <!-- ================= EXPLORE ================= -->
 
-    <h2 class="section-title">Explore the Hub</h2>
+  <section class="explore" id="explore">
+
+    <h2 class="section-title">
+      Explore the Hub
+    </h2>
 
     <p class="section-subtitle">
-      Learn, explore, and discover how technology is shaping the future of Medical Imaging.
+      Learn the fundamentals, explore new ideas, and discover how
+      technology is shaping the future of medical imaging.
     </p>
+
 
     <div class="cards">
 
       <div class="card">
+
+        <div class="card-number">01</div>
+
         <h3>Medical Imaging</h3>
+
         <p>
-          Explore concepts, modalities, and practical knowledge from the world of medical imaging.
+          Understand imaging modalities, concepts, techniques,
+          and practical knowledge in a simple way.
         </p>
+
       </div>
 
+
       <div class="card">
+
+        <div class="card-number">02</div>
+
         <h3>AI in Healthcare</h3>
+
         <p>
-          Discover how Artificial Intelligence is being explored and applied in medical imaging.
+          Explore how artificial intelligence and machine learning
+          are being applied to medical imaging and healthcare.
         </p>
+
       </div>
 
+
       <div class="card">
+
+        <div class="card-number">03</div>
+
         <h3>Projects</h3>
+
         <p>
-          Explore practical AI and Medical Imaging projects, experiments, and learning journeys.
+          Discover practical projects, experiments, and real-world
+          applications connecting AI with medical imaging.
         </p>
+
       </div>
 
+
       <div class="card">
+
+        <div class="card-number">04</div>
+
         <h3>Resources</h3>
+
         <p>
-          Useful learning resources, tools, courses, and opportunities for Medical Imaging students.
+          Find useful courses, tools, learning materials, and
+          opportunities for students and aspiring professionals.
         </p>
+
       </div>
 
     </div>
@@ -242,10 +436,33 @@
   </section>
 
 
-  <!-- Footer -->
+  <!-- ================= ABOUT ================= -->
+
+  <section class="about-strip" id="about">
+
+    <h2>
+      Why Med Imaging Hub?
+    </h2>
+
+    <p>
+      Medical imaging is constantly evolving. From advances in
+      imaging technology to the growing role of artificial intelligence,
+      there is always something new to learn. Med Imaging Hub brings
+      these ideas together in one accessible space.
+    </p>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
   <footer>
-    © 2026 Med Imaging Hub · Exploring Medical Imaging, AI & Technology
+
+    © 2026 Med Imaging Hub ·
+    Created & curated by <strong>Zara Ashraf</strong>
+
   </footer>
+
 
 </body>
 </html>
