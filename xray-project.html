@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>X-ray Quality Control Classifier | Med Imaging Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #17202a;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b5563;
+      margin-left: 27px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* HERO */
+
+    .project-hero {
+      text-align: center;
+      padding: 90px 8% 75px;
+      background: #f8fafc;
+    }
+
+    .project-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+
+    .project-hero h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .project-hero p {
+      max-width: 720px;
+      margin: auto;
+      color: #667085;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* MAIN */
+
+    .content {
+      max-width: 1050px;
+      margin: auto;
+      padding: 75px 8%;
+    }
+
+    .section {
+      margin-bottom: 65px;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .section p {
+      color: #667085;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 850px;
+    }
+
+    /* OVERVIEW */
+
+    .overview {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .info-box {
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      padding: 24px;
+      background: #ffffff;
+    }
+
+    .info-box span {
+      display: block;
+      font-size: 12px;
+      color: #2563eb;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+    }
+
+    .info-box strong {
+      font-size: 16px;
+      color: #17202a;
+    }
+
+    /* RESULTS */
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .result-box {
+      background: #f8fafc;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      padding: 28px;
+    }
+
+    .result-box h3 {
+      font-size: 15px;
+      color: #667085;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+
+    .result-box strong {
+      font-size: 30px;
+      color: #17202a;
+    }
+
+    /* CLASSES */
+
+    .classes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .class-box {
+      padding: 20px;
+      border: 1px solid #e6eaf0;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 14px;
+      color: #4b5563;
+      background: #ffffff;
+    }
+
+    /* APP BOX */
+
+    .app-box {
+      margin-top: 30px;
+      padding: 32px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid #e6eaf0;
+    }
+
+    .app-box h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .app-box p {
+      margin-bottom: 22px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff;
+      padding: 12px 22px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* NOTE */
+
+    .note {
+      border-left: 3px solid #2563eb;
+      padding-left: 20px;
+      margin-top: 25px;
+    }
+
+    .note p {
+      font-size: 14px;
+    }
+
+    /* BACK LINK */
+
+    .back {
+      max-width: 1050px;
+      margin: auto;
+      padding: 0 8% 60px;
+    }
+
+    .back a {
+      text-decoration: none;
+      color: #2563eb;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 1px solid #e5e7eb;
+      color: #8a94a3;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #4b5563;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .overview,
+      .results {
+        grid-template-columns: 1fr;
+      }
+
+      .classes {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project-hero h1 {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .project-hero {
+        padding: 65px 7% 50px;
+      }
+
+      .project-hero h1 {
+        font-size: 36px;
+      }
+
+      .content {
+        padding: 60px 7%;
+      }
+
+      .section h2 {
+        font-size: 25px;
+      }
+
+      .classes {
+        grid-template-columns: 1fr;
+      }
+
+      .back {
+        padding: 0 7% 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      Med Imaging <span>Hub</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="insights.html">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <!-- PROJECT HERO -->
+
+  <section class="project-hero">
+
+    <div class="project-label">
+      AI • X-RAY • QUALITY CONTROL
+    </div>
+
+    <h1>X-ray Quality Control Classifier</h1>
+
+    <p>
+      A Vision Transformer-based project exploring automated
+      quality assessment of X-ray images before clinical interpretation.
+    </p>
+
+  </section>
+
+
+  <!-- CONTENT -->
+
+  <main class="content">
+
+    <!-- ABOUT PROJECT -->
+
+    <section class="section">
+
+      <h2>About the Project</h2>
+
+      <p>
+        This project explores how artificial intelligence can help
+        identify common quality issues in X-ray images. Instead of
+        focusing on disease detection, the model focuses on the
+        technical quality of an image and determines whether it is
+        suitable for further evaluation.
+      </p>
+
+      <div class="overview">
+
+        <div class="info-box">
+          <span>MODEL</span>
+          <strong>Vision Transformer (ViT)</strong>
+        </div>
+
+        <div class="info-box">
+          <span>DATASET</span>
+          <strong>1,866 X-ray Images</strong>
+        </div>
+
+        <div class="info-box">
+          <span>TASK</span>
+          <strong>Image Quality Classification</strong>
+        </div>
+
+        <div class="info-box">
+          <span>APPLICATION</span>
+          <strong>Streamlit Web Application</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DATASET -->
+
+    <section class="section">
+
+      <h2>Dataset & Preparation</h2>
+
+      <p>
+        The dataset was personally curated and organized from
+        multiple publicly available X-ray image sources. Images
+        were reviewed and categorized according to the quality
+        characteristics being studied, followed by preprocessing
+        and preparation for model training.
+      </p>
+
+      <div class="classes">
+
+        <div class="class-box">
+          Good Quality
+        </div>
+
+        <div class="class-box">
+          Blur
+        </div>
+
+        <div class="class-box">
+          Exposure Error
+        </div>
+
+        <div class="class-box">
+          Foreign Artifact
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- METHODOLOGY -->
+
+    <section class="section">
+
+      <h2>How It Works</h2>
+
+      <p>
+        The X-ray image is first prepared using standard image
+        preprocessing techniques and resized to 224 × 224 pixels.
+        A Vision Transformer then analyzes the image and learns
+        visual patterns associated with different quality categories.
+        The trained model produces a predicted quality class along
+        with its confidence.
+      </p>
+
+    </section>
+
+
+    <!-- RESULTS -->
+
+    <section class="section">
+
+      <h2>Results</h2>
+
+      <p>
+        The model achieved strong performance on the held-out test
+        set, showing that deep learning can be useful for automated
+        assessment of X-ray image quality.
+      </p>
+
+      <div class="results">
+
+        <div class="result-box">
+          <h3>Validation Accuracy</h3>
+          <strong>96.08%</strong>
+        </div>
+
+        <div class="result-box">
+          <h3>Test Accuracy</h3>
+          <strong>92.31%</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- APPLICATION -->
+
+    <section class="section">
+
+      <h2>Interactive Application</h2>
+
+      <div class="app-box">
+
+        <h3>Try the X-ray Quality Control Classifier</h3>
+
+        <p>
+          The project was also developed as an interactive Streamlit
+          application. Users can upload an X-ray image and receive
+          an automated quality classification with the model's
+          confidence.
+        </p>
+
+        <a
+          href="https://xray-qc-classifier-app-hr8nvswgygbfgscbhlbhyy.streamlit.app/"
+          class="button"
+          target="_blank"
+        >
+          Open Live App →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- LIMITATIONS -->
+
+    <section class="section">
+
+      <h2>Limitations</h2>
+
+      <div class="note">
+
+        <p>
+          This project is intended as a learning and research
+          exploration rather than a clinically validated diagnostic
+          system. The model evaluates image quality only and does
+          not identify diseases or clinical findings. Performance
+          may also vary across different hospitals, imaging systems,
+          acquisition protocols, and patient populations.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- TECHNOLOGY -->
+
+    <section class="section">
+
+      <h2>Tools & Technologies</h2>
+
+      <p>
+        Python • PyTorch • Torchvision • TIMM • Pillow • Streamlit
+        • Hugging Face • GitHub
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- BACK -->
+
+  <div class="back">
+    <a href="projects.html">← Back to Projects</a>
+  </div>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Med Imaging Hub · Created & curated by
+    <strong>Zara Ashraf</strong>
+  </footer>
+
+</body>
+</html>
