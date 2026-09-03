@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Breast Ultrasound AI Analysis | Med Imaging Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #17202a;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b5563;
+      margin-left: 27px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* HERO */
+
+    .project-hero {
+      text-align: center;
+      padding: 90px 8% 75px;
+      background: #f8fafc;
+    }
+
+    .project-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+
+    .project-hero h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .project-hero p {
+      max-width: 760px;
+      margin: auto;
+      color: #667085;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* MAIN */
+
+    .content {
+      max-width: 1050px;
+      margin: auto;
+      padding: 75px 8%;
+    }
+
+    .section {
+      margin-bottom: 65px;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .section p {
+      color: #667085;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 880px;
+    }
+
+    /* OVERVIEW */
+
+    .overview {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .info-box {
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      padding: 24px;
+      background: #ffffff;
+    }
+
+    .info-box span {
+      display: block;
+      font-size: 12px;
+      color: #2563eb;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+    }
+
+    .info-box strong {
+      font-size: 16px;
+      color: #17202a;
+    }
+
+    /* QUESTION */
+
+    .question-box {
+      margin-top: 28px;
+      padding: 30px;
+      border: 1px solid #e6eaf0;
+      border-radius: 14px;
+      background: #f8fafc;
+    }
+
+    .question-box p {
+      font-size: 20px;
+      line-height: 1.6;
+      color: #17202a;
+      font-weight: 600;
+    }
+
+    /* RESULTS */
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .result-box {
+      background: #f8fafc;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .result-box h3 {
+      font-size: 14px;
+      color: #667085;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+
+    .result-box strong {
+      font-size: 28px;
+      color: #17202a;
+    }
+
+    /* DATASET */
+
+    .dataset-box {
+      margin-top: 28px;
+      padding: 28px;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+    }
+
+    .dataset-box strong {
+      color: #17202a;
+    }
+
+    /* EXPLAINABILITY */
+
+    .explainability {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .explain-box {
+      padding: 25px;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    .explain-box h3 {
+      font-size: 14px;
+      color: #667085;
+      margin-bottom: 8px;
+    }
+
+    .explain-box strong {
+      font-size: 25px;
+      color: #17202a;
+    }
+
+    /* CASE LEVEL */
+
+    .case-box {
+      margin-top: 28px;
+      padding: 30px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid #e6eaf0;
+    }
+
+    .case-box h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .case-results {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .case-result {
+      padding: 18px;
+      background: #ffffff;
+      border: 1px solid #e6eaf0;
+      border-radius: 10px;
+    }
+
+    .case-result span {
+      display: block;
+      font-size: 12px;
+      color: #667085;
+      margin-bottom: 5px;
+    }
+
+    .case-result strong {
+      font-size: 22px;
+    }
+
+    /* APP */
+
+    .app-box {
+      margin-top: 30px;
+      padding: 32px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid #e6eaf0;
+    }
+
+    .app-box h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .app-box p {
+      margin-bottom: 22px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff;
+      padding: 12px 22px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* LIMITATION */
+
+    .note {
+      border-left: 3px solid #2563eb;
+      padding-left: 20px;
+      margin-top: 25px;
+    }
+
+    .note p {
+      font-size: 14px;
+    }
+
+    /* BACK */
+
+    .back {
+      max-width: 1050px;
+      margin: auto;
+      padding: 0 8% 60px;
+    }
+
+    .back a {
+      text-decoration: none;
+      color: #2563eb;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 1px solid #e5e7eb;
+      color: #8a94a3;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #4b5563;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .results,
+      .explainability,
+      .case-results {
+        grid-template-columns: 1fr;
+      }
+
+      .project-hero h1 {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .project-hero {
+        padding: 65px 7% 50px;
+      }
+
+      .project-hero h1 {
+        font-size: 36px;
+      }
+
+      .content {
+        padding: 60px 7%;
+      }
+
+      .overview {
+        grid-template-columns: 1fr;
+      }
+
+      .section h2 {
+        font-size: 25px;
+      }
+
+      .back {
+        padding: 0 7% 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      Med Imaging <span>Hub</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="insights.html">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="project-hero">
+
+    <div class="project-label">
+      AI • BREAST ULTRASOUND • EXPLAINABILITY
+    </div>
+
+    <h1>Breast Ultrasound AI Analysis</h1>
+
+    <p>
+      An AI-assisted project exploring breast lesion classification
+      and model explainability using deep learning and Grad-CAM++.
+    </p>
+
+  </section>
+
+
+  <!-- CONTENT -->
+
+  <main class="content">
+
+
+    <!-- ABOUT -->
+
+    <section class="section">
+
+      <h2>About the Project</h2>
+
+      <p>
+        This project explores whether artificial intelligence can
+        classify breast ultrasound lesions while also providing
+        insight into the areas influencing its prediction.
+        The focus was not only on model performance, but also on
+        understanding what the model was actually looking at.
+      </p>
+
+      <div class="question-box">
+
+        <p>
+          “Can AI not only classify a breast lesion,
+          but also help us understand what it was looking at
+          when making that prediction?”
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- OVERVIEW -->
+
+    <section class="section">
+
+      <h2>Project Overview</h2>
+
+      <div class="overview">
+
+        <div class="info-box">
+          <span>MODEL</span>
+          <strong>EfficientNet-B3</strong>
+        </div>
+
+        <div class="info-box">
+          <span>DATASET</span>
+          <strong>BUS-BRA</strong>
+        </div>
+
+        <div class="info-box">
+          <span>TASK</span>
+          <strong>Benign vs Malignant</strong>
+        </div>
+
+        <div class="info-box">
+          <span>EXPLAINABILITY</span>
+          <strong>Grad-CAM++</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DATASET -->
+
+    <section class="section">
+
+      <h2>Dataset</h2>
+
+      <p>
+        The project uses the BUS-BRA breast ultrasound dataset,
+        containing 1,875 ultrasound images and 1,875 corresponding
+        lesion masks. The image-mask pairs were verified before
+        being used for the explainability analysis.
+      </p>
+
+      <div class="dataset-box">
+
+        <p>
+          <strong>1,875</strong> ultrasound images
+          &nbsp; • &nbsp;
+          <strong>1,875</strong> lesion masks
+          &nbsp; • &nbsp;
+          <strong>1,875 / 1,875</strong> verified image-mask matches
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- MODEL -->
+
+    <section class="section">
+
+      <h2>Model & Approach</h2>
+
+      <p>
+        A single-image EfficientNet-B3 model was trained for binary
+        classification of benign and malignant breast lesions.
+        The final model uses 300 × 300 input images and a decision
+        threshold of 0.52.
+      </p>
+
+      <p style="margin-top:18px;">
+        Grad-CAM++ was then used to visualize regions that contributed
+        to the model's predictions. These attention maps were compared
+        with the reference lesion masks to evaluate how closely the
+        model's focus aligned with the lesion region.
+      </p>
+
+    </section>
+
+
+    <!-- IMAGE RESULTS -->
+
+    <section class="section">
+
+      <h2>Image-Level Results</h2>
+
+      <p>
+        On the held-out test set of 309 ultrasound images, the final
+        model achieved the following results:
+      </p>
+
+      <div class="results">
+
+        <div class="result-box">
+          <h3>Accuracy</h3>
+          <strong>88.35%</strong>
+        </div>
+
+        <div class="result-box">
+          <h3>Precision</h3>
+          <strong>81.90%</strong>
+        </div>
+
+        <div class="result-box">
+          <h3>Recall / Sensitivity</h3>
+          <strong>83.50%</strong>
+        </div>
+
+        <div class="result-box">
+          <h3>F1-Score</h3>
+          <strong>82.69%</strong>
+        </div>
+
+        <div class="result-box">
+          <h3>ROC-AUC</h3>
+          <strong>0.9364</strong>
+        </div>
+
+        <div class="result-box">
+          <h3>Test Images</h3>
+          <strong>309</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CASE LEVEL -->
+
+    <section class="section">
+
+      <h2>Case-Level Evaluation</h2>
+
+      <p>
+        Because some ultrasound cases contain multiple views,
+        performance was also evaluated at the case level. The test
+        set contained 170 unique cases, including 139 cases with
+        two views and 31 cases with one view.
+      </p>
+
+      <div class="case-box">
+
+        <h3>170 Unique Test Cases</h3>
+
+        <div class="case-results">
+
+          <div class="case-result">
+            <span>Accuracy</span>
+            <strong>90.00%</strong>
+          </div>
+
+          <div class="case-result">
+            <span>Precision</span>
+            <strong>81.67%</strong>
+          </div>
+
+          <div class="case-result">
+            <span>Recall</span>
+            <strong>89.09%</strong>
+          </div>
+
+          <div class="case-result">
+            <span>F1-Score</span>
+            <strong>85.22%</strong>
+          </div>
+
+          <div class="case-result">
+            <span>ROC-AUC</span>
+            <strong>0.9505</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXPLAINABILITY -->
+
+    <section class="section">
+
+      <h2>Grad-CAM++ Explainability</h2>
+
+      <p>
+        One of the main goals of this project was to look beyond
+        classification accuracy. Grad-CAM++ was used to investigate
+        where the model was focusing when making its predictions.
+      </p>
+
+      <div class="explainability">
+
+        <div class="explain-box">
+          <h3>Mean IoU</h3>
+          <strong>0.3397</strong>
+        </div>
+
+        <div class="explain-box">
+          <h3>Mean Dice</h3>
+          <strong>0.4807</strong>
+        </div>
+
+        <div class="explain-box">
+          <h3>Attention Inside Lesion</h3>
+          <strong>40.24%</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONFIDENCE -->
+
+    <section class="section">
+
+      <h2>Confidence Analysis</h2>
+
+      <p>
+        The model's average prediction confidence across the test
+        set was 93.28%. Correct predictions had a mean confidence
+        of 94.68%, while incorrect predictions had a lower mean
+        confidence of 82.60%.
+      </p>
+
+      <div class="dataset-box">
+
+        <p>
+          <strong>ECE:</strong> 0.0570
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- IMPORTANT OBSERVATION -->
+
+    <section class="section">
+
+      <h2>What I Learned From the Results</h2>
+
+      <div class="note">
+
+        <p>
+          High confidence does not always mean a correct prediction.
+          One representative failure case was classified as
+          malignant with 99.91% confidence even though the true
+          label was benign. This highlighted an important point:
+          explainability and confidence analysis are valuable when
+          evaluating AI systems, especially in medical imaging.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- APPLICATION -->
+
+    <section class="section">
+
+      <h2>Interactive Application</h2>
+
+      <div class="app-box">
+
+        <h3>Try the AI-Assisted Breast Ultrasound Analysis</h3>
+
+        <p>
+          The project was developed as an interactive Streamlit
+          application where users can upload a breast ultrasound
+          image, view the predicted class and probabilities, and
+          explore the Grad-CAM++ visualization.
+        </p>
+
+        <a
+          href="https://ai-assisted-breast-ultrasound-3mupqtp6ehvq6jrkwsjst8.streamlit.app/"
+          class="button"
+          target="_blank"
+        >
+          Open Live App →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- LIMITATIONS -->
+
+    <section class="section">
+
+      <h2>Limitations</h2>
+
+      <div class="note">
+
+        <p>
+          This project is an AI research and learning exploration
+          using a research dataset and is not a clinically validated
+          diagnostic system. The model performs binary classification
+          only. A high-confidence prediction does not guarantee
+          correctness, and Grad-CAM++ provides an attention
+          visualization rather than a true segmentation of the lesion.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- TECHNOLOGIES -->
+
+    <section class="section">
+
+      <h2>Tools & Technologies</h2>
+
+      <p>
+        Python • PyTorch • Torchvision • NumPy • Pillow • Streamlit
+        • EfficientNet-B3 • Grad-CAM++ • GitHub • Hugging Face
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- BACK -->
+
+  <div class="back">
+    <a href="projects.html">← Back to Projects</a>
+  </div>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Med Imaging Hub · Created & curated by
+    <strong>Zara Ashraf</strong>
+  </footer>
+
+</body>
+</html>
