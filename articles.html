@@ -1,1 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Articles | Med Imaging Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #17202a;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b5563;
+      margin-left: 27px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 85px 8% 65px;
+      background: #f8fafc;
+    }
+
+    .page-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+    }
+
+    .page-header h1 {
+      font-size: 46px;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+    }
+
+    .page-header p {
+      max-width: 680px;
+      margin: auto;
+      color: #667085;
+      font-size: 17px;
+    }
+
+    .articles {
+      padding: 75px 8%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .article-card {
+      border: 1px solid #e6eaf0;
+      border-radius: 14px;
+      padding: 30px;
+      margin-bottom: 24px;
+      transition: 0.25s ease;
+    }
+
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.07);
+      border-color: #d8e0eb;
+    }
+
+    .article-tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .article-card h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .article-card p {
+      color: #667085;
+      font-size: 15px;
+      max-width: 800px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 1px solid #e5e7eb;
+      color: #8a94a3;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #4b5563;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .page-header {
+        padding: 65px 7% 50px;
+      }
+
+      .page-header h1 {
+        font-size: 36px;
+      }
+
+      .articles {
+        padding: 55px 7%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <div class="logo">
+      Med Imaging <span>Hub</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="insights.html">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <section class="page-header">
+
+    <div class="page-label">
+      MEDICAL IMAGING • LEARNING
+    </div>
+
+    <h1>Articles</h1>
+
+    <p>
+      Simple and practical explanations of medical imaging concepts,
+      technology, and the ideas shaping modern healthcare.
+    </p>
+
+  </section>
+
+
+  <main class="articles">
+
+    <article class="article-card">
+
+      <div class="article-tag">
+        MEDICAL IMAGING
+      </div>
+
+      <h2>Why Do Bones Look White on an X-ray?</h2>
+
+      <p>
+        A simple explanation of how X-rays interact with different
+        tissues and why bones appear bright while lungs appear dark.
+      </p>
+
+    </article>
+
+
+    <article class="article-card">
+
+      <div class="article-tag">
+        MRI
+      </div>
+
+      <h2>Why Does an MRI Machine Make So Much Noise?</h2>
+
+      <p>
+        Ever wondered where all that loud knocking and buzzing comes from?
+        Let's break down the role of gradient coils in simple terms.
+      </p>
+
+    </article>
+
+
+    <article class="article-card">
+
+      <div class="article-tag">
+        CT
+      </div>
+
+      <h2>Why Is Contrast Used in a CT Scan?</h2>
+
+      <p>
+        Understand how contrast helps different tissues and blood vessels
+        become easier to see on CT images.
+      </p>
+
+    </article>
+
+  </main>
+
+
+  <footer>
+    © 2026 Med Imaging Hub · Created & curated by <strong>Zara Ashraf</strong>
+  </footer>
+
+</body>
+</html>
