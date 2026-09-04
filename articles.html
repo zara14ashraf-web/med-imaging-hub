@@ -138,7 +138,7 @@
       border: 1px solid #dfe6ef;
       border-radius: 18px;
       padding: 38px;
-      margin-bottom: 65px;
+      margin-bottom: 30px;
       background: #f8fafc;
       transition: 0.25s ease;
     }
@@ -186,6 +186,51 @@
 
     .read-link:hover {
       text-decoration: underline;
+    }
+
+    /* ARTICLE SEARCH */
+
+    .article-search {
+      max-width: 620px;
+      margin: 0 auto 55px;
+      position: relative;
+    }
+
+    .article-search svg {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      transform: translateY(-50%);
+      fill: none;
+      stroke: #8a94a3;
+      stroke-width: 1.8;
+      pointer-events: none;
+    }
+
+    .article-search input {
+      display: block;
+      width: 100%;
+      height: 48px;
+      padding: 0 18px 0 48px;
+      border: 1px solid #e3e8ef;
+      border-radius: 30px;
+      background: #ffffff;
+      color: #17202a;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    .article-search input::placeholder {
+      color: #98a2b3;
+    }
+
+    .article-search input:focus {
+      border-color: #bfdbfe;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.06);
     }
 
     /* SECTION TITLE */
@@ -257,7 +302,19 @@
       color: #8a94a3;
     }
 
-    /* HIDDEN ARTICLES */
+    /* NO RESULTS */
+
+    .no-results {
+      text-align: center;
+      padding: 45px 20px;
+      color: #8a94a3;
+      font-size: 14px;
+      border: 1px dashed #e3e8ef;
+      border-radius: 14px;
+      margin-top: 10px;
+    }
+
+    /* HIDDEN */
 
     .hidden {
       display: none !important;
@@ -324,6 +381,10 @@
         gap: 10px;
         flex-direction: column;
       }
+
+      .article-search {
+        margin-bottom: 45px;
+      }
     }
   </style>
 </head>
@@ -370,7 +431,7 @@
 
 
     <!-- CATEGORY FILTERS -->
-   
+
     <div class="categories">
 
       <span class="category active" data-category="all">All</span>
@@ -414,19 +475,26 @@
 
     </section>
 
-    <div class="article-search">
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <circle cx="11" cy="11" r="6.5"></circle>
-    <path d="M16 16L21 21"></path>
-  </svg>
 
-  <input
-    type="text"
-    id="articleSearch"
-    placeholder="Search by topic or keyword..."
-    aria-label="Search articles"
-  >
-</div>
+    <!-- ARTICLE SEARCH -->
+
+    <div class="article-search">
+
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="6.5"></circle>
+        <path d="M16 16L21 21"></path>
+      </svg>
+
+      <input
+        type="text"
+        id="articleSearch"
+        placeholder="Search by topic or keyword..."
+        aria-label="Search articles"
+      >
+
+    </div>
+
+
     <!-- MORE ARTICLES -->
 
     <div class="section-heading">
@@ -820,6 +888,12 @@
 
     </div>
 
+
+    <div id="noResults" class="no-results hidden">
+      No articles found. Try a different topic or keyword.
+    </div>
+
+
   </main>
 
 
@@ -828,21 +902,108 @@
   </footer>
 
 
-  <!-- CATEGORY FILTER SCRIPT -->
+  <!-- SEARCH + CATEGORY FILTER SCRIPT -->
 
   <script>
 
     const categories = document.querySelectorAll(".category");
     const articleCards = document.querySelectorAll(".article-card");
     const featuredArticle = document.querySelector(".featured");
+    const searchInput = document.getElementById("articleSearch");
+    const noResults = document.getElementById("noResults");
+
+    let selectedCategory = "all";
+    let searchTerm = "";
+
+
+    function getSearchText(element) {
+
+      const title = element.querySelector("h2, h3");
+      const description = element.querySelector("p");
+
+      return `
+        ${title ? title.textContent : ""}
+        ${description ? description.textContent : ""}
+      `.toLowerCase();
+
+    }
+
+
+    function filterArticles() {
+
+      let visibleCount = 0;
+
+      const matches = (element) => {
+
+        const categoryMatch =
+          selectedCategory === "all" ||
+          element.dataset.category === selectedCategory;
+
+        const text = getSearchText(element);
+
+        const searchMatch =
+          searchTerm === "" ||
+          text.includes(searchTerm);
+
+        return categoryMatch && searchMatch;
+
+      };
+
+
+      /* Featured article */
+
+      if (matches(featuredArticle)) {
+
+        featuredArticle.classList.remove("hidden");
+        visibleCount++;
+
+      } else {
+
+        featuredArticle.classList.add("hidden");
+
+      }
+
+
+      /* Article cards */
+
+      articleCards.forEach(card => {
+
+        if (matches(card)) {
+
+          card.classList.remove("hidden");
+          visibleCount++;
+
+        } else {
+
+          card.classList.add("hidden");
+
+        }
+
+      });
+
+
+      /* No results */
+
+      if (visibleCount === 0) {
+
+        noResults.classList.remove("hidden");
+
+      } else {
+
+        noResults.classList.add("hidden");
+
+      }
+
+    }
+
+
+    /* CATEGORY FILTER */
 
     categories.forEach(category => {
 
       category.addEventListener("click", () => {
 
-        const selectedCategory = category.dataset.category;
-
-        /* Active button */
+        selectedCategory = category.dataset.category;
 
         categories.forEach(item => {
           item.classList.remove("active");
@@ -850,35 +1011,20 @@
 
         category.classList.add("active");
 
-
-        /* Featured article */
-
-        if (
-          selectedCategory === "all" ||
-          featuredArticle.dataset.category === selectedCategory
-        ) {
-          featuredArticle.classList.remove("hidden");
-        } else {
-          featuredArticle.classList.add("hidden");
-        }
-
-
-        /* Article cards */
-
-        articleCards.forEach(card => {
-
-          if (
-            selectedCategory === "all" ||
-            card.dataset.category === selectedCategory
-          ) {
-            card.classList.remove("hidden");
-          } else {
-            card.classList.add("hidden");
-          }
-
-        });
+        filterArticles();
 
       });
+
+    });
+
+
+    /* SEARCH */
+
+    searchInput.addEventListener("input", () => {
+
+      searchTerm = searchInput.value.toLowerCase().trim();
+
+      filterArticles();
 
     });
 
