@@ -1,1 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>What Is Medical Imaging Technology? | Med Imaging Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.75;
+    }
+
+    /* HEADER */
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #17202a;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b5563;
+      margin-left: 27px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* ARTICLE HERO */
+
+    .article-hero {
+      background:
+        radial-gradient(
+          circle at 50% 5%,
+          rgba(37, 99, 235, 0.09),
+          transparent 45%
+        ),
+        #f8fafc;
+
+      text-align: center;
+      padding: 85px 8% 70px;
+      border-bottom: 1px solid #eef2f6;
+    }
+
+    .article-category {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      padding: 7px 13px;
+      border: 1px solid #dbeafe;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .article-hero h1 {
+      max-width: 850px;
+      margin: auto;
+      font-size: 48px;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      color: #17202a;
+    }
+
+    .article-intro {
+      max-width: 720px;
+      margin: 22px auto 0;
+      color: #667085;
+      font-size: 17px;
+    }
+
+    .article-meta {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #8a94a3;
+    }
+
+    /* ARTICLE */
+
+    .article-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 65px 25px 80px;
+    }
+
+    .article-note {
+      margin-bottom: 38px;
+      padding: 16px 20px;
+      border-left: 3px solid #2563eb;
+      background: #f8fafc;
+      color: #667085;
+      font-size: 14px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .article-container h2 {
+      margin-top: 55px;
+      margin-bottom: 18px;
+      font-size: 28px;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+      color: #17202a;
+    }
+
+    .article-container h3 {
+      margin-top: 35px;
+      margin-bottom: 12px;
+      font-size: 21px;
+      line-height: 1.35;
+      color: #17202a;
+    }
+
+    .article-container p {
+      margin-bottom: 19px;
+      color: #344054;
+      font-size: 16px;
+    }
+
+    .article-container strong {
+      color: #17202a;
+    }
+
+    /* LIST */
+
+    .article-container ul,
+    .article-container ol {
+      margin: 10px 0 25px 24px;
+      color: #344054;
+    }
+
+    .article-container li {
+      margin-bottom: 9px;
+      padding-left: 5px;
+    }
+
+    /* FLOW */
+
+    .flow-box {
+      margin: 28px 0 30px;
+      padding: 24px 22px;
+      border: 1px solid #dfe6ef;
+      border-radius: 14px;
+      background: #f8fafc;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #344054;
+      line-height: 1.9;
+    }
+
+    .flow-box span {
+      color: #2563eb;
+      padding: 0 5px;
+    }
+
+    /* ANALOGY */
+
+    .analogy {
+      margin: 28px 0 32px;
+      padding: 25px 27px;
+      border: 1px solid #dbeafe;
+      border-radius: 14px;
+      background: #eff6ff;
+    }
+
+    .analogy-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1.5px;
+      margin-bottom: 9px;
+    }
+
+    .analogy p {
+      margin-bottom: 0;
+      color: #344054;
+    }
+
+    /* MODALITY SECTIONS */
+
+    .modality {
+      margin-top: 35px;
+      padding: 28px;
+      border: 1px solid #e6eaf0;
+      border-radius: 14px;
+      background: #ffffff;
+    }
+
+    .modality h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .modality p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* TABLE */
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 28px 0 35px;
+      border: 1px solid #e3e8ef;
+      border-radius: 14px;
+    }
+
+    .modality-table {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .modality-table th {
+      background: #f8fafc;
+      color: #17202a;
+      font-weight: 700;
+      text-align: left;
+      padding: 15px 16px;
+      border-bottom: 1px solid #e3e8ef;
+    }
+
+    .modality-table td {
+      padding: 15px 16px;
+      color: #475467;
+      border-bottom: 1px solid #eef2f6;
+      vertical-align: top;
+    }
+
+    .modality-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .modality-table tr:hover td {
+      background: #fafcff;
+    }
+
+    /* PROCESS STEPS */
+
+    .process-list {
+      counter-reset: process;
+      list-style: none;
+      margin-left: 0 !important;
+    }
+
+    .process-list li {
+      counter-increment: process;
+      position: relative;
+      padding: 15px 18px 15px 58px;
+      margin-bottom: 10px;
+      border: 1px solid #e6eaf0;
+      border-radius: 10px;
+      background: #ffffff;
+    }
+
+    .process-list li::before {
+      content: counter(process);
+      position: absolute;
+      left: 17px;
+      top: 13px;
+      width: 27px;
+      height: 27px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* TAKEAWAY */
+
+    .takeaway {
+      margin-top: 60px;
+      padding: 32px;
+      border-radius: 16px;
+      background: #f8fafc;
+      border: 1px solid #dfe6ef;
+    }
+
+    .takeaway-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1.7px;
+      margin-bottom: 12px;
+    }
+
+    .takeaway p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #344054;
+      margin-bottom: 0;
+    }
+
+    /* BACK LINK */
+
+    .back-link {
+      display: inline-block;
+      margin-top: 45px;
+      color: #2563eb;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 1px solid #e5e7eb;
+      color: #8a94a3;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #4b5563;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .article-hero {
+        padding: 65px 7% 50px;
+      }
+
+      .article-hero h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+      }
+
+      .article-intro {
+        font-size: 15px;
+      }
+
+      .article-container {
+        padding: 50px 7% 65px;
+      }
+
+      .article-container h2 {
+        font-size: 25px;
+        margin-top: 45px;
+      }
+
+      .article-container h3 {
+        font-size: 20px;
+      }
+
+      .article-container p {
+        font-size: 15px;
+      }
+
+      .modality {
+        padding: 22px;
+      }
+
+      .analogy {
+        padding: 22px;
+      }
+
+      .flow-box {
+        text-align: left;
+        font-size: 14px;
+      }
+
+      .takeaway {
+        padding: 25px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      Med Imaging <span>Hub</span>
+    </div>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../articles.html">Articles</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <!-- ARTICLE HERO -->
+
+  <section class="article-hero">
+
+    <div class="article-category">
+      IMAGING TECHNOLOGY
+    </div>
+
+    <h1>
+      What Is Medical Imaging Technology?
+    </h1>
+
+    <p class="article-intro">
+      A simple guide to the technologies, physics, people, and processes
+      behind the medical images used in modern healthcare.
+    </p>
+
+    <div class="article-meta">
+      8 min read · Medical Imaging
+    </div>
+
+  </section>
+
+
+  <!-- ARTICLE CONTENT -->
+
+  <main class="article-container">
+
+    <div class="article-note">
+      Here, you’ll learn about Medical Imaging Technology through simple
+      examples that make concepts easier to understand.
+    </div>
+
+
+    <p>
+      Have you ever wondered how a doctor can look inside the human body
+      without making an incision?
+    </p>
+
+    <p>
+      A chest X-ray can reveal a problem in the lungs. An MRI can show
+      detailed structures of the brain or joints. Ultrasound can show a
+      developing fetus and even display blood flow. A CT scan can turn
+      X-ray measurements into detailed cross-sectional views of the body.
+    </p>
+
+    <p>
+      All of these are possible because of <strong>medical imaging
+      technology</strong>.
+    </p>
+
+    <p>
+      Medical imaging uses different technologies to obtain images and
+      other information about the inside of the human body. These images
+      and measurements help healthcare professionals <strong>detect
+      disease, understand injuries, plan treatments, monitor conditions,
+      and sometimes guide procedures</strong>. Different imaging
+      technologies work in different ways, so each one provides a
+      different type of information.
+    </p>
+
+    <p>
+      But medical imaging is much more than simply "taking pictures."
+    </p>
+
+
+    <!-- WHY IMAGING -->
+
+    <h2>Why Do We Need Medical Imaging?</h2>
+
+    <p>
+      The human body is complex, and many problems cannot be identified
+      by looking at the outside of the body alone.
+    </p>
+
+    <p>
+      Consider a patient who comes to a hospital with chest pain. The
+      symptoms provide important information, but they may not be enough
+      to determine what is happening inside the body. Imaging can provide
+      additional information that helps answer the clinical question.
+    </p>
+
+    <div class="flow-box">
+      Symptoms
+      <span>→</span>
+      Clinical Question
+      <span>→</span>
+      Appropriate Imaging
+      <span>→</span>
+      Information
+      <span>→</span>
+      Interpretation
+      <span>→</span>
+      Diagnosis / Treatment Planning
+    </div>
+
+    <p>
+      The choice of imaging depends on the clinical situation. A suspected
+      fracture may require an X-ray, while a suspected stroke may require
+      CT or MRI depending on the clinical circumstances. Abdominal symptoms
+      may be investigated using ultrasound, CT, or another appropriate
+      examination.
+    </p>
+
+    <p>
+      There is no single imaging test that is best for every situation.
+      The modality is selected according to the <strong>clinical question,
+      body part, information required, and patient-specific
+      considerations</strong>.
+    </p>
+
+
+    <!-- HOW IMAGE IS CREATED -->
+
+    <h2>How Does Medical Imaging Actually Create an Image?</h2>
+
+    <p>
+      Different imaging modalities use different forms of energy or
+      physical phenomena to obtain information from the body.
+    </p>
+
+
+    <!-- X-RAY -->
+
+    <div class="modality">
+
+      <h3>X-ray</h3>
+
+      <p>
+        X-rays are a form of <strong>ionizing radiation</strong>. During
+        an X-ray examination, a beam passes through the body. Different
+        tissues attenuate, or reduce, the X-ray beam by different amounts.
+      </p>
+
+      <p>
+        The X-rays that pass through the body reach a detector, and the
+        resulting differences are used to form the image. This is why
+        structures such as bones and lungs appear differently on an X-ray.
+      </p>
+
+      <div class="analogy">
+
+        <div class="analogy-label">
+          A SIMPLE ANALOGY
+        </div>
+
+        <p>
+          Imagine shining a light through different materials. A thin
+          transparent sheet lets most of the light through, while a thick
+          object blocks much more of it. X-ray imaging works on a similar
+          principle: different tissues affect the X-ray beam differently.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- CT -->
+
+    <div class="modality">
+
+      <h3>CT — Computed Tomography</h3>
+
+      <p>
+        CT also uses X-rays, but instead of producing a single projection
+        image, the X-ray source and detectors collect many measurements
+        from different angles around the patient.
+      </p>
+
+      <p>
+        A computer then uses these measurements to reconstruct
+        <strong>cross-sectional images, or slices</strong>, through the
+        body.
+      </p>
+
+      <div class="analogy">
+
+        <div class="analogy-label">
+          A SIMPLE ANALOGY
+        </div>
+
+        <p>
+          Think about a loaf of bread. Looking at the whole loaf gives you
+          a general idea of its shape, but cutting it into slices lets you
+          examine what is happening inside at different levels. CT works
+          in a similar conceptual way — although its slices are
+          computationally reconstructed rather than physically cut.
+        </p>
+
+      </div>
+
+      <p>
+        CT can provide detailed information about bones, organs, soft
+        tissues, and blood vessels.
+      </p>
+
+    </div>
+
+
+    <!-- MRI -->
+
+    <div class="modality">
+
+      <h3>MRI — Magnetic Resonance Imaging</h3>
+
+      <p>
+        MRI works very differently from X-ray and CT. It uses a
+        <strong>strong magnetic field and radiofrequency waves</strong>
+        to produce signals from the body, which are then processed to
+        create images.
+      </p>
+
+      <p>
+        MRI is particularly valuable for detailed soft-tissue imaging,
+        including the brain, spinal cord, muscles, ligaments, and joints.
+      </p>
+
+      <p>
+        MRI does not use ionizing radiation. However, it has important
+        safety requirements because of the strong magnetic field and
+        radiofrequency energy involved. Like every imaging technology,
+        MRI has its own risks, limitations, and considerations.
+      </p>
+
+    </div>
+
+
+    <!-- ULTRASOUND -->
+
+    <div class="modality">
+
+      <h3>Ultrasound</h3>
+
+      <p>
+        Ultrasound uses <strong>high-frequency sound waves</strong>.
+        A transducer, or probe, sends sound waves into the body and
+        receives the echoes that return after the waves interact with
+        different tissues.
+      </p>
+
+      <p>
+        The ultrasound system analyzes the timing and strength of these
+        echoes and uses the information to construct an image.
+      </p>
+
+      <div class="analogy">
+
+        <div class="analogy-label">
+          A SIMPLE ANALOGY
+        </div>
+
+        <p>
+          Imagine throwing a small ball toward a wall. The ball travels
+          forward, hits the wall, and comes back. If you know how long it
+          took to return, you can get an idea of how far away the wall is.
+        </p>
+
+        <p style="margin-top: 15px;">
+          Ultrasound works on a similar idea. The transducer sends sound
+          waves into the body, receives the returning echoes, and uses
+          their timing and characteristics to build an image.
+        </p>
+
+      </div>
+
+      <p>
+        Because ultrasound can continuously send and receive sound waves,
+        it can produce images in real time. This makes it useful for
+        observing movement and assessing blood flow with Doppler
+        techniques.
+      </p>
+
+    </div>
+
+
+    <!-- NUCLEAR MEDICINE -->
+
+    <div class="modality">
+
+      <h3>Nuclear Medicine</h3>
+
+      <p>
+        Nuclear medicine works differently from the other modalities
+        described above. Instead of primarily sending energy into the
+        body and measuring what comes back, a
+        <strong>radiopharmaceutical</strong> is administered to the
+        patient.
+      </p>
+
+      <p>
+        Depending on the examination, the radiopharmaceutical may be
+        injected, swallowed, or inhaled. It travels to particular tissues
+        or participates in biological processes. A detector then detects
+        the radiation coming from the patient, and the resulting image
+        represents the distribution of the radiopharmaceutical.
+      </p>
+
+      <p>
+        This means nuclear medicine can provide information about
+        <strong>function and physiology</strong>, not only anatomy.
+      </p>
+
+      <p>
+        A useful way to think about the difference is:
+        <strong>“What does this organ look like?”</strong> versus
+        <strong>“How is this organ functioning?”</strong>
+      </p>
+
+      <p>
+        PET and SPECT are common examples of nuclear medicine imaging.
+      </p>
+
+    </div>
+
+
+    <!-- TABLE -->
+
+    <h2>Medical Imaging Modalities at a Glance</h2>
+
+    <p>
+      Each modality uses a different technology and provides different
+      types of information.
+    </p>
+
+    <div class="table-wrapper">
+
+      <table class="modality-table">
+
+        <thead>
+          <tr>
+            <th>Modality</th>
+            <th>Main Technology</th>
+            <th>Ionizing Radiation?</th>
+            <th>Commonly Good At</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td><strong>X-ray</strong></td>
+            <td>X-rays</td>
+            <td>Yes</td>
+            <td>Quick projection images, especially bones and chest</td>
+          </tr>
+
+          <tr>
+            <td><strong>CT</strong></td>
+            <td>X-rays + computer reconstruction</td>
+            <td>Yes</td>
+            <td>Detailed cross-sectional anatomy</td>
+          </tr>
+
+          <tr>
+            <td><strong>MRI</strong></td>
+            <td>Magnetic field + radiofrequency waves</td>
+            <td>No</td>
+            <td>Detailed soft-tissue imaging</td>
+          </tr>
+
+          <tr>
+            <td><strong>Ultrasound</strong></td>
+            <td>High-frequency sound waves</td>
+            <td>No</td>
+            <td>Real-time imaging, soft tissues and blood flow</td>
+          </tr>
+
+          <tr>
+            <td><strong>Nuclear Medicine</strong></td>
+            <td>Radiopharmaceuticals + radiation detection</td>
+            <td>Yes</td>
+            <td>Functional and physiological information</td>
+          </tr>
+
+          <tr>
+            <td><strong>Mammography</strong></td>
+            <td>Specialized X-ray imaging</td>
+            <td>Yes</td>
+            <td>Breast imaging</td>
+          </tr>
+
+          <tr>
+            <td><strong>Fluoroscopy</strong></td>
+            <td>Continuous/rapid X-ray imaging</td>
+            <td>Yes</td>
+            <td>Real-time imaging and procedure guidance</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <p>
+      These modalities should not be thought of as competitors where one
+      is simply <strong>“better”</strong> than the others.
+      <strong>Each answers different clinical questions.</strong>
+    </p>
+
+
+    <!-- ANATOMY VS FUNCTION -->
+
+    <h2>Anatomy vs Function: What Is the Difference?</h2>
+
+    <p>
+      One useful way to understand medical imaging is to separate
+      <strong>structure</strong> from <strong>function</strong>.
+    </p>
+
+    <p>
+      X-rays are excellent for showing structures such as bones and
+      providing projection images of the chest. CT provides detailed
+      cross-sectional anatomical information. MRI is particularly useful
+      when detailed soft-tissue information is needed. Ultrasound can show
+      organs and movement in real time.
+    </p>
+
+    <p>
+      Nuclear medicine can go a step further by showing physiological or
+      biochemical activity. Instead of only showing where a structure is,
+      it can provide information about how tissue is functioning.
+    </p>
+
+    <p>
+      Hybrid imaging can combine these different types of information.
+      For example, <strong>PET/CT</strong> combines functional information
+      from PET with anatomical information from CT.
+    </p>
+
+    <p>
+      So medical imaging is not always simply about creating a picture.
+      Sometimes the important question is where something is, and
+      sometimes it is how that tissue or organ is behaving.
+    </p>
+
+
+    <!-- RADIATION -->
+
+    <h2>Does Every Imaging Modality Use Radiation?</h2>
+
+    <p>
+      No. This is a common misconception because the word
+      <strong>“radiation”</strong> can sound alarming, but different
+      imaging technologies use different forms of physical energy.
+    </p>
+
+    <p>
+      Imaging modalities that use ionizing radiation include
+      <strong>X-ray, CT, fluoroscopy, mammography, and nuclear
+      medicine</strong>. Ionizing radiation has enough energy to cause
+      changes in biological tissue, so appropriate use and radiation
+      protection are important.
+    </p>
+
+    <p>
+      MRI and ultrasound do not use ionizing radiation. MRI uses magnetic
+      fields and radiofrequency waves, while ultrasound uses sound waves.
+    </p>
+
+    <p>
+      However, non-ionizing does not automatically mean risk-free. Each
+      imaging technology has its own safety considerations, limitations,
+      and appropriate uses.
+    </p>
+
+
+    <!-- EXAMINATION -->
+
+    <h2>What Happens During an Imaging Examination?</h2>
+
+    <p>
+      A medical imaging examination involves much more than pressing a
+      button on a machine. A typical examination may involve several
+      important steps:
+    </p>
+
+    <ol class="process-list">
+
+      <li>
+        <strong>Referral / Clinical Question</strong> — Understanding why
+        the examination is needed.
+      </li>
+
+      <li>
+        <strong>Patient Preparation</strong> — Preparing the patient
+        according to the requirements of the examination.
+      </li>
+
+      <li>
+        <strong>Patient Identification and Safety Checks</strong> —
+        Confirming patient details and relevant safety information.
+      </li>
+
+      <li>
+        <strong>Positioning</strong> — Placing the patient correctly for
+        the examination.
+      </li>
+
+      <li>
+        <strong>Image Acquisition</strong> — Obtaining the required images
+        using appropriate technical parameters.
+      </li>
+
+      <li>
+        <strong>Image Quality Check</strong> — Ensuring that the images are
+        suitable for their intended diagnostic purpose.
+      </li>
+
+      <li>
+        <strong>Image Processing and Storage</strong> — Processing,
+        storing, and transferring digital image data.
+      </li>
+
+      <li>
+        <strong>Interpretation</strong> — The images are reviewed and
+        interpreted by the appropriate healthcare professional.
+      </li>
+
+    </ol>
+
+    <p>
+      This process requires technical knowledge, patient care,
+      communication, safety awareness, and attention to detail.
+    </p>
+
+
+    <!-- TECHNOLOGIST -->
+
+    <h2>Where Does a Medical Imaging Technologist Fit In?</h2>
+
+    <p>
+      The role of a medical imaging technologist is often reduced to
+      simply operating an imaging machine. In reality, the role involves
+      much more.
+    </p>
+
+    <p>
+      Depending on the modality and scope of practice, an imaging
+      technologist may:
+    </p>
+
+    <ul>
+      <li>Communicate with and prepare patients.</li>
+      <li>Confirm examination requirements.</li>
+      <li>Position patients correctly.</li>
+      <li>Select appropriate technical parameters and protocols within their scope of practice.</li>
+      <li>Operate imaging equipment.</li>
+      <li>Produce diagnostically useful images.</li>
+      <li>Maintain image quality.</li>
+      <li>Apply radiation protection principles when ionizing radiation is used.</li>
+      <li>Maintain patient safety throughout the examination.</li>
+      <li>Work with radiologists and the wider healthcare team.</li>
+    </ul>
+
+    <p>
+      Positioning, technical factors, and equipment performance can all
+      affect the final image. The image did not simply
+      <strong>“appear.”</strong> There is a complete technical and
+      clinical process behind it.
+    </p>
+
+
+    <!-- TECHNOLOGY BEHIND IMAGE -->
+
+    <h2>The Technology Behind the Image</h2>
+
+    <p>
+      Medical imaging brings together several fields, including
+      <strong>physics, electronics, computing, engineering, and
+      healthcare</strong>.
+    </p>
+
+    <p>
+      The imaging system first acquires information from the patient.
+      That information is then processed using detectors or sensors,
+      digital electronics, computers, reconstruction algorithms, and
+      image-processing systems.
+    </p>
+
+    <p>
+      In CT, for example, the system collects measurements from multiple
+      angles and a computer reconstructs them into cross-sectional images.
+      Ultrasound systems process returning echoes. MRI systems process
+      signals generated in response to radiofrequency excitation within
+      a magnetic field.
+    </p>
+
+    <p>
+      Medical imaging is therefore a close meeting point between
+      <strong>medicine and technology</strong>.
+    </p>
+
+
+    <!-- DIGITAL IMAGES -->
+
+    <h2>What About Digital Medical Images?</h2>
+
+    <p>
+      Modern medical images are primarily digital rather than being
+      produced on physical film. Digital images can be processed, stored,
+      transferred, and reviewed using computer-based systems.
+    </p>
+
+    <p>
+      Two important terms in modern medical imaging are
+      <strong>DICOM</strong> and <strong>PACS</strong>.
+    </p>
+
+    <p>
+      DICOM is a standard used for medical imaging information and
+      communication. PACS, or Picture Archiving and Communication
+      Systems, are used to store and provide access to medical images
+      within healthcare environments.
+    </p>
+
+    <p>
+      These technologies are an important part of the modern digital
+      imaging workflow.
+    </p>
+
+
+    <!-- FUTURE -->
+
+    <h2>What Does the Future of Medical Imaging Look Like?</h2>
+
+    <p>
+      Medical imaging continues to evolve as scanners, computing systems,
+      and image-processing technologies become more sophisticated.
+    </p>
+
+    <p>
+      Areas of ongoing development and research include:
+    </p>
+
+    <ul>
+      <li>Faster and more advanced imaging systems</li>
+      <li>Portable point-of-care ultrasound</li>
+      <li>AI-assisted image analysis</li>
+      <li>Quantitative imaging</li>
+      <li>Faster image acquisition</li>
+      <li>Improved image reconstruction</li>
+      <li>Hybrid imaging</li>
+      <li>Personalized imaging</li>
+      <li>Better integration with clinical workflows</li>
+    </ul>
+
+    <p>
+      The field is gradually moving beyond simply producing pictures
+      toward extracting more useful information from medical imaging data.
+    </p>
+
+
+    <!-- BIG PICTURE -->
+
+    <h2>The Big Picture</h2>
+
+    <p>
+      Medical imaging is not one technology. It is a whole group of
+      technologies designed to answer different clinical questions.
+    </p>
+
+    <p>
+      <strong>X-ray</strong> uses X-rays.
+      <strong>CT</strong> uses X-rays combined with computer
+      reconstruction.
+      <strong>MRI</strong> uses magnetic fields and radiofrequency waves.
+      <strong>Ultrasound</strong> uses sound waves.
+      <strong>Nuclear medicine</strong> uses radiopharmaceuticals to
+      provide information about biological function.
+    </p>
+
+    <p>
+      Each modality has its own physics, strengths, limitations, safety
+      considerations, and clinical applications.
+    </p>
+
+    <p>
+      Behind every medical image is a combination of
+      <strong>technology, physics, patient care, clinical knowledge, and
+      human expertise</strong>.
+    </p>
+
+
+    <!-- TAKEAWAY -->
+
+    <div class="takeaway">
+
+      <div class="takeaway-label">
+        KEY TAKEAWAY
+      </div>
+
+      <p>
+        Medical imaging is not simply about creating images.
+        It is about <strong>turning information that cannot be seen from
+        the outside into something healthcare professionals can visualize,
+        analyze, and use to care for a patient.</strong>
+        That is what makes medical imaging technology such an important
+        part of modern healthcare.
+      </p>
+
+    </div>
+
+
+    <a href="../articles.html" class="back-link">
+      ← Back to Articles
+    </a>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Med Imaging Hub · Created & curated by <strong>Zara Ashraf</strong>
+  </footer>
+
+</body>
+</html>
