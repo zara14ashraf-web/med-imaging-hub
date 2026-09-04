@@ -52,40 +52,43 @@
       color: #2563eb;
     }
 
-   .page-header {
-  position: relative;
-  text-align: center;
-  padding: 95px 8% 80px;
-  overflow: hidden;
-  background:
-    radial-gradient(
-      circle at 50% 10%,
-      rgba(37, 99, 235, 0.10),
-      transparent 48%
-    ),
-    #f8fafc;
-}
+    /* PAGE HEADER */
 
-.page-label {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  color: #2563eb;
-  letter-spacing: 2px;
-  margin-bottom: 18px;
-  padding: 7px 13px;
-  border: 1px solid #dbeafe;
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.8);
-}
+    .page-header {
+      position: relative;
+      text-align: center;
+      padding: 90px 8% 75px;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 50% 10%,
+          rgba(37, 99, 235, 0.10),
+          transparent 48%
+        ),
+        #f8fafc;
+    }
 
-.page-header h1 {
-  font-size: 52px;
-  line-height: 1.1;
-  letter-spacing: -2px;
-  margin-bottom: 20px;
-  color: #17202a;
-}
+    .page-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      padding: 7px 13px;
+      border: 1px solid #dbeafe;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .page-header h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+      color: #17202a;
+    }
+
     .page-header p {
       max-width: 680px;
       margin: auto;
@@ -93,18 +96,134 @@
       font-size: 17px;
     }
 
+    /* ARTICLE AREA */
+
     .articles {
-      padding: 75px 8%;
+      padding: 70px 8%;
       max-width: 1150px;
       margin: auto;
     }
 
+    /* CATEGORY FILTERS */
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 55px;
+    }
+
+    .category {
+      padding: 8px 16px;
+      border: 1px solid #e3e8ef;
+      border-radius: 30px;
+      color: #667085;
+      background: #ffffff;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .category:hover,
+    .category.active {
+      color: #2563eb;
+      border-color: #bfdbfe;
+      background: #eff6ff;
+    }
+
+    /* FEATURED ARTICLE */
+
+    .featured {
+      border: 1px solid #dfe6ef;
+      border-radius: 18px;
+      padding: 38px;
+      margin-bottom: 65px;
+      background: #f8fafc;
+      transition: 0.25s ease;
+    }
+
+    .featured:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.07);
+    }
+
+    .featured-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+    }
+
+    .featured h2 {
+      font-size: 30px;
+      line-height: 1.25;
+      margin-bottom: 13px;
+      max-width: 780px;
+    }
+
+    .featured p {
+      color: #667085;
+      font-size: 15px;
+      max-width: 760px;
+      margin-bottom: 20px;
+    }
+
+    .article-meta {
+      font-size: 12px;
+      color: #8a94a3;
+    }
+
+    .read-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #2563eb;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .read-link:hover {
+      text-decoration: underline;
+    }
+
+    /* SECTION TITLE */
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      font-size: 24px;
+    }
+
+    .section-heading span {
+      font-size: 13px;
+      color: #8a94a3;
+    }
+
+    /* ARTICLE GRID */
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
     .article-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
       border: 1px solid #e6eaf0;
       border-radius: 14px;
-      padding: 30px;
-      margin-bottom: 24px;
+      padding: 28px;
+      min-height: 205px;
       transition: 0.25s ease;
+      background: #ffffff;
     }
 
     .article-card:hover {
@@ -114,23 +233,31 @@
     }
 
     .article-tag {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       color: #2563eb;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
+      letter-spacing: 1.2px;
+      margin-bottom: 11px;
     }
 
-    .article-card h2 {
-      font-size: 24px;
+    .article-card h3 {
+      font-size: 20px;
+      line-height: 1.35;
       margin-bottom: 10px;
     }
 
     .article-card p {
       color: #667085;
-      font-size: 15px;
-      max-width: 800px;
+      font-size: 14px;
+      margin-bottom: 15px;
     }
+
+    .card-meta {
+      font-size: 12px;
+      color: #8a94a3;
+    }
+
+    /* FOOTER */
 
     footer {
       text-align: center;
@@ -138,13 +265,17 @@
       border-top: 1px solid #e5e7eb;
       color: #8a94a3;
       font-size: 13px;
+      margin-top: 25px;
     }
 
     footer strong {
       color: #4b5563;
     }
 
+    /* MOBILE */
+
     @media (max-width: 700px) {
+
       header {
         flex-direction: column;
         gap: 15px;
@@ -168,6 +299,24 @@
 
       .articles {
         padding: 55px 7%;
+      }
+
+      .featured {
+        padding: 27px;
+      }
+
+      .featured h2 {
+        font-size: 25px;
+      }
+
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
       }
     }
   </style>
@@ -193,17 +342,19 @@
   </header>
 
 
+  <!-- PAGE HEADER -->
+
   <section class="page-header">
 
     <div class="page-label">
       MEDICAL IMAGING • LEARNING
     </div>
 
-    <h1>Articles</h1>
+    <h1>Medical Imaging, Made Easier</h1>
 
     <p>
-      Simple and practical explanations of medical imaging concepts,
-      technology, and the ideas shaping modern healthcare.
+      Clear and practical explanations of medical imaging concepts,
+      techniques, and technology — without unnecessary complexity.
     </p>
 
   </section>
@@ -211,18 +362,410 @@
 
   <main class="articles">
 
-  <div class="article-card">
 
-    <h2>Articles coming soon</h2>
+    <!-- CATEGORY FILTERS -->
 
-    <p>
-      Educational articles on Medical Imaging, AI, and emerging
-      healthcare technology will be added here.
-    </p>
+    <div class="categories">
 
-  </div>
+      <span class="category active">All</span>
+      <span class="category">X-ray</span>
+      <span class="category">CT</span>
+      <span class="category">MRI</span>
+      <span class="category">Ultrasound</span>
+      <span class="category">Nuclear Medicine</span>
+      <span class="category">Mammography</span>
+      <span class="category">Fluoroscopy</span>
+      <span class="category">Imaging Technology</span>
 
-</main>
+    </div>
+
+
+    <!-- FEATURED ARTICLE -->
+
+    <section class="featured">
+
+      <div class="featured-label">
+        FEATURED ARTICLE · X-RAY
+      </div>
+
+      <h2>
+        Why Do Bones Look White While Lungs Look Dark on an X-ray?
+      </h2>
+
+      <p>
+        Ever wondered why the same X-ray can show some structures as
+        bright white while others appear almost black? Let’s understand
+        the simple science behind X-ray image formation.
+      </p>
+
+      <div class="article-meta">
+        5 min read
+      </div>
+
+      <a href="articles/why-bones-look-white.html" class="read-link">
+        Read Article →
+      </a>
+
+    </section>
+
+
+    <!-- MORE ARTICLES -->
+
+    <div class="section-heading">
+      <h2>More Articles</h2>
+      <span>Explore medical imaging concepts</span>
+    </div>
+
+
+    <div class="article-grid">
+
+
+      <a href="articles/how-x-rays-are-produced.html" class="article-card">
+
+        <div class="article-tag">X-RAY</div>
+
+        <h3>How Are X-rays Produced?</h3>
+
+        <p>
+          A simple look at how an X-ray tube produces the radiation
+          used to create medical images.
+        </p>
+
+        <div class="card-meta">
+          5 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/kvp-vs-mas.html" class="article-card">
+
+        <div class="article-tag">X-RAY</div>
+
+        <h3>kVp vs mAs — What’s the Difference?</h3>
+
+        <p>
+          Understand what kVp and mAs actually control and how they
+          affect an X-ray image.
+        </p>
+
+        <div class="card-meta">
+          5 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/radiation-attenuation.html" class="article-card">
+
+        <div class="article-tag">X-RAY</div>
+
+        <h3>What Is Radiation Attenuation?</h3>
+
+        <p>
+          Learn why X-rays lose intensity as they pass through the
+          human body and why this matters in imaging.
+        </p>
+
+        <div class="card-meta">
+          4 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/how-ct-works.html" class="article-card">
+
+        <div class="article-tag">CT</div>
+
+        <h3>How Does CT Create Cross-Sectional Images?</h3>
+
+        <p>
+          Discover how rotating X-ray beams and computer processing
+          create detailed cross-sectional images.
+        </p>
+
+        <div class="card-meta">
+          6 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/hounsfield-units.html" class="article-card">
+
+        <div class="article-tag">CT</div>
+
+        <h3>What Are Hounsfield Units (HU)?</h3>
+
+        <p>
+          A simple explanation of CT numbers and what they tell us
+          about different tissues.
+        </p>
+
+        <div class="card-meta">
+          5 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/ct-contrast.html" class="article-card">
+
+        <div class="article-tag">CT</div>
+
+        <h3>Why Is Contrast Used in CT?</h3>
+
+        <p>
+          Understand why contrast helps certain structures and
+          abnormalities become easier to see.
+        </p>
+
+        <div class="card-meta">
+          5 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/how-mri-works.html" class="article-card">
+
+        <div class="article-tag">MRI</div>
+
+        <h3>How Does MRI Create an Image?</h3>
+
+        <p>
+          An easy introduction to how MRI uses magnetic fields and
+          radiofrequency signals to create images.
+        </p>
+
+        <div class="card-meta">
+          6 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/mri-noise.html" class="article-card">
+
+        <div class="article-tag">MRI</div>
+
+        <h3>Why Does an MRI Machine Make So Much Noise?</h3>
+
+        <p>
+          What causes the loud knocking and buzzing sounds during
+          an MRI examination?
+        </p>
+
+        <div class="card-meta">
+          4 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/t1-vs-t2.html" class="article-card">
+
+        <div class="article-tag">MRI</div>
+
+        <h3>T1 vs T2 MRI — What’s the Difference?</h3>
+
+        <p>
+          Learn the basic difference between T1- and T2-weighted
+          images with simple examples.
+        </p>
+
+        <div class="card-meta">
+          5 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/how-ultrasound-works.html" class="article-card">
+
+        <div class="article-tag">ULTRASOUND</div>
+
+        <h3>How Does Ultrasound Create an Image?</h3>
+
+        <p>
+          See how sound waves travel through the body and return
+          information that becomes an ultrasound image.
+        </p>
+
+        <div class="card-meta">
+          5 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/fluid-black-ultrasound.html" class="article-card">
+
+        <div class="article-tag">ULTRASOUND</div>
+
+        <h3>Why Does Fluid Look Black on Ultrasound?</h3>
+
+        <p>
+          Understand why simple fluid often appears completely
+          dark on an ultrasound image.
+        </p>
+
+        <div class="card-meta">
+          4 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/acoustic-shadowing.html" class="article-card">
+
+        <div class="article-tag">ULTRASOUND</div>
+
+        <h3>Acoustic Shadowing vs Posterior Enhancement</h3>
+
+        <p>
+          Two common ultrasound appearances explained with simple
+          and practical examples.
+        </p>
+
+        <div class="card-meta">
+          5 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/doppler-ultrasound.html" class="article-card">
+
+        <div class="article-tag">ULTRASOUND</div>
+
+        <h3>What Is Doppler Ultrasound and How Does It Work?</h3>
+
+        <p>
+          Learn how Doppler helps us assess blood flow and movement
+          inside the body.
+        </p>
+
+        <div class="card-meta">
+          5 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/nuclear-medicine.html" class="article-card">
+
+        <div class="article-tag">NUCLEAR MEDICINE</div>
+
+        <h3>What Is Nuclear Medicine?</h3>
+
+        <p>
+          An introduction to how radioactive tracers help us study
+          function as well as structure.
+        </p>
+
+        <div class="card-meta">
+          5 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/mammography-vs-xray.html" class="article-card">
+
+        <div class="article-tag">MAMMOGRAPHY</div>
+
+        <h3>Why Is Mammography Different from a Regular X-ray?</h3>
+
+        <p>
+          Explore why mammography uses specialized equipment and
+          techniques for breast imaging.
+        </p>
+
+        <div class="card-meta">
+          5 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/fluoroscopy.html" class="article-card">
+
+        <div class="article-tag">FLUOROSCOPY</div>
+
+        <h3>How Does Fluoroscopy Show Movement in Real Time?</h3>
+
+        <p>
+          Understand how continuous X-ray imaging allows us to
+          observe movement inside the body.
+        </p>
+
+        <div class="card-meta">
+          5 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/dicom.html" class="article-card">
+
+        <div class="article-tag">IMAGING TECHNOLOGY</div>
+
+        <h3>What Is DICOM?</h3>
+
+        <p>
+          Learn about the standard that allows medical images and
+          related information to be stored and shared.
+        </p>
+
+        <div class="card-meta">
+          5 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/pacs.html" class="article-card">
+
+        <div class="article-tag">IMAGING TECHNOLOGY</div>
+
+        <h3>What Is PACS?</h3>
+
+        <p>
+          Understand how hospitals store, organize, access, and
+          manage medical images digitally.
+        </p>
+
+        <div class="card-meta">
+          5 min read
+        </div>
+
+      </a>
+
+
+      <a href="articles/dicom-vs-pacs.html" class="article-card">
+
+        <div class="article-tag">IMAGING TECHNOLOGY</div>
+
+        <h3>DICOM vs PACS — What’s the Difference?</h3>
+
+        <p>
+          DICOM and PACS are often mentioned together. Here’s the
+          simple difference between them.
+        </p>
+
+        <div class="card-meta">
+          4 min read
+        </div>
+
+      </a>
+
+
+    </div>
+
+  </main>
+
 
   <footer>
     © 2026 Med Imaging Hub · Created & curated by <strong>Zara Ashraf</strong>
