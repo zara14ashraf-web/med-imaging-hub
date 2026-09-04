@@ -905,128 +905,130 @@
 
   <script>
 
-    const categories = document.querySelectorAll(".category");
-    const articleCards = document.querySelectorAll(".article-card");
-    const featuredArticle = document.querySelector(".featured");
-    const searchInput = document.getElementById("articleSearch");
-    const noResults = document.getElementById("noResults");
+    <script>
 
-    let selectedCategory = "all";
-    let searchTerm = "";
+  const categories = document.querySelectorAll(".category");
+  const articleCards = document.querySelectorAll(".article-card");
+  const featuredArticle = document.querySelector(".featured");
+  const searchInput = document.getElementById("articleSearch");
+  const noResults = document.getElementById("noResults");
+
+  let selectedCategory = "all";
+  let searchTerm = "";
 
 
-    function getSearchText(element) {
+  function getSearchText(element) {
 
-      const title = element.querySelector("h2, h3");
-      const description = element.querySelector("p");
+    return element.textContent.toLowerCase();
 
-      return `
-        ${title ? title.textContent : ""}
-        ${description ? description.textContent : ""}
-      `.toLowerCase();
+  }
+
+
+  function filterArticles() {
+
+    let visibleCount = 0;
+
+
+    /* Featured article */
+
+    const featuredCategoryMatch =
+      selectedCategory === "all" ||
+      featuredArticle.dataset.category === selectedCategory;
+
+    const featuredSearchMatch =
+      searchTerm === "" ||
+      getSearchText(featuredArticle).includes(searchTerm);
+
+    if (featuredCategoryMatch && featuredSearchMatch) {
+
+      featuredArticle.classList.remove("hidden");
+      visibleCount++;
+
+    } else {
+
+      featuredArticle.classList.add("hidden");
 
     }
 
 
-    function filterArticles() {
+    /* Article cards */
 
-      let visibleCount = 0;
+    articleCards.forEach(card => {
 
-      const matches = (element) => {
+      const categoryMatch =
+        selectedCategory === "all" ||
+        card.dataset.category === selectedCategory;
 
-        const categoryMatch =
-          selectedCategory === "all" ||
-          element.dataset.category === selectedCategory;
+      const searchMatch =
+        searchTerm === "" ||
+        getSearchText(card).includes(searchTerm);
 
-        const text = getSearchText(element);
+      if (categoryMatch && searchMatch) {
 
-        const searchMatch =
-          searchTerm === "" ||
-          text.includes(searchTerm);
-
-        return categoryMatch && searchMatch;
-
-      };
-
-
-      /* Featured article */
-
-      if (matches(featuredArticle)) {
-
-        featuredArticle.classList.remove("hidden");
+        card.classList.remove("hidden");
         visibleCount++;
 
       } else {
 
-        featuredArticle.classList.add("hidden");
+        card.classList.add("hidden");
 
       }
-
-
-      /* Article cards */
-
-      articleCards.forEach(card => {
-
-        if (matches(card)) {
-
-          card.classList.remove("hidden");
-          visibleCount++;
-
-        } else {
-
-          card.classList.add("hidden");
-
-        }
-
-      });
-
-
-      /* No results */
-
-      if (visibleCount === 0) {
-
-        noResults.classList.remove("hidden");
-
-      } else {
-
-        noResults.classList.add("hidden");
-
-      }
-
-    }
-
-
-    /* CATEGORY FILTER */
-
-    categories.forEach(category => {
-
-      category.addEventListener("click", () => {
-
-        selectedCategory = category.dataset.category;
-
-        categories.forEach(item => {
-          item.classList.remove("active");
-        });
-
-        category.classList.add("active");
-
-        filterArticles();
-
-      });
 
     });
 
 
-    /* SEARCH */
+    /* No results */
 
-    searchInput.addEventListener("input", () => {
+    if (visibleCount === 0) {
 
-      searchTerm = searchInput.value.toLowerCase().trim();
+      noResults.classList.remove("hidden");
+
+    } else {
+
+      noResults.classList.add("hidden");
+
+    }
+
+  }
+
+
+  /* CATEGORY FILTER */
+
+  categories.forEach(category => {
+
+    category.addEventListener("click", () => {
+
+      selectedCategory = category.dataset.category;
+
+      categories.forEach(item => {
+        item.classList.remove("active");
+      });
+
+      category.classList.add("active");
 
       filterArticles();
 
     });
 
+  });
+
+
+  /* SEARCH */
+
+  searchInput.addEventListener("input", () => {
+
+    searchTerm = searchInput.value.toLowerCase().trim();
+
+    filterArticles();
+
+  });
+
+
+  /* INITIAL FILTER */
+
+  filterArticles();
+
+</script>
   </script>
 
 </body>
