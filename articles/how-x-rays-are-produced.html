@@ -1,1 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>How Are X-rays Produced? | Med Imaging Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #17202a;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b5563;
+      margin-left: 27px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .article-header {
+      text-align: center;
+      padding: 85px 8% 65px;
+      background:
+        radial-gradient(
+          circle at 50% 10%,
+          rgba(37, 99, 235, 0.10),
+          transparent 48%
+        ),
+        #f8fafc;
+    }
+
+    .article-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1.8px;
+      margin-bottom: 18px;
+      padding: 7px 13px;
+      border: 1px solid #dbeafe;
+      border-radius: 30px;
+      background: #ffffff;
+    }
+
+    .article-header h1 {
+      max-width: 850px;
+      margin: auto;
+      font-size: 48px;
+      line-height: 1.15;
+      letter-spacing: -1.7px;
+      margin-bottom: 18px;
+    }
+
+    .article-intro {
+      max-width: 700px;
+      margin: auto;
+      color: #667085;
+      font-size: 17px;
+    }
+
+    .article-meta {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #8a94a3;
+    }
+
+    .article-content {
+      max-width: 760px;
+      margin: auto;
+      padding: 70px 25px 90px;
+    }
+
+    .article-content h2 {
+      font-size: 28px;
+      line-height: 1.3;
+      margin: 45px 0 15px;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content p {
+      color: #4b5563;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .article-content ul {
+      margin: 15px 0 25px 22px;
+      color: #4b5563;
+    }
+
+    .article-content li {
+      margin-bottom: 8px;
+    }
+
+    .simple-box {
+      margin: 30px 0;
+      padding: 24px 26px;
+      border-left: 4px solid #2563eb;
+      background: #f8fafc;
+      border-radius: 8px;
+    }
+
+    .simple-box strong {
+      color: #17202a;
+    }
+
+    .takeaway {
+      margin-top: 50px;
+      padding: 28px;
+      border: 1px solid #dbeafe;
+      border-radius: 14px;
+      background: #eff6ff;
+    }
+
+    .takeaway h2 {
+      margin: 0 0 12px;
+      font-size: 23px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 45px;
+      color: #2563eb;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 1px solid #e5e7eb;
+      color: #8a94a3;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #4b5563;
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .article-header {
+        padding: 65px 7% 50px;
+      }
+
+      .article-header h1 {
+        font-size: 35px;
+      }
+
+      .article-content {
+        padding: 55px 7% 70px;
+      }
+
+      .article-content h2 {
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <div class="logo">
+      Med Imaging <span>Hub</span>
+    </div>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../articles.html">Articles</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <section class="article-header">
+
+    <div class="article-tag">
+      X-RAY
+    </div>
+
+    <h1>How Are X-rays Produced?</h1>
+
+    <p class="article-intro">
+      Ever wondered what actually happens inside an X-ray tube
+      before an image appears on the screen?
+    </p>
+
+    <div class="article-meta">
+      5 min read · Medical Imaging
+    </div>
+
+  </section>
+
+
+  <main class="article-content">
+
+    <h2>First, What Exactly Is an X-ray?</h2>
+
+    <p>
+      An X-ray is a form of electromagnetic radiation. It has enough
+      energy to pass through the human body, which is why it can be
+      used to create medical images.
+    </p>
+
+    <p>
+      But the X-rays used in medical imaging do not simply come from
+      nowhere. They are produced inside a special device called an
+      <strong>X-ray tube</strong>.
+    </p>
+
+
+    <h2>So, How Does the X-ray Tube Produce Them?</h2>
+
+    <p>
+      The process mainly involves two important parts of the X-ray tube:
+      the <strong>cathode</strong> and the <strong>anode</strong>.
+    </p>
+
+    <ul>
+      <li>
+        The <strong>cathode</strong> contains a filament that releases electrons.
+      </li>
+      <li>
+        A high voltage accelerates these electrons toward the anode.
+      </li>
+      <li>
+        The electrons hit a target material, usually tungsten.
+      </li>
+      <li>
+        Their sudden interaction with the target produces X-rays.
+      </li>
+    </ul>
+
+
+    <div class="simple-box">
+
+      <strong>Think of it like this:</strong>
+
+      <p>
+        Imagine throwing a fast-moving ball at a hard wall. When the
+        ball suddenly stops or changes direction, energy is released.
+        In an X-ray tube, fast-moving electrons hit the target and
+        their energy is converted into X-ray photons.
+      </p>
+
+    </div>
+
+
+    <h2>What Happens to the Electrons?</h2>
+
+    <p>
+      When electrons strike the tungsten target, most of their energy
+      is converted into <strong>heat</strong>. Only a small portion is
+      converted into X-rays.
+    </p>
+
+    <p>
+      This is one reason why the X-ray tube needs to be designed to
+      handle a large amount of heat.
+    </p>
+
+
+    <h2>Where Do the X-rays Go?</h2>
+
+    <p>
+      The X-rays produced at the target leave the tube through a small
+      opening. They then travel toward the patient.
+    </p>
+
+    <p>
+      As the X-ray beam passes through the body, different tissues
+      absorb different amounts of radiation. The remaining X-rays
+      reach the detector and are used to create the image.
+    </p>
+
+
+    <div class="takeaway">
+
+      <h2>Key Takeaway</h2>
+
+      <p>
+        X-rays are produced inside an X-ray tube when high-speed
+        electrons from the cathode strike a target at the anode.
+        Their interaction produces X-ray photons, which then pass
+        through the patient and help create the final image.
+      </p>
+
+    </div>
+
+
+    <a href="../articles.html" class="back-link">
+      ← Back to Articles
+    </a>
+
+  </main>
+
+
+  <footer>
+    © 2026 Med Imaging Hub · Created & curated by <strong>Zara Ashraf</strong>
+  </footer>
+
+</body>
+</html>
