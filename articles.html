@@ -257,6 +257,12 @@
       color: #8a94a3;
     }
 
+    /* HIDDEN ARTICLES */
+
+    .hidden {
+      display: none !important;
+    }
+
     /* FOOTER */
 
     footer {
@@ -367,22 +373,22 @@
 
     <div class="categories">
 
-     <span class="category active" data-category="all">All</span>
-     <span class="category" data-category="xray">X-ray</span>
-     <span class="category" data-category="ct">CT</span>
-     <span class="category" data-category="mri">MRI</span>
-     <span class="category" data-category="ultrasound">Ultrasound</span>
-     <span class="category" data-category="nuclear-medicine">Nuclear Medicine</span>
-     <span class="category" data-category="mammography">Mammography</span>
-     <span class="category" data-category="fluoroscopy">Fluoroscopy</span>
-     <span class="category" data-category="imaging-technology">Imaging Technology</span>
+      <span class="category active" data-category="all">All</span>
+      <span class="category" data-category="xray">X-ray</span>
+      <span class="category" data-category="ct">CT</span>
+      <span class="category" data-category="mri">MRI</span>
+      <span class="category" data-category="ultrasound">Ultrasound</span>
+      <span class="category" data-category="nuclear-medicine">Nuclear Medicine</span>
+      <span class="category" data-category="mammography">Mammography</span>
+      <span class="category" data-category="fluoroscopy">Fluoroscopy</span>
+      <span class="category" data-category="imaging-technology">Imaging Technology</span>
 
     </div>
 
 
     <!-- FEATURED ARTICLE -->
 
-    <section class="featured">
+    <section class="featured" data-category="xray">
 
       <div class="featured-label">
         FEATURED ARTICLE · X-RAY
@@ -420,7 +426,9 @@
     <div class="article-grid">
 
 
-      <a href="articles/how-x-rays-are-produced.html" class="article-card">
+      <a href="articles/how-x-rays-are-produced.html"
+         class="article-card"
+         data-category="xray">
 
         <div class="article-tag">X-RAY</div>
 
@@ -438,7 +446,9 @@
       </a>
 
 
-      <a href="articles/kvp-vs-mas.html" class="article-card">
+      <a href="articles/kvp-vs-mas.html"
+         class="article-card"
+         data-category="xray">
 
         <div class="article-tag">X-RAY</div>
 
@@ -456,7 +466,9 @@
       </a>
 
 
-      <a href="articles/radiation-attenuation.html" class="article-card">
+      <a href="articles/radiation-attenuation.html"
+         class="article-card"
+         data-category="xray">
 
         <div class="article-tag">X-RAY</div>
 
@@ -474,7 +486,9 @@
       </a>
 
 
-      <a href="articles/how-ct-works.html" class="article-card">
+      <a href="articles/how-ct-works.html"
+         class="article-card"
+         data-category="ct">
 
         <div class="article-tag">CT</div>
 
@@ -492,7 +506,9 @@
       </a>
 
 
-      <a href="articles/hounsfield-units.html" class="article-card">
+      <a href="articles/hounsfield-units.html"
+         class="article-card"
+         data-category="ct">
 
         <div class="article-tag">CT</div>
 
@@ -510,7 +526,9 @@
       </a>
 
 
-      <a href="articles/ct-contrast.html" class="article-card">
+      <a href="articles/ct-contrast.html"
+         class="article-card"
+         data-category="ct">
 
         <div class="article-tag">CT</div>
 
@@ -528,7 +546,9 @@
       </a>
 
 
-      <a href="articles/how-mri-works.html" class="article-card">
+      <a href="articles/how-mri-works.html"
+         class="article-card"
+         data-category="mri">
 
         <div class="article-tag">MRI</div>
 
@@ -546,7 +566,9 @@
       </a>
 
 
-      <a href="articles/mri-noise.html" class="article-card">
+      <a href="articles/mri-noise.html"
+         class="article-card"
+         data-category="mri">
 
         <div class="article-tag">MRI</div>
 
@@ -564,7 +586,9 @@
       </a>
 
 
-      <a href="articles/t1-vs-t2.html" class="article-card">
+      <a href="articles/t1-vs-t2.html"
+         class="article-card"
+         data-category="mri">
 
         <div class="article-tag">MRI</div>
 
@@ -582,7 +606,9 @@
       </a>
 
 
-      <a href="articles/how-ultrasound-works.html" class="article-card">
+      <a href="articles/how-ultrasound-works.html"
+         class="article-card"
+         data-category="ultrasound">
 
         <div class="article-tag">ULTRASOUND</div>
 
@@ -600,7 +626,9 @@
       </a>
 
 
-      <a href="articles/fluid-black-ultrasound.html" class="article-card">
+      <a href="articles/fluid-black-ultrasound.html"
+         class="article-card"
+         data-category="ultrasound">
 
         <div class="article-tag">ULTRASOUND</div>
 
@@ -618,7 +646,9 @@
       </a>
 
 
-      <a href="articles/acoustic-shadowing.html" class="article-card">
+      <a href="articles/acoustic-shadowing.html"
+         class="article-card"
+         data-category="ultrasound">
 
         <div class="article-tag">ULTRASOUND</div>
 
@@ -636,7 +666,9 @@
       </a>
 
 
-      <a href="articles/doppler-ultrasound.html" class="article-card">
+      <a href="articles/doppler-ultrasound.html"
+         class="article-card"
+         data-category="ultrasound">
 
         <div class="article-tag">ULTRASOUND</div>
 
@@ -654,7 +686,9 @@
       </a>
 
 
-      <a href="articles/nuclear-medicine.html" class="article-card">
+      <a href="articles/nuclear-medicine.html"
+         class="article-card"
+         data-category="nuclear-medicine">
 
         <div class="article-tag">NUCLEAR MEDICINE</div>
 
@@ -672,7 +706,9 @@
       </a>
 
 
-      <a href="articles/mammography-vs-xray.html" class="article-card">
+      <a href="articles/mammography-vs-xray.html"
+         class="article-card"
+         data-category="mammography">
 
         <div class="article-tag">MAMMOGRAPHY</div>
 
@@ -690,7 +726,9 @@
       </a>
 
 
-      <a href="articles/fluoroscopy.html" class="article-card">
+      <a href="articles/fluoroscopy.html"
+         class="article-card"
+         data-category="fluoroscopy">
 
         <div class="article-tag">FLUOROSCOPY</div>
 
@@ -708,7 +746,9 @@
       </a>
 
 
-      <a href="articles/dicom.html" class="article-card">
+      <a href="articles/dicom.html"
+         class="article-card"
+         data-category="imaging-technology">
 
         <div class="article-tag">IMAGING TECHNOLOGY</div>
 
@@ -726,7 +766,9 @@
       </a>
 
 
-      <a href="articles/pacs.html" class="article-card">
+      <a href="articles/pacs.html"
+         class="article-card"
+         data-category="imaging-technology">
 
         <div class="article-tag">IMAGING TECHNOLOGY</div>
 
@@ -744,7 +786,9 @@
       </a>
 
 
-      <a href="articles/dicom-vs-pacs.html" class="article-card">
+      <a href="articles/dicom-vs-pacs.html"
+         class="article-card"
+         data-category="imaging-technology">
 
         <div class="article-tag">IMAGING TECHNOLOGY</div>
 
@@ -770,6 +814,63 @@
   <footer>
     © 2026 Med Imaging Hub · Created & curated by <strong>Zara Ashraf</strong>
   </footer>
+
+
+  <!-- CATEGORY FILTER SCRIPT -->
+
+  <script>
+
+    const categories = document.querySelectorAll(".category");
+    const articleCards = document.querySelectorAll(".article-card");
+    const featuredArticle = document.querySelector(".featured");
+
+    categories.forEach(category => {
+
+      category.addEventListener("click", () => {
+
+        const selectedCategory = category.dataset.category;
+
+        /* Active button */
+
+        categories.forEach(item => {
+          item.classList.remove("active");
+        });
+
+        category.classList.add("active");
+
+
+        /* Featured article */
+
+        if (
+          selectedCategory === "all" ||
+          featuredArticle.dataset.category === selectedCategory
+        ) {
+          featuredArticle.classList.remove("hidden");
+        } else {
+          featuredArticle.classList.add("hidden");
+        }
+
+
+        /* Article cards */
+
+        articleCards.forEach(card => {
+
+          if (
+            selectedCategory === "all" ||
+            card.dataset.category === selectedCategory
+          ) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+
+        });
+
+      });
+
+    });
+
+  </script>
 
 </body>
 </html>
