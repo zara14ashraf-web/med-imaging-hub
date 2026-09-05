@@ -1,1 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>DICOM: The Language That Lets Medical Images “Talk” | Med Imaging Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #17202a;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        /* HEADER */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            border-bottom: 1px solid #e8edf2;
+            background: #ffffff;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 700;
+            color: #17202a;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* ARTICLE HEADER */
+
+        .article-header {
+            text-align: center;
+            padding: 75px 8% 60px;
+            background:
+                radial-gradient(circle at top,
+                #eff6ff 0%,
+                #f8fafc 45%,
+                #ffffff 80%);
+        }
+
+        .article-label {
+            display: inline-block;
+            padding: 6px 13px;
+            border: 1px solid #dbeafe;
+            border-radius: 30px;
+            color: #2563eb;
+            background: #eff6ff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .article-header h1 {
+            max-width: 900px;
+            margin: 0 auto 20px;
+            font-size: 48px;
+            line-height: 1.12;
+            letter-spacing: -1.8px;
+        }
+
+        .article-header p {
+            max-width: 720px;
+            margin: auto;
+            color: #667085;
+            font-size: 17px;
+        }
+
+        /* ARTICLE */
+
+        .article {
+            max-width: 820px;
+            margin: auto;
+            padding: 65px 25px 90px;
+        }
+
+        .article h2 {
+            margin-top: 48px;
+            margin-bottom: 18px;
+            font-size: 29px;
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+        }
+
+        .article h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .article p {
+            margin: 0 0 18px;
+            color: #374151;
+            font-size: 16px;
+        }
+
+        .article ul {
+            margin: 10px 0 25px;
+            padding-left: 24px;
+            color: #374151;
+        }
+
+        .article li {
+            margin-bottom: 8px;
+        }
+
+        .article strong {
+            color: #17202a;
+        }
+
+        /* HIGHLIGHT */
+
+        .highlight {
+            margin: 25px 0;
+            padding: 22px 25px;
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            border-radius: 10px;
+            font-size: 17px;
+        }
+
+        .highlight strong {
+            color: #2563eb;
+        }
+
+        /* REAL IMAGE */
+
+        .visual {
+            margin: 35px 0 42px;
+            text-align: center;
+        }
+
+        .visual img {
+            display: block;
+            width: 100%;
+            max-width: 780px;
+            margin: auto;
+            border: 1px solid #e8edf2;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(23, 32, 42, 0.06);
+        }
+
+        .caption {
+            margin-top: 11px;
+            color: #667085;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* TAGS VISUAL */
+
+        .tags-visual {
+            margin: 35px 0 45px;
+            padding: 28px;
+            background: #f8fafc;
+            border: 1px solid #e8edf2;
+            border-radius: 16px;
+        }
+
+        .visual-heading {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .dicom-file {
+            background: #ffffff;
+            border: 1px solid #e8edf2;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .dicom-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 18px;
+            border-bottom: 1px solid #edf0f3;
+            gap: 20px;
+        }
+
+        .dicom-row:last-child {
+            border-bottom: none;
+        }
+
+        .tag {
+            font-family: monospace;
+            font-size: 13px;
+            color: #2563eb;
+            background: #eff6ff;
+            padding: 5px 9px;
+            border-radius: 6px;
+        }
+
+        .tag-info {
+            font-size: 14px;
+            color: #4b5563;
+            text-align: right;
+        }
+
+        /* WORKFLOW */
+
+        .workflow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 9px;
+            margin: 35px 0 45px;
+            flex-wrap: wrap;
+        }
+
+        .workflow-box {
+            width: 135px;
+            min-height: 105px;
+            padding: 17px 10px;
+            background: #f8fafc;
+            border: 1px solid #e8edf2;
+            border-radius: 13px;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .workflow-number {
+            width: 28px;
+            height: 28px;
+            margin: 0 auto 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: #eff6ff;
+            color: #2563eb;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .workflow-box strong {
+            font-size: 13px;
+        }
+
+        .workflow-box small {
+            color: #667085;
+            font-size: 11px;
+        }
+
+        .arrow {
+            color: #98a2b3;
+            font-size: 21px;
+        }
+
+        /* TABLES */
+
+        .article-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0 35px;
+            font-size: 14px;
+        }
+
+        .article-table th,
+        .article-table td {
+            padding: 14px 15px;
+            border: 1px solid #e8edf2;
+            text-align: left;
+        }
+
+        .article-table th {
+            background: #f8fafc;
+            font-weight: 700;
+            color: #17202a;
+        }
+
+        .article-table td {
+            color: #4b5563;
+        }
+
+        /* TAKEAWAY */
+
+        .takeaway {
+            margin-top: 50px;
+            padding: 28px;
+            background: #f8fafc;
+            border: 1px solid #e8edf2;
+            border-radius: 15px;
+        }
+
+        .takeaway h3 {
+            margin-top: 0;
+            color: #2563eb;
+        }
+
+        .takeaway p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 8%;
+            border-top: 1px solid #e8edf2;
+            text-align: center;
+            color: #667085;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .article-header {
+                padding: 55px 7% 45px;
+            }
+
+            .article-header h1 {
+                font-size: 36px;
+            }
+
+            .article-header p {
+                font-size: 15px;
+            }
+
+            .article {
+                padding: 45px 20px 70px;
+            }
+
+            .article h2 {
+                font-size: 25px;
+            }
+
+            .dicom-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .tag-info {
+                text-align: left;
+            }
+
+            .workflow {
+                flex-direction: column;
+            }
+
+            .workflow-box {
+                width: 200px;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+
+            .article-table {
+                font-size: 13px;
+            }
+
+            .article-table th,
+            .article-table td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="../index.html" class="logo">
+        Med Imaging <span>Hub</span>
+    </a>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../insights.html">Insights</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../resources.html">Resources</a>
+        <a href="../about.html">About</a>
+    </nav>
+
+</header>
+
+
+<section class="article-header">
+
+    <div class="article-label">Medical Imaging Technology</div>
+
+    <h1>
+        DICOM: The Language That Lets Medical Images “Talk”
+    </h1>
+
+    <p>
+        How medical imaging systems store, share, and understand imaging
+        information using a common standard.
+    </p>
+
+</section>
+
+
+<main class="article">
+
+
+    <p>
+        <strong>Imagine this:</strong>
+    </p>
+
+    <p>
+        A patient gets an MRI in one hospital, then moves to another
+        city for treatment. The new hospital's system opens the scan instantly.
+        The images are there, along with the information needed to understand
+        and manage the study.
+    </p>
+
+    <p>
+        How can different imaging systems make this possible?
+    </p>
+
+    <p>
+        That's because of <strong>DICOM.</strong>
+    </p>
+
+
+    <h2>What Is DICOM?</h2>
+
+    <p>
+        <strong>DICOM</strong> stands for
+        <strong>Digital Imaging and Communications in Medicine.</strong>
+    </p>
+
+    <p>
+        DICOM is a standard that enables medical imaging systems to
+        store, communicate, exchange, and manage imaging information
+        consistently.
+    </p>
+
+    <p>
+        In simple words, DICOM gives medical imaging systems a
+        <strong>common language.</strong>
+    </p>
+
+    <p>
+        A CT scan from a Siemens machine. An X-ray from a GE machine.
+        An ultrasound from a Philips. Different brands, different software,
+        different hospitals, but all of them can "talk" to each other because
+        they follow the same DICOM standard.
+    </p>
+
+
+    <h2>Why Do We Need DICOM?</h2>
+
+    <p>
+        A medical image is not just about what appears on the screen.
+    </p>
+
+    <p>
+        When a radiologist reviews an imaging study, there is important
+        information associated with it:
+    </p>
+
+    <ul>
+        <li>Who is the patient?</li>
+        <li>What examination was performed?</li>
+        <li>Which body region was examined?</li>
+        <li>When was the study performed?</li>
+        <li>Which modality produced the image?</li>
+        <li>What technical information is associated with the image?</li>
+    </ul>
+
+    <p>
+        DICOM provides a standardized structure for associating this
+        information with the imaging data.
+    </p>
+
+    <div class="highlight">
+        <strong>Medical image + structured information + standardized communication</strong>
+    </div>
+
+    <p>
+        This makes imaging information easier for compatible systems to
+        identify, organize, exchange, and process.
+    </p>
+
+
+    <h2>What Is Inside a DICOM File?</h2>
+
+    <p>
+        A DICOM file can contain two main things:
+    </p>
+
+    <p>
+        <strong>1. Pixel Data (The Image):</strong>
+    </p>
+
+    <p>
+        The actual visual medical image, such as an X-ray, CT scan, or
+        MRI slice, saved in digital pixel form.
+    </p>
+
+    <p>
+        <strong>2. Header (Metadata):</strong>
+    </p>
+
+    <p>
+        Information text about the patient (name, ID, birth date), the
+        hospital, the date of the scan, and the machine settings (like X-ray
+        power or MRI magnetic strength).
+    </p>
+
+    <p>
+        This additional information is often called <strong>metadata.</strong>
+    </p>
+
+
+    <!-- REAL IMAGE -->
+
+    <div class="visual">
+
+        <img
+            src="../images/dicom-viewer.jpg"
+            alt="Real anonymized DICOM viewer showing a medical image and associated information"
+        >
+
+        <p class="caption">
+            A real DICOM viewer showing a medical image together with
+            information associated with the study.
+        </p>
+
+    </div>
+
+
+    <h2>What Are DICOM Tags?</h2>
+
+    <p>
+        DICOM organizes information into small fields called
+        <strong>tags.</strong>
+    </p>
+
+    <p>
+        For example:
+    </p>
+
+
+    <table class="article-table">
+
+        <tr>
+            <th>DICOM Tag</th>
+            <th>Example Information</th>
+        </tr>
+
+        <tr>
+            <td>(0010,0010)</td>
+            <td>Patient Name</td>
+        </tr>
+
+        <tr>
+            <td>(0010,0020)</td>
+            <td>Patient ID</td>
+        </tr>
+
+        <tr>
+            <td>(0008,0060)</td>
+            <td>Modality</td>
+        </tr>
+
+    </table>
+
+
+    <p>
+        You do not need to memorize these numbers to understand the idea.
+    </p>
+
+    <p>
+        Think of DICOM tags like <strong>labels on different boxes.</strong>
+        One label identifies the patient, another identifies the examination,
+        and another identifies the imaging modality.
+    </p>
+
+
+    <!-- TAG VISUAL -->
+
+    <div class="tags-visual">
+
+        <div class="visual-heading">
+            Inside a DICOM File
+        </div>
+
+        <div class="dicom-file">
+
+            <div class="dicom-row">
+                <span class="tag">(0010,0010)</span>
+                <span class="tag-info">Patient Name</span>
+            </div>
+
+            <div class="dicom-row">
+                <span class="tag">(0010,0020)</span>
+                <span class="tag-info">Patient ID</span>
+            </div>
+
+            <div class="dicom-row">
+                <span class="tag">(0008,0060)</span>
+                <span class="tag-info">Modality</span>
+            </div>
+
+            <div class="dicom-row">
+                <span class="tag">Image Data</span>
+                <span class="tag-info">CT / MRI / X-ray Image</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <h2>How Does DICOM Work in Real Life?</h2>
+
+    <p>
+        A simplified imaging workflow looks like this:
+    </p>
+
+
+    <!-- WORKFLOW VISUAL -->
+
+    <div class="workflow">
+
+        <div class="workflow-box">
+            <span class="workflow-number">01</span>
+            <strong>Scanner</strong>
+            <small>CT / MRI / X-ray</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-box">
+            <span class="workflow-number">02</span>
+            <strong>DICOM Data</strong>
+            <small>Image + Information</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-box">
+            <span class="workflow-number">03</span>
+            <strong>Hospital System</strong>
+            <small>Imaging data</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-box">
+            <span class="workflow-number">04</span>
+            <strong>Viewer</strong>
+            <small>Image review</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-box">
+            <span class="workflow-number">05</span>
+            <strong>Radiologist</strong>
+            <small>Clinical review</small>
+        </div>
+
+    </div>
+
+
+    <p>
+        For example:
+    </p>
+
+    <p>
+        Imagine a trauma patient arrives in the emergency department.
+        A CT scan is taken. Within seconds, that scan needs to move from
+        the CT machine, into the hospital's PACS, and onto the radiologist's
+        screen, possibly even to a specialist in another city for a second
+        opinion.
+    </p>
+
+    <p>
+        This entire journey happens smoothly because the systems involved
+        can communicate using DICOM.
+    </p>
+
+    <p>
+        Now imagine if every manufacturer used their own private format
+        instead. Emergency care would slow down. Second opinions would be
+        harder. Sharing imaging information between hospitals would become
+        much more difficult.
+    </p>
+
+    <p>
+        A <strong>PACS</strong> can also be part of this workflow.
+        DICOM and PACS are not the same thing—this difference will be
+        explained separately.
+    </p>
+
+
+    <h2>DICOM vs JPG or PNG</h2>
+
+    <p>
+        A JPG or PNG file can show an image very well, but it is not
+        designed specifically for medical imaging workflows.
+    </p>
+
+
+    <table class="article-table">
+
+        <tr>
+            <th>JPG / PNG</th>
+            <th>DICOM</th>
+        </tr>
+
+        <tr>
+            <td>General-purpose image format</td>
+            <td>Medical imaging standard</td>
+        </tr>
+
+        <tr>
+            <td>Mainly stores the image</td>
+            <td>Can store image + associated information</td>
+        </tr>
+
+        <tr>
+            <td>Used for everyday images</td>
+            <td>Designed for medical imaging systems</td>
+        </tr>
+
+        <tr>
+            <td>Limited medical workflow information</td>
+            <td>Supports medical imaging workflows</td>
+        </tr>
+
+    </table>
+
+
+    <p>
+        For example, a screenshot of a CT image saved as JPG may show the
+        anatomy, but it does not provide the same structured medical
+        information and workflow support as the original DICOM data.
+    </p>
+
+
+    <h2>Why Is DICOM Important?</h2>
+
+    <p>
+        Imagine a hospital using scanners from several different
+        manufacturers.
+    </p>
+
+    <p>
+        Without a common standard, exchanging medical imaging information
+        between different systems could become much more difficult.
+    </p>
+
+    <p>
+        DICOM helps different medical imaging systems
+        <strong>communicate and work together.</strong>
+    </p>
+
+    <p>
+        This makes it possible to move imaging information through modern
+        healthcare environments—from acquisition and storage to viewing and
+        clinical use.
+    </p>
+
+
+    <h2>The Big Picture</h2>
+
+    <p>
+        DICOM is more than a file extension.
+    </p>
+
+    <p>
+        It is a <strong>common standard for medical imaging information</strong>
+        that helps images and their associated information move between
+        compatible systems.
+    </p>
+
+    <p>
+        So, when a medical image needs to travel from one system to another,
+        DICOM helps make sure that the receiving system can understand what
+        it is receiving.
+    </p>
+
+
+    <div class="takeaway">
+
+        <h3>Key Takeaway</h3>
+
+        <p>
+            <strong>DICOM gives medical imaging systems a common language.</strong>
+        </p>
+
+        <p>
+            It helps keep medical images connected with important examination
+            information and allows different compatible systems to exchange
+            and understand that information.
+        </p>
+
+        <p>
+            In simple terms:
+        </p>
+
+        <p>
+            <strong>DICOM helps medical images “talk” to different systems.</strong>
+        </p>
+
+    </div>
+
+</main>
+
+
+<footer>
+    © 2026 Med Imaging Hub · Complex medical imaging concepts, explained simply.
+</footer>
+
+
+</body>
+</html>
