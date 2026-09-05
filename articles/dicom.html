@@ -152,30 +152,6 @@
             color: #2563eb;
         }
 
-        /* REAL IMAGE */
-
-        .visual {
-            margin: 35px 0 42px;
-            text-align: center;
-        }
-
-        .visual img {
-            display: block;
-            width: 100%;
-            max-width: 780px;
-            margin: auto;
-            border: 1px solid #e8edf2;
-            border-radius: 14px;
-            box-shadow: 0 8px 25px rgba(23, 32, 42, 0.06);
-        }
-
-        .caption {
-            margin-top: 11px;
-            color: #667085;
-            font-size: 13px;
-            line-height: 1.5;
-        }
-
         /* TAGS VISUAL */
 
         .tags-visual {
@@ -285,10 +261,16 @@
 
         /* TABLES */
 
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            margin: 25px 0 35px;
+        }
+
         .article-table {
             width: 100%;
+            min-width: 560px;
             border-collapse: collapse;
-            margin: 25px 0 35px;
             font-size: 14px;
         }
 
@@ -395,13 +377,8 @@
                 transform: rotate(90deg);
             }
 
-            .article-table {
-                font-size: 13px;
-            }
-
-            .article-table th,
-            .article-table td {
-                padding: 10px;
+            .tags-visual {
+                padding: 20px;
             }
         }
     </style>
@@ -445,16 +422,14 @@
 
 <main class="article">
 
-
     <p>
         <strong>Imagine this:</strong>
     </p>
 
     <p>
         A patient gets an MRI in one hospital, then moves to another
-        city for treatment. The new hospital's system opens the scan instantly.
-        The images are there, along with the information needed to understand
-        and manage the study.
+        city for treatment. The new hospital's system opens the scan,
+        along with the information needed to identify and manage the study.
     </p>
 
     <p>
@@ -487,8 +462,8 @@
     <p>
         A CT scan from a Siemens machine. An X-ray from a GE machine.
         An ultrasound from a Philips. Different brands, different software,
-        different hospitals, but all of them can "talk" to each other because
-        they follow the same DICOM standard.
+        and different hospitals can exchange imaging information when the
+        systems involved support the DICOM standard.
     </p>
 
 
@@ -514,7 +489,7 @@
 
     <p>
         DICOM provides a standardized structure for associating this
-        information with the imaging data.
+        information with imaging data.
     </p>
 
     <div class="highlight">
@@ -530,7 +505,10 @@
     <h2>What Is Inside a DICOM File?</h2>
 
     <p>
-        A DICOM file can contain two main things:
+        A DICOM object can contain the actual image data together with
+        associated information about the patient, study, series, modality,
+        and image or acquisition details. The exact information fields
+        depend on the type of DICOM object.
     </p>
 
     <p>
@@ -538,40 +516,22 @@
     </p>
 
     <p>
-        The actual visual medical image, such as an X-ray, CT scan, or
-        MRI slice, saved in digital pixel form.
+        The actual visual medical image, such as an X-ray, CT image, or
+        MRI image, represented as digital pixel data.
     </p>
 
     <p>
-        <strong>2. Header (Metadata):</strong>
+        <strong>2. Associated Information (Metadata):</strong>
     </p>
 
     <p>
-        Information text about the patient (name, ID, birth date), the
-        hospital, the date of the scan, and the machine settings (like X-ray
-        power or MRI magnetic strength).
+        Information related to the patient, examination, imaging modality,
+        date and time, and technical details of the image or acquisition.
     </p>
 
     <p>
         This additional information is often called <strong>metadata.</strong>
     </p>
-
-
-    <!-- REAL IMAGE -->
-
-    <div class="visual">
-
-        <img
-            src="../images/dicom-viewer.jpg"
-            alt="Real anonymized DICOM viewer showing a medical image and associated information"
-        >
-
-        <p class="caption">
-            A real DICOM viewer showing a medical image together with
-            information associated with the study.
-        </p>
-
-    </div>
 
 
     <h2>What Are DICOM Tags?</h2>
@@ -586,29 +546,33 @@
     </p>
 
 
-    <table class="article-table">
+    <div class="table-wrapper">
 
-        <tr>
-            <th>DICOM Tag</th>
-            <th>Example Information</th>
-        </tr>
+        <table class="article-table">
 
-        <tr>
-            <td>(0010,0010)</td>
-            <td>Patient Name</td>
-        </tr>
+            <tr>
+                <th>DICOM Tag</th>
+                <th>Example Information</th>
+            </tr>
 
-        <tr>
-            <td>(0010,0020)</td>
-            <td>Patient ID</td>
-        </tr>
+            <tr>
+                <td>(0010,0010)</td>
+                <td>Patient Name</td>
+            </tr>
 
-        <tr>
-            <td>(0008,0060)</td>
-            <td>Modality</td>
-        </tr>
+            <tr>
+                <td>(0010,0020)</td>
+                <td>Patient ID</td>
+            </tr>
 
-    </table>
+            <tr>
+                <td>(0008,0060)</td>
+                <td>Modality</td>
+            </tr>
+
+        </table>
+
+    </div>
 
 
     <p>
@@ -648,8 +612,8 @@
             </div>
 
             <div class="dicom-row">
-                <span class="tag">Image Data</span>
-                <span class="tag-info">CT / MRI / X-ray Image</span>
+                <span class="tag">Pixel Data</span>
+                <span class="tag-info">Medical Image</span>
             </div>
 
         </div>
@@ -710,27 +674,27 @@
 
 
     <p>
-        For example:
+        <strong>For example:</strong>
     </p>
 
     <p>
         Imagine a trauma patient arrives in the emergency department.
-        A CT scan is taken. Within seconds, that scan needs to move from
-        the CT machine, into the hospital's PACS, and onto the radiologist's
-        screen, possibly even to a specialist in another city for a second
-        opinion.
+        A CT scan is taken. The imaging data can then be sent from the
+        CT system to the hospital's PACS and made available on the
+        radiologist's workstation, or potentially to another authorized
+        location for consultation.
     </p>
 
     <p>
-        This entire journey happens smoothly because the systems involved
-        can communicate using DICOM.
+        This workflow can happen because the systems involved can
+        communicate using DICOM.
     </p>
 
     <p>
-        Now imagine if every manufacturer used their own private format
-        instead. Emergency care would slow down. Second opinions would be
-        harder. Sharing imaging information between hospitals would become
-        much more difficult.
+        Now imagine if every manufacturer used its own completely
+        incompatible format instead. Emergency care could become slower,
+        second opinions could be harder to arrange, and sharing imaging
+        information between hospitals would become much more difficult.
     </p>
 
     <p>
@@ -748,34 +712,38 @@
     </p>
 
 
-    <table class="article-table">
+    <div class="table-wrapper">
 
-        <tr>
-            <th>JPG / PNG</th>
-            <th>DICOM</th>
-        </tr>
+        <table class="article-table">
 
-        <tr>
-            <td>General-purpose image format</td>
-            <td>Medical imaging standard</td>
-        </tr>
+            <tr>
+                <th>JPG / PNG</th>
+                <th>DICOM</th>
+            </tr>
 
-        <tr>
-            <td>Mainly stores the image</td>
-            <td>Can store image + associated information</td>
-        </tr>
+            <tr>
+                <td>General-purpose image format</td>
+                <td>Medical imaging standard</td>
+            </tr>
 
-        <tr>
-            <td>Used for everyday images</td>
-            <td>Designed for medical imaging systems</td>
-        </tr>
+            <tr>
+                <td>Mainly stores the image</td>
+                <td>Can store image data with associated information</td>
+            </tr>
 
-        <tr>
-            <td>Limited medical workflow information</td>
-            <td>Supports medical imaging workflows</td>
-        </tr>
+            <tr>
+                <td>Used for everyday images</td>
+                <td>Designed for medical imaging systems</td>
+            </tr>
 
-    </table>
+            <tr>
+                <td>Not designed for full medical imaging workflows</td>
+                <td>Supports medical imaging workflows and communication</td>
+            </tr>
+
+        </table>
+
+    </div>
 
 
     <p>
@@ -804,8 +772,8 @@
 
     <p>
         This makes it possible to move imaging information through modern
-        healthcare environments—from acquisition and storage to viewing and
-        clinical use.
+        healthcare environments—from acquisition and storage to viewing
+        and clinical use.
     </p>
 
 
@@ -822,9 +790,9 @@
     </p>
 
     <p>
-        So, when a medical image needs to travel from one system to another,
-        DICOM helps make sure that the receiving system can understand what
-        it is receiving.
+        So, when medical imaging information needs to travel from one
+        system to another, DICOM helps make sure that compatible systems
+        can interpret the information being exchanged.
     </p>
 
 
