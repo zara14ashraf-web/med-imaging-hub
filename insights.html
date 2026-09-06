@@ -1,524 +1,967 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Insights | Med Imaging Hub</title>
+  <title>Insights | Med Imaging Hub</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #17202a;
-            background: #ffffff;
-            line-height: 1.6;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.6;
+    }
 
-        /* HEADER */
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
+      background: #ffffff;
+    }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            border-bottom: 1px solid #e8edf2;
-            background: #ffffff;
-        }
+    .logo {
+      font-size: 23px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #17202a;
+    }
 
-        .logo {
-            font-size: 23px;
-            font-weight: 700;
-            color: #17202a;
-            text-decoration: none;
-        }
+    .logo span {
+      color: #2563eb;
+    }
 
-        .logo span {
-            color: #2563eb;
-        }
+    nav {
+      display: flex;
+      gap: 28px;
+    }
 
-        nav {
-            display: flex;
-            gap: 25px;
-        }
+    nav a {
+      text-decoration: none;
+      color: #4b5563;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
 
-        nav a {
-            text-decoration: none;
-            color: #4b5563;
-            font-size: 14px;
-        }
+    nav a:hover,
+    nav a.active {
+      color: #2563eb;
+    }
 
-        nav a:hover {
-            color: #2563eb;
-        }
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 90px 8% 80px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.08), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(37, 99, 235, 0.06), transparent 30%),
+        #f8fafc;
+    }
 
-        /* PAGE HEADER */
+    .eyebrow {
+      display: inline-block;
+      color: #2563eb;
+      background: #eff6ff;
+      padding: 7px 13px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
 
-        .page-header {
-            text-align: center;
-            padding: 90px 8% 75px;
-            background:
-                radial-gradient(circle at top,
-                #eff6ff 0%,
-                #f8fafc 45%,
-                #ffffff 80%);
-        }
+    .hero h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
 
-        .page-label {
-            display: inline-block;
-            padding: 6px 13px;
-            border: 1px solid #dbeafe;
-            border-radius: 30px;
-            color: #2563eb;
-            background: #eff6ff;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-bottom: 18px;
-        }
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #64748b;
+      font-size: 17px;
+    }
 
-        .page-header h1 {
-            max-width: 800px;
-            margin: 0 auto 18px;
-            font-size: 52px;
-            line-height: 1.1;
-            letter-spacing: -2px;
-        }
+    /* SECTION */
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 80px 8%;
+    }
 
-        .page-header p {
-            max-width: 680px;
-            margin: auto;
-            color: #667085;
-            font-size: 17px;
-        }
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
 
-        /* INSIGHTS */
+    .section-heading h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      letter-spacing: -0.7px;
+    }
 
-        .insights {
-            max-width: 1150px;
-            margin: auto;
-            padding: 70px 8% 90px;
-        }
+    .section-heading p {
+      color: #64748b;
+      max-width: 600px;
+      margin: auto;
+    }
 
-        /* FEATURED */
+    /* EXPLORATION PATH */
+    .path-wrapper {
+      position: relative;
+      padding: 35px 0 20px;
+    }
 
-        .featured {
-            padding: 38px;
-            margin-bottom: 55px;
-            background: #f8fafc;
-            border: 1px solid #e8edf2;
-            border-radius: 18px;
-            transition: 0.25s ease;
-        }
+    .path-line {
+      position: absolute;
+      top: 105px;
+      left: 12%;
+      right: 12%;
+      height: 2px;
+      background: #dbe5f0;
+      z-index: 0;
+    }
 
-        .featured:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(23, 32, 42, 0.07);
-        }
+    .path {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+    }
 
-        .featured-label {
-            display: inline-block;
-            margin-bottom: 12px;
-            color: #2563eb;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+    .path-node {
+      text-align: center;
+      cursor: pointer;
+    }
 
-        .featured h2 {
-            margin: 0 0 14px;
-            font-size: 30px;
-            line-height: 1.25;
-        }
+    .node-circle {
+      width: 76px;
+      height: 76px;
+      margin: auto;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid #dbe5f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      transition: 0.25s ease;
+      box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
+    }
 
-        .featured p {
-            max-width: 760px;
-            margin: 0 0 20px;
-            color: #4b5563;
-        }
+    .path-node:hover .node-circle,
+    .path-node.selected .node-circle {
+      border-color: #2563eb;
+      color: #2563eb;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.13);
+    }
 
-        .read-more {
-            color: #2563eb;
-            font-size: 14px;
-            font-weight: 700;
-            text-decoration: none;
-        }
+    .path-node h3 {
+      margin-top: 18px;
+      font-size: 17px;
+    }
 
-        .read-more:hover {
-            text-decoration: underline;
-        }
+    .path-node span {
+      display: block;
+      margin-top: 4px;
+      color: #94a3b8;
+      font-size: 12px;
+    }
 
-        /* CATEGORY */
+    .path-detail {
+      margin: 40px auto 0;
+      max-width: 700px;
+      padding: 25px 28px;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 14px;
+      text-align: center;
+      min-height: 95px;
+      transition: 0.25s ease;
+    }
 
-        .section-title {
-            margin-bottom: 22px;
-            font-size: 24px;
-        }
+    .path-detail h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
 
-        .categories {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 35px;
-        }
+    .path-detail p {
+      color: #64748b;
+      font-size: 14px;
+    }
 
-        .category {
-            padding: 8px 14px;
-            border: 1px solid #e8edf2;
-            border-radius: 30px;
-            color: #4b5563;
-            background: #ffffff;
-            font-size: 13px;
-        }
+    /* INTEREST AREAS */
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
 
-        .category.active {
-            color: #2563eb;
-            background: #eff6ff;
-            border-color: #dbeafe;
-        }
+    .interest-card {
+      border: 1px solid #e8edf2;
+      border-radius: 16px;
+      padding: 30px;
+      background: #ffffff;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
 
-        /* CARD GRID */
+    .interest-card:hover {
+      transform: translateY(-4px);
+      border-color: #cbdaf5;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+    }
 
-        .insight-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
-        }
+    .interest-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
 
-        .insight-card {
-            min-height: 220px;
-            padding: 28px;
-            border: 1px solid #e8edf2;
-            border-radius: 14px;
-            background: #ffffff;
-            transition: 0.25s ease;
-        }
+    .interest-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      background: #eff6ff;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
 
-        .insight-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(23, 32, 42, 0.06);
-        }
+    .arrow {
+      color: #94a3b8;
+      font-size: 20px;
+      transition: 0.2s ease;
+    }
 
-        .card-label {
-            color: #2563eb;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+    .interest-card:hover .arrow {
+      color: #2563eb;
+      transform: translateX(4px);
+    }
 
-        .insight-card h3 {
-            margin: 10px 0 12px;
-            font-size: 20px;
-            line-height: 1.3;
-        }
+    .interest-card h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
 
-        .insight-card p {
-            margin: 0 0 18px;
-            color: #667085;
-            font-size: 14px;
-        }
+    .interest-card p {
+      color: #64748b;
+      font-size: 14px;
+    }
 
-        /* FOOTER */
+    .interest-detail {
+      display: none;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid #edf1f5;
+      color: #475569;
+      font-size: 13px;
+    }
 
-        footer {
-            padding: 30px 8%;
-            border-top: 1px solid #e8edf2;
-            text-align: center;
-            color: #667085;
-            font-size: 13px;
-        }
+    .interest-card.open .interest-detail {
+      display: block;
+    }
 
-        /* MOBILE */
+    /* CURRENTLY EXPLORING */
+    .exploring-box {
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 18px;
+      padding: 35px;
+    }
 
-        @media (max-width: 700px) {
+    .exploring-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
 
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+    .exploring-item {
+      background: #ffffff;
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
+      padding: 22px;
+    }
 
-            nav {
-                gap: 14px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+    .status {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #2563eb;
+      background: #eff6ff;
+      padding: 5px 9px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
 
-            .page-header {
-                padding: 60px 7% 50px;
-            }
+    .exploring-item h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
 
-            .page-header h1 {
-                font-size: 38px;
-            }
+    .exploring-item p {
+      color: #64748b;
+      font-size: 13px;
+    }
 
-            .page-header p {
-                font-size: 15px;
-            }
+    /* QUESTIONS */
+    .questions {
+      display: grid;
+      gap: 12px;
+      max-width: 800px;
+      margin: auto;
+    }
 
-            .insights {
-                padding: 50px 7% 70px;
-            }
+    .question {
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
+      padding: 20px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
 
-            .featured {
-                padding: 26px;
-            }
+    .question:hover {
+      border-color: #cbdaf5;
+      background: #f8fafc;
+    }
 
-            .featured h2 {
-                font-size: 25px;
-            }
+    .question-text {
+      font-size: 15px;
+      font-weight: 600;
+    }
 
-            .insight-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    .question-answer {
+      display: none;
+      padding-top: 10px;
+      color: #64748b;
+      font-size: 13px;
+      max-width: 700px;
+    }
+
+    .question.open {
+      display: block;
+    }
+
+    .question.open .question-answer {
+      display: block;
+    }
+
+    .question.open .plus {
+      transform: rotate(45deg);
+    }
+
+    .plus {
+      font-size: 22px;
+      color: #94a3b8;
+      transition: 0.2s ease;
+      flex-shrink: 0;
+      margin-left: 15px;
+    }
+
+    /* FUTURE */
+    .future {
+      text-align: center;
+      background: #f8fafc;
+      border-radius: 20px;
+      padding: 55px 30px;
+    }
+
+    .future h2 {
+      font-size: 30px;
+      margin-bottom: 14px;
+    }
+
+    .future p {
+      max-width: 650px;
+      margin: auto;
+      color: #64748b;
+    }
+
+    .future-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    .future-links a {
+      text-decoration: none;
+      color: #2563eb;
+      border: 1px solid #cbdaf5;
+      background: #ffffff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      transition: 0.2s ease;
+    }
+
+    .future-links a:hover {
+      background: #eff6ff;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 35px 8%;
+      border-top: 1px solid #e8edf2;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .path {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 20px;
+      }
+
+      .path-line {
+        display: none;
+      }
+
+      .interest-grid,
+      .exploring-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero {
+        padding: 65px 7% 60px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      section {
+        padding: 60px 7%;
+      }
+
+      .path {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-
+  <!-- HEADER -->
+  <header>
     <a href="index.html" class="logo">
-        Med Imaging <span>Hub</span>
+      Med Imaging <span>Hub</span>
     </a>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="articles.html">Articles</a>
-        <a href="insights.html">Insights</a>
-        <a href="projects.html">Projects</a>
-        <a href="resources.html">Resources</a>
-        <a href="about.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="insights.html" class="active">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
     </nav>
+  </header>
 
-</header>
 
+  <!-- HERO -->
+  <div class="hero">
+    <span class="eyebrow">Insights</span>
 
-<section class="page-header">
-
-    <div class="page-label">Insights</div>
-
-    <h1>
-        Where Medical Imaging Meets Technology
-    </h1>
+    <h1>Explore What’s Next.</h1>
 
     <p>
-        Exploring how artificial intelligence, research, and emerging
-        technologies are shaping the future of medical imaging.
+      A space for exploring the ideas, technologies, questions and possibilities
+      shaping the future of medical imaging.
     </p>
-
-</section>
-
-
-<main class="insights">
+  </div>
 
 
-    <!-- FEATURED -->
+  <!-- EXPLORATION PATH -->
+  <section>
 
-    <section class="featured">
+    <div class="section-heading">
+      <h2>My Exploration Path</h2>
 
-        <div class="featured-label">
-            Featured Insight
+      <p>
+        Medical imaging is evolving quickly. These are the areas connecting
+        my clinical background with where I want to explore next.
+      </p>
+    </div>
+
+    <div class="path-wrapper">
+
+      <div class="path-line"></div>
+
+      <div class="path">
+
+        <div class="path-node selected"
+             onclick="showPath(
+             'Medical Imaging',
+             'The foundation: understanding how imaging technologies create useful clinical information.'
+             )">
+
+          <div class="node-circle">◉</div>
+
+          <h3>Medical Imaging</h3>
+          <span>Foundation</span>
         </div>
 
-        <h2>
-            How Is Artificial Intelligence Changing Medical Imaging?
-        </h2>
+
+        <div class="path-node"
+             onclick="showPath(
+             'Artificial Intelligence',
+             'Exploring how AI can support image analysis, workflow, detection and decision-making in healthcare.'
+             )">
+
+          <div class="node-circle">✦</div>
+
+          <h3>AI</h3>
+          <span>Exploration</span>
+        </div>
+
+
+        <div class="path-node"
+             onclick="showPath(
+             'Medical Imaging Research',
+             'Turning clinical questions into meaningful research and learning how technology can improve imaging practice.'
+             )">
+
+          <div class="node-circle">⌕</div>
+
+          <h3>Research</h3>
+          <span>Discovery</span>
+        </div>
+
+
+        <div class="path-node"
+             onclick="showPath(
+             'Healthcare Innovation',
+             'Looking beyond the image toward better healthcare systems, tools, workflows and patient care.'
+             )">
+
+          <div class="node-circle">↗</div>
+
+          <h3>Innovation</h3>
+          <span>Future</span>
+        </div>
+
+      </div>
+
+
+      <div class="path-detail" id="pathDetail">
+
+        <h3>Medical Imaging</h3>
 
         <p>
-            AI is becoming an increasingly important part of medical imaging.
-            From image analysis to workflow support, it is helping healthcare
-            professionals handle complex imaging information in new ways.
+          The foundation: understanding how imaging technologies create
+          useful clinical information.
         </p>
 
-        <a href="#" class="read-more">
-            Read Insight →
-        </a>
-
-    </section>
-
-
-    <h2 class="section-title">
-        Explore Insights
-    </h2>
-
-
-    <div class="categories">
-
-        <span class="category active">
-            All
-        </span>
-
-        <span class="category">
-            AI in Medical Imaging
-        </span>
-
-        <span class="category">
-            Imaging Technology
-        </span>
-
-        <span class="category">
-            Research
-        </span>
-
-        <span class="category">
-            Future of Healthcare
-        </span>
+      </div>
 
     </div>
 
-
-    <section class="insight-grid">
-
-
-        <article class="insight-card">
-
-            <div class="card-label">
-                AI in Medical Imaging
-            </div>
-
-            <h3>
-                Can AI Really Replace Radiologists?
-            </h3>
-
-            <p>
-                A simple look at what AI can do in medical imaging—and
-                why human clinical expertise still matters.
-            </p>
-
-            <a href="#" class="read-more">
-                Read Insight →
-            </a>
-
-        </article>
+  </section>
 
 
-        <article class="insight-card">
+  <!-- INTEREST AREAS -->
+  <section>
 
-            <div class="card-label">
-                Imaging Technology
-            </div>
+    <div class="section-heading">
+      <h2>Areas I’m Curious About</h2>
 
-            <h3>
-                Why Are Modern MRI Scanners Getting Faster?
-            </h3>
-
-            <p>
-                New imaging techniques are changing how quickly MRI
-                examinations can acquire useful information.
-            </p>
-
-            <a href="#" class="read-more">
-                Read Insight →
-            </a>
-
-        </article>
+      <p>
+        Click an area to explore the questions and ideas behind it.
+      </p>
+    </div>
 
 
-        <article class="insight-card">
+    <div class="interest-grid">
 
-            <div class="card-label">
-                Research
-            </div>
+      <div class="interest-card" onclick="toggleCard(this)">
 
-            <h3>
-                What Makes Medical Imaging Research Reliable?
-            </h3>
+        <div class="interest-top">
 
-            <p>
-                Dataset quality, validation, reproducibility, and careful
-                evaluation all matter when developing imaging research.
-            </p>
+          <div class="interest-icon">✦</div>
 
-            <a href="#" class="read-more">
-                Read Insight →
-            </a>
+          <div class="arrow">→</div>
 
-        </article>
+        </div>
 
+        <h3>AI × Medical Imaging</h3>
 
-        <article class="insight-card">
+        <p>
+          Exploring where artificial intelligence can complement
+          medical imaging.
+        </p>
 
-            <div class="card-label">
-                AI in Medical Imaging
-            </div>
+        <div class="interest-detail">
+          From image classification and segmentation to explainability,
+          AI is opening new possibilities in how medical images can be
+          analysed and understood.
+        </div>
 
-            <h3>
-                What Is Explainable AI in Medical Imaging?
-            </h3>
-
-            <p>
-                Understanding why an AI model makes a prediction can be
-                just as important as the prediction itself.
-            </p>
-
-            <a href="#" class="read-more">
-                Read Insight →
-            </a>
-
-        </article>
+      </div>
 
 
-        <article class="insight-card">
+      <div class="interest-card" onclick="toggleCard(this)">
 
-            <div class="card-label">
-                Future of Healthcare
-            </div>
+        <div class="interest-top">
 
-            <h3>
-                What Could the Future of Medical Imaging Look Like?
-            </h3>
+          <div class="interest-icon">⌕</div>
 
-            <p>
-                From portable imaging to intelligent systems, technology
-                is opening new possibilities for medical imaging.
-            </p>
+          <div class="arrow">→</div>
 
-            <a href="#" class="read-more">
-                Read Insight →
-            </a>
+        </div>
 
-        </article>
+        <h3>Medical Imaging Research</h3>
 
+        <p>
+          Understanding how good research can turn imaging problems
+          into useful solutions.
+        </p>
 
-        <article class="insight-card">
+        <div class="interest-detail">
+          Research connects clinical knowledge with evidence, technology
+          and problem-solving. It is also where new ideas can be tested
+          rather than simply assumed to work.
+        </div>
 
-            <div class="card-label">
-                Imaging Technology
-            </div>
-
-            <h3>
-                How Is Technology Making Imaging More Accessible?
-            </h3>
-
-            <p>
-                Portable devices, improved workflows, and connected systems
-                are changing where and how imaging can be performed.
-            </p>
-
-            <a href="#" class="read-more">
-                Read Insight →
-            </a>
-
-        </article>
+      </div>
 
 
-    </section>
+      <div class="interest-card" onclick="toggleCard(this)">
 
-</main>
+        <div class="interest-top">
+
+          <div class="interest-icon">◇</div>
+
+          <div class="arrow">→</div>
+
+        </div>
+
+        <h3>Emerging Imaging Technology</h3>
+
+        <p>
+          Looking at technologies changing how images are acquired,
+          reconstructed and used.
+        </p>
+
+        <div class="interest-detail">
+          Faster acquisition, advanced reconstruction, portable imaging,
+          quantitative techniques and hybrid technologies are changing
+          what medical imaging can provide.
+        </div>
+
+      </div>
 
 
-<footer>
-    © 2026 Med Imaging Hub · Complex medical imaging concepts, explained simply.
-</footer>
+      <div class="interest-card" onclick="toggleCard(this)">
 
+        <div class="interest-top">
+
+          <div class="interest-icon">+</div>
+
+          <div class="arrow">→</div>
+
+        </div>
+
+        <h3>Healthcare Innovation</h3>
+
+        <p>
+          Exploring how technology can move beyond individual images
+          and improve healthcare more broadly.
+        </p>
+
+        <div class="interest-detail">
+          Digital health, connected systems, better workflows and
+          technology-driven healthcare solutions can influence the
+          entire patient journey.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CURRENTLY EXPLORING -->
+  <section>
+
+    <div class="section-heading">
+      <h2>Currently Exploring</h2>
+
+      <p>
+        A growing space for topics that are shaping my learning journey.
+      </p>
+    </div>
+
+
+    <div class="exploring-box">
+
+      <div class="exploring-list">
+
+        <div class="exploring-item">
+
+          <span class="status">Learning</span>
+
+          <h3>AI in Medical Imaging</h3>
+
+          <p>
+            Understanding how machine learning and deep learning
+            can be applied to medical images.
+          </p>
+
+        </div>
+
+
+        <div class="exploring-item">
+
+          <span class="status">Exploring</span>
+
+          <h3>Imaging Research</h3>
+
+          <p>
+            Learning how imaging questions can be investigated
+            through structured research.
+          </p>
+
+        </div>
+
+
+        <div class="exploring-item">
+
+          <span class="status">Building</span>
+
+          <h3>Med Imaging Hub</h3>
+
+          <p>
+            Creating a space where medical imaging knowledge,
+            projects and future ideas come together.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FUTURE QUESTIONS -->
+  <section>
+
+    <div class="section-heading">
+      <h2>Questions Worth Exploring</h2>
+
+      <p>
+        Some of the most interesting discoveries begin with a simple question.
+      </p>
+    </div>
+
+
+    <div class="questions">
+
+      <div class="question" onclick="toggleQuestion(this)">
+
+        <div>
+          <div class="question-text">
+            Can AI make medical imaging workflows more efficient?
+          </div>
+
+          <div class="question-answer">
+            The interesting part is not simply whether AI can analyse an image,
+            but how it could fit safely into the real clinical workflow.
+          </div>
+        </div>
+
+        <span class="plus">+</span>
+
+      </div>
+
+
+      <div class="question" onclick="toggleQuestion(this)">
+
+        <div>
+          <div class="question-text">
+            How can AI-assisted imaging remain explainable?
+          </div>
+
+          <div class="question-answer">
+            A useful system should provide more than a prediction.
+            Understanding why a model reaches a result is an important
+            part of responsible clinical AI.
+          </div>
+        </div>
+
+        <span class="plus">+</span>
+
+      </div>
+
+
+      <div class="question" onclick="toggleQuestion(this)">
+
+        <div>
+          <div class="question-text">
+            What could medical imaging look like in the next decade?
+          </div>
+
+          <div class="question-answer">
+            Faster acquisition, improved reconstruction, portable systems,
+            quantitative imaging and AI-assisted workflows may all contribute
+            to the next generation of imaging.
+          </div>
+        </div>
+
+        <span class="plus">+</span>
+
+      </div>
+
+
+      <div class="question" onclick="toggleQuestion(this)">
+
+        <div>
+          <div class="question-text">
+            Where does a medical imaging professional fit into this future?
+          </div>
+
+          <div class="question-answer">
+            As imaging becomes more technology-driven, clinical understanding,
+            patient care, image quality and technological awareness remain
+            important parts of the profession.
+          </div>
+        </div>
+
+        <span class="plus">+</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FUTURE DIRECTION -->
+  <section>
+
+    <div class="future">
+
+      <h2>Where This Journey Is Heading</h2>
+
+      <p>
+        Med Imaging Hub will continue to grow alongside this exploration —
+        from learning the fundamentals to building projects, exploring
+        research and understanding how technology can shape healthcare.
+      </p>
+
+      <div class="future-links">
+
+        <a href="projects.html">See Projects →</a>
+
+        <a href="resources.html">Explore Resources →</a>
+
+        <a href="articles.html">Learn the Fundamentals →</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Med Imaging Hub · Learn. Explore. Build.
+  </footer>
+
+
+  <script>
+
+    function showPath(title, description) {
+
+      document.getElementById("pathDetail").innerHTML = `
+        <h3>${title}</h3>
+        <p>${description}</p>
+      `;
+
+      document.querySelectorAll(".path-node").forEach(node => {
+        node.classList.remove("selected");
+      });
+
+      event.currentTarget.classList.add("selected");
+    }
+
+
+    function toggleCard(card) {
+
+      document.querySelectorAll(".interest-card").forEach(item => {
+
+        if (item !== card) {
+          item.classList.remove("open");
+        }
+
+      });
+
+      card.classList.toggle("open");
+    }
+
+
+    function toggleQuestion(question) {
+
+      document.querySelectorAll(".question").forEach(item => {
+
+        if (item !== question) {
+          item.classList.remove("open");
+        }
+
+      });
+
+      question.classList.toggle("open");
+    }
+
+  </script>
 
 </body>
 </html>
