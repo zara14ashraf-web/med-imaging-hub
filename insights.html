@@ -1,223 +1,524 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Insights | Med Imaging Hub</title>
+    <title>Insights | Med Imaging Hub</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      color: #17202a;
-      background: #ffffff;
-      line-height: 1.6;
-    }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #17202a;
+            background: #ffffff;
+            line-height: 1.6;
+        }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 8%;
-      border-bottom: 1px solid #e8edf2;
-      background: #ffffff;
-    }
+        /* HEADER */
 
-    .logo {
-      font-size: 23px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: #17202a;
-    }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            border-bottom: 1px solid #e8edf2;
+            background: #ffffff;
+        }
 
-    .logo span {
-      color: #2563eb;
-    }
+        .logo {
+            font-size: 23px;
+            font-weight: 700;
+            color: #17202a;
+            text-decoration: none;
+        }
 
-    nav a {
-      text-decoration: none;
-      color: #4b5563;
-      margin-left: 27px;
-      font-size: 14px;
-      transition: 0.2s;
-    }
+        .logo span {
+            color: #2563eb;
+        }
 
-    nav a:hover {
-      color: #2563eb;
-    }
+        nav {
+            display: flex;
+            gap: 25px;
+        }
 
-   .page-header {
-  position: relative;
-  text-align: center;
-  padding: 95px 8% 80px;
-  overflow: hidden;
-  background:
-    radial-gradient(
-      circle at 50% 10%,
-      rgba(37, 99, 235, 0.10),
-      transparent 48%
-    ),
-    #f8fafc;
-}
+        nav a {
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 14px;
+        }
 
-.page-label {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  color: #2563eb;
-  letter-spacing: 2px;
-  margin-bottom: 18px;
-  padding: 7px 13px;
-  border: 1px solid #dbeafe;
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.8);
-}
+        nav a:hover {
+            color: #2563eb;
+        }
 
-.page-header h1 {
-  font-size: 52px;
-  line-height: 1.1;
-  letter-spacing: -2px;
-  margin-bottom: 20px;
-  color: #17202a;
-}
-    .page-header p {
-      max-width: 680px;
-      margin: auto;
-      color: #667085;
-      font-size: 17px;
-    }
+        /* PAGE HEADER */
 
-    .insights {
-      padding: 75px 8%;
-      max-width: 1150px;
-      margin: auto;
-    }
+        .page-header {
+            text-align: center;
+            padding: 90px 8% 75px;
+            background:
+                radial-gradient(circle at top,
+                #eff6ff 0%,
+                #f8fafc 45%,
+                #ffffff 80%);
+        }
 
-    .insight-placeholder {
-      max-width: 760px;
-      margin: auto;
-      padding: 35px;
-      text-align: center;
-      border: 1px solid #e6eaf0;
-      border-radius: 14px;
-      background: #f8fafc;
-    }
+        .page-label {
+            display: inline-block;
+            padding: 6px 13px;
+            border: 1px solid #dbeafe;
+            border-radius: 30px;
+            color: #2563eb;
+            background: #eff6ff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
 
-    .insight-placeholder h2 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
+        .page-header h1 {
+            max-width: 800px;
+            margin: 0 auto 18px;
+            font-size: 52px;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
 
-    .insight-placeholder p {
-      color: #667085;
-      font-size: 15px;
-      line-height: 1.7;
-    }
+        .page-header p {
+            max-width: 680px;
+            margin: auto;
+            color: #667085;
+            font-size: 17px;
+        }
 
-    footer {
-      text-align: center;
-      padding: 32px 20px;
-      border-top: 1px solid #e5e7eb;
-      color: #8a94a3;
-      font-size: 13px;
-    }
+        /* INSIGHTS */
 
-    footer strong {
-      color: #4b5563;
-    }
+        .insights {
+            max-width: 1150px;
+            margin: auto;
+            padding: 70px 8% 90px;
+        }
 
-    @media (max-width: 700px) {
+        /* FEATURED */
 
-      header {
-        flex-direction: column;
-        gap: 15px;
-      }
+        .featured {
+            padding: 38px;
+            margin-bottom: 55px;
+            background: #f8fafc;
+            border: 1px solid #e8edf2;
+            border-radius: 18px;
+            transition: 0.25s ease;
+        }
 
-      nav {
-        text-align: center;
-      }
+        .featured:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(23, 32, 42, 0.07);
+        }
 
-      nav a {
-        margin: 0 7px;
-      }
+        .featured-label {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: #2563eb;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-      .page-header {
-        padding: 65px 7% 50px;
-      }
+        .featured h2 {
+            margin: 0 0 14px;
+            font-size: 30px;
+            line-height: 1.25;
+        }
 
-      .page-header h1 {
-        font-size: 36px;
-      }
+        .featured p {
+            max-width: 760px;
+            margin: 0 0 20px;
+            color: #4b5563;
+        }
 
-      .insights {
-        padding: 55px 7%;
-      }
+        .read-more {
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+        }
 
-    }
-  </style>
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* CATEGORY */
+
+        .section-title {
+            margin-bottom: 22px;
+            font-size: 24px;
+        }
+
+        .categories {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .category {
+            padding: 8px 14px;
+            border: 1px solid #e8edf2;
+            border-radius: 30px;
+            color: #4b5563;
+            background: #ffffff;
+            font-size: 13px;
+        }
+
+        .category.active {
+            color: #2563eb;
+            background: #eff6ff;
+            border-color: #dbeafe;
+        }
+
+        /* CARD GRID */
+
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .insight-card {
+            min-height: 220px;
+            padding: 28px;
+            border: 1px solid #e8edf2;
+            border-radius: 14px;
+            background: #ffffff;
+            transition: 0.25s ease;
+        }
+
+        .insight-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(23, 32, 42, 0.06);
+        }
+
+        .card-label {
+            color: #2563eb;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .insight-card h3 {
+            margin: 10px 0 12px;
+            font-size: 20px;
+            line-height: 1.3;
+        }
+
+        .insight-card p {
+            margin: 0 0 18px;
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 8%;
+            border-top: 1px solid #e8edf2;
+            text-align: center;
+            color: #667085;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page-header {
+                padding: 60px 7% 50px;
+            }
+
+            .page-header h1 {
+                font-size: 38px;
+            }
+
+            .page-header p {
+                font-size: 15px;
+            }
+
+            .insights {
+                padding: 50px 7% 70px;
+            }
+
+            .featured {
+                padding: 26px;
+            }
+
+            .featured h2 {
+                font-size: 25px;
+            }
+
+            .insight-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <header>
+<header>
 
-    <div class="logo">
-      Med Imaging <span>Hub</span>
-    </div>
+    <a href="index.html" class="logo">
+        Med Imaging <span>Hub</span>
+    </a>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="articles.html">Articles</a>
-      <a href="insights.html">Insights</a>
-      <a href="projects.html">Projects</a>
-      <a href="resources.html">Resources</a>
-      <a href="about.html">About</a>
+        <a href="index.html">Home</a>
+        <a href="articles.html">Articles</a>
+        <a href="insights.html">Insights</a>
+        <a href="projects.html">Projects</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
     </nav>
 
-  </header>
+</header>
 
 
-  <section class="page-header">
+<section class="page-header">
 
-    <div class="page-label">
-      MEDICAL IMAGING • TECHNOLOGY
-    </div>
+    <div class="page-label">Insights</div>
 
-    <h1>Insights</h1>
+    <h1>
+        Where Medical Imaging Meets Technology
+    </h1>
 
     <p>
-      Explore ideas, trends, and perspectives around medical imaging,
-      artificial intelligence, and emerging healthcare technology.
+        Exploring how artificial intelligence, research, and emerging
+        technologies are shaping the future of medical imaging.
     </p>
 
-  </section>
+</section>
 
 
-  <main class="insights">
+<main class="insights">
 
-    <div class="insight-placeholder">
 
-      <h2>Insights coming soon</h2>
+    <!-- FEATURED -->
 
-      <p>
-        New perspectives on medical imaging, AI, technology,
-        and the future of healthcare will be shared here.
-      </p>
+    <section class="featured">
+
+        <div class="featured-label">
+            Featured Insight
+        </div>
+
+        <h2>
+            How Is Artificial Intelligence Changing Medical Imaging?
+        </h2>
+
+        <p>
+            AI is becoming an increasingly important part of medical imaging.
+            From image analysis to workflow support, it is helping healthcare
+            professionals handle complex imaging information in new ways.
+        </p>
+
+        <a href="#" class="read-more">
+            Read Insight →
+        </a>
+
+    </section>
+
+
+    <h2 class="section-title">
+        Explore Insights
+    </h2>
+
+
+    <div class="categories">
+
+        <span class="category active">
+            All
+        </span>
+
+        <span class="category">
+            AI in Medical Imaging
+        </span>
+
+        <span class="category">
+            Imaging Technology
+        </span>
+
+        <span class="category">
+            Research
+        </span>
+
+        <span class="category">
+            Future of Healthcare
+        </span>
 
     </div>
 
-  </main>
+
+    <section class="insight-grid">
 
 
-  <footer>
-    © 2026 Med Imaging Hub · Created & curated by <strong>Zara Ashraf</strong>
-  </footer>
+        <article class="insight-card">
+
+            <div class="card-label">
+                AI in Medical Imaging
+            </div>
+
+            <h3>
+                Can AI Really Replace Radiologists?
+            </h3>
+
+            <p>
+                A simple look at what AI can do in medical imaging—and
+                why human clinical expertise still matters.
+            </p>
+
+            <a href="#" class="read-more">
+                Read Insight →
+            </a>
+
+        </article>
+
+
+        <article class="insight-card">
+
+            <div class="card-label">
+                Imaging Technology
+            </div>
+
+            <h3>
+                Why Are Modern MRI Scanners Getting Faster?
+            </h3>
+
+            <p>
+                New imaging techniques are changing how quickly MRI
+                examinations can acquire useful information.
+            </p>
+
+            <a href="#" class="read-more">
+                Read Insight →
+            </a>
+
+        </article>
+
+
+        <article class="insight-card">
+
+            <div class="card-label">
+                Research
+            </div>
+
+            <h3>
+                What Makes Medical Imaging Research Reliable?
+            </h3>
+
+            <p>
+                Dataset quality, validation, reproducibility, and careful
+                evaluation all matter when developing imaging research.
+            </p>
+
+            <a href="#" class="read-more">
+                Read Insight →
+            </a>
+
+        </article>
+
+
+        <article class="insight-card">
+
+            <div class="card-label">
+                AI in Medical Imaging
+            </div>
+
+            <h3>
+                What Is Explainable AI in Medical Imaging?
+            </h3>
+
+            <p>
+                Understanding why an AI model makes a prediction can be
+                just as important as the prediction itself.
+            </p>
+
+            <a href="#" class="read-more">
+                Read Insight →
+            </a>
+
+        </article>
+
+
+        <article class="insight-card">
+
+            <div class="card-label">
+                Future of Healthcare
+            </div>
+
+            <h3>
+                What Could the Future of Medical Imaging Look Like?
+            </h3>
+
+            <p>
+                From portable imaging to intelligent systems, technology
+                is opening new possibilities for medical imaging.
+            </p>
+
+            <a href="#" class="read-more">
+                Read Insight →
+            </a>
+
+        </article>
+
+
+        <article class="insight-card">
+
+            <div class="card-label">
+                Imaging Technology
+            </div>
+
+            <h3>
+                How Is Technology Making Imaging More Accessible?
+            </h3>
+
+            <p>
+                Portable devices, improved workflows, and connected systems
+                are changing where and how imaging can be performed.
+            </p>
+
+            <a href="#" class="read-more">
+                Read Insight →
+            </a>
+
+        </article>
+
+
+    </section>
+
+</main>
+
+
+<footer>
+    © 2026 Med Imaging Hub · Complex medical imaging concepts, explained simply.
+</footer>
+
 
 </body>
 </html>
