@@ -8,11 +8,12 @@
 
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
       color: #17202a;
       background: #ffffff;
@@ -31,7 +32,8 @@
 
     .logo {
       font-size: 23px;
-      font-weight: bold;
+      font-weight: 700;
+      letter-spacing: -0.5px;
       color: #17202a;
       text-decoration: none;
     }
@@ -40,15 +42,12 @@
       color: #2563eb;
     }
 
-    nav {
-      display: flex;
-      gap: 28px;
-    }
-
     nav a {
       text-decoration: none;
       color: #4b5563;
+      margin-left: 27px;
       font-size: 14px;
+      transition: 0.2s;
     }
 
     nav a:hover,
@@ -57,78 +56,63 @@
     }
 
     /* Hero */
-    .hero {
+    .page-header {
+      position: relative;
       text-align: center;
-      padding: 90px 8% 75px;
-      background: radial-gradient(
-        circle at top,
-        #eef5ff 0%,
-        #f8fafc 42%,
-        #ffffff 78%
-      );
+      padding: 95px 8% 80px;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 50% 10%,
+          rgba(37, 99, 235, 0.10),
+          transparent 48%
+        ),
+        #f8fafc;
     }
 
-    .hero-label {
+    .page-label {
       display: inline-block;
-      padding: 6px 12px;
-      border-radius: 20px;
-      background: #eaf2ff;
+      font-size: 11px;
+      font-weight: 700;
       color: #2563eb;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
+      letter-spacing: 2px;
       margin-bottom: 18px;
+      padding: 7px 13px;
+      border: 1px solid #dbeafe;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.8);
     }
 
-    .hero h1 {
-      margin: 0 auto 18px;
-      max-width: 750px;
+    .page-header h1 {
       font-size: 52px;
       line-height: 1.1;
       letter-spacing: -2px;
+      margin-bottom: 20px;
+      color: #17202a;
     }
 
-    .hero p {
-      max-width: 650px;
-      margin: 0 auto;
+    .page-header p {
+      max-width: 680px;
+      margin: auto;
       color: #667085;
       font-size: 17px;
     }
 
-    /* Intro */
-    .intro {
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 70px 8% 30px;
-      text-align: center;
-    }
-
-    .intro h2 {
-      margin: 0 0 15px;
-      font-size: 30px;
-      letter-spacing: -0.5px;
-    }
-
-    .intro p {
-      margin: 0;
-      color: #667085;
-      font-size: 16px;
-    }
-
     /* Insights */
     .insights {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 40px 8% 90px;
+      max-width: 900px;
+      margin: auto;
+      padding: 70px 8% 90px;
     }
 
     .insight-card {
-      display: block;
-      padding: 32px;
-      margin-bottom: 22px;
-      border: 1px solid #e5eaf0;
-      border-radius: 16px;
+      display: grid;
+      grid-template-columns: 65px 1fr;
+      gap: 20px;
+      padding: 28px 30px;
+      margin-bottom: 20px;
+      border: 1px solid #e6eaf0;
+      border-radius: 14px;
       background: #ffffff;
       text-decoration: none;
       color: inherit;
@@ -136,87 +120,116 @@
     }
 
     .insight-card:hover {
-      transform: translateY(-3px);
-      border-color: #cbd9ee;
-      box-shadow: 0 10px 25px rgba(23, 32, 42, 0.06);
+      border-color: #d2dceb;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(23, 32, 42, 0.05);
     }
 
-    .number {
+    .insight-number {
       font-size: 13px;
-      font-weight: bold;
+      font-weight: 700;
       color: #2563eb;
-      margin-bottom: 12px;
+      padding-top: 4px;
+      letter-spacing: 0.5px;
     }
 
-    .insight-card h3 {
-      margin: 0 0 10px;
-      font-size: 25px;
+    .insight-content {
+      border-left: 1px solid #e8edf2;
+      padding-left: 20px;
+    }
+
+    .insight-topic {
+      font-size: 11px;
+      font-weight: 700;
+      color: #667085;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .insight-card h2 {
+      font-size: 24px;
       line-height: 1.3;
+      letter-spacing: -0.5px;
+      margin-bottom: 9px;
     }
 
     .insight-card p {
-      margin: 0;
       color: #667085;
       font-size: 15px;
-      max-width: 800px;
+      line-height: 1.65;
+      max-width: 650px;
     }
 
-    .read-more {
+    .explore {
       display: inline-block;
-      margin-top: 18px;
+      margin-top: 13px;
       color: #2563eb;
-      font-size: 14px;
-      font-weight: bold;
+      font-size: 13px;
+      font-weight: 700;
     }
 
     /* Footer */
     footer {
-      border-top: 1px solid #e8edf2;
-      padding: 28px 8%;
       text-align: center;
-      color: #7b8490;
+      padding: 32px 20px;
+      border-top: 1px solid #e5e7eb;
+      color: #8a94a3;
       font-size: 13px;
+    }
+
+    footer strong {
+      color: #4b5563;
     }
 
     /* Mobile */
     @media (max-width: 700px) {
+
       header {
         flex-direction: column;
         gap: 15px;
       }
 
       nav {
-        gap: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
+        text-align: center;
       }
 
-      .hero {
-        padding: 65px 8% 55px;
+      nav a {
+        margin: 0 7px;
       }
 
-      .hero h1 {
-        font-size: 40px;
+      .page-header {
+        padding: 65px 7% 50px;
       }
 
-      .hero p {
+      .page-header h1 {
+        font-size: 38px;
+      }
+
+      .page-header p {
         font-size: 16px;
       }
 
-      .intro {
-        padding-top: 55px;
-      }
-
       .insights {
-        padding-top: 30px;
+        padding: 50px 7% 65px;
       }
 
       .insight-card {
-        padding: 25px;
+        grid-template-columns: 45px 1fr;
+        gap: 12px;
+        padding: 24px 20px;
       }
 
-      .insight-card h3 {
-        font-size: 22px;
+      .insight-content {
+        padding-left: 15px;
+      }
+
+      .insight-card h2 {
+        font-size: 21px;
+      }
+
+      .insight-card p {
+        font-size: 14px;
       }
     }
   </style>
@@ -225,6 +238,7 @@
 <body>
 
   <header>
+
     <a href="index.html" class="logo">
       Med Imaging <span>Hub</span>
     </a>
@@ -237,74 +251,97 @@
       <a href="resources.html">Resources</a>
       <a href="about.html">About</a>
     </nav>
+
   </header>
 
 
-  <section class="hero">
-    <div class="hero-label">Insights</div>
+  <!-- Hero -->
+  <section class="page-header">
 
-    <h1>Looking at Where Medical Imaging Is Going</h1>
+    <div class="page-label">
+      MEDICAL IMAGING • TECHNOLOGY
+    </div>
+
+    <h1>Things Worth Exploring</h1>
 
     <p>
-      New technologies are changing the way medical images are produced,
-      processed, and understood. Here, we take a closer look at some of them.
+      Explore ideas, technologies, and changes that are shaping
+      the future of medical imaging.
     </p>
+
   </section>
 
 
-  <section class="intro">
-    <h2>What’s New in Medical Imaging?</h2>
-
-    <p>
-      Medical imaging is not standing still. New ideas are changing
-      technologies that have been used for years. These insights explore
-      what is changing, how it works, and why it matters.
-    </p>
-  </section>
-
-
-  <section class="insights">
+  <!-- Insights -->
+  <main class="insights">
 
     <a href="insights/virtual-grids.html" class="insight-card">
 
-      <div class="number">01</div>
+      <div class="insight-number">
+        01
+      </div>
 
-      <h3>Virtual Grids: Are Physical Grids Still Needed?</h3>
+      <div class="insight-content">
 
-      <p>
-        Physical grids have been used in X-ray imaging for years to reduce
-        scattered radiation. But now, digital systems can use software to
-        achieve a similar goal. So, how does a virtual grid work, and could
-        it change the way we perform X-ray imaging?
-      </p>
+        <div class="insight-topic">
+          Digital Radiography
+        </div>
 
-      <span class="read-more">Explore this insight →</span>
+        <h2>
+          Virtual Grids: Are Physical Grids Still Needed?
+        </h2>
+
+        <p>
+          Physical grids have been used in X-ray imaging for years
+          to reduce the effect of scattered radiation. But now,
+          software is offering another way to deal with scatter.
+        </p>
+
+        <span class="explore">
+          Explore this insight →
+        </span>
+
+      </div>
 
     </a>
 
 
     <a href="insights/photon-counting-ct.html" class="insight-card">
 
-      <div class="number">02</div>
+      <div class="insight-number">
+        02
+      </div>
 
-      <h3>Photon-Counting CT: What Makes It Different?</h3>
+      <div class="insight-content">
 
-      <p>
-        CT technology has come a long way, but a newer type of detector is
-        taking things further. Photon-counting CT can measure individual
-        X-ray photons and their energy, opening up new possibilities for
-        image quality and clinical imaging.
-      </p>
+        <div class="insight-topic">
+          CT Technology
+        </div>
 
-      <span class="read-more">Explore this insight →</span>
+        <h2>
+          Photon-Counting CT: What Makes It Different?
+        </h2>
+
+        <p>
+          A newer type of CT detector can measure individual
+          X-ray photons and their energy. So, what does that
+          actually change about CT imaging?
+        </p>
+
+        <span class="explore">
+          Explore this insight →
+        </span>
+
+      </div>
 
     </a>
 
-  </section>
+  </main>
 
 
   <footer>
-    © 2026 Med Imaging Hub. Complex medical imaging concepts, explained simply.
+    © 2026 Med Imaging Hub · Created & curated by
+    <strong>Zara Ashraf</strong>
   </footer>
 
 </body>
