@@ -21,6 +21,7 @@
         }
 
         /* HEADER */
+
         header {
             display: flex;
             justify-content: space-between;
@@ -58,7 +59,9 @@
             color: #2563eb;
         }
 
+
         /* HERO */
+
         .hero {
             text-align: center;
             padding: 90px 8% 75px;
@@ -91,23 +94,25 @@
         }
 
         .hero p {
-            max-width: 650px;
+            max-width: 700px;
             margin: auto;
             color: #6b7280;
             font-size: 17px;
         }
 
+
         /* INTRO */
+
         .intro {
             max-width: 850px;
             margin: 0 auto;
-            padding: 65px 8% 30px;
+            padding: 65px 8% 35px;
             text-align: center;
         }
 
         .intro h2 {
             font-size: 30px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .intro p {
@@ -115,17 +120,22 @@
             font-size: 16px;
         }
 
-        /* INSIGHTS */
+
+        /* INSIGHT LIST */
+
         .insights {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 35px 8% 80px;
+            padding: 30px 8% 85px;
         }
+
+
+        /* CARD */
 
         .insight {
             border: 1px solid #e6ebf1;
             border-radius: 18px;
-            margin-bottom: 24px;
+            margin-bottom: 25px;
             overflow: hidden;
             background: #ffffff;
             transition: 0.25s ease;
@@ -136,8 +146,11 @@
             transform: translateY(-2px);
         }
 
+
+        /* CARD HEADER */
+
         .insight-header {
-            padding: 28px 30px;
+            padding: 30px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -150,13 +163,13 @@
             color: #2563eb;
             font-weight: 700;
             letter-spacing: 1px;
-            margin-bottom: 6px;
+            margin-bottom: 7px;
         }
 
         .insight-header h2 {
             font-size: 23px;
             line-height: 1.3;
-            margin-bottom: 5px;
+            margin-bottom: 7px;
         }
 
         .insight-header p {
@@ -165,8 +178,8 @@
         }
 
         .arrow {
-            width: 34px;
-            height: 34px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             background: #f1f5f9;
             display: flex;
@@ -183,27 +196,59 @@
             background: #eaf2ff;
         }
 
+
         /* CONTENT */
+
         .insight-content {
             display: none;
-            padding: 0 30px 32px;
+            padding: 0 30px 35px;
         }
 
         .insight.open .insight-content {
             display: block;
         }
 
-        .explanation {
-            max-width: 760px;
+        .content {
+            max-width: 800px;
             color: #4b5563;
             font-size: 15px;
         }
 
-        .explanation p {
-            margin-bottom: 14px;
+        .content p {
+            margin-bottom: 15px;
         }
 
-        /* VISUAL */
+
+        /* SECTION LABEL */
+
+        .section-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #2563eb;
+            font-weight: 700;
+            margin-top: 27px;
+            margin-bottom: 9px;
+        }
+
+
+        /* SIMPLE FACT BOX */
+
+        .fact-box {
+            margin: 25px 0;
+            padding: 21px 23px;
+            background: #f8fafc;
+            border: 1px solid #edf1f5;
+            border-radius: 12px;
+        }
+
+        .fact-box strong {
+            color: #17202a;
+        }
+
+
+        /* VISUAL FLOW */
+
         .visual-box {
             margin: 28px 0;
             padding: 28px;
@@ -224,9 +269,9 @@
             background: #ffffff;
             border: 1px solid #dce4ee;
             border-radius: 12px;
-            padding: 14px 18px;
+            padding: 15px 18px;
             text-align: center;
-            min-width: 120px;
+            min-width: 125px;
             font-size: 14px;
             font-weight: 600;
         }
@@ -236,7 +281,7 @@
             color: #7b8794;
             font-size: 11px;
             font-weight: 400;
-            margin-top: 3px;
+            margin-top: 4px;
         }
 
         .flow-arrow {
@@ -244,57 +289,61 @@
             font-size: 22px;
         }
 
-        /* HUMAN VS AI */
-        .comparison {
+
+        /* PATTERN VISUAL */
+
+        .pattern-grid {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
             align-items: center;
             gap: 18px;
         }
 
-        .comparison-box {
+        .pattern-box {
             background: #ffffff;
             border: 1px solid #dce4ee;
             border-radius: 12px;
-            padding: 20px;
+            padding: 21px;
         }
 
-        .comparison-box h3 {
+        .pattern-box h3 {
             font-size: 16px;
             margin-bottom: 10px;
         }
 
-        .comparison-box p {
+        .pattern-box p {
             font-size: 13px;
             color: #6b7280;
             margin-bottom: 5px;
         }
 
         .vs {
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: #eaf2ff;
             color: #2563eb;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
         }
 
-        /* CONFIDENCE */
+
+        /* CONFIDENCE VISUAL */
+
         .confidence-box {
+            margin: 28px 0;
+            padding: 30px;
             background: #f8fafc;
             border: 1px solid #edf1f5;
             border-radius: 14px;
-            padding: 28px;
-            margin: 28px 0;
             text-align: center;
         }
 
         .confidence-number {
-            font-size: 42px;
+            font-size: 44px;
             font-weight: 700;
             color: #2563eb;
             margin-bottom: 12px;
@@ -303,9 +352,9 @@
         .confidence-bar {
             max-width: 500px;
             height: 12px;
+            margin: auto;
             background: #e5e7eb;
             border-radius: 10px;
-            margin: 0 auto 15px;
             overflow: hidden;
         }
 
@@ -316,12 +365,28 @@
             border-radius: 10px;
         }
 
-        .confidence-box p {
+        .confidence-caption {
+            margin-top: 14px;
             color: #6b7280;
             font-size: 14px;
         }
 
-        /* REVEAL BUTTON */
+
+        /* KEY POINTS */
+
+        .key-points {
+            margin: 20px 0;
+            padding-left: 20px;
+            color: #4b5563;
+        }
+
+        .key-points li {
+            margin-bottom: 7px;
+        }
+
+
+        /* REVEAL */
+
         .reveal-btn {
             border: none;
             background: #2563eb;
@@ -340,7 +405,7 @@
 
         .reveal-text {
             display: none;
-            margin-top: 18px;
+            margin-top: 17px;
             padding: 18px;
             background: #f8fafc;
             border-left: 3px solid #2563eb;
@@ -353,10 +418,12 @@
             display: block;
         }
 
+
         /* MY THOUGHT */
+
         .thought {
             margin-top: 28px;
-            padding: 20px 22px;
+            padding: 21px 23px;
             background: #f8fafc;
             border-radius: 12px;
             border: 1px solid #edf1f5;
@@ -376,14 +443,19 @@
             font-size: 14px;
         }
 
+
+        /* CLOSING QUESTION */
+
         .question {
-            margin-top: 22px;
+            margin-top: 24px;
             font-size: 16px;
             font-weight: 600;
             color: #17202a;
         }
 
+
         /* FOOTER */
+
         footer {
             border-top: 1px solid #e8edf2;
             padding: 35px 8%;
@@ -392,7 +464,9 @@
             font-size: 13px;
         }
 
-        /* RESPONSIVE */
+
+        /* MOBILE */
+
         @media (max-width: 700px) {
 
             header {
@@ -430,7 +504,7 @@
                 padding: 0 23px 28px;
             }
 
-            .comparison {
+            .pattern-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -446,25 +520,33 @@
                 transform: rotate(90deg);
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
+
+<!-- HEADER -->
+
 <header>
-    <a href="../index.html" class="logo">
+
+    <a href="index.html" class="logo">
         Med Imaging <span>Hub</span>
     </a>
 
     <nav>
-        <a href="../index.html">Home</a>
-        <a href="../articles.html">Articles</a>
-        <a href="../insights.html" class="active">Insights</a>
-        <a href="../projects.html">Projects</a>
-        <a href="../resources.html">Resources</a>
-        <a href="../about.html">About</a>
+        <a href="index.html">Home</a>
+        <a href="articles.html">Articles</a>
+        <a href="insights.html" class="active">Insights</a>
+        <a href="projects.html">Projects</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
     </nav>
+
 </header>
+
 
 
 <!-- HERO -->
@@ -476,25 +558,30 @@
     <h1>Things Worth Exploring.</h1>
 
     <p>
-        Small questions, interesting observations, and personal thoughts
-        about where AI meets medical imaging.
+        Technology is changing medical imaging quickly.
+        Here, we look beyond the basics and explore the ideas,
+        questions, and possibilities shaping its future.
     </p>
 
 </section>
+
 
 
 <!-- INTRO -->
 
 <section class="intro">
 
-    <h2>Not Everything Needs an Article.</h2>
+    <h2>Look Beyond the Image.</h2>
 
     <p>
-        Some ideas are more interesting when you stop, look at them,
-        and simply ask: “What if?”
+        Articles help you understand how medical imaging works.
+        Insights take that understanding a little further —
+        into AI, real-world applications, and the questions
+        that are shaping the future of imaging.
     </p>
 
 </section>
+
 
 
 <!-- INSIGHTS -->
@@ -502,53 +589,74 @@
 <section class="insights">
 
 
-    <!-- INSIGHT 1 -->
 
-    <div class="insight">
+<!-- INSIGHT 01 -->
 
-        <div class="insight-header">
+<div class="insight">
 
-            <div>
-                <div class="insight-number">01</div>
+    <div class="insight-header">
 
-                <h2>
-                    What does AI actually look at in a medical image?
-                </h2>
+        <div>
 
-                <p>
-                    We see anatomy. But what does a model see?
-                </p>
-            </div>
+            <div class="insight-number">01 · AI & IMAGING</div>
 
-            <div class="arrow">↓</div>
+            <h2>
+                What does AI actually look at in a medical image?
+            </h2>
+
+            <p>
+                We see anatomy. But what does a computer actually see?
+            </p>
 
         </div>
 
+        <div class="arrow">↓</div>
 
-        <div class="insight-content">
+    </div>
 
-            <div class="explanation">
 
-                <p>
-                    When we look at an X-ray, we may notice bones, lungs,
-                    or an area that looks unusual. We understand the image
-                    using what we already know about the human body.
-                </p>
 
-                <p>
-                    An AI model looks at the same image in a different way.
-                    It processes the image as data and looks for patterns
-                    that it has learned from many examples.
-                </p>
+    <div class="insight-content">
 
-                <p>
-                    These patterns may help the model decide whether an
-                    image looks more like one category or another. But
-                    this creates an interesting question: what part of the
-                    image is actually influencing its decision?
-                </p>
+        <div class="content">
 
+            <div class="section-label">Start with the basics</div>
+
+            <p>
+                When we look at an X-ray, MRI, or ultrasound image,
+                we usually see things we have learned to recognize:
+                bones, organs, blood vessels, lesions, or areas that
+                look different from normal.
+            </p>
+
+            <p>
+                An AI model does not look at an image in the same
+                human way. It processes the image as numerical data
+                and looks for patterns within that data.
+            </p>
+
+            <div class="fact-box">
+                <strong>So what does AI “see”?</strong><br>
+                It sees numbers representing the image and uses
+                patterns learned from previous examples to make
+                a prediction.
             </div>
+
+
+            <div class="section-label">How does that work?</div>
+
+            <p>
+                During training, an AI model is shown many medical
+                images together with their known labels or outcomes.
+                For example, it may be shown ultrasound images labelled
+                as benign or malignant.
+            </p>
+
+            <p>
+                The model gradually learns which visual patterns
+                are useful for separating one group from another.
+                It can then use those patterns when it sees a new image.
+            </p>
 
 
             <div class="visual-box">
@@ -564,14 +672,14 @@
 
                     <div class="flow-item">
                         AI Model
-                        <small>Finds patterns</small>
+                        <small>Finds image patterns</small>
                     </div>
 
                     <div class="flow-arrow">→</div>
 
                     <div class="flow-item">
                         Prediction
-                        <small>Model's decision</small>
+                        <small>Possible result</small>
                     </div>
 
                 </div>
@@ -579,16 +687,33 @@
             </div>
 
 
+            <div class="section-label">But here's the interesting part</div>
+
+            <p>
+                If an AI model gives the correct answer, that does not
+                automatically tell us which part of the image helped
+                it reach that answer.
+            </p>
+
+            <p>
+                Maybe it focused on the lesion. Maybe it used a texture,
+                shape, or intensity pattern. And sometimes, it may even
+                use a pattern that we did not expect.
+            </p>
+
+
             <button class="reveal-btn" onclick="revealText(this)">
                 Look a little deeper
             </button>
 
             <div class="reveal-text">
-                This is where tools such as Grad-CAM can become interesting.
-                They can help us see which areas of an image contributed
-                to a model's prediction. It does not mean we can see
-                exactly what the AI “thinks”, but it can give us a useful
-                clue about where the model was focusing.
+                Techniques such as Grad-CAM can create a visual map showing
+                which areas of an image contributed more strongly to a
+                model's prediction. This can help researchers investigate
+                whether the model is focusing on a medically meaningful
+                region. It does not show exactly what the AI “thinks,”
+                but it can provide useful evidence about where the model
+                is looking.
             </div>
 
 
@@ -606,88 +731,97 @@
 
 
             <div class="question">
-                So, when AI looks at a medical image… are we really sure
-                we know what it sees?
+                So, when AI looks at a medical image…
+                are we really sure we know what it sees?
             </div>
 
         </div>
 
     </div>
 
+</div>
 
 
-    <!-- INSIGHT 2 -->
 
-    <div class="insight">
 
-        <div class="insight-header">
+<!-- INSIGHT 02 -->
 
-            <div>
-                <div class="insight-number">02</div>
+<div class="insight">
 
-                <h2>
-                    Does AI understand an image — or recognize patterns?
-                </h2>
+    <div class="insight-header">
 
-                <p>
-                    A simple question with a surprisingly interesting answer.
-                </p>
-            </div>
+        <div>
 
-            <div class="arrow">↓</div>
+            <div class="insight-number">02 · AI & IMAGING</div>
+
+            <h2>
+                Does AI understand an image — or recognize patterns?
+            </h2>
+
+            <p>
+                A simple question that changes how we think about medical AI.
+            </p>
 
         </div>
 
+        <div class="arrow">↓</div>
 
-        <div class="insight-content">
+    </div>
 
-            <div class="explanation">
 
-                <p>
-                    Imagine showing an AI thousands of ultrasound images
-                    labelled as benign or malignant.
-                </p>
 
-                <p>
-                    During training, the model looks at these examples again
-                    and again. Over time, it becomes better at finding
-                    patterns that are often connected with the labels it
-                    has been given.
-                </p>
+    <div class="insight-content">
 
-                <p>
-                    But does that mean the AI actually understands what
-                    a lesion is? Or has it simply become very good at
-                    recognizing patterns that are associated with the answer?
-                </p>
+        <div class="content">
 
-            </div>
+            <div class="section-label">Imagine this</div>
+
+            <p>
+                Imagine showing an AI thousands of ultrasound images
+                labelled as benign or malignant.
+            </p>
+
+            <p>
+                The model studies these examples during training.
+                It does not receive a textbook definition of a tumour
+                and then understand it like a student would.
+            </p>
+
+            <p>
+                Instead, it learns patterns in the examples that help
+                it distinguish between the categories it has been trained
+                to recognize.
+            </p>
 
 
             <div class="visual-box">
 
-                <div class="comparison">
+                <div class="pattern-grid">
 
-                    <div class="comparison-box">
+                    <div class="pattern-box">
 
-                        <h3>Human</h3>
+                        <h3>What a human can use</h3>
 
                         <p>• Anatomy</p>
                         <p>• Clinical knowledge</p>
-                        <p>• Patient context</p>
-                        <p>• Experience</p>
+                        <p>• Patient information</p>
+                        <p>• Previous experience</p>
 
                     </div>
 
-                    <div class="vs">VS</div>
 
-                    <div class="comparison-box">
+                    <div class="vs">
+                        VS
+                    </div>
 
-                        <h3>AI Model</h3>
 
-                        <p>• Image patterns</p>
-                        <p>• Features learned from data</p>
-                        <p>• Mathematical relationships</p>
+                    <div class="pattern-box">
+
+                        <h3>What an AI model uses</h3>
+
+                        <p>• Patterns in images</p>
+                        <p>• Information learned from data</p>
+                        <p>• Relationships between features</p>
                         <p>• Prediction</p>
 
                     </div>
@@ -697,17 +831,63 @@
             </div>
 
 
+            <div class="section-label">Does that mean AI understands?</div>
+
+            <p>
+                This is where things become interesting.
+            </p>
+
+            <p>
+                An AI model can become extremely good at recognizing
+                patterns associated with a particular outcome. But
+                recognizing those patterns is not necessarily the same
+                as understanding the medical meaning of an image.
+            </p>
+
+            <p>
+                For example, if certain features repeatedly appear in
+                images labelled as malignant, the model may learn that
+                those features are useful for making its prediction.
+                But it does not have the same understanding of disease,
+                anatomy, or patient history that a healthcare professional
+                brings to the examination.
+            </p>
+
+
+            <div class="fact-box">
+                <strong>The important idea:</strong><br>
+                A model can recognize patterns very well without
+                understanding an image in the same way a human does.
+            </div>
+
+
+            <div class="section-label">Why should we care?</div>
+
+            <p>
+                Because a model can sometimes learn a pattern that works
+                well in its training data but does not represent the
+                medical finding we actually care about.
+            </p>
+
+            <p>
+                This is one reason researchers test models on new images,
+                different datasets, and different patient populations.
+                A model should not only perform well on the examples
+                it has already seen.
+            </p>
+
+
             <button class="reveal-btn" onclick="revealText(this)">
-                Why does this matter?
+                Think about the difference
             </button>
 
             <div class="reveal-text">
-                Because a model can sometimes learn something that works
-                very well on its training examples but does not represent
-                the actual medical finding we care about. For example,
-                it might notice a visual pattern that happens to appear
-                often in one group of images. That is why testing AI on
-                new and different images is so important.
+                A useful way to think about it is this: a medical imaging
+                professional brings anatomy, clinical knowledge, patient
+                information, and experience together when interpreting an
+                image. An AI model works from the information available
+                in its training and input data. That difference matters
+                when we decide how AI should be used in healthcare.
             </div>
 
 
@@ -733,58 +913,46 @@
 
     </div>
 
+</div>
 
 
-    <!-- INSIGHT 3 -->
 
-    <div class="insight">
 
-        <div class="insight-header">
+<!-- INSIGHT 03 -->
 
-            <div>
-                <div class="insight-number">03</div>
+<div class="insight">
 
-                <h2>
-                    Can AI be confident and still be wrong?
-                </h2>
+    <div class="insight-header">
 
-                <p>
-                    Sometimes the number beside a prediction can be misleading.
-                </p>
-            </div>
+        <div>
 
-            <div class="arrow">↓</div>
+            <div class="insight-number">03 · AI & IMAGING</div>
+
+            <h2>
+                Can AI be confident and still be wrong?
+            </h2>
+
+            <p>
+                A high percentage can look convincing. But what does it really mean?
+            </p>
 
         </div>
 
+        <div class="arrow">↓</div>
 
-        <div class="insight-content">
+    </div>
 
-            <div class="explanation">
 
-                <p>
-                    Imagine an AI system looks at a medical image and says:
-                    “Malignant — 99% confidence.”
-                </p>
 
-                <p>
-                    Sounds convincing, right?
-                </p>
+    <div class="insight-content">
 
-                <p>
-                    But confidence is not the same thing as correctness.
-                    An AI model can be very sure about a prediction and
-                    still get it wrong.
-                </p>
+        <div class="content">
 
-                <p>
-                    This becomes especially important in medical imaging,
-                    because an incorrect prediction can affect how an image
-                    is reviewed or how a clinical decision is considered.
-                </p>
+            <div class="section-label">Imagine this</div>
 
-            </div>
-
+            <p>
+                An AI system looks at a medical image and says:
+            </p>
 
             <div class="confidence-box">
 
@@ -794,25 +962,83 @@
                     <div class="confidence-fill"></div>
                 </div>
 
-                <p>
-                    High confidence does not mean guaranteed correctness.
-                </p>
+                <div class="confidence-caption">
+                    “Malignant — 99% confidence”
+                </div>
 
             </div>
 
 
+            <p>
+                Sounds convincing, right?
+            </p>
+
+            <p>
+                But here is something important:
+                <strong>confidence is not the same as correctness.</strong>
+            </p>
+
+            <p>
+                An AI model can be very confident about a prediction
+                and still make the wrong prediction.
+            </p>
+
+
+            <div class="section-label">Why can this happen?</div>
+
+            <p>
+                AI models learn from data. If a new image is very different
+                from the examples the model learned from, the model may
+                struggle to handle it correctly.
+            </p>
+
+            <p>
+                It may also pick up patterns in the training data that
+                are useful for making predictions but are not actually
+                related to the medical finding we want it to identify.
+            </p>
+
+            <p>
+                And because the model still has to produce an output,
+                it can sometimes give that output with a high confidence
+                score even when it is wrong.
+            </p>
+
+
+            <div class="fact-box">
+                <strong>99% confidence does not mean:</strong><br>
+                “There is a 99% guarantee that this diagnosis is correct.”
+                The meaning of a model's confidence score depends on how
+                the model was trained, tested, and calibrated.
+            </div>
+
+
+            <div class="section-label">Why does this matter in medical imaging?</div>
+
+            <p>
+                Medical images can influence important clinical decisions.
+                That means an AI system should not be trusted simply because
+                a number beside its prediction looks impressive.
+            </p>
+
+            <p>
+                AI systems need proper testing, careful evaluation,
+                and human oversight. Their role should be to support
+                healthcare professionals rather than replace their judgment.
+            </p>
+
+
             <button class="reveal-btn" onclick="revealText(this)">
-                But how can 99% still be wrong?
+                One more thing to consider
             </button>
 
             <div class="reveal-text">
-                The number produced by an AI model is based on what the
-                model has learned from its data. If an image is unusual,
-                different from the examples the model learned from, or
-                contains something the model handles poorly, it can still
-                make an incorrect prediction with high confidence.
-                That is why AI should support human expertise rather than
-                replace it.
+                Researchers do not only look at whether an AI model is
+                accurate. They can also study when it makes mistakes,
+                whether its confidence matches its actual performance,
+                and how it behaves on data that is different from its
+                training examples. Understanding failure is just as
+                important as celebrating accuracy.
             </div>
 
 
@@ -839,8 +1065,12 @@
 
     </div>
 
+</div>
+
+
 
 </section>
+
 
 
 <!-- FOOTER -->
@@ -848,6 +1078,7 @@
 <footer>
     © 2026 Med Imaging Hub · Complex medical imaging concepts, explained simply.
 </footer>
+
 
 
 <script>
@@ -877,7 +1108,7 @@
     });
 
 
-    /* REVEAL TEXT */
+    /* REVEAL EXTRA EXPLANATION */
 
     function revealText(button) {
 
@@ -886,14 +1117,19 @@
         text.classList.toggle("show");
 
         if (text.classList.contains("show")) {
+
             button.textContent = "Hide explanation";
+
         } else {
+
             button.textContent = "Look a little deeper";
+
         }
 
     }
 
 </script>
+
 
 </body>
 </html>
