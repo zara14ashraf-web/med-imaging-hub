@@ -1,1180 +1,899 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Insights | Med Imaging Hub</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      color: #17202a;
-      background: #ffffff;
-      line-height: 1.6;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 8%;
-      border-bottom: 1px solid #e8edf2;
-      background: #ffffff;
-    }
-
-    .logo {
-      font-size: 23px;
-      font-weight: 700;
-      text-decoration: none;
-      color: #17202a;
-    }
-
-    .logo span {
-      color: #2563eb;
-    }
-
-    nav {
-      display: flex;
-      gap: 28px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #4b5563;
-      font-size: 14px;
-      transition: 0.2s ease;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #2563eb;
-    }
-
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      text-align: center;
-      padding: 95px 8% 85px;
-
-      background:
-        radial-gradient(
-          circle at 20% 20%,
-          rgba(37, 99, 235, 0.08),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 80% 30%,
-          rgba(37, 99, 235, 0.06),
-          transparent 30%
-        ),
-        #f8fafc;
-    }
-
-    .eyebrow {
-      display: inline-block;
-
-      color: #2563eb;
-      background: #eff6ff;
-
-      padding: 7px 13px;
-      border-radius: 30px;
-
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: 52px;
-      line-height: 1.1;
-      letter-spacing: -2px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 650px;
-      margin: auto;
-
-      color: #64748b;
-      font-size: 17px;
-    }
-
-
-    /* =========================
-       MAIN
-    ========================= */
-
-    main {
-      max-width: 1150px;
-      margin: auto;
-      padding: 75px 8%;
-    }
-
-
-    /* =========================
-       INTRO
-    ========================= */
-
-    .intro {
-      max-width: 720px;
-      margin: 0 auto 65px;
-      text-align: center;
-    }
-
-    .intro h2 {
-      font-size: 30px;
-      margin-bottom: 12px;
-      letter-spacing: -0.5px;
-    }
-
-    .intro p {
-      color: #64748b;
-      font-size: 15px;
-    }
-
-
-    /* =========================
-       INSIGHT CARDS
-    ========================= */
-
-    .insights {
-      display: grid;
-      gap: 22px;
-    }
-
-    .insight {
-      border: 1px solid #e8edf2;
-      border-radius: 18px;
-
-      background: #ffffff;
-
-      overflow: hidden;
-
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
-    }
-
-    .insight:hover {
-      transform: translateY(-3px);
-
-      border-color: #cbdaf5;
-
-      box-shadow:
-        0 14px 35px rgba(15, 23, 42, 0.07);
-    }
-
-
-    /* CARD TOP */
-
-    .insight-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      padding: 28px 30px;
-
-      cursor: pointer;
-    }
-
-    .insight-number {
-      color: #2563eb;
-      font-size: 13px;
-      font-weight: 700;
-
-      margin-bottom: 8px;
-      letter-spacing: 0.5px;
-    }
-
-    .insight h3 {
-      font-size: 22px;
-      line-height: 1.3;
-      font-weight: 700;
-    }
-
-    .insight-subtitle {
-      color: #64748b;
-      font-size: 14px;
-
-      margin-top: 7px;
-    }
-
-
-    /* PLUS BUTTON */
-
-    .toggle {
-      width: 42px;
-      height: 42px;
-
-      border: 1px solid #dbe5f0;
-      border-radius: 50%;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      color: #64748b;
-      font-size: 22px;
-
-      flex-shrink: 0;
-
-      transition: 0.25s ease;
-    }
-
-    .insight.open .toggle {
-      transform: rotate(45deg);
-      color: #2563eb;
-      border-color: #cbdaf5;
-    }
-
-
-    /* =========================
-       INSIGHT CONTENT
-    ========================= */
-
-    .insight-content {
-      display: none;
-
-      border-top: 1px solid #edf1f5;
-
-      padding: 0 30px 32px;
-    }
-
-    .insight.open .insight-content {
-      display: block;
-    }
-
-
-    /* VISUAL AREA */
-
-    .visual {
-      margin-top: 28px;
-
-      background: #f8fafc;
-
-      border: 1px solid #e8edf2;
-      border-radius: 14px;
-
-      padding: 30px;
-    }
-
-
-    /* =========================
-       INSIGHT 01 VISUAL
-    ========================= */
-
-    .scan-flow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-
-      flex-wrap: wrap;
-    }
-
-    .scan-box {
-      min-width: 145px;
-
-      padding: 22px 15px;
-
-      text-align: center;
-
-      background: #ffffff;
-      border: 1px solid #dbe5f0;
-      border-radius: 12px;
-    }
-
-    .scan-icon {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
-
-    .scan-box strong {
-      display: block;
-      font-size: 14px;
-    }
-
-    .scan-box span {
-      color: #94a3b8;
-      font-size: 12px;
-    }
-
-    .flow-arrow {
-      color: #2563eb;
-      font-size: 22px;
-    }
-
-
-    /* REVEAL BUTTON */
-
-    .reveal-btn {
-      display: block;
-
-      margin: 22px auto 0;
-
-      border: 1px solid #cbdaf5;
-      background: #ffffff;
-
-      color: #2563eb;
-
-      padding: 9px 17px;
-
-      border-radius: 8px;
-
-      font-size: 13px;
-      font-weight: 600;
-
-      cursor: pointer;
-
-      transition: 0.2s ease;
-    }
-
-    .reveal-btn:hover {
-      background: #eff6ff;
-    }
-
-    .reveal-text {
-      display: none;
-
-      max-width: 580px;
-      margin: 18px auto 0;
-
-      text-align: center;
-
-      color: #475569;
-      font-size: 13px;
-    }
-
-    .reveal-text.show {
-      display: block;
-    }
-
-
-    /* =========================
-       THOUGHT BOX
-    ========================= */
-
-    .thought {
-      margin-top: 28px;
-
-      padding: 22px 24px;
-
-      border-left: 3px solid #2563eb;
-
-      background: #f8fafc;
-
-      border-radius: 0 12px 12px 0;
-    }
-
-    .thought-label {
-      color: #2563eb;
-
-      font-size: 11px;
-      font-weight: 700;
-
-      letter-spacing: 1px;
-      text-transform: uppercase;
-
-      margin-bottom: 7px;
-    }
-
-    .thought p {
-      color: #475569;
-      font-size: 14px;
-    }
-
-
-    /* =========================
-       INSIGHT 02
-    ========================= */
-
-    .pattern-box {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-
-      align-items: center;
-
-      gap: 20px;
-    }
-
-    .pattern-side {
-      padding: 25px;
-
-      background: #ffffff;
-
-      border: 1px solid #dbe5f0;
-      border-radius: 12px;
-
-      text-align: center;
-    }
-
-    .pattern-side h4 {
-      font-size: 15px;
-      margin-bottom: 8px;
-    }
-
-    .pattern-side p {
-      color: #64748b;
-      font-size: 13px;
-    }
-
-    .pattern-question {
-      color: #2563eb;
-      font-size: 25px;
-      font-weight: 700;
-    }
-
-
-    /* =========================
-       INSIGHT 03
-    ========================= */
-
-    .confidence {
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .confidence-row {
-      margin-bottom: 22px;
-    }
-
-    .confidence-label {
-      display: flex;
-      justify-content: space-between;
-
-      margin-bottom: 8px;
-
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .confidence-bar {
-      height: 10px;
-
-      background: #e8edf2;
-
-      border-radius: 20px;
-
-      overflow: hidden;
-    }
-
-    .confidence-fill {
-      height: 100%;
-
-      background: #2563eb;
-
-      border-radius: 20px;
-    }
-
-    .confidence-result {
-      margin-top: 25px;
-
-      padding: 18px;
-
-      text-align: center;
-
-      background: #ffffff;
-
-      border: 1px solid #dbe5f0;
-
-      border-radius: 12px;
-
-      color: #475569;
-
-      font-size: 14px;
-    }
-
-
-    /* =========================
-       CLOSING
-    ========================= */
-
-    .closing {
-      margin-top: 75px;
-
-      text-align: center;
-
-      padding: 55px 30px;
-
-      background: #f8fafc;
-
-      border-radius: 20px;
-
-      border: 1px solid #e8edf2;
-    }
-
-    .closing h2 {
-      font-size: 29px;
-      margin-bottom: 12px;
-    }
-
-    .closing p {
-      max-width: 650px;
-      margin: auto;
-
-      color: #64748b;
-      font-size: 14px;
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      text-align: center;
-
-      padding: 35px 8%;
-
-      border-top: 1px solid #e8edf2;
-
-      color: #94a3b8;
-
-      font-size: 13px;
-    }
-
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media (max-width: 800px) {
-
-      header {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      nav {
-        gap: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .pattern-box {
-        grid-template-columns: 1fr;
-      }
-
-      .pattern-question {
-        text-align: center;
-      }
-    }
-
-
-    @media (max-width: 550px) {
-
-      .hero {
-        padding: 65px 7% 60px;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      main {
-        padding: 60px 7%;
-      }
-
-      .insight-top {
-        padding: 23px;
-      }
-
-      .insight-content {
-        padding: 0 23px 27px;
-      }
-
-      .insight h3 {
-        font-size: 19px;
-      }
-
-      .visual {
-        padding: 20px;
-      }
-
-      .scan-flow {
-        flex-direction: column;
-      }
-
-      .flow-arrow {
-        transform: rotate(90deg);
-      }
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Insights | Med Imaging Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #17202a;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            border-bottom: 1px solid #e8edf2;
+            background: #ffffff;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 700;
+            color: #17202a;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 14px;
+            transition: 0.2s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #2563eb;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 90px 8% 75px;
+            background: radial-gradient(
+                circle at top,
+                #eef5ff 0%,
+                #f8fafc 45%,
+                #ffffff 80%
+            );
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 7px 13px;
+            border-radius: 20px;
+            background: #eaf2ff;
+            color: #2563eb;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #6b7280;
+            font-size: 17px;
+        }
+
+        /* INTRO */
+        .intro {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 65px 8% 30px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .intro p {
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        /* INSIGHTS */
+        .insights {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 35px 8% 80px;
+        }
+
+        .insight {
+            border: 1px solid #e6ebf1;
+            border-radius: 18px;
+            margin-bottom: 24px;
+            overflow: hidden;
+            background: #ffffff;
+            transition: 0.25s ease;
+        }
+
+        .insight:hover {
+            box-shadow: 0 12px 30px rgba(30, 64, 175, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .insight-header {
+            padding: 28px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .insight-number {
+            font-size: 12px;
+            color: #2563eb;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .insight-header h2 {
+            font-size: 23px;
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+
+        .insight-header p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .arrow {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+            font-size: 20px;
+            flex-shrink: 0;
+            transition: 0.25s ease;
+        }
+
+        .insight.open .arrow {
+            transform: rotate(180deg);
+            background: #eaf2ff;
+        }
+
+        /* CONTENT */
+        .insight-content {
+            display: none;
+            padding: 0 30px 32px;
+        }
+
+        .insight.open .insight-content {
+            display: block;
+        }
+
+        .explanation {
+            max-width: 760px;
+            color: #4b5563;
+            font-size: 15px;
+        }
+
+        .explanation p {
+            margin-bottom: 14px;
+        }
+
+        /* VISUAL */
+        .visual-box {
+            margin: 28px 0;
+            padding: 28px;
+            background: #f8fafc;
+            border-radius: 14px;
+            border: 1px solid #edf1f5;
+        }
+
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .flow-item {
+            background: #ffffff;
+            border: 1px solid #dce4ee;
+            border-radius: 12px;
+            padding: 14px 18px;
+            text-align: center;
+            min-width: 120px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .flow-item small {
+            display: block;
+            color: #7b8794;
+            font-size: 11px;
+            font-weight: 400;
+            margin-top: 3px;
+        }
+
+        .flow-arrow {
+            color: #2563eb;
+            font-size: 22px;
+        }
+
+        /* HUMAN VS AI */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .comparison-box {
+            background: #ffffff;
+            border: 1px solid #dce4ee;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .comparison-box h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .comparison-box p {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 5px;
+        }
+
+        .vs {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #eaf2ff;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* CONFIDENCE */
+        .confidence-box {
+            background: #f8fafc;
+            border: 1px solid #edf1f5;
+            border-radius: 14px;
+            padding: 28px;
+            margin: 28px 0;
+            text-align: center;
+        }
+
+        .confidence-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        .confidence-bar {
+            max-width: 500px;
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            margin: 0 auto 15px;
+            overflow: hidden;
+        }
+
+        .confidence-fill {
+            width: 99%;
+            height: 100%;
+            background: #2563eb;
+            border-radius: 10px;
+        }
+
+        .confidence-box p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* REVEAL BUTTON */
+        .reveal-btn {
+            border: none;
+            background: #2563eb;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.2s ease;
+        }
+
+        .reveal-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .reveal-text {
+            display: none;
+            margin-top: 18px;
+            padding: 18px;
+            background: #f8fafc;
+            border-left: 3px solid #2563eb;
+            border-radius: 8px;
+            color: #4b5563;
+            font-size: 14px;
+        }
+
+        .reveal-text.show {
+            display: block;
+        }
+
+        /* MY THOUGHT */
+        .thought {
+            margin-top: 28px;
+            padding: 20px 22px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border: 1px solid #edf1f5;
+        }
+
+        .thought-title {
+            font-size: 11px;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .thought p {
+            color: #4b5563;
+            font-size: 14px;
+        }
+
+        .question {
+            margin-top: 22px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #17202a;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid #e8edf2;
+            padding: 35px 8%;
+            text-align: center;
+            color: #7b8794;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 65px 7% 55px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .intro {
+                padding-top: 45px;
+            }
+
+            .insight-header {
+                padding: 23px;
+            }
+
+            .insight-content {
+                padding: 0 23px 28px;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .vs {
+                margin: auto;
+            }
+
+            .flow {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-
-  <!-- =========================
-       HEADER
-  ========================= -->
-
-  <header>
-
-    <a href="index.html" class="logo">
-      Med Imaging <span>Hub</span>
+<header>
+    <a href="../index.html" class="logo">
+        Med Imaging <span>Hub</span>
     </a>
 
     <nav>
-
-      <a href="index.html">Home</a>
-
-      <a href="articles.html">Articles</a>
-
-      <a href="insights.html" class="active">Insights</a>
-
-      <a href="projects.html">Projects</a>
-
-      <a href="resources.html">Resources</a>
-
-      <a href="about.html">About</a>
-
+        <a href="../index.html">Home</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../insights.html" class="active">Insights</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../resources.html">Resources</a>
+        <a href="../about.html">About</a>
     </nav>
-
-  </header>
-
+</header>
 
 
-  <!-- =========================
-       HERO
-  ========================= -->
+<!-- HERO -->
 
-  <div class="hero">
+<section class="hero">
 
-    <span class="eyebrow">AI × Medical Imaging</span>
+    <div class="eyebrow">AI × Medical Imaging</div>
 
     <h1>Things Worth Exploring.</h1>
 
     <p>
-      Small questions, interesting observations, and personal thoughts
-      about where AI meets medical imaging.
+        Small questions, interesting observations, and personal thoughts
+        about where AI meets medical imaging.
     </p>
 
-  </div>
+</section>
 
 
+<!-- INTRO -->
 
-  <!-- =========================
-       MAIN
-  ========================= -->
+<section class="intro">
 
-  <main>
+    <h2>Not Everything Needs an Article.</h2>
 
-
-    <div class="intro">
-
-      <h2>Not Everything Needs an Article.</h2>
-
-      <p>
+    <p>
         Some ideas are more interesting when you stop, look at them,
-        and simply ask: <em>“What if?”</em>
-      </p>
+        and simply ask: “What if?”
+    </p>
+
+</section>
+
+
+<!-- INSIGHTS -->
+
+<section class="insights">
+
+
+    <!-- INSIGHT 1 -->
+
+    <div class="insight">
+
+        <div class="insight-header">
+
+            <div>
+                <div class="insight-number">01</div>
+
+                <h2>
+                    What does AI actually look at in a medical image?
+                </h2>
+
+                <p>
+                    We see anatomy. But what does a model see?
+                </p>
+            </div>
+
+            <div class="arrow">↓</div>
+
+        </div>
+
+
+        <div class="insight-content">
+
+            <div class="explanation">
+
+                <p>
+                    When we look at an X-ray, we may notice bones, lungs,
+                    or an area that looks unusual. We understand the image
+                    using what we already know about the human body.
+                </p>
+
+                <p>
+                    An AI model looks at the same image in a different way.
+                    It processes the image as data and looks for patterns
+                    that it has learned from many examples.
+                </p>
+
+                <p>
+                    These patterns may help the model decide whether an
+                    image looks more like one category or another. But
+                    this creates an interesting question: what part of the
+                    image is actually influencing its decision?
+                </p>
+
+            </div>
+
+
+            <div class="visual-box">
+
+                <div class="flow">
+
+                    <div class="flow-item">
+                        Medical Image
+                        <small>X-ray / MRI / Ultrasound</small>
+                    </div>
+
+                    <div class="flow-arrow">→</div>
+
+                    <div class="flow-item">
+                        AI Model
+                        <small>Finds patterns</small>
+                    </div>
+
+                    <div class="flow-arrow">→</div>
+
+                    <div class="flow-item">
+                        Prediction
+                        <small>Model's decision</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button class="reveal-btn" onclick="revealText(this)">
+                Look a little deeper
+            </button>
+
+            <div class="reveal-text">
+                This is where tools such as Grad-CAM can become interesting.
+                They can help us see which areas of an image contributed
+                to a model's prediction. It does not mean we can see
+                exactly what the AI “thinks”, but it can give us a useful
+                clue about where the model was focusing.
+            </div>
+
+
+            <div class="thought">
+
+                <div class="thought-title">My Thought</div>
+
+                <p>
+                    When I first started exploring AI in medical imaging,
+                    one question kept coming back to me: if a model gives
+                    the right answer, how do we know what it actually looked at?
+                </p>
+
+            </div>
+
+
+            <div class="question">
+                So, when AI looks at a medical image… are we really sure
+                we know what it sees?
+            </div>
+
+        </div>
 
     </div>
 
 
 
-    <!-- =========================
-         INSIGHTS
-    ========================= -->
+    <!-- INSIGHT 2 -->
 
-    <div class="insights">
+    <div class="insight">
 
+        <div class="insight-header">
 
-      <!-- =====================
-           INSIGHT 01
-      ====================== -->
+            <div>
+                <div class="insight-number">02</div>
 
-      <div class="insight">
-
-        <div class="insight-top" onclick="toggleInsight(this)">
-
-          <div>
-
-            <div class="insight-number">
-              INSIGHT 01
-            </div>
-
-            <h3>
-              What does AI actually look at in a medical image?
-            </h3>
-
-            <p class="insight-subtitle">
-              We see anatomy. But what does a model see?
-            </p>
-
-          </div>
-
-          <div class="toggle">
-            +
-          </div>
-
-        </div>
-
-
-        <div class="insight-content">
-
-
-          <div class="visual">
-
-            <div class="scan-flow">
-
-              <div class="scan-box">
-
-                <div class="scan-icon">
-                  🩻
-                </div>
-
-                <strong>
-                  Medical Image
-                </strong>
-
-                <span>
-                  What we see
-                </span>
-
-              </div>
-
-
-              <div class="flow-arrow">
-                →
-              </div>
-
-
-              <div class="scan-box">
-
-                <div class="scan-icon">
-                  ✦
-                </div>
-
-                <strong>
-                  AI Model
-                </strong>
-
-                <span>
-                  What it analyses
-                </span>
-
-              </div>
-
-
-              <div class="flow-arrow">
-                →
-              </div>
-
-
-              <div class="scan-box">
-
-                <div class="scan-icon">
-                  ◉
-                </div>
-
-                <strong>
-                  Attention
-                </strong>
-
-                <span>
-                  Where it focuses
-                </span>
-
-              </div>
-
-            </div>
-
-
-            <button class="reveal-btn"
-                    onclick="revealText(event, 'reveal1')">
-
-              Reveal the thought →
-
-            </button>
-
-
-            <div class="reveal-text" id="reveal1">
-
-              An AI model does not look at an X-ray the way a human does.
-              It processes patterns in the image that can help it make
-              a prediction.
-
-            </div>
-
-          </div>
-
-
-          <div class="thought">
-
-            <div class="thought-label">
-              A thought
-            </div>
-
-            <p>
-              When I first started exploring AI in medical imaging,
-              one question kept coming back to me: if a model gives
-              the right answer, how do we know what it actually looked at?
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- =====================
-           INSIGHT 02
-      ====================== -->
-
-      <div class="insight">
-
-        <div class="insight-top" onclick="toggleInsight(this)">
-
-          <div>
-
-            <div class="insight-number">
-              INSIGHT 02
-            </div>
-
-            <h3>
-              Does AI understand an image — or recognize patterns?
-            </h3>
-
-            <p class="insight-subtitle">
-              A simple question with a surprisingly complicated answer.
-            </p>
-
-          </div>
-
-          <div class="toggle">
-            +
-          </div>
-
-        </div>
-
-
-        <div class="insight-content">
-
-
-          <div class="visual">
-
-            <div class="pattern-box">
-
-              <div class="pattern-side">
-
-                <h4>
-                  Human
-                </h4>
+                <h2>
+                    Does AI understand an image — or recognize patterns?
+                </h2>
 
                 <p>
-                  Anatomy<br>
-                  Context<br>
-                  Clinical knowledge
+                    A simple question with a surprisingly interesting answer.
                 </p>
-
-              </div>
-
-
-              <div class="pattern-question">
-                ?
-              </div>
-
-
-              <div class="pattern-side">
-
-                <h4>
-                  AI
-                </h4>
-
-                <p>
-                  Image patterns<br>
-                  Learned features<br>
-                  Predictions
-                </p>
-
-              </div>
-
             </div>
 
-
-            <button class="reveal-btn"
-                    onclick="revealText(event, 'reveal2')">
-
-              Think about it →
-
-            </button>
-
-
-            <div class="reveal-text" id="reveal2">
-
-              A model learns from examples. It can become very good
-              at recognizing patterns associated with a particular
-              outcome — but that does not necessarily mean it understands
-              the image in the same way a human does.
-
-            </div>
-
-          </div>
-
-
-          <div class="thought">
-
-            <div class="thought-label">
-              A thought
-            </div>
-
-            <p>
-              This is one of the things I find most interesting about
-              medical imaging AI. A correct prediction does not always
-              tell us what the model has learned.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- =====================
-           INSIGHT 03
-      ====================== -->
-
-      <div class="insight">
-
-        <div class="insight-top" onclick="toggleInsight(this)">
-
-          <div>
-
-            <div class="insight-number">
-              INSIGHT 03
-            </div>
-
-            <h3>
-              Can AI be confident and still be wrong?
-            </h3>
-
-            <p class="insight-subtitle">
-              Sometimes the number beside a prediction can be misleading.
-            </p>
-
-          </div>
-
-          <div class="toggle">
-            +
-          </div>
+            <div class="arrow">↓</div>
 
         </div>
 
 
         <div class="insight-content">
 
+            <div class="explanation">
 
-          <div class="visual">
+                <p>
+                    Imagine showing an AI thousands of ultrasound images
+                    labelled as benign or malignant.
+                </p>
 
-            <div class="confidence">
+                <p>
+                    During training, the model looks at these examples again
+                    and again. Over time, it becomes better at finding
+                    patterns that are often connected with the labels it
+                    has been given.
+                </p>
 
-              <div class="confidence-row">
+                <p>
+                    But does that mean the AI actually understands what
+                    a lesion is? Or has it simply become very good at
+                    recognizing patterns that are associated with the answer?
+                </p>
 
-                <div class="confidence-label">
+            </div>
 
-                  <span>
-                    AI prediction
-                  </span>
 
-                  <span>
-                    99%
-                  </span>
+            <div class="visual-box">
+
+                <div class="comparison">
+
+                    <div class="comparison-box">
+
+                        <h3>Human</h3>
+
+                        <p>• Anatomy</p>
+                        <p>• Clinical knowledge</p>
+                        <p>• Patient context</p>
+                        <p>• Experience</p>
+
+                    </div>
+
+                    <div class="vs">VS</div>
+
+                    <div class="comparison-box">
+
+                        <h3>AI Model</h3>
+
+                        <p>• Image patterns</p>
+                        <p>• Features learned from data</p>
+                        <p>• Mathematical relationships</p>
+                        <p>• Prediction</p>
+
+                    </div>
 
                 </div>
+
+            </div>
+
+
+            <button class="reveal-btn" onclick="revealText(this)">
+                Why does this matter?
+            </button>
+
+            <div class="reveal-text">
+                Because a model can sometimes learn something that works
+                very well on its training examples but does not represent
+                the actual medical finding we care about. For example,
+                it might notice a visual pattern that happens to appear
+                often in one group of images. That is why testing AI on
+                new and different images is so important.
+            </div>
+
+
+            <div class="thought">
+
+                <div class="thought-title">My Thought</div>
+
+                <p>
+                    This is one of the things I find most interesting about
+                    medical imaging AI. A correct prediction does not always
+                    tell us what the model has learned.
+                </p>
+
+            </div>
+
+
+            <div class="question">
+                If AI finds the right answer, does it really matter
+                how it got there?
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- INSIGHT 3 -->
+
+    <div class="insight">
+
+        <div class="insight-header">
+
+            <div>
+                <div class="insight-number">03</div>
+
+                <h2>
+                    Can AI be confident and still be wrong?
+                </h2>
+
+                <p>
+                    Sometimes the number beside a prediction can be misleading.
+                </p>
+            </div>
+
+            <div class="arrow">↓</div>
+
+        </div>
+
+
+        <div class="insight-content">
+
+            <div class="explanation">
+
+                <p>
+                    Imagine an AI system looks at a medical image and says:
+                    “Malignant — 99% confidence.”
+                </p>
+
+                <p>
+                    Sounds convincing, right?
+                </p>
+
+                <p>
+                    But confidence is not the same thing as correctness.
+                    An AI model can be very sure about a prediction and
+                    still get it wrong.
+                </p>
+
+                <p>
+                    This becomes especially important in medical imaging,
+                    because an incorrect prediction can affect how an image
+                    is reviewed or how a clinical decision is considered.
+                </p>
+
+            </div>
+
+
+            <div class="confidence-box">
+
+                <div class="confidence-number">99%</div>
 
                 <div class="confidence-bar">
-
-                  <div
-                    class="confidence-fill"
-                    style="width: 99%;">
-                  </div>
-
+                    <div class="confidence-fill"></div>
                 </div>
 
-              </div>
-
-
-              <div class="confidence-result">
-
-                <strong>
-                  High confidence ≠ guaranteed correctness
-                </strong>
-
-                <br>
-
-                A model can be very confident in a prediction
-                and still make a mistake.
-
-              </div>
+                <p>
+                    High confidence does not mean guaranteed correctness.
+                </p>
 
             </div>
 
 
-            <button class="reveal-btn"
-                    onclick="revealText(event, 'reveal3')">
-
-              Why does this matter? →
-
+            <button class="reveal-btn" onclick="revealText(this)">
+                But how can 99% still be wrong?
             </button>
 
+            <div class="reveal-text">
+                The number produced by an AI model is based on what the
+                model has learned from its data. If an image is unusual,
+                different from the examples the model learned from, or
+                contains something the model handles poorly, it can still
+                make an incorrect prediction with high confidence.
+                That is why AI should support human expertise rather than
+                replace it.
+            </div>
 
-            <div class="reveal-text" id="reveal3">
 
-              In medical imaging, confidence should not be treated
-              as proof. AI outputs need appropriate validation,
-              clinical context, and human oversight.
+            <div class="thought">
+
+                <div class="thought-title">My Thought</div>
+
+                <p>
+                    A high percentage can look reassuring. But if AI is
+                    going to assist healthcare professionals, I think one
+                    of the important questions is not only “How accurate is it?”
+                    but also “When is it wrong?”
+                </p>
 
             </div>
 
-          </div>
 
-
-          <div class="thought">
-
-            <div class="thought-label">
-              A thought
+            <div class="question">
+                Would you trust an AI system simply because it says
+                “99% confident”?
             </div>
-
-            <p>
-              A high percentage can look reassuring. But if AI is going
-              to assist healthcare professionals, I think one of the
-              important questions is not only <em>“How accurate is it?”</em>
-              but also <em>“When is it wrong?”</em>
-            </p>
-
-          </div>
 
         </div>
 
-      </div>
-
-
     </div>
 
 
-
-    <!-- =========================
-         CLOSING
-    ========================= -->
-
-    <div class="closing">
-
-      <h2>
-        More Questions Will Come.
-      </h2>
-
-      <p>
-        Insights will grow slowly — as new ideas, technologies,
-        projects and questions become worth exploring.
-        There is no rush to fill this space.
-      </p>
-
-    </div>
+</section>
 
 
-  </main>
+<!-- FOOTER -->
+
+<footer>
+    © 2026 Med Imaging Hub · Complex medical imaging concepts, explained simply.
+</footer>
 
 
+<script>
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
+    /* OPEN ONE INSIGHT AT A TIME */
 
-  <footer>
+    const insights = document.querySelectorAll(".insight");
 
-    © 2026 Med Imaging Hub · Learn. Explore. Think.
+    insights.forEach(insight => {
 
-  </footer>
+        const header = insight.querySelector(".insight-header");
+
+        header.addEventListener("click", () => {
+
+            insights.forEach(other => {
+
+                if (other !== insight) {
+                    other.classList.remove("open");
+                }
+
+            });
+
+            insight.classList.toggle("open");
+
+        });
+
+    });
 
 
+    /* REVEAL TEXT */
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
+    function revealText(button) {
 
-  <script>
+        const text = button.nextElementSibling;
 
-    function toggleInsight(header) {
+        text.classList.toggle("show");
 
-      const insight = header.parentElement;
-
-      document.querySelectorAll(".insight").forEach(item => {
-
-        if (item !== insight) {
-          item.classList.remove("open");
+        if (text.classList.contains("show")) {
+            button.textContent = "Hide explanation";
+        } else {
+            button.textContent = "Look a little deeper";
         }
-
-      });
-
-      insight.classList.toggle("open");
 
     }
 
-
-    function revealText(event, id) {
-
-      event.stopPropagation();
-
-      const text = document.getElementById(id);
-
-      text.classList.toggle("show");
-
-      const button = event.currentTarget;
-
-      if (text.classList.contains("show")) {
-
-        button.textContent = "Hide the thought ↑";
-
-      } else {
-
-        if (id === "reveal1") {
-          button.textContent = "Reveal the thought →";
-        }
-
-        if (id === "reveal2") {
-          button.textContent = "Think about it →";
-        }
-
-        if (id === "reveal3") {
-          button.textContent = "Why does this matter? →";
-        }
-
-      }
-
-    }
-
-  </script>
-
+</script>
 
 </body>
 </html>
