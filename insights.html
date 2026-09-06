@@ -1,1135 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Insights | Med Imaging Hub</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            color: #17202a;
-            background: #ffffff;
-            line-height: 1.6;
-        }
-
-        /* HEADER */
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            border-bottom: 1px solid #e8edf2;
-            background: #ffffff;
-        }
-
-        .logo {
-            font-size: 23px;
-            font-weight: 700;
-            color: #17202a;
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: #2563eb;
-        }
-
-        nav {
-            display: flex;
-            gap: 28px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #4b5563;
-            font-size: 14px;
-            transition: 0.2s ease;
-        }
-
-        nav a:hover,
-        nav a.active {
-            color: #2563eb;
-        }
-
-
-        /* HERO */
-
-        .hero {
-            text-align: center;
-            padding: 90px 8% 75px;
-            background: radial-gradient(
-                circle at top,
-                #eef5ff 0%,
-                #f8fafc 45%,
-                #ffffff 80%
-            );
-        }
-
-        .eyebrow {
-            display: inline-block;
-            padding: 7px 13px;
-            border-radius: 20px;
-            background: #eaf2ff;
-            color: #2563eb;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: 52px;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-            color: #6b7280;
-            font-size: 17px;
-        }
-
-
-        /* INTRO */
-
-        .intro {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 65px 8% 35px;
-            text-align: center;
-        }
-
-        .intro h2 {
-            font-size: 30px;
-            margin-bottom: 14px;
-        }
-
-        .intro p {
-            color: #6b7280;
-            font-size: 16px;
-        }
-
-
-        /* INSIGHT LIST */
-
-        .insights {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 30px 8% 85px;
-        }
-
-
-        /* CARD */
-
-        .insight {
-            border: 1px solid #e6ebf1;
-            border-radius: 18px;
-            margin-bottom: 25px;
-            overflow: hidden;
-            background: #ffffff;
-            transition: 0.25s ease;
-        }
-
-        .insight:hover {
-            box-shadow: 0 12px 30px rgba(30, 64, 175, 0.08);
-            transform: translateY(-2px);
-        }
-
-
-        /* CARD HEADER */
-
-        .insight-header {
-            padding: 30px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .insight-number {
-            font-size: 12px;
-            color: #2563eb;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 7px;
-        }
-
-        .insight-header h2 {
-            font-size: 23px;
-            line-height: 1.3;
-            margin-bottom: 7px;
-        }
-
-        .insight-header p {
-            color: #6b7280;
-            font-size: 14px;
-        }
-
-        .arrow {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background: #f1f5f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2563eb;
-            font-size: 20px;
-            flex-shrink: 0;
-            transition: 0.25s ease;
-        }
-
-        .insight.open .arrow {
-            transform: rotate(180deg);
-            background: #eaf2ff;
-        }
-
-
-        /* CONTENT */
-
-        .insight-content {
-            display: none;
-            padding: 0 30px 35px;
-        }
-
-        .insight.open .insight-content {
-            display: block;
-        }
-
-        .content {
-            max-width: 800px;
-            color: #4b5563;
-            font-size: 15px;
-        }
-
-        .content p {
-            margin-bottom: 15px;
-        }
-
-
-        /* SECTION LABEL */
-
-        .section-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #2563eb;
-            font-weight: 700;
-            margin-top: 27px;
-            margin-bottom: 9px;
-        }
-
-
-        /* SIMPLE FACT BOX */
-
-        .fact-box {
-            margin: 25px 0;
-            padding: 21px 23px;
-            background: #f8fafc;
-            border: 1px solid #edf1f5;
-            border-radius: 12px;
-        }
-
-        .fact-box strong {
-            color: #17202a;
-        }
-
-
-        /* VISUAL FLOW */
-
-        .visual-box {
-            margin: 28px 0;
-            padding: 28px;
-            background: #f8fafc;
-            border-radius: 14px;
-            border: 1px solid #edf1f5;
-        }
-
-        .flow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .flow-item {
-            background: #ffffff;
-            border: 1px solid #dce4ee;
-            border-radius: 12px;
-            padding: 15px 18px;
-            text-align: center;
-            min-width: 125px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .flow-item small {
-            display: block;
-            color: #7b8794;
-            font-size: 11px;
-            font-weight: 400;
-            margin-top: 4px;
-        }
-
-        .flow-arrow {
-            color: #2563eb;
-            font-size: 22px;
-        }
-
-
-        /* PATTERN VISUAL */
-
-        .pattern-grid {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .pattern-box {
-            background: #ffffff;
-            border: 1px solid #dce4ee;
-            border-radius: 12px;
-            padding: 21px;
-        }
-
-        .pattern-box h3 {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        .pattern-box p {
-            font-size: 13px;
-            color: #6b7280;
-            margin-bottom: 5px;
-        }
-
-        .vs {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #eaf2ff;
-            color: #2563eb;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 11px;
-            font-weight: 700;
-        }
-
-
-        /* CONFIDENCE VISUAL */
-
-        .confidence-box {
-            margin: 28px 0;
-            padding: 30px;
-            background: #f8fafc;
-            border: 1px solid #edf1f5;
-            border-radius: 14px;
-            text-align: center;
-        }
-
-        .confidence-number {
-            font-size: 44px;
-            font-weight: 700;
-            color: #2563eb;
-            margin-bottom: 12px;
-        }
-
-        .confidence-bar {
-            max-width: 500px;
-            height: 12px;
-            margin: auto;
-            background: #e5e7eb;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .confidence-fill {
-            width: 99%;
-            height: 100%;
-            background: #2563eb;
-            border-radius: 10px;
-        }
-
-        .confidence-caption {
-            margin-top: 14px;
-            color: #6b7280;
-            font-size: 14px;
-        }
-
-
-        /* KEY POINTS */
-
-        .key-points {
-            margin: 20px 0;
-            padding-left: 20px;
-            color: #4b5563;
-        }
-
-        .key-points li {
-            margin-bottom: 7px;
-        }
-
-
-        /* REVEAL */
-
-        .reveal-btn {
-            border: none;
-            background: #2563eb;
-            color: white;
-            padding: 11px 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 13px;
-            font-weight: 600;
-            transition: 0.2s ease;
-        }
-
-        .reveal-btn:hover {
-            background: #1d4ed8;
-        }
-
-        .reveal-text {
-            display: none;
-            margin-top: 17px;
-            padding: 18px;
-            background: #f8fafc;
-            border-left: 3px solid #2563eb;
-            border-radius: 8px;
-            color: #4b5563;
-            font-size: 14px;
-        }
-
-        .reveal-text.show {
-            display: block;
-        }
-
-
-        /* MY THOUGHT */
-
-        .thought {
-            margin-top: 28px;
-            padding: 21px 23px;
-            background: #f8fafc;
-            border-radius: 12px;
-            border: 1px solid #edf1f5;
-        }
-
-        .thought-title {
-            font-size: 11px;
-            color: #2563eb;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .thought p {
-            color: #4b5563;
-            font-size: 14px;
-        }
-
-
-        /* CLOSING QUESTION */
-
-        .question {
-            margin-top: 24px;
-            font-size: 16px;
-            font-weight: 600;
-            color: #17202a;
-        }
-
-
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid #e8edf2;
-            padding: 35px 8%;
-            text-align: center;
-            color: #7b8794;
-            font-size: 13px;
-        }
-
-
-        /* MOBILE */
-
-        @media (max-width: 700px) {
-
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero {
-                padding: 65px 7% 55px;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
-
-            .intro {
-                padding-top: 45px;
-            }
-
-            .insight-header {
-                padding: 23px;
-            }
-
-            .insight-content {
-                padding: 0 23px 28px;
-            }
-
-            .pattern-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .vs {
-                margin: auto;
-            }
-
-            .flow {
-                flex-direction: column;
-            }
-
-            .flow-arrow {
-                transform: rotate(90deg);
-            }
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Insights | Med Imaging Hub</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #17202a;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b5563;
+      font-size: 14px;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #2563eb;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 90px 8% 75px;
+      background: radial-gradient(
+        circle at top,
+        #eef5ff 0%,
+        #f8fafc 42%,
+        #ffffff 78%
+      );
+    }
+
+    .hero-label {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: #eaf2ff;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0 auto 18px;
+      max-width: 750px;
+      font-size: 52px;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: #667085;
+      font-size: 17px;
+    }
+
+    /* Intro */
+    .intro {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 70px 8% 30px;
+      text-align: center;
+    }
+
+    .intro h2 {
+      margin: 0 0 15px;
+      font-size: 30px;
+      letter-spacing: -0.5px;
+    }
+
+    .intro p {
+      margin: 0;
+      color: #667085;
+      font-size: 16px;
+    }
+
+    /* Insights */
+    .insights {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 40px 8% 90px;
+    }
+
+    .insight-card {
+      display: block;
+      padding: 32px;
+      margin-bottom: 22px;
+      border: 1px solid #e5eaf0;
+      border-radius: 16px;
+      background: #ffffff;
+      text-decoration: none;
+      color: inherit;
+      transition: 0.2s ease;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-3px);
+      border-color: #cbd9ee;
+      box-shadow: 0 10px 25px rgba(23, 32, 42, 0.06);
+    }
+
+    .number {
+      font-size: 13px;
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 12px;
+    }
+
+    .insight-card h3 {
+      margin: 0 0 10px;
+      font-size: 25px;
+      line-height: 1.3;
+    }
+
+    .insight-card p {
+      margin: 0;
+      color: #667085;
+      font-size: 15px;
+      max-width: 800px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 18px;
+      color: #2563eb;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #e8edf2;
+      padding: 28px 8%;
+      text-align: center;
+      color: #7b8490;
+      font-size: 13px;
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 65px 8% 55px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .intro {
+        padding-top: 55px;
+      }
+
+      .insights {
+        padding-top: 30px;
+      }
+
+      .insight-card {
+        padding: 25px;
+      }
+
+      .insight-card h3 {
+        font-size: 22px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
-
-<!-- HEADER -->
-
-<header>
-
+  <header>
     <a href="index.html" class="logo">
-        Med Imaging <span>Hub</span>
+      Med Imaging <span>Hub</span>
     </a>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="articles.html">Articles</a>
-        <a href="insights.html" class="active">Insights</a>
-        <a href="projects.html">Projects</a>
-        <a href="resources.html">Resources</a>
-        <a href="about.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="insights.html" class="active">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
     </nav>
-
-</header>
-
+  </header>
 
 
-<!-- HERO -->
+  <section class="hero">
+    <div class="hero-label">Insights</div>
 
-<section class="hero">
-
-    <div class="eyebrow">AI × Medical Imaging</div>
-
-    <h1>Things Worth Exploring.</h1>
+    <h1>Looking at Where Medical Imaging Is Going</h1>
 
     <p>
-        Technology is changing medical imaging quickly.
-        Here, we look beyond the basics and explore the ideas,
-        questions, and possibilities shaping its future.
+      New technologies are changing the way medical images are produced,
+      processed, and understood. Here, we take a closer look at some of them.
     </p>
-
-</section>
-
+  </section>
 
 
-<!-- INTRO -->
-
-<section class="intro">
-
-    <h2>Look Beyond the Image.</h2>
+  <section class="intro">
+    <h2>What’s New in Medical Imaging?</h2>
 
     <p>
-        Articles help you understand how medical imaging works.
-        Insights take that understanding a little further —
-        into AI, real-world applications, and the questions
-        that are shaping the future of imaging.
+      Medical imaging is not standing still. New ideas are changing
+      technologies that have been used for years. These insights explore
+      what is changing, how it works, and why it matters.
     </p>
+  </section>
 
-</section>
 
+  <section class="insights">
 
+    <a href="insights/virtual-grids.html" class="insight-card">
 
-<!-- INSIGHTS -->
+      <div class="number">01</div>
 
-<section class="insights">
+      <h3>Virtual Grids: Are Physical Grids Still Needed?</h3>
 
+      <p>
+        Physical grids have been used in X-ray imaging for years to reduce
+        scattered radiation. But now, digital systems can use software to
+        achieve a similar goal. So, how does a virtual grid work, and could
+        it change the way we perform X-ray imaging?
+      </p>
 
+      <span class="read-more">Explore this insight →</span>
 
-<!-- INSIGHT 01 -->
+    </a>
 
-<div class="insight">
 
-    <div class="insight-header">
+    <a href="insights/photon-counting-ct.html" class="insight-card">
 
-        <div>
+      <div class="number">02</div>
 
-            <div class="insight-number">01 · AI & IMAGING</div>
+      <h3>Photon-Counting CT: What Makes It Different?</h3>
 
-            <h2>
-                What does AI actually look at in a medical image?
-            </h2>
+      <p>
+        CT technology has come a long way, but a newer type of detector is
+        taking things further. Photon-counting CT can measure individual
+        X-ray photons and their energy, opening up new possibilities for
+        image quality and clinical imaging.
+      </p>
 
-            <p>
-                We see anatomy. But what does a computer actually see?
-            </p>
+      <span class="read-more">Explore this insight →</span>
 
-        </div>
+    </a>
 
-        <div class="arrow">↓</div>
+  </section>
 
-    </div>
 
-
-
-    <div class="insight-content">
-
-        <div class="content">
-
-            <div class="section-label">Start with the basics</div>
-
-            <p>
-                When we look at an X-ray, MRI, or ultrasound image,
-                we usually see things we have learned to recognize:
-                bones, organs, blood vessels, lesions, or areas that
-                look different from normal.
-            </p>
-
-            <p>
-                An AI model does not look at an image in the same
-                human way. It processes the image as numerical data
-                and looks for patterns within that data.
-            </p>
-
-            <div class="fact-box">
-                <strong>So what does AI “see”?</strong><br>
-                It sees numbers representing the image and uses
-                patterns learned from previous examples to make
-                a prediction.
-            </div>
-
-
-            <div class="section-label">How does that work?</div>
-
-            <p>
-                During training, an AI model is shown many medical
-                images together with their known labels or outcomes.
-                For example, it may be shown ultrasound images labelled
-                as benign or malignant.
-            </p>
-
-            <p>
-                The model gradually learns which visual patterns
-                are useful for separating one group from another.
-                It can then use those patterns when it sees a new image.
-            </p>
-
-
-            <div class="visual-box">
-
-                <div class="flow">
-
-                    <div class="flow-item">
-                        Medical Image
-                        <small>X-ray / MRI / Ultrasound</small>
-                    </div>
-
-                    <div class="flow-arrow">→</div>
-
-                    <div class="flow-item">
-                        AI Model
-                        <small>Finds image patterns</small>
-                    </div>
-
-                    <div class="flow-arrow">→</div>
-
-                    <div class="flow-item">
-                        Prediction
-                        <small>Possible result</small>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="section-label">But here's the interesting part</div>
-
-            <p>
-                If an AI model gives the correct answer, that does not
-                automatically tell us which part of the image helped
-                it reach that answer.
-            </p>
-
-            <p>
-                Maybe it focused on the lesion. Maybe it used a texture,
-                shape, or intensity pattern. And sometimes, it may even
-                use a pattern that we did not expect.
-            </p>
-
-
-            <button class="reveal-btn" onclick="revealText(this)">
-                Look a little deeper
-            </button>
-
-            <div class="reveal-text">
-                Techniques such as Grad-CAM can create a visual map showing
-                which areas of an image contributed more strongly to a
-                model's prediction. This can help researchers investigate
-                whether the model is focusing on a medically meaningful
-                region. It does not show exactly what the AI “thinks,”
-                but it can provide useful evidence about where the model
-                is looking.
-            </div>
-
-
-            <div class="thought">
-
-                <div class="thought-title">My Thought</div>
-
-                <p>
-                    When I first started exploring AI in medical imaging,
-                    one question kept coming back to me: if a model gives
-                    the right answer, how do we know what it actually looked at?
-                </p>
-
-            </div>
-
-
-            <div class="question">
-                So, when AI looks at a medical image…
-                are we really sure we know what it sees?
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-
-<!-- INSIGHT 02 -->
-
-<div class="insight">
-
-    <div class="insight-header">
-
-        <div>
-
-            <div class="insight-number">02 · AI & IMAGING</div>
-
-            <h2>
-                Does AI understand an image — or recognize patterns?
-            </h2>
-
-            <p>
-                A simple question that changes how we think about medical AI.
-            </p>
-
-        </div>
-
-        <div class="arrow">↓</div>
-
-    </div>
-
-
-
-    <div class="insight-content">
-
-        <div class="content">
-
-            <div class="section-label">Imagine this</div>
-
-            <p>
-                Imagine showing an AI thousands of ultrasound images
-                labelled as benign or malignant.
-            </p>
-
-            <p>
-                The model studies these examples during training.
-                It does not receive a textbook definition of a tumour
-                and then understand it like a student would.
-            </p>
-
-            <p>
-                Instead, it learns patterns in the examples that help
-                it distinguish between the categories it has been trained
-                to recognize.
-            </p>
-
-
-            <div class="visual-box">
-
-                <div class="pattern-grid">
-
-                    <div class="pattern-box">
-
-                        <h3>What a human can use</h3>
-
-                        <p>• Anatomy</p>
-                        <p>• Clinical knowledge</p>
-                        <p>• Patient information</p>
-                        <p>• Previous experience</p>
-
-                    </div>
-
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-
-                    <div class="pattern-box">
-
-                        <h3>What an AI model uses</h3>
-
-                        <p>• Patterns in images</p>
-                        <p>• Information learned from data</p>
-                        <p>• Relationships between features</p>
-                        <p>• Prediction</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="section-label">Does that mean AI understands?</div>
-
-            <p>
-                This is where things become interesting.
-            </p>
-
-            <p>
-                An AI model can become extremely good at recognizing
-                patterns associated with a particular outcome. But
-                recognizing those patterns is not necessarily the same
-                as understanding the medical meaning of an image.
-            </p>
-
-            <p>
-                For example, if certain features repeatedly appear in
-                images labelled as malignant, the model may learn that
-                those features are useful for making its prediction.
-                But it does not have the same understanding of disease,
-                anatomy, or patient history that a healthcare professional
-                brings to the examination.
-            </p>
-
-
-            <div class="fact-box">
-                <strong>The important idea:</strong><br>
-                A model can recognize patterns very well without
-                understanding an image in the same way a human does.
-            </div>
-
-
-            <div class="section-label">Why should we care?</div>
-
-            <p>
-                Because a model can sometimes learn a pattern that works
-                well in its training data but does not represent the
-                medical finding we actually care about.
-            </p>
-
-            <p>
-                This is one reason researchers test models on new images,
-                different datasets, and different patient populations.
-                A model should not only perform well on the examples
-                it has already seen.
-            </p>
-
-
-            <button class="reveal-btn" onclick="revealText(this)">
-                Think about the difference
-            </button>
-
-            <div class="reveal-text">
-                A useful way to think about it is this: a medical imaging
-                professional brings anatomy, clinical knowledge, patient
-                information, and experience together when interpreting an
-                image. An AI model works from the information available
-                in its training and input data. That difference matters
-                when we decide how AI should be used in healthcare.
-            </div>
-
-
-            <div class="thought">
-
-                <div class="thought-title">My Thought</div>
-
-                <p>
-                    This is one of the things I find most interesting about
-                    medical imaging AI. A correct prediction does not always
-                    tell us what the model has learned.
-                </p>
-
-            </div>
-
-
-            <div class="question">
-                If AI finds the right answer, does it really matter
-                how it got there?
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-
-<!-- INSIGHT 03 -->
-
-<div class="insight">
-
-    <div class="insight-header">
-
-        <div>
-
-            <div class="insight-number">03 · AI & IMAGING</div>
-
-            <h2>
-                Can AI be confident and still be wrong?
-            </h2>
-
-            <p>
-                A high percentage can look convincing. But what does it really mean?
-            </p>
-
-        </div>
-
-        <div class="arrow">↓</div>
-
-    </div>
-
-
-
-    <div class="insight-content">
-
-        <div class="content">
-
-            <div class="section-label">Imagine this</div>
-
-            <p>
-                An AI system looks at a medical image and says:
-            </p>
-
-            <div class="confidence-box">
-
-                <div class="confidence-number">99%</div>
-
-                <div class="confidence-bar">
-                    <div class="confidence-fill"></div>
-                </div>
-
-                <div class="confidence-caption">
-                    “Malignant — 99% confidence”
-                </div>
-
-            </div>
-
-
-            <p>
-                Sounds convincing, right?
-            </p>
-
-            <p>
-                But here is something important:
-                <strong>confidence is not the same as correctness.</strong>
-            </p>
-
-            <p>
-                An AI model can be very confident about a prediction
-                and still make the wrong prediction.
-            </p>
-
-
-            <div class="section-label">Why can this happen?</div>
-
-            <p>
-                AI models learn from data. If a new image is very different
-                from the examples the model learned from, the model may
-                struggle to handle it correctly.
-            </p>
-
-            <p>
-                It may also pick up patterns in the training data that
-                are useful for making predictions but are not actually
-                related to the medical finding we want it to identify.
-            </p>
-
-            <p>
-                And because the model still has to produce an output,
-                it can sometimes give that output with a high confidence
-                score even when it is wrong.
-            </p>
-
-
-            <div class="fact-box">
-                <strong>99% confidence does not mean:</strong><br>
-                “There is a 99% guarantee that this diagnosis is correct.”
-                The meaning of a model's confidence score depends on how
-                the model was trained, tested, and calibrated.
-            </div>
-
-
-            <div class="section-label">Why does this matter in medical imaging?</div>
-
-            <p>
-                Medical images can influence important clinical decisions.
-                That means an AI system should not be trusted simply because
-                a number beside its prediction looks impressive.
-            </p>
-
-            <p>
-                AI systems need proper testing, careful evaluation,
-                and human oversight. Their role should be to support
-                healthcare professionals rather than replace their judgment.
-            </p>
-
-
-            <button class="reveal-btn" onclick="revealText(this)">
-                One more thing to consider
-            </button>
-
-            <div class="reveal-text">
-                Researchers do not only look at whether an AI model is
-                accurate. They can also study when it makes mistakes,
-                whether its confidence matches its actual performance,
-                and how it behaves on data that is different from its
-                training examples. Understanding failure is just as
-                important as celebrating accuracy.
-            </div>
-
-
-            <div class="thought">
-
-                <div class="thought-title">My Thought</div>
-
-                <p>
-                    A high percentage can look reassuring. But if AI is
-                    going to assist healthcare professionals, I think one
-                    of the important questions is not only “How accurate is it?”
-                    but also “When is it wrong?”
-                </p>
-
-            </div>
-
-
-            <div class="question">
-                Would you trust an AI system simply because it says
-                “99% confident”?
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-</section>
-
-
-
-<!-- FOOTER -->
-
-<footer>
-    © 2026 Med Imaging Hub · Complex medical imaging concepts, explained simply.
-</footer>
-
-
-
-<script>
-
-    /* OPEN ONE INSIGHT AT A TIME */
-
-    const insights = document.querySelectorAll(".insight");
-
-    insights.forEach(insight => {
-
-        const header = insight.querySelector(".insight-header");
-
-        header.addEventListener("click", () => {
-
-            insights.forEach(other => {
-
-                if (other !== insight) {
-                    other.classList.remove("open");
-                }
-
-            });
-
-            insight.classList.toggle("open");
-
-        });
-
-    });
-
-
-    /* REVEAL EXTRA EXPLANATION */
-
-    function revealText(button) {
-
-        const text = button.nextElementSibling;
-
-        text.classList.toggle("show");
-
-        if (text.classList.contains("show")) {
-
-            button.textContent = "Hide explanation";
-
-        } else {
-
-            button.textContent = "Look a little deeper";
-
-        }
-
-    }
-
-</script>
-
+  <footer>
+    © 2026 Med Imaging Hub. Complex medical imaging concepts, explained simply.
+  </footer>
 
 </body>
 </html>
