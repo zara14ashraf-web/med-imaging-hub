@@ -325,62 +325,154 @@
     }
 
 
-    /* ================= MOBILE ================= */
+   /* ================= MOBILE ================= */
 
-    @media (max-width: 700px) {
+@media (max-width: 700px) {
 
-      header {
-        flex-direction: column;
-        gap: 15px;
-      }
+  /* Header */
 
-      nav {
-        text-align: center;
-      }
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    padding: 17px 6%;
+  }
 
-      nav a {
-        margin: 0 7px;
-      }
+  .logo {
+    font-size: 21px;
+  }
 
-      .hero {
-        padding: 80px 7% 70px;
-      }
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px 4px;
+    width: 100%;
+  }
 
-      .hero h1 {
-        font-size: 39px;
-        letter-spacing: -1.3px;
-      }
+  nav a {
+    margin: 0;
+    padding: 4px 6px;
+    font-size: 13px;
+  }
 
-      .hero p {
-        font-size: 16px;
-      }
 
-      .hero-label {
-        font-size: 10px;
-        letter-spacing: 1.4px;
-      }
+  /* Hero */
 
-      .explore {
-        padding: 68px 7%;
-      }
+  .hero {
+    padding: 68px 7% 58px;
+  }
 
-      .cards {
-        grid-template-columns: 1fr;
-      }
+  .hero-label {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+    padding: 6px 11px;
+    margin-bottom: 18px;
+  }
 
-      .section-title {
-        font-size: 29px;
-      }
+  .hero h1 {
+    font-size: 38px;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+    margin-bottom: 18px;
+  }
 
-      .about-strip {
-        padding: 70px 7%;
-      }
+  .hero p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 27px;
+  }
 
-      .about-strip h2 {
-        font-size: 28px;
-      }
+  .hero-buttons {
+    gap: 9px;
+  }
 
-    }
+  .button,
+  .button-secondary {
+    padding: 11px 19px;
+    font-size: 14px;
+  }
+
+  .founder {
+    margin-top: 23px;
+    font-size: 13px;
+  }
+
+
+  /* Explore */
+
+  .explore {
+    padding: 60px 7%;
+  }
+
+  .section-title {
+    font-size: 28px;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+
+  .section-subtitle {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 34px;
+  }
+
+
+  /* Cards */
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    min-height: auto;
+    padding: 27px 23px 25px;
+    border-radius: 13px;
+  }
+
+  .card-number {
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+
+  .card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+
+  /* About */
+
+  .about-strip {
+    padding: 62px 7%;
+  }
+
+  .about-strip h2 {
+    font-size: 27px;
+    margin-bottom: 13px;
+  }
+
+  .about-strip p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+
+  /* Footer */
+
+  footer {
+    padding: 27px 18px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+}
 
   </style>
 </head>
