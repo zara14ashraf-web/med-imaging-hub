@@ -1,1 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Photon-Counting CT: What Makes It Different? | Med Imaging Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #17202a;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b5563;
+      margin-left: 27px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #2563eb;
+    }
+
+
+    /* Article Header */
+    .article-header {
+      position: relative;
+      text-align: center;
+      padding: 85px 8% 70px;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 50% 10%,
+          rgba(37, 99, 235, 0.10),
+          transparent 48%
+        ),
+        #f8fafc;
+    }
+
+    .article-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      padding: 7px 13px;
+      border: 1px solid #dbeafe;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .article-header h1 {
+      max-width: 850px;
+      margin: 0 auto 18px;
+      font-size: 48px;
+      line-height: 1.15;
+      letter-spacing: -1.8px;
+      color: #17202a;
+    }
+
+    .article-header p {
+      max-width: 680px;
+      margin: auto;
+      color: #667085;
+      font-size: 17px;
+    }
+
+
+    /* Article */
+    .article {
+      max-width: 850px;
+      margin: auto;
+      padding: 65px 30px 90px;
+    }
+
+    .article p {
+      font-size: 16px;
+      color: #344054;
+      margin-bottom: 20px;
+    }
+
+    .article h2 {
+      font-size: 30px;
+      line-height: 1.3;
+      letter-spacing: -0.7px;
+      margin-top: 55px;
+      margin-bottom: 18px;
+      color: #17202a;
+    }
+
+    .article h3 {
+      font-size: 22px;
+      line-height: 1.4;
+      margin-top: 38px;
+      margin-bottom: 14px;
+      color: #17202a;
+    }
+
+
+    /* Highlight */
+    .highlight-box {
+      margin: 28px 0;
+      padding: 22px 25px;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      background: #f3f8ff;
+      color: #243b53;
+    }
+
+
+    /* Article Image */
+    .article-image {
+      margin: 38px auto;
+      text-align: center;
+    }
+
+    .article-image img {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 12px;
+      border: 1px solid #e5eaf0;
+      box-shadow: 0 7px 20px rgba(23, 32, 42, 0.07);
+    }
+
+    .image-caption {
+      margin-top: 10px !important;
+      font-size: 13px !important;
+      color: #8a94a3 !important;
+    }
+
+
+    /* Comparison Table */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 25px 0 30px;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+      font-size: 14px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 15px 16px;
+      text-align: left;
+      border: 1px solid #e2e8f0;
+      vertical-align: top;
+    }
+
+    .comparison-table th {
+      background: #f1f6fb;
+      color: #17202a;
+      font-weight: 700;
+    }
+
+    .comparison-table tr:nth-child(even) td {
+      background: #fafcff;
+    }
+
+
+    /* Simple Thought */
+    .simple-thought {
+      margin: 28px 0;
+      padding: 20px 24px;
+      text-align: center;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid #e6eaf0;
+      color: #344054;
+    }
+
+
+    /* Quote Box */
+    .quote-box {
+      margin: 28px 0;
+      padding: 22px 25px;
+      border-left: 4px solid #8b5cf6;
+      border-radius: 10px;
+      background: #faf8ff;
+      color: #344054;
+    }
+
+    .quote-box p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* Important Note */
+    .important-note {
+      margin: 28px 0;
+      padding: 20px 24px;
+      border-left: 4px solid #e0a11a;
+      border-radius: 10px;
+      background: #fffaf0;
+      color: #4a3b18;
+    }
+
+
+    /* Applications */
+    .application-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin: 28px 0;
+    }
+
+    .application-card {
+      padding: 22px;
+      border: 1px solid #e6eaf0;
+      border-radius: 13px;
+      background: #ffffff;
+      transition: 0.2s ease;
+    }
+
+    .application-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 20px rgba(23, 32, 42, 0.05);
+    }
+
+    .application-card h3 {
+      margin-top: 0;
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .application-card p {
+      font-size: 14px;
+      margin-bottom: 0;
+      color: #667085;
+    }
+
+
+    /* Big Idea */
+    .big-idea {
+      margin-top: 60px;
+      padding: 35px 32px;
+      border-radius: 16px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #f1f7ff,
+          #faf7ff
+        );
+
+      border: 1px solid #e4eaf2;
+      text-align: center;
+    }
+
+    .big-idea-label {
+      display: inline-block;
+      padding: 6px 13px;
+      border-radius: 20px;
+      background: #ffffff;
+      border: 1px solid #dbeafe;
+      color: #2563eb;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin-bottom: 15px;
+    }
+
+    .big-idea h2 {
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .key-points {
+      display: grid;
+      gap: 10px;
+      max-width: 600px;
+      margin: 25px auto;
+      text-align: left;
+    }
+
+    .key-point {
+      padding: 13px 17px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid #e6eaf0;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    .final-line {
+      margin-top: 22px;
+      font-size: 17px !important;
+    }
+
+
+    /* Sources */
+    .sources {
+      margin-top: 60px;
+      padding-top: 28px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .sources h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .sources ol {
+      padding-left: 22px;
+    }
+
+    .sources li {
+      margin-bottom: 13px;
+      font-size: 13px;
+      color: #667085;
+      padding-left: 5px;
+    }
+
+
+    /* Back Link */
+    .back-link {
+      display: inline-block;
+      margin-top: 45px;
+      color: #2563eb;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 1px solid #e5e7eb;
+      color: #8a94a3;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #4b5563;
+    }
+
+
+    /* Mobile */
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .article-header {
+        padding: 65px 7% 50px;
+      }
+
+      .article-header h1 {
+        font-size: 36px;
+      }
+
+      .article-header p {
+        font-size: 16px;
+      }
+
+      .article {
+        padding: 50px 20px 65px;
+      }
+
+      .article h2 {
+        font-size: 26px;
+      }
+
+      .article h3 {
+        font-size: 20px;
+      }
+
+      .article p {
+        font-size: 15px;
+      }
+
+      .article-image img {
+        max-width: 100%;
+      }
+
+      .application-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .big-idea {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- Header -->
+  <header>
+
+    <a href="../index.html" class="logo">
+      Med Imaging <span>Hub</span>
+    </a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../articles.html">Articles</a>
+      <a href="../insights.html" class="active">Insights</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <!-- Article Header -->
+  <section class="article-header">
+
+    <div class="article-label">
+      CT TECHNOLOGY
+    </div>
+
+    <h1>
+      Photon-Counting CT: What Makes It Different?
+    </h1>
+
+    <p>
+      Understanding how a new generation of CT detectors can capture
+      more information from X-ray photons.
+    </p>
+
+  </section>
+
+
+  <!-- Article Content -->
+  <main class="article">
+
+
+    <p>
+      CT scanners have changed a lot over the years. One of the newer
+      developments is <strong>photon-counting CT (PCCT)</strong>.
+    </p>
+
+    <p>
+      The name may sound complicated, but the basic idea is quite simple:
+    </p>
+
+    <div class="highlight-box">
+      <strong>
+        Instead of only measuring the combined energy of many X-ray
+        photons, a photon-counting detector can detect individual
+        X-ray photons and sort them according to their energy.
+      </strong>
+    </div>
+
+    <p>
+      So, what does that actually change about CT imaging?
+    </p>
+
+
+    <!-- Difference -->
+    <h2>
+      First: How is it different from conventional CT?
+    </h2>
+
+    <p>
+      In conventional CT, the detector receives X-rays and converts
+      them into light before producing an electrical signal. The
+      energies of many X-ray photons are combined to create the image.
+    </p>
+
+    <p>
+      Photon-counting CT works differently. Its detector can
+      <strong>directly convert incoming X-ray photons into electrical
+      signals</strong> and count them individually.
+    </p>
+
+    <p>
+      This means the detector can keep useful information about the
+      <strong>energy of the X-ray photons</strong>, rather than combining
+      everything into one signal.
+    </p>
+
+
+    <!-- Comparison Image -->
+    <div class="article-image">
+
+      <img
+        src="../images/photon-counting-ct-vs-conventional-ct.png"
+        alt="Comparison between conventional CT and photon-counting CT"
+      >
+
+      <p class="image-caption">
+        A simplified comparison of conventional CT and photon-counting
+        CT detector technology.
+      </p>
+
+    </div>
+
+
+    <h3>
+      A simple comparison
+    </h3>
+
+    <div class="table-wrapper">
+
+      <table class="comparison-table">
+
+        <thead>
+          <tr>
+            <th>Conventional CT</th>
+            <th>Photon-Counting CT</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>
+              Combines the energy from many X-ray photons
+            </td>
+
+            <td>
+              Counts individual X-ray photons
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              X-rays are first converted into light
+            </td>
+
+            <td>
+              X-rays are directly converted into electrical signals
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Individual photon-energy information is largely lost
+            </td>
+
+            <td>
+              Photon-energy information can be separated into
+              energy ranges
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Uses larger detector elements in typical systems
+            </td>
+
+            <td>
+              Can use much smaller detector pixels
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <p>
+      This difference in detector technology is the main reason
+      photon-counting CT can provide new possibilities in CT imaging.
+    </p>
+
+
+    <!-- Improvements -->
+    <h2>
+      So, what actually improves?
+    </h2>
+
+
+    <h3>
+      🔍 1. Finer anatomical detail
+    </h3>
+
+    <p>
+      One important advantage of photon-counting CT is its ability
+      to produce <strong>higher spatial resolution</strong>.
+    </p>
+
+    <p>
+      In simple words, spatial resolution describes how well a CT
+      system can show small structures separately.
+    </p>
+
+    <p>
+      Photon-counting detectors can use very small detector pixels.
+      This can help show fine anatomical details that may be difficult
+      to see clearly with conventional CT.
+    </p>
+
+    <p>
+      This can be especially useful when looking at structures such as
+      small vessels, lung details, bones, and other fine anatomy.
+    </p>
+
+    <div class="simple-thought">
+
+      <strong>Think of it like this:</strong>
+      <br><br>
+
+      Smaller pixels → finer details → more detailed CT images.
+
+    </div>
+
+
+    <h3>
+      🎨 2. More information about different materials
+    </h3>
+
+    <p>
+      This is one of the most interesting features of photon-counting CT.
+    </p>
+
+    <p>
+      X-ray photons can have different energy levels. Photon-counting
+      detectors can sort detected photons into different
+      <strong>energy ranges</strong>, often called
+      <strong>energy bins</strong>.
+    </p>
+
+    <p>
+      Why does that matter?
+    </p>
+
+    <p>
+      Different materials interact with X-rays differently depending
+      on their energy. By keeping this energy information,
+      photon-counting CT can help distinguish between materials
+      more effectively.
+    </p>
+
+    <p>
+      For example, it can provide useful information about
+      <strong>iodine-based contrast material</strong>.
+    </p>
+
+    <p>
+      This allows the scanner to create different types of
+      <strong>spectral or multi-energy images</strong> from the same
+      CT examination.
+    </p>
+
+    <div class="quote-box">
+
+      <p>
+        Conventional CT mainly asks,
+        <strong>"How much X-ray signal reached the detector?"</strong>
+      </p>
+
+      <p>
+        Photon-counting CT can also ask,
+        <strong>"How many photons arrived, and what were their
+        energy ranges?"</strong>
+      </p>
+
+    </div>
+
+
+    <h3>
+      🔇 3. Less electronic noise
+    </h3>
+
+    <p>
+      All imaging systems have some amount of unwanted electronic noise.
+    </p>
+
+    <p>
+      Photon-counting detectors use an energy threshold, which can
+      help reject very small signals that are related to electronic
+      noise rather than useful X-ray photons.
+    </p>
+
+    <p>
+      As a result, photon-counting CT can achieve
+      <strong>very low electronic noise</strong>, which can contribute
+      to improved image quality, particularly when high spatial
+      resolution is needed.
+    </p>
+
+    <div class="simple-thought">
+
+      Less electronic noise → cleaner useful signal → better
+      image information.
+
+    </div>
+
+
+    <h3>
+      ☢️ 4. Potential for lower radiation dose
+    </h3>
+
+    <p>
+      Radiation dose is always an important consideration in CT.
+    </p>
+
+    <p>
+      Photon-counting detectors can use the incoming X-ray photons
+      more efficiently. This creates the
+      <strong>potential to obtain useful diagnostic images with less
+      radiation</strong>, depending on the examination and scanning
+      protocol.
+    </p>
+
+    <div class="important-note">
+
+      <strong>Important:</strong>
+      Photon-counting CT does not automatically mean a lower dose
+      for every patient. The amount of dose reduction depends on
+      factors such as the body part being scanned, the diagnostic
+      task, and how the CT protocol is designed.
+
+    </div>
+
+
+    <h3>
+      🌈 5. Spectral CT information from the same scan
+    </h3>
+
+    <p>
+      Because photon-counting detectors can separate photons according
+      to their energy, they can provide
+      <strong>spectral information</strong> during CT acquisition.
+    </p>
+
+    <p>
+      This can allow the creation of different types of images from
+      the same dataset, including material-specific images and
+      <strong>virtual monoenergetic images</strong>.
+    </p>
+
+    <div class="simple-thought">
+
+      <strong>For students:</strong>
+      <br><br>
+
+      One CT acquisition can provide more than just a conventional
+      anatomical image. It can also provide information about the
+      materials within the image.
+
+    </div>
+
+
+    <!-- Applications -->
+    <h2>
+      Where can photon-counting CT be useful?
+    </h2>
+
+    <p>
+      Photon-counting CT is being studied and increasingly used
+      across several areas of medical imaging.
+    </p>
+
+
+    <div class="application-grid">
+
+      <div class="application-card">
+
+        <h3>❤️ Cardiovascular Imaging</h3>
+
+        <p>
+          Higher spatial and contrast resolution can help with
+          detailed assessment of vessels and cardiovascular structures.
+        </p>
+
+      </div>
+
+
+      <div class="application-card">
+
+        <h3>🫁 Thoracic Imaging</h3>
+
+        <p>
+          Improved spatial resolution can help visualize fine lung
+          and airway structures.
+        </p>
+
+      </div>
+
+
+      <div class="application-card">
+
+        <h3>🦴 Musculoskeletal Imaging</h3>
+
+        <p>
+          Very small bone structures and fine anatomical details can
+          benefit from higher spatial resolution.
+        </p>
+
+      </div>
+
+
+      <div class="application-card">
+
+        <h3>🧠 Neurovascular Imaging</h3>
+
+        <p>
+          The technology is being investigated for detailed imaging
+          of small vessels and other neurovascular structures.
+        </p>
+
+      </div>
+
+
+      <div class="application-card">
+
+        <h3>👶 Pediatric Imaging</h3>
+
+        <p>
+          Dose efficiency is particularly important in children,
+          so photon-counting CT is also being explored for
+          pediatric applications.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <p>
+      These applications are still developing, and the advantages
+      can vary depending on the clinical question and scanning protocol.
+    </p>
+
+
+    <!-- Limitations -->
+    <h2>
+      Is photon-counting CT perfect?
+    </h2>
+
+    <p>
+      <strong>No.</strong>
+    </p>
+
+    <p>
+      Photon-counting CT is a major development in CT technology,
+      but it also has technical challenges.
+    </p>
+
+    <p>
+      For example, very high numbers of photons arriving at the
+      detector at the same time can make accurate counting more
+      difficult. Other detector effects can also affect energy
+      measurement and image quality.
+    </p>
+
+    <p>
+      Researchers are continuing to improve detector materials,
+      electronics, image reconstruction, and scanning protocols.
+    </p>
+
+
+    <div class="quote-box">
+
+      <strong>
+        Rather than thinking "Photon-counting CT is replacing
+        conventional CT," it is better to think:
+      </strong>
+
+      <br><br>
+
+      <strong>
+        "Photon-counting CT gives CT scanners new ways to collect
+        and use X-ray information."
+      </strong>
+
+    </div>
+
+    <p>
+      Its benefits depend on the patient, the clinical question,
+      and the imaging protocol.
+    </p>
+
+
+    <!-- Big Idea -->
+    <section class="big-idea">
+
+      <div class="big-idea-label">
+        THE BIG IDEA
+      </div>
+
+      <h2>
+        What should you remember?
+      </h2>
+
+      <p>
+        Conventional CT mainly measures the combined energy of
+        many X-ray photons.
+      </p>
+
+      <p>
+        Photon-counting CT detects individual photons and keeps
+        information about their energy.
+      </p>
+
+
+      <div class="key-points">
+
+        <div class="key-point">
+          🔍 <strong>Higher spatial resolution</strong>
+        </div>
+
+        <div class="key-point">
+          🎨 <strong>Better material and spectral information</strong>
+        </div>
+
+        <div class="key-point">
+          🔇 <strong>Lower electronic noise</strong>
+        </div>
+
+        <div class="key-point">
+          ☢️ <strong>Improved dose efficiency</strong>
+        </div>
+
+        <div class="key-point">
+          🧩 <strong>More information from a single CT acquisition</strong>
+        </div>
+
+      </div>
+
+
+      <p class="final-line">
+        And that is what makes
+        <strong>photon-counting CT</strong> different.
+      </p>
+
+    </section>
+
+
+    <!-- Sources -->
+    <section class="sources">
+
+      <h2>
+        Sources
+      </h2>
+
+      <ol>
+
+        <li>
+          Schwartz FR, et al.
+          <em>
+            Photon-Counting CT: Technology, Current and Potential
+            Future Clinical Applications, and Overview of Approved
+            Systems and Those in Various Stages of Research and
+            Development.
+          </em>
+          Radiology. 2025;314(3).
+        </li>
+
+        <li>
+          Fletcher JG, et al.
+          <em>
+            Photon-Counting CT in Thoracic Imaging: Early Clinical
+            Evidence and Incorporation Into Clinical Practice.
+          </em>
+          Radiology. 2024;310(3).
+        </li>
+
+        <li>
+          Douek PC, et al.
+          <em>
+            Clinical Applications of Photon-counting CT: A Review
+            of Pioneer Studies and a Glimpse into the Future.
+          </em>
+          Radiology. 2023;309(1).
+        </li>
+
+        <li>
+          Nehra AK, et al.
+          <em>
+            Seeing More with Less: Clinical Benefits of
+            Photon-counting Detector CT.
+          </em>
+          RadioGraphics. 2023;43(5).
+        </li>
+
+        <li>
+          <em>
+            Toward Broader Clinical Adoption of Photon-Counting CT:
+            Where We Stand According to High-Impact Literature.
+          </em>
+          Radiology. 2026;319(1).
+        </li>
+
+      </ol>
+
+    </section>
+
+
+    <!-- Back to Insights -->
+    <a href="../insights.html" class="back-link">
+      ← Back to Insights
+    </a>
+
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+
+    © 2026 Med Imaging Hub · Created & curated by
+    <strong>Zara Ashraf</strong>
+
+  </footer>
+
+
+</body>
+</html>
