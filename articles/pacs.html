@@ -1,1 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>PACS: The System That Never Lets a Medical Image Get “Lost” | Med Imaging Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #17202a;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        /* HEADER */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            border-bottom: 1px solid #e8edf2;
+            background: #ffffff;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 700;
+            color: #17202a;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* ARTICLE HEADER */
+
+        .article-header {
+            text-align: center;
+            padding: 75px 8% 60px;
+            background:
+                radial-gradient(circle at top,
+                #eff6ff 0%,
+                #f8fafc 45%,
+                #ffffff 80%);
+        }
+
+        .article-label {
+            display: inline-block;
+            padding: 6px 13px;
+            border: 1px solid #dbeafe;
+            border-radius: 30px;
+            color: #2563eb;
+            background: #eff6ff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .article-header h1 {
+            max-width: 900px;
+            margin: 0 auto 20px;
+            font-size: 48px;
+            line-height: 1.12;
+            letter-spacing: -1.8px;
+        }
+
+        .article-header p {
+            max-width: 720px;
+            margin: auto;
+            color: #667085;
+            font-size: 17px;
+        }
+
+        /* ARTICLE */
+
+        .article {
+            max-width: 820px;
+            margin: auto;
+            padding: 65px 25px 90px;
+        }
+
+        .article h2 {
+            margin-top: 48px;
+            margin-bottom: 18px;
+            font-size: 29px;
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+        }
+
+        .article h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .article p {
+            margin: 0 0 18px;
+            color: #374151;
+            font-size: 16px;
+        }
+
+        .article ul {
+            margin: 10px 0 25px;
+            padding-left: 24px;
+            color: #374151;
+        }
+
+        .article li {
+            margin-bottom: 8px;
+        }
+
+        .article strong {
+            color: #17202a;
+        }
+
+        /* HIGHLIGHT */
+
+        .highlight {
+            margin: 25px 0;
+            padding: 22px 25px;
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            border-radius: 10px;
+            font-size: 17px;
+        }
+
+        .highlight strong {
+            color: #2563eb;
+        }
+
+        /* WORKFLOW */
+
+        .workflow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 9px;
+            margin: 35px 0 45px;
+            flex-wrap: wrap;
+        }
+
+        .workflow-box {
+            width: 135px;
+            min-height: 105px;
+            padding: 17px 10px;
+            background: #f8fafc;
+            border: 1px solid #e8edf2;
+            border-radius: 13px;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .workflow-number {
+            width: 28px;
+            height: 28px;
+            margin: 0 auto 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: #eff6ff;
+            color: #2563eb;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .workflow-box strong {
+            font-size: 13px;
+        }
+
+        .workflow-box small {
+            color: #667085;
+            font-size: 11px;
+        }
+
+        .arrow {
+            color: #98a2b3;
+            font-size: 21px;
+        }
+
+        /* TAKEAWAY */
+
+        .takeaway {
+            margin-top: 50px;
+            padding: 28px;
+            background: #f8fafc;
+            border: 1px solid #e8edf2;
+            border-radius: 15px;
+        }
+
+        .takeaway h3 {
+            margin-top: 0;
+            color: #2563eb;
+        }
+
+        .takeaway p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 8%;
+            border-top: 1px solid #e8edf2;
+            text-align: center;
+            color: #667085;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .article-header {
+                padding: 55px 7% 45px;
+            }
+
+            .article-header h1 {
+                font-size: 36px;
+            }
+
+            .article-header p {
+                font-size: 15px;
+            }
+
+            .article {
+                padding: 45px 20px 70px;
+            }
+
+            .article h2 {
+                font-size: 25px;
+            }
+
+            .workflow {
+                flex-direction: column;
+            }
+
+            .workflow-box {
+                width: 200px;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="../index.html" class="logo">
+        Med Imaging <span>Hub</span>
+    </a>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../insights.html">Insights</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../resources.html">Resources</a>
+        <a href="../about.html">About</a>
+    </nav>
+
+</header>
+
+
+<section class="article-header">
+
+    <div class="article-label">Medical Imaging Technology</div>
+
+    <h1>
+        PACS: The System That Never Lets a Medical Image “Get Lost”
+    </h1>
+
+    <p>
+        Understanding how medical images are stored, organized, retrieved,
+        and accessed in modern healthcare.
+    </p>
+
+</section>
+
+
+<main class="article">
+
+    <p>
+        <strong>Imagine the old days of medical imaging.</strong>
+    </p>
+
+    <p>
+        X-ray films stored in large envelopes. Physical archive rooms
+        filled with patient studies. And when a doctor needed to compare
+        today's image with an examination from months or years ago,
+        someone had to find it.
+    </p>
+
+    <p>
+        Now imagine a different workflow.
+    </p>
+
+    <p>
+        A radiologist needs to review a patient's previous chest X-ray.
+        Instead of searching through physical files, they open the
+        patient's imaging studies on a workstation and retrieve the
+        previous examination within seconds.
+    </p>
+
+    <p>
+        This is where <strong>PACS</strong> comes in.
+    </p>
+
+
+    <h2>What Is PACS?</h2>
+
+    <p>
+        <strong>PACS</strong> stands for
+        <strong>Picture Archiving and Communication System.</strong>
+    </p>
+
+    <p>
+        In simple terms, PACS is a digital system used to
+        <strong>store, organize, retrieve, view, and distribute medical images.</strong>
+    </p>
+
+    <p>
+        It is commonly used in radiology departments to manage imaging
+        studies from modalities such as:
+    </p>
+
+    <ul>
+        <li>X-ray</li>
+        <li>CT</li>
+        <li>MRI</li>
+        <li>Ultrasound</li>
+        <li>Mammography</li>
+    </ul>
+
+    <p>
+        Think of PACS as a <strong>digital library for medical images.</strong>
+        Instead of books and documents, the library contains imaging
+        studies that can be retrieved when they are needed.
+    </p>
+
+
+    <h2>Why Was PACS Needed?</h2>
+
+    <p>
+        Before digital imaging became common, medical images were often
+        stored as physical films.
+    </p>
+
+    <p>
+        This created several practical problems:
+    </p>
+
+    <ul>
+        <li>Large amounts of physical storage were required.</li>
+        <li>Finding previous examinations could take time.</li>
+        <li>Films could be damaged or misplaced.</li>
+        <li>Sharing images between departments was difficult.</li>
+        <li>Comparing current and previous examinations was less convenient.</li>
+    </ul>
+
+    <p>
+        As medical imaging became digital, hospitals needed a better way
+        to manage the growing number of digital images.
+    </p>
+
+    <div class="highlight">
+        <strong>PACS became an important part of this digital workflow.</strong>
+    </div>
+
+
+    <h2>What Does PACS Actually Do?</h2>
+
+    <p>
+        PACS has several important roles in medical imaging.
+    </p>
+
+    <p>
+        <strong>1. Stores Imaging Studies</strong>
+    </p>
+
+    <p>
+        PACS provides digital storage for imaging studies so they can be
+        retained and accessed when needed.
+    </p>
+
+    <p>
+        <strong>2. Organizes Images</strong>
+    </p>
+
+    <p>
+        Imaging studies are organized so that authorized users can find
+        the appropriate examination for a patient.
+    </p>
+
+    <p>
+        <strong>3. Retrieves Previous Examinations</strong>
+    </p>
+
+    <p>
+        When a patient returns for another examination, previous imaging
+        studies can be retrieved for comparison.
+    </p>
+
+    <p>
+        <strong>4. Allows Image Viewing</strong>
+    </p>
+
+    <p>
+        Authorized healthcare professionals can access imaging studies
+        through compatible viewing systems or workstations.
+    </p>
+
+    <p>
+        <strong>5. Distributes Images</strong>
+    </p>
+
+    <p>
+        PACS allows imaging studies to be made available to authorized
+        users and locations within the healthcare organization's
+        imaging network.
+    </p>
+
+    <p>
+        So PACS is not simply a place where images are stored.
+    </p>
+
+    <p>
+        It helps move an imaging study from
+        <strong>storage to clinical use.</strong>
+    </p>
+
+
+    <h2>How Does PACS Work?</h2>
+
+    <p>
+        A simplified medical imaging workflow can look like this:
+    </p>
+
+
+    <!-- WORKFLOW VISUAL -->
+
+    <div class="workflow">
+
+        <div class="workflow-box">
+            <span class="workflow-number">01</span>
+            <strong>Modality</strong>
+            <small>X-ray / CT / MRI / US</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-box">
+            <span class="workflow-number">02</span>
+            <strong>Imaging Study</strong>
+            <small>Image acquisition</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-box">
+            <span class="workflow-number">03</span>
+            <strong>PACS</strong>
+            <small>Store & organize</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-box">
+            <span class="workflow-number">04</span>
+            <strong>Viewer</strong>
+            <small>Image review</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-box">
+            <span class="workflow-number">05</span>
+            <strong>Radiologist</strong>
+            <small>Clinical interpretation</small>
+        </div>
+
+    </div>
+
+
+    <p>
+        The imaging modality produces the examination, and the study can
+        then be sent to the hospital's PACS.
+    </p>
+
+    <p>
+        PACS stores and organizes the study so that it can be retrieved
+        and viewed by authorized users.
+    </p>
+
+    <p>
+        The radiologist can then review the images and interpret the
+        examination.
+    </p>
+
+
+    <h2>A Simple Example</h2>
+
+    <p>
+        Imagine a patient who had a chest X-ray six months ago and now
+        comes back with new respiratory symptoms.
+    </p>
+
+    <p>
+        A new chest X-ray is performed.
+    </p>
+
+    <p>
+        The radiologist may want to compare the current image with the
+        patient's previous examination.
+    </p>
+
+    <p>
+        Instead of looking for an old physical film, the previous study
+        can be retrieved through PACS.
+    </p>
+
+    <p>
+        The radiologist can then compare the two examinations and look
+        for changes over time.
+    </p>
+
+    <p>
+        This is one of the important advantages of having imaging studies
+        available digitally.
+    </p>
+
+
+    <h2>Why Is PACS Important?</h2>
+
+    <p>
+        Medical imaging produces a large amount of data every day.
+    </p>
+
+    <p>
+        A hospital may perform thousands of imaging examinations, and
+        these studies need to remain accessible for patient care.
+    </p>
+
+    <p>
+        PACS helps make this possible by providing a structured digital
+        environment for managing imaging studies.
+    </p>
+
+    <p>
+        It can make it easier to:
+    </p>
+
+    <ul>
+        <li>Access previous examinations</li>
+        <li>Compare current and previous images</li>
+        <li>Reduce dependence on physical film archives</li>
+        <li>Share imaging studies within authorized healthcare environments</li>
+        <li>Integrate image access into digital clinical workflows</li>
+    </ul>
+
+    <p>
+        For radiology departments, this can make the process of managing
+        and reviewing medical images much more efficient.
+    </p>
+
+
+    <h2>PACS in Modern Medical Imaging</h2>
+
+    <p>
+        Today, PACS is an important part of the digital radiology
+        environment.
+    </p>
+
+    <p>
+        A radiology department is not only about acquiring images from
+        scanners.
+    </p>
+
+    <p>
+        There is also a digital workflow behind every examination:
+    </p>
+
+    <div class="highlight">
+        <strong>
+            Image acquisition → Image management → Image viewing → Clinical interpretation
+        </strong>
+    </div>
+
+    <p>
+        PACS plays an important role in the
+        <strong>image management and access</strong> part of this workflow.
+    </p>
+
+    <p>
+        It helps ensure that an imaging study remains available after
+        the moment it is acquired, so it can be reviewed when needed.
+    </p>
+
+
+    <h2>The Bigger Picture</h2>
+
+    <p>
+        When we think about medical imaging, it is easy to focus on the
+        machines that create the images.
+    </p>
+
+    <p>
+        We think about CT scanners, MRI systems, X-ray machines, and
+        ultrasound equipment.
+    </p>
+
+    <p>
+        But creating the image is only one part of the process.
+    </p>
+
+    <p>
+        That image also needs to be
+        <strong>stored, organized, retrieved, viewed, and made available
+        for clinical use.</strong>
+    </p>
+
+    <p>
+        PACS helps make that digital workflow possible.
+    </p>
+
+
+    <!-- TAKEAWAY -->
+
+    <div class="takeaway">
+
+        <h3>Key Takeaway</h3>
+
+        <p>
+            <strong>
+                PACS is a digital system for managing medical imaging studies.
+            </strong>
+        </p>
+
+        <p>
+            It helps store, organize, retrieve, view, and distribute
+            medical images so that authorized healthcare professionals
+            can access them when they are needed.
+        </p>
+
+        <p>
+            In simple terms:
+        </p>
+
+        <p>
+            <strong>
+                PACS gives medical images a digital place to live —
+                and makes them easier to find when they matter.
+            </strong>
+        </p>
+
+    </div>
+
+</main>
+
+
+<footer>
+    © 2026 Med Imaging Hub · Complex medical imaging concepts, explained simply.
+</footer>
+
+
+</body>
+</html>
