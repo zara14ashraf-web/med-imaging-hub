@@ -1,1 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>DICOM vs PACS — What’s the Difference? | Med Imaging Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #17202a;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        /* HEADER */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            border-bottom: 1px solid #e8edf2;
+            background: #ffffff;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 700;
+            color: #17202a;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* ARTICLE HEADER */
+
+        .article-header {
+            text-align: center;
+            padding: 75px 8% 60px;
+            background:
+                radial-gradient(circle at top,
+                #eff6ff 0%,
+                #f8fafc 45%,
+                #ffffff 80%);
+        }
+
+        .article-label {
+            display: inline-block;
+            padding: 6px 13px;
+            border: 1px solid #dbeafe;
+            border-radius: 30px;
+            color: #2563eb;
+            background: #eff6ff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .article-header h1 {
+            max-width: 900px;
+            margin: 0 auto 20px;
+            font-size: 48px;
+            line-height: 1.12;
+            letter-spacing: -1.8px;
+        }
+
+        .article-header p {
+            max-width: 720px;
+            margin: auto;
+            color: #667085;
+            font-size: 17px;
+        }
+
+        /* ARTICLE */
+
+        .article {
+            max-width: 820px;
+            margin: auto;
+            padding: 65px 25px 90px;
+        }
+
+        .article h2 {
+            margin-top: 48px;
+            margin-bottom: 18px;
+            font-size: 29px;
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+        }
+
+        .article h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .article p {
+            margin: 0 0 18px;
+            color: #374151;
+            font-size: 16px;
+        }
+
+        .article strong {
+            color: #17202a;
+        }
+
+        /* HIGHLIGHT */
+
+        .highlight {
+            margin: 28px 0;
+            padding: 22px 25px;
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            border-radius: 10px;
+            font-size: 17px;
+        }
+
+        .highlight strong {
+            color: #2563eb;
+        }
+
+        /* COMPARISON TABLE */
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            margin: 28px 0 38px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            min-width: 560px;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px 16px;
+            border: 1px solid #e8edf2;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .comparison-table th {
+            background: #f8fafc;
+            color: #17202a;
+            font-weight: 700;
+        }
+
+        .comparison-table th:first-child {
+            color: #2563eb;
+        }
+
+        .comparison-table th:last-child {
+            color: #2563eb;
+        }
+
+        .comparison-table td {
+            color: #4b5563;
+        }
+
+        /* WORKFLOW */
+
+        .workflow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 9px;
+            margin: 35px 0 45px;
+            flex-wrap: wrap;
+        }
+
+        .workflow-box {
+            width: 135px;
+            min-height: 105px;
+            padding: 17px 10px;
+            background: #f8fafc;
+            border: 1px solid #e8edf2;
+            border-radius: 13px;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .workflow-number {
+            width: 28px;
+            height: 28px;
+            margin: 0 auto 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: #eff6ff;
+            color: #2563eb;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .workflow-box strong {
+            font-size: 13px;
+        }
+
+        .workflow-box small {
+            color: #667085;
+            font-size: 11px;
+        }
+
+        .arrow {
+            color: #98a2b3;
+            font-size: 21px;
+        }
+
+        /* TAKEAWAY */
+
+        .takeaway {
+            margin-top: 50px;
+            padding: 28px;
+            background: #f8fafc;
+            border: 1px solid #e8edf2;
+            border-radius: 15px;
+        }
+
+        .takeaway h3 {
+            margin-top: 0;
+            color: #2563eb;
+        }
+
+        .takeaway p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 8%;
+            border-top: 1px solid #e8edf2;
+            text-align: center;
+            color: #667085;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .article-header {
+                padding: 55px 7% 45px;
+            }
+
+            .article-header h1 {
+                font-size: 36px;
+            }
+
+            .article-header p {
+                font-size: 15px;
+            }
+
+            .article {
+                padding: 45px 20px 70px;
+            }
+
+            .article h2 {
+                font-size: 25px;
+            }
+
+            .workflow {
+                flex-direction: column;
+            }
+
+            .workflow-box {
+                width: 200px;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="../index.html" class="logo">
+        Med Imaging <span>Hub</span>
+    </a>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../insights.html">Insights</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../resources.html">Resources</a>
+        <a href="../about.html">About</a>
+    </nav>
+
+</header>
+
+
+<section class="article-header">
+
+    <div class="article-label">Medical Imaging Technology</div>
+
+    <h1>
+        DICOM vs PACS — What’s the Difference?
+    </h1>
+
+    <p>
+        DICOM and PACS are often mentioned together.
+        Here’s the simple difference between them.
+    </p>
+
+</section>
+
+
+<main class="article">
+
+    <p>
+        <strong>DICOM and PACS are often mentioned together in medical imaging.</strong>
+    </p>
+
+    <p>
+        Because both are involved in the digital imaging workflow,
+        it is easy to think they are the same thing.
+    </p>
+
+    <p>
+        They are not.
+    </p>
+
+    <p>
+        The easiest way to understand the difference is to remember:
+    </p>
+
+    <div class="highlight">
+        <strong>DICOM is a standard. PACS is a system.</strong>
+    </div>
+
+
+    <h2>So, What Is DICOM?</h2>
+
+    <p>
+        <strong>DICOM</strong> stands for
+        <strong>Digital Imaging and Communications in Medicine.</strong>
+    </p>
+
+    <p>
+        It is a standard that defines how medical imaging information
+        is structured and exchanged between compatible systems.
+    </p>
+
+    <p>
+        In simple words, DICOM gives medical imaging systems a
+        <strong>common language</strong> for communicating imaging information.
+    </p>
+
+
+    <h2>And What Is PACS?</h2>
+
+    <p>
+        <strong>PACS</strong> stands for
+        <strong>Picture Archiving and Communication System.</strong>
+    </p>
+
+    <p>
+        PACS is a digital system used to
+        <strong>store, organize, retrieve, view, and distribute medical imaging studies.</strong>
+    </p>
+
+    <p>
+        In simple words, PACS provides a place where imaging studies
+        can be managed and accessed when they are needed.
+    </p>
+
+
+    <h2>The Simple Difference</h2>
+
+    <div class="table-wrapper">
+
+        <table class="comparison-table">
+
+            <tr>
+                <th>DICOM</th>
+                <th>PACS</th>
+            </tr>
+
+            <tr>
+                <td><strong>A medical imaging standard</strong></td>
+                <td><strong>A medical imaging system</strong></td>
+            </tr>
+
+            <tr>
+                <td>
+                    Defines how imaging information can be structured
+                    and exchanged.
+                </td>
+
+                <td>
+                    Manages the storage, retrieval, viewing, and
+                    distribution of imaging studies.
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Helps compatible systems communicate using
+                    standardized imaging information.
+                </td>
+
+                <td>
+                    Provides access to imaging studies for authorized
+                    users within the healthcare environment.
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Think: <strong>Common language</strong>
+                </td>
+
+                <td>
+                    Think: <strong>Digital imaging environment</strong>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <h2>How Do They Work Together?</h2>
+
+    <p>
+        DICOM and PACS are different, but they commonly work together
+        in a medical imaging workflow.
+    </p>
+
+    <p>
+        For example, when a CT examination is performed, the imaging
+        data can be exchanged using DICOM and sent to the hospital's PACS.
+    </p>
+
+    <p>
+        PACS can then store and organize the imaging study so that it
+        can later be retrieved and viewed by an authorized user.
+    </p>
+
+
+    <!-- WORKFLOW VISUAL -->
+
+    <div class="workflow">
+
+        <div class="workflow-box">
+            <span class="workflow-number">01</span>
+            <strong>Modality</strong>
+            <small>CT / MRI / X-ray</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-box">
+            <span class="workflow-number">02</span>
+            <strong>DICOM</strong>
+            <small>Standardized data</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-box">
+            <span class="workflow-number">03</span>
+            <strong>PACS</strong>
+            <small>Store & manage</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-box">
+            <span class="workflow-number">04</span>
+            <strong>Viewer</strong>
+            <small>Image review</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-box">
+            <span class="workflow-number">05</span>
+            <strong>Radiologist</strong>
+            <small>Clinical review</small>
+        </div>
+
+    </div>
+
+
+    <h2>A Simple Example</h2>
+
+    <p>
+        Imagine a patient has a CT scan in a hospital.
+    </p>
+
+    <p>
+        The CT scanner produces the imaging study. The imaging data can
+        be exchanged using the DICOM standard and sent to the hospital's PACS.
+    </p>
+
+    <p>
+        PACS stores and organizes the study. Later, an authorized
+        radiologist can retrieve the examination through a viewer
+        and review the images.
+    </p>
+
+    <p>
+        So, both DICOM and PACS are involved, but they have
+        <strong>different roles.</strong>
+    </p>
+
+
+    <h2>The Easiest Way to Remember</h2>
+
+    <p>
+        Think about two people who need to communicate.
+    </p>
+
+    <p>
+        <strong>DICOM is like the language they use.</strong>
+    </p>
+
+    <p>
+        <strong>PACS is like the system where their information is managed and accessed.</strong>
+    </p>
+
+    <p>
+        They are connected, but they are not the same thing.
+    </p>
+
+
+    <div class="takeaway">
+
+        <h3>Key Takeaway</h3>
+
+        <p>
+            <strong>
+                DICOM and PACS work together, but they have different jobs.
+            </strong>
+        </p>
+
+        <p>
+            DICOM is the standard that helps compatible medical imaging
+            systems structure and exchange imaging information.
+        </p>
+
+        <p>
+            PACS is the system that helps store, organize, retrieve,
+            view, and distribute medical imaging studies.
+        </p>
+
+        <p>
+            In simple terms:
+        </p>
+
+        <p>
+            <strong>
+                DICOM helps systems communicate. PACS helps manage the images.
+            </strong>
+        </p>
+
+    </div>
+
+</main>
+
+
+<footer>
+    © 2026 Med Imaging Hub · Complex medical imaging concepts, explained simply.
+</footer>
+
+
+</body>
+</html>
