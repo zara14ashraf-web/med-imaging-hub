@@ -7,7 +7,6 @@
   <title>How Does Fluoroscopy Show Movement in Real Time? | Med Imaging Hub</title>
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -21,6 +20,7 @@
       line-height: 1.7;
     }
 
+    /* HEADER */
     header {
       display: flex;
       justify-content: space-between;
@@ -32,321 +32,359 @@
 
     .logo {
       font-size: 23px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
+      font-weight: bold;
       color: #17202a;
+      text-decoration: none;
     }
 
     .logo span {
       color: #2563eb;
     }
 
+    nav {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
     nav a {
       text-decoration: none;
       color: #4b5563;
-      margin-left: 27px;
       font-size: 14px;
-      transition: 0.2s;
     }
 
     nav a:hover {
       color: #2563eb;
     }
 
-
     /* ARTICLE HEADER */
-
     .article-header {
       text-align: center;
-      padding: 80px 8% 65px;
+      padding: 75px 8% 60px;
       background:
-        radial-gradient(
-          circle at 50% 10%,
-          rgba(37, 99, 235, 0.10),
-          transparent 48%
-        ),
-        #f8fafc;
+        radial-gradient(circle at top left, #eff6ff 0%, #f8fafc 38%, #ffffff 75%);
     }
 
     .article-label {
       display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
+      padding: 6px 13px;
+      border-radius: 20px;
+      background: #eff6ff;
       color: #2563eb;
-      letter-spacing: 2px;
-      margin-bottom: 18px;
-      padding: 7px 13px;
-      border: 1px solid #dbeafe;
-      border-radius: 30px;
-      background: rgba(255, 255, 255, 0.8);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.7px;
+      margin-bottom: 20px;
     }
 
     .article-header h1 {
-      max-width: 850px;
-      margin: auto;
+      max-width: 900px;
+      margin: 0 auto 20px;
       font-size: 48px;
-      line-height: 1.15;
+      line-height: 1.12;
       letter-spacing: -1.8px;
     }
 
-    .article-meta {
-      margin-top: 18px;
-      font-size: 13px;
-      color: #8a94a3;
+    .article-header p {
+      max-width: 720px;
+      margin: auto;
+      color: #667085;
+      font-size: 17px;
     }
 
-
     /* ARTICLE */
-
     .article {
       max-width: 820px;
       margin: auto;
-      padding: 65px 7% 80px;
+      padding: 65px 25px 90px;
+    }
+
+    .article h2 {
+      margin-top: 48px;
+      margin-bottom: 18px;
+      font-size: 29px;
+      line-height: 1.25;
+      color: #17202a;
+    }
+
+    .article h2:first-child {
+      margin-top: 0;
     }
 
     .article p {
       font-size: 16px;
-      color: #3f4a59;
-      margin-bottom: 22px;
+      color: #374151;
+      margin-bottom: 18px;
     }
 
-    .article h2 {
-      font-size: 29px;
-      line-height: 1.3;
-      margin: 48px 0 18px;
-      color: #17202a;
+    .article ul {
+      margin: 10px 0 20px 22px;
+      color: #374151;
     }
 
-    .article h3 {
-      font-size: 21px;
-      margin: 30px 0 12px;
+    .article li {
+      margin-bottom: 8px;
+      font-size: 16px;
     }
 
     .article strong {
       color: #17202a;
     }
 
-    .article ul {
-      margin: 10px 0 25px 22px;
-      color: #3f4a59;
+    /* HIGHLIGHT */
+    .highlight {
+      margin: 25px 0;
+      padding: 22px 25px;
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      font-size: 17px;
+      color: #374151;
     }
 
-    .article li {
-      margin-bottom: 9px;
+    .highlight strong {
+      color: #2563eb;
     }
 
-
-    /* HERO IMAGE */
-
+    /* IMAGE */
     .article-image {
-      margin: 35px 0 45px;
+      margin: 35px 0 40px;
       text-align: center;
     }
 
     .article-image img {
       display: block;
       width: 100%;
-      max-width: 760px;
-      max-height: 520px;
+      max-width: 650px;
+      max-height: 430px;
       object-fit: contain;
       margin: auto;
       border-radius: 14px;
-      border: 1px solid #e6eaf0;
+      border: 1px solid #e8edf2;
       background: #f8fafc;
     }
 
     .image-caption {
-      max-width: 700px;
-      margin: 10px auto 0;
-      font-size: 12px;
+      margin-top: 10px;
+      color: #667085;
+      font-size: 13px;
       line-height: 1.5;
-      color: #8a94a3;
     }
 
-    .image-caption a {
+    .image-credit {
+      margin-top: 5px;
+      color: #98a2b3;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .image-credit a {
       color: #667085;
       text-decoration: underline;
     }
 
-
-    /* SIMPLE FLOW */
-
-    .flow-box {
-      margin: 30px 0 35px;
-      padding: 25px;
-      border: 1px solid #dbeafe;
-      border-radius: 14px;
-      background: #eff6ff;
-      text-align: center;
-      font-weight: 700;
-      color: #1e3a8a;
-    }
-
-
-    /* KEY IDEA */
-
-    .key-idea {
-      margin: 38px 0;
-      padding: 25px 28px;
-      border-left: 4px solid #2563eb;
-      border-radius: 8px;
+    /* FLUOROSCOPY VISUAL */
+    .fluoro-visual {
+      margin: 35px 0 45px;
+      padding: 28px;
       background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 16px;
     }
 
-    .key-idea p {
-      margin: 0;
-      color: #344054;
+    .visual-heading {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 22px;
     }
 
+    .workflow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
-    /* COMPARISON TABLE */
+    .workflow-box {
+      width: 135px;
+      min-height: 105px;
+      padding: 17px 12px;
+      background: #ffffff;
+      border: 1px solid #e8edf2;
+      border-radius: 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
+    .workflow-number {
+      width: 29px;
+      height: 29px;
+      border-radius: 50%;
+      background: #eff6ff;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 9px;
+    }
+
+    .workflow-box strong {
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .workflow-box span {
+      font-size: 12px;
+      color: #667085;
+      margin-top: 4px;
+    }
+
+    .workflow-arrow {
+      font-size: 22px;
+      color: #98a2b3;
+    }
+
+    /* TABLE */
     .table-wrapper {
       overflow-x: auto;
-      margin: 28px 0 35px;
+      margin: 25px 0 35px;
     }
 
-    table {
+    .article-table {
       width: 100%;
+      min-width: 560px;
       border-collapse: collapse;
-      min-width: 620px;
       font-size: 14px;
     }
 
-    th,
-    td {
-      padding: 15px 16px;
-      border: 1px solid #e5e7eb;
+    .article-table th,
+    .article-table td {
+      padding: 14px 15px;
+      border: 1px solid #e8edf2;
       text-align: left;
       vertical-align: top;
     }
 
-    th {
+    .article-table th {
       background: #f8fafc;
+      font-weight: bold;
       color: #17202a;
-      font-weight: 700;
     }
 
-    td {
-      color: #4b5563;
+    .article-table td {
+      color: #374151;
     }
 
-
-    /* SOURCES */
-
-    .sources {
-      margin-top: 55px;
-      padding-top: 30px;
-      border-top: 1px solid #e5e7eb;
+    /* TAKEAWAY */
+    .takeaway {
+      margin-top: 50px;
+      padding: 28px;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 15px;
     }
 
-    .sources h2 {
-      margin-top: 0;
-      font-size: 24px;
-    }
-
-    .sources ul {
-      margin-top: 15px;
-    }
-
-    .sources a {
+    .takeaway h3 {
       color: #2563eb;
-      text-decoration: none;
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
-    .sources a:hover {
-      text-decoration: underline;
+    .takeaway p {
+      margin-bottom: 0;
     }
-
-
-    /* BACK LINK */
-
-    .back-link {
-      display: inline-block;
-      margin-top: 25px;
-      color: #2563eb;
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-
 
     /* FOOTER */
-
     footer {
+      padding: 30px 8%;
+      border-top: 1px solid #e8edf2;
       text-align: center;
-      padding: 32px 20px;
-      border-top: 1px solid #e5e7eb;
-      color: #8a94a3;
+      color: #667085;
       font-size: 13px;
     }
 
-    footer strong {
-      color: #4b5563;
-    }
-
-
     /* MOBILE */
-
     @media (max-width: 700px) {
 
       header {
         flex-direction: column;
         gap: 15px;
+        padding: 18px 7%;
       }
 
       nav {
-        text-align: center;
-      }
-
-      nav a {
-        margin: 0 7px;
+        justify-content: center;
+        gap: 16px;
       }
 
       .article-header {
-        padding: 65px 7% 50px;
+        padding: 55px 7% 45px;
       }
 
       .article-header h1 {
         font-size: 36px;
+        letter-spacing: -1px;
+      }
+
+      .article-header p {
+        font-size: 15px;
       }
 
       .article {
-        padding: 50px 7% 65px;
+        padding: 45px 20px 70px;
       }
 
       .article h2 {
         font-size: 25px;
       }
 
-      .article p {
-        font-size: 15px;
+      .article p,
+      .article li {
+        font-size: 15.5px;
       }
 
-      .flow-box {
-        font-size: 14px;
-        line-height: 1.8;
+      .highlight {
+        font-size: 16px;
+        padding: 20px;
       }
 
+      .fluoro-visual {
+        padding: 20px;
+      }
+
+      .workflow {
+        flex-direction: column;
+      }
+
+      .workflow-box {
+        width: 200px;
+      }
+
+      .workflow-arrow {
+        transform: rotate(90deg);
+      }
+
+      .article-image img {
+        max-height: 350px;
+      }
     }
-
   </style>
 </head>
-
 
 <body>
 
   <!-- HEADER -->
-
   <header>
-
-    <div class="logo">
+    <a href="../index.html" class="logo">
       Med Imaging <span>Hub</span>
-    </div>
+    </a>
 
     <nav>
       <a href="../index.html">Home</a>
@@ -356,12 +394,10 @@
       <a href="../resources.html">Resources</a>
       <a href="../about.html">About</a>
     </nav>
-
   </header>
 
 
   <!-- ARTICLE HEADER -->
-
   <section class="article-header">
 
     <div class="article-label">
@@ -372,17 +408,16 @@
       How Does Fluoroscopy Show Movement in Real Time?
     </h1>
 
-    <div class="article-meta">
-      5 min read · Medical Imaging
-    </div>
+    <p>
+      How repeated X-ray images allow us to follow movement inside the body
+      during examinations and procedures.
+    </p>
 
   </section>
 
 
   <!-- ARTICLE -->
-
   <main class="article">
-
 
     <p>
       A conventional X-ray gives us a picture of the body at one particular
@@ -395,15 +430,43 @@
     </p>
 
     <p>
-      Fluoroscopy is an X-ray imaging technique that displays a changing
-      image on a monitor. It can be used to observe body structures,
-      contrast material, or medical instruments while they are moving
-      during an examination or procedure.
+      Fluoroscopy is an X-ray imaging technique that shows a changing image
+      on a monitor. It can be used to watch body parts, contrast material,
+      or medical instruments while they are moving during an examination
+      or procedure.
     </p>
 
 
-    <!-- IMAGE 1 -->
+    <h2>How Does It Work?</h2>
 
+    <p>
+      The basic idea is quite simple.
+    </p>
+
+    <p>
+      An X-ray tube produces X-rays and sends them through the part of the
+      body being examined. Some X-rays are absorbed by the body, while
+      others pass through and reach a detector.
+    </p>
+
+    <p>
+      In a normal X-ray, the information from the detector is used to
+      produce a still image.
+    </p>
+
+    <p>
+      In fluoroscopy, images are produced <strong>repeatedly while the
+      examination is taking place.</strong> The system sends these images
+      to a monitor, where they can be viewed as a moving sequence.
+    </p>
+
+    <p>
+      So, instead of seeing just one picture, the radiologist can watch
+      how things change from one moment to the next.
+    </p>
+
+
+    <!-- C-ARM IMAGE -->
     <div class="article-image">
 
       <img
@@ -412,7 +475,10 @@
       >
 
       <div class="image-caption">
-        Mobile C-arm fluoroscopy unit.
+        A mobile C-arm fluoroscopy unit used for image-guided procedures.
+      </div>
+
+      <div class="image-credit">
         Image by Ben Stephenson via
         <a
           href="https://commons.wikimedia.org/wiki/File:Mobile_X-ray_machine.jpg"
@@ -434,203 +500,198 @@
     </div>
 
 
-    <h2>How does it work?</h2>
+    <!-- WORKFLOW VISUAL -->
+    <div class="fluoro-visual">
 
-    <p>
-      The basic idea is quite simple.
-    </p>
+      <div class="visual-heading">
+        The Basic Fluoroscopy Process
+      </div>
 
-    <p>
-      An X-ray tube produces X-rays and sends them through the part of the
-      body being examined. Some X-rays are absorbed by the body, while
-      others pass through and reach a detector.
-    </p>
+      <div class="workflow">
 
-    <p>
-      In a conventional radiograph, the information from the detector is
-      used to produce a still image.
-    </p>
+        <div class="workflow-box">
+          <div class="workflow-number">1</div>
+          <strong>X-ray Tube</strong>
+          <span>Produces X-rays</span>
+        </div>
 
-    <p>
-      In fluoroscopy, images are acquired repeatedly during the examination
-      and displayed on a monitor. Because these images are shown in rapid
-      sequence, the movement of body structures, contrast material, or
-      instruments can be followed.
-    </p>
+        <div class="workflow-arrow">→</div>
 
+        <div class="workflow-box">
+          <div class="workflow-number">2</div>
+          <strong>Patient</strong>
+          <span>X-rays pass through the body</span>
+        </div>
 
-    <div class="flow-box">
-      X-ray tube → Patient → Detector → Monitor
-    </div>
+        <div class="workflow-arrow">→</div>
 
-    <p>
-      That is the basic idea behind fluoroscopic imaging.
-    </p>
+        <div class="workflow-box">
+          <div class="workflow-number">3</div>
+          <strong>Detector</strong>
+          <span>Receives X-rays</span>
+        </div>
 
+        <div class="workflow-arrow">→</div>
 
-    <h2>A simple clinical example: swallowing</h2>
+        <div class="workflow-box">
+          <div class="workflow-number">4</div>
+          <strong>Monitor</strong>
+          <span>Displays the images</span>
+        </div>
 
-    <p>
-      One of the easiest ways to understand fluoroscopy is through a
-      <strong>swallowing examination</strong>.
-    </p>
-
-    <p>
-      During a Video Fluoroscopic Swallowing Examination (VFSE), a patient
-      is given different liquids or foods containing barium. Barium is a
-      radiopaque contrast material, which makes the material easier to see
-      on X-ray.
-    </p>
-
-    <p>
-      As the patient swallows, fluoroscopy allows the examination team to
-      watch the movement on the monitor. The study can show how the
-      swallowed material moves through the mouth and throat and can help
-      assess whether swallowing is safe and effective.
-    </p>
-
-    <p>
-      This is something a single X-ray image cannot show as well.
-    </p>
-
-
-    <div class="key-idea">
-
-      <p>
-        A still image can show the <strong>position</strong> of the material.
-        Fluoroscopy can show <strong>how it moves over time</strong>.
-      </p>
-
-    </div>
-
-
-    <!-- IMAGE 2 -->
-
-    <div class="article-image">
-
-      <img
-        src="../images/barium-swallow-esophagram.jpg"
-        alt="Barium swallow fluoroscopic examination of the esophagus"
-      >
-
-      <div class="image-caption">
-        Example of a barium swallow fluoroscopic examination.
       </div>
 
     </div>
 
 
-    <h2>What else can we watch with fluoroscopy?</h2>
+    <h2>A Simple Clinical Example: Swallowing</h2>
 
     <p>
-      Fluoroscopy is useful whenever movement is important to an examination
-      or procedure.
+      One of the easiest ways to understand fluoroscopy is through a
+      <strong>swallowing examination.</strong>
+    </p>
+
+    <p>
+      Suppose a patient has difficulty swallowing. During a Video
+      Fluoroscopic Swallowing Examination (VFSE), the patient is given
+      different foods or liquids containing barium.
+    </p>
+
+    <p>
+      Barium helps make the material easier to see on X-ray.
+    </p>
+
+    <p>
+      As the patient swallows, fluoroscopy allows the radiologist and
+      speech-language pathologist to watch the movement on the monitor.
+      They can see how the material moves through the mouth and throat
+      and assess whether the swallowing process is safe and effective.
+    </p>
+
+    <p>
+      This is something a single X-ray cannot show well.
+    </p>
+
+    <div class="highlight">
+
+      A still image can show the <strong>position</strong> of the material.
+
+      <br><br>
+
+      Fluoroscopy can show <strong>how it moves.</strong>
+
+    </div>
+
+
+    <!-- BARIUM SWALLOW IMAGE -->
+    <div class="article-image">
+
+      <img
+        src="../images/barium-swallow-esophagram.jpg"
+        alt="Fluoroscopy of a barium swallow"
+      >
+
+      <div class="image-caption">
+        Fluoroscopy can be used to observe the movement of barium during
+        a swallowing examination.
+      </div>
+
+      <div class="image-credit">
+        Image credit: Wikimedia Commons. Replace this line with the
+        exact creator and license information for the image you use.
+      </div>
+
+    </div>
+
+
+    <h2>What Else Can We Watch?</h2>
+
+    <p>
+      Fluoroscopy is useful whenever movement needs to be observed during
+      an examination or procedure. For example, it can be used to:
     </p>
 
     <ul>
-
-      <li>
-        Follow contrast material through the digestive system.
-      </li>
-
-      <li>
-        Observe blood vessels during certain contrast examinations.
-      </li>
-
-      <li>
-        Guide catheters and other medical instruments.
-      </li>
-
-      <li>
-        Help guide some orthopedic procedures.
-      </li>
-
-      <li>
-        Guide the placement of devices such as stents.
-      </li>
-
+      <li>follow contrast material through the digestive system</li>
+      <li>observe blood vessels during certain contrast examinations</li>
+      <li>guide catheters and other instruments</li>
+      <li>help with some orthopedic procedures</li>
+      <li>guide the placement of devices such as stents</li>
     </ul>
 
-
     <p>
-      For example, during an upper gastrointestinal examination, a patient
-      may drink barium while fluoroscopy is used to observe its movement
-      through the esophagus, stomach, and duodenum.
+      For example, during an upper GI examination, a patient drinks
+      barium while the radiologist watches its movement through the
+      esophagus, stomach, and duodenum.
     </p>
 
     <p>
-      In interventional procedures, fluoroscopy can also help a physician
-      see the position of an instrument and guide it toward the required
+      In interventional procedures, fluoroscopy can also help the
+      physician see where an instrument is and guide it to the required
       location.
     </p>
 
 
-    <h2>Is the X-ray beam always switched on?</h2>
+    <h2>Is the X-ray Beam Always Switched On?</h2>
 
     <p>
       Not necessarily.
     </p>
 
     <p>
-      Fluoroscopy can use a continuous X-ray beam or
-      <strong>pulsed fluoroscopy</strong>, in which X-rays are produced in
-      short pulses. The resulting images can still be displayed rapidly
-      enough to follow movement.
+      Fluoroscopy can use a <strong>continuous X-ray beam or pulsed
+      X-rays.</strong> With pulsed fluoroscopy, X-rays are produced in
+      short bursts rather than continuously, while the images are still
+      displayed as a moving sequence.
     </p>
 
     <p>
-      The exact imaging settings depend on the equipment and the type of
-      examination or procedure.
+      The exact settings depend on the equipment and the type of
+      examination.
     </p>
 
     <p>
-      So, when we say that fluoroscopy provides a “real-time” view, it does
-      not necessarily mean that the X-ray tube is producing radiation
-      continuously every second.
+      So, when we say that fluoroscopy provides a “real-time” view,
+      it does not necessarily mean that the X-ray tube is producing
+      radiation continuously every second.
     </p>
 
     <p>
-      The important idea is that images are acquired repeatedly and
-      displayed quickly enough to follow changes over time.
+      The important point is that the system acquires images repeatedly
+      and displays them quickly enough to follow the movement.
     </p>
 
 
-    <h2>What about radiation dose?</h2>
+    <h2>What About Radiation Dose?</h2>
 
     <p>
       Fluoroscopy uses ionizing radiation, just like conventional X-rays.
     </p>
 
     <p>
-      Because fluoroscopy may involve repeated X-ray exposures over a longer
-      period, radiation exposure can be higher than with a single
-      radiograph, especially during longer or more complex procedures.
+      Because images may be acquired for a longer period, radiation
+      exposure can be higher than with a single radiograph, especially
+      during longer or more complex procedures.
     </p>
 
     <p>
       This is why radiation protection is important during fluoroscopy.
+    </p>
+
+    <p>
       The imaging team aims to use the radiation needed to obtain useful
-      images while avoiding unnecessary exposure.
-    </p>
-
-    <p>
-      Modern fluoroscopy systems can include dose-management features.
-      One example is <strong>last-image hold</strong>, which allows the most
-      recently acquired image to be reviewed without continuing the X-ray
-      exposure.
+      images while avoiding unnecessary exposure. Modern systems can also
+      provide radiation-dose information and features such as
+      <strong>last-image hold</strong>, which allows the most recent image
+      to be reviewed without continuing the X-ray exposure.
     </p>
 
 
-    <h2>Fluoroscopy vs. a normal X-ray</h2>
-
-    <p>
-      The easiest way to remember the difference is:
-    </p>
-
+    <h2>Fluoroscopy vs. Conventional X-ray</h2>
 
     <div class="table-wrapper">
 
-      <table>
+      <table class="article-table">
 
         <thead>
           <tr>
@@ -642,23 +703,44 @@
         <tbody>
 
           <tr>
-            <td>Mainly produces a still image</td>
-            <td>Displays a moving sequence of images</td>
+            <td>
+              Mainly gives a still image
+            </td>
+
+            <td>
+              Shows a moving sequence of images
+            </td>
           </tr>
 
           <tr>
-            <td>Useful for viewing anatomy at one point in time</td>
-            <td>Useful when movement needs to be observed</td>
+            <td>
+              Useful for looking at anatomy at one point in time
+            </td>
+
+            <td>
+              Useful when movement needs to be observed
+            </td>
           </tr>
 
           <tr>
-            <td>Commonly used for chest and bone examinations</td>
-            <td>Commonly used for contrast studies and image-guided procedures</td>
+            <td>
+              Commonly used for chest and bone examinations
+            </td>
+
+            <td>
+              Commonly used for contrast studies and image-guided
+              procedures
+            </td>
           </tr>
 
           <tr>
-            <td>Often involves a short exposure</td>
-            <td>May involve repeated exposures during the examination</td>
+            <td>
+              Usually involves a short exposure
+            </td>
+
+            <td>
+              May require repeated exposure during the examination
+            </td>
           </tr>
 
         </tbody>
@@ -667,14 +749,13 @@
 
     </div>
 
-
     <p>
-      Both use X-rays. The main difference is
-      <strong>how the images are acquired and displayed.</strong>
+      Both use X-rays. The main difference is <strong>how the images are
+      acquired and displayed.</strong>
     </p>
 
 
-    <h2>The main idea</h2>
+    <h2>The Main Idea</h2>
 
     <p>
       Fluoroscopy is useful when we need more than a picture.
@@ -686,78 +767,38 @@
       swallowing, or an instrument being guided during a procedure.
     </p>
 
+    <div class="highlight">
 
-    <div class="key-idea">
+      <strong>Radiography mainly shows us what is there.</strong>
 
-      <p>
-        <strong>Radiography mainly shows us what is there.</strong><br>
-        <strong>Fluoroscopy helps us see what is happening over time.</strong>
-      </p>
+      <br>
+
+      Fluoroscopy helps us see <strong>what is happening.</strong>
 
     </div>
 
 
-    <!-- SOURCES -->
+    <!-- TAKEAWAY -->
+    <div class="takeaway">
 
-    <section class="sources">
+      <h3>Key Takeaway</h3>
 
-      <h2>Sources</h2>
+      <p>
+        Fluoroscopy is an X-ray imaging technique that produces images
+        repeatedly and displays them as a moving sequence. This makes it
+        especially useful when clinicians need to observe movement,
+        follow contrast material, or guide instruments during a procedure.
+      </p>
 
-      <ul>
-
-        <li>
-          U.S. Food and Drug Administration (FDA) —
-          <a
-            href="https://www.fda.gov/radiation-emitting-products/medical-x-ray-imaging/fluoroscopy"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Fluoroscopy
-          </a>
-        </li>
-
-        <li>
-          U.S. Food and Drug Administration (FDA) —
-          <a
-            href="https://www.fda.gov/radiation-emitting-products/medical-x-ray-imaging/questions-and-answers-physicians-about-medical-x-rays"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Questions and Answers for Physicians About Medical X-rays
-          </a>
-        </li>
-
-        <li>
-          RadiologyInfo.org —
-          <a
-            href="https://www.radiologyinfo.org/en/info/modbariumswallow"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Video Fluoroscopic Swallowing Exam (VFSE) / Esophagram
-          </a>
-        </li>
-
-      </ul>
-
-    </section>
-
-
-    <a href="../articles.html" class="back-link">
-      ← Back to Articles
-    </a>
-
+    </div>
 
   </main>
 
 
   <!-- FOOTER -->
-
   <footer>
-    © 2026 Med Imaging Hub · Created & curated by
-    <strong>Zara Ashraf</strong>
+    © 2026 Med Imaging Hub · Student-led educational platform
   </footer>
-
 
 </body>
 </html>
