@@ -27,7 +27,6 @@
       align-items: center;
       padding: 20px 8%;
       border-bottom: 1px solid #e8edf2;
-      background: #ffffff;
     }
 
     .logo {
@@ -104,11 +103,16 @@
       margin-bottom: 18px;
       font-size: 29px;
       line-height: 1.25;
-      color: #17202a;
     }
 
     .article h2:first-child {
       margin-top: 0;
+    }
+
+    .article h3 {
+      font-size: 21px;
+      margin-top: 45px;
+      margin-bottom: 18px;
     }
 
     .article p {
@@ -131,34 +135,19 @@
       color: #17202a;
     }
 
-    /* HIGHLIGHT */
-    .highlight {
-      margin: 25px 0;
-      padding: 22px 25px;
-      background: #f8fafc;
-      border-left: 4px solid #2563eb;
-      border-radius: 10px;
-      font-size: 17px;
-      color: #374151;
-    }
-
-    .highlight strong {
-      color: #2563eb;
-    }
-
     /* IMAGE */
     .article-image {
-      margin: 35px 0 40px;
+      margin: 35px auto 42px;
       text-align: center;
     }
 
     .article-image img {
       display: block;
       width: 100%;
-      max-width: 650px;
-      max-height: 430px;
+      max-width: 620px;
+      max-height: 390px;
       object-fit: contain;
-      margin: auto;
+      margin: 0 auto;
       border-radius: 14px;
       border: 1px solid #e8edf2;
       background: #f8fafc;
@@ -172,7 +161,7 @@
     }
 
     .image-credit {
-      margin-top: 5px;
+      margin-top: 4px;
       color: #98a2b3;
       font-size: 12px;
       line-height: 1.5;
@@ -183,7 +172,21 @@
       text-decoration: underline;
     }
 
-    /* FLUOROSCOPY VISUAL */
+    /* HIGHLIGHT */
+    .highlight {
+      margin: 25px 0;
+      padding: 22px 25px;
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      font-size: 17px;
+    }
+
+    .highlight strong {
+      color: #2563eb;
+    }
+
+    /* WORKFLOW */
     .fluoro-visual {
       margin: 35px 0 45px;
       padding: 28px;
@@ -240,12 +243,6 @@
       line-height: 1.35;
     }
 
-    .workflow-box span {
-      font-size: 12px;
-      color: #667085;
-      margin-top: 4px;
-    }
-
     .workflow-arrow {
       font-size: 22px;
       color: #98a2b3;
@@ -275,11 +272,32 @@
     .article-table th {
       background: #f8fafc;
       font-weight: bold;
-      color: #17202a;
     }
 
     .article-table td {
       color: #374151;
+    }
+
+    /* SOURCES */
+    .sources {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid #e8edf2;
+    }
+
+    .sources h3 {
+      color: #17202a;
+      font-size: 21px;
+      margin-bottom: 15px;
+    }
+
+    .sources ul {
+      margin-left: 20px;
+    }
+
+    .sources li {
+      font-size: 14px;
+      margin-bottom: 7px;
     }
 
     /* TAKEAWAY */
@@ -289,12 +307,6 @@
       background: #f8fafc;
       border: 1px solid #e8edf2;
       border-radius: 15px;
-    }
-
-    .takeaway h3 {
-      color: #2563eb;
-      font-size: 20px;
-      margin-bottom: 10px;
     }
 
     .takeaway p {
@@ -355,6 +367,11 @@
         padding: 20px;
       }
 
+      .article-image img {
+        max-width: 100%;
+        max-height: 330px;
+      }
+
       .fluoro-visual {
         padding: 20px;
       }
@@ -370,10 +387,6 @@
       .workflow-arrow {
         transform: rotate(90deg);
       }
-
-      .article-image img {
-        max-height: 350px;
-      }
     }
   </style>
 </head>
@@ -382,6 +395,7 @@
 
   <!-- HEADER -->
   <header>
+
     <a href="../index.html" class="logo">
       Med Imaging <span>Hub</span>
     </a>
@@ -394,6 +408,7 @@
       <a href="../resources.html">Resources</a>
       <a href="../about.html">About</a>
     </nav>
+
   </header>
 
 
@@ -409,20 +424,18 @@
     </h1>
 
     <p>
-      How repeated X-ray images allow us to follow movement inside the body
-      during examinations and procedures.
+      A closer look at how fluoroscopy allows us to observe movement during
+      medical imaging examinations and procedures.
     </p>
 
   </section>
 
 
-  <!-- ARTICLE -->
+  <!-- ARTICLE CONTENT -->
   <main class="article">
 
     <p>
-      A conventional X-ray gives us a picture of the body at one particular
-      moment. But sometimes, one picture is not enough. We may need to see
-      <strong>what is happening while something is moving.</strong>
+      A conventional X-ray gives us a picture of the body at one particular moment. But sometimes, one picture is not enough. We may need to see <strong>what is happening while something is moving</strong>.
     </p>
 
     <p>
@@ -430,39 +443,152 @@
     </p>
 
     <p>
-      Fluoroscopy is an X-ray imaging technique that shows a changing image
-      on a monitor. It can be used to watch body parts, contrast material,
-      or medical instruments while they are moving during an examination
-      or procedure.
+      Fluoroscopy is an X-ray imaging technique that shows a changing image on a monitor. It can be used to watch body parts, contrast material, or medical instruments while they are moving during an examination or procedure.
     </p>
 
 
-    <h2>How Does It Work?</h2>
+    <h2>How does it work?</h2>
 
     <p>
       The basic idea is quite simple.
     </p>
 
     <p>
-      An X-ray tube produces X-rays and sends them through the part of the
-      body being examined. Some X-rays are absorbed by the body, while
-      others pass through and reach a detector.
+      An X-ray tube produces X-rays and sends them through the part of the body being examined. Some X-rays are absorbed by the body, while others pass through and reach a detector.
     </p>
 
     <p>
-      In a normal X-ray, the information from the detector is used to
-      produce a still image.
+      In a normal X-ray, the information from the detector is used to produce a still image.
     </p>
 
     <p>
-      In fluoroscopy, images are produced <strong>repeatedly while the
-      examination is taking place.</strong> The system sends these images
-      to a monitor, where they can be viewed as a moving sequence.
+      In fluoroscopy, images are produced <strong>repeatedly while the examination is taking place</strong>. The system sends these images to a monitor, where they can be viewed as a moving sequence.
     </p>
 
     <p>
-      So, instead of seeing just one picture, the radiologist can watch
-      how things change from one moment to the next.
+      So, instead of seeing just one picture, the radiologist can watch how things change from one moment to the next.
+    </p>
+
+
+    <!-- FLUOROSCOPY WORKFLOW -->
+    <div class="fluoro-visual">
+
+      <div class="visual-heading">
+        How Fluoroscopy Works
+      </div>
+
+      <div class="workflow">
+
+        <div class="workflow-box">
+          <div class="workflow-number">1</div>
+          <strong>X-ray Tube</strong>
+        </div>
+
+        <div class="workflow-arrow">→</div>
+
+        <div class="workflow-box">
+          <div class="workflow-number">2</div>
+          <strong>Patient</strong>
+        </div>
+
+        <div class="workflow-arrow">→</div>
+
+        <div class="workflow-box">
+          <div class="workflow-number">3</div>
+          <strong>Detector</strong>
+        </div>
+
+        <div class="workflow-arrow">→</div>
+
+        <div class="workflow-box">
+          <div class="workflow-number">4</div>
+          <strong>Monitor</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <p>
+      <strong>X-ray tube → Patient → Detector → Monitor</strong>
+    </p>
+
+    <p>
+      That is the basic idea behind fluoroscopic imaging.
+    </p>
+
+
+    <h2>A simple clinical example: swallowing</h2>
+
+    <p>
+      One of the easiest ways to understand fluoroscopy is through a <strong>swallowing examination</strong>.
+    </p>
+
+    <p>
+      Suppose a patient has difficulty swallowing. During a Video Fluoroscopic Swallowing Examination (VFSE), the patient is given different foods or liquids containing barium.
+    </p>
+
+    <p>
+      Barium helps make the material easier to see on X-ray.
+    </p>
+
+    <p>
+      As the patient swallows, fluoroscopy allows the radiologist and speech-language pathologist to watch the movement on the monitor. They can see how the material moves through the mouth and throat and assess whether the swallowing process is safe and effective.
+    </p>
+
+    <p>
+      This is something a single X-ray cannot show well.
+    </p>
+
+    <p>
+      A still image can show the <strong>position</strong> of the material.
+    </p>
+
+    <p>
+      Fluoroscopy can show <strong>how it moves</strong>.
+    </p>
+
+
+    <!-- BARIUM SWALLOW IMAGE -->
+    <div class="article-image">
+
+      <img
+        src="../images/barium-swallow-esophagram.jpg"
+        alt="Barium swallow fluoroscopy"
+      >
+
+      <div class="image-caption">
+        Fluoroscopy during a barium swallow examination.
+      </div>
+
+    </div>
+
+
+    <h2>What else can we watch with fluoroscopy?</h2>
+
+    <p>
+      Fluoroscopy is useful whenever movement is important to the examination or procedure.
+    </p>
+
+    <p>
+      For example, it can be used to:
+    </p>
+
+    <ul>
+      <li>follow contrast material through the digestive system</li>
+      <li>observe blood vessels during certain contrast examinations</li>
+      <li>guide catheters and other instruments</li>
+      <li>help with some orthopedic procedures</li>
+      <li>guide the placement of devices such as stents</li>
+    </ul>
+
+    <p>
+      For example, during an upper GI examination, a patient drinks barium while the radiologist watches its movement through the esophagus, stomach, and duodenum.
+    </p>
+
+    <p>
+      In interventional procedures, fluoroscopy can also help the physician see where an instrument is and guide it to the required location.
     </p>
 
 
@@ -475,7 +601,7 @@
       >
 
       <div class="image-caption">
-        A mobile C-arm fluoroscopy unit used for image-guided procedures.
+        A mobile C-arm fluoroscopy unit.
       </div>
 
       <div class="image-credit">
@@ -500,178 +626,37 @@
     </div>
 
 
-    <!-- WORKFLOW VISUAL -->
-    <div class="fluoro-visual">
-
-      <div class="visual-heading">
-        The Basic Fluoroscopy Process
-      </div>
-
-      <div class="workflow">
-
-        <div class="workflow-box">
-          <div class="workflow-number">1</div>
-          <strong>X-ray Tube</strong>
-          <span>Produces X-rays</span>
-        </div>
-
-        <div class="workflow-arrow">→</div>
-
-        <div class="workflow-box">
-          <div class="workflow-number">2</div>
-          <strong>Patient</strong>
-          <span>X-rays pass through the body</span>
-        </div>
-
-        <div class="workflow-arrow">→</div>
-
-        <div class="workflow-box">
-          <div class="workflow-number">3</div>
-          <strong>Detector</strong>
-          <span>Receives X-rays</span>
-        </div>
-
-        <div class="workflow-arrow">→</div>
-
-        <div class="workflow-box">
-          <div class="workflow-number">4</div>
-          <strong>Monitor</strong>
-          <span>Displays the images</span>
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <h2>A Simple Clinical Example: Swallowing</h2>
-
-    <p>
-      One of the easiest ways to understand fluoroscopy is through a
-      <strong>swallowing examination.</strong>
-    </p>
-
-    <p>
-      Suppose a patient has difficulty swallowing. During a Video
-      Fluoroscopic Swallowing Examination (VFSE), the patient is given
-      different foods or liquids containing barium.
-    </p>
-
-    <p>
-      Barium helps make the material easier to see on X-ray.
-    </p>
-
-    <p>
-      As the patient swallows, fluoroscopy allows the radiologist and
-      speech-language pathologist to watch the movement on the monitor.
-      They can see how the material moves through the mouth and throat
-      and assess whether the swallowing process is safe and effective.
-    </p>
-
-    <p>
-      This is something a single X-ray cannot show well.
-    </p>
-
-    <div class="highlight">
-
-      A still image can show the <strong>position</strong> of the material.
-
-      <br><br>
-
-      Fluoroscopy can show <strong>how it moves.</strong>
-
-    </div>
-
-
-    <!-- BARIUM SWALLOW IMAGE -->
-    <div class="article-image">
-
-      <img
-        src="../images/barium-swallow-esophagram.jpg"
-        alt="Fluoroscopy of a barium swallow"
-      >
-
-      <div class="image-caption">
-        Fluoroscopy can be used to observe the movement of barium during
-        a swallowing examination.
-      </div>
-
-      <div class="image-credit">
-        Image credit: Wikimedia Commons. Replace this line with the
-        exact creator and license information for the image you use.
-      </div>
-
-    </div>
-
-
-    <h2>What Else Can We Watch?</h2>
-
-    <p>
-      Fluoroscopy is useful whenever movement needs to be observed during
-      an examination or procedure. For example, it can be used to:
-    </p>
-
-    <ul>
-      <li>follow contrast material through the digestive system</li>
-      <li>observe blood vessels during certain contrast examinations</li>
-      <li>guide catheters and other instruments</li>
-      <li>help with some orthopedic procedures</li>
-      <li>guide the placement of devices such as stents</li>
-    </ul>
-
-    <p>
-      For example, during an upper GI examination, a patient drinks
-      barium while the radiologist watches its movement through the
-      esophagus, stomach, and duodenum.
-    </p>
-
-    <p>
-      In interventional procedures, fluoroscopy can also help the
-      physician see where an instrument is and guide it to the required
-      location.
-    </p>
-
-
-    <h2>Is the X-ray Beam Always Switched On?</h2>
+    <h2>Is the X-ray beam always switched on?</h2>
 
     <p>
       Not necessarily.
     </p>
 
     <p>
-      Fluoroscopy can use a <strong>continuous X-ray beam or pulsed
-      X-rays.</strong> With pulsed fluoroscopy, X-rays are produced in
-      short bursts rather than continuously, while the images are still
-      displayed as a moving sequence.
+      Fluoroscopy can use a <strong>continuous X-ray beam or pulsed X-rays</strong>. With pulsed fluoroscopy, X-rays are produced in short bursts rather than continuously, while the images are still displayed as a moving sequence.
     </p>
 
     <p>
-      The exact settings depend on the equipment and the type of
-      examination.
+      The exact settings depend on the equipment and the type of examination.
     </p>
 
     <p>
-      So, when we say that fluoroscopy provides a “real-time” view,
-      it does not necessarily mean that the X-ray tube is producing
-      radiation continuously every second.
+      So, when we say that fluoroscopy provides a “real-time” view, it does not necessarily mean that the X-ray tube is producing radiation continuously every second.
     </p>
 
     <p>
-      The important point is that the system acquires images repeatedly
-      and displays them quickly enough to follow the movement.
+      The important point is that the system acquires images repeatedly and displays them quickly enough to follow the movement.
     </p>
 
 
-    <h2>What About Radiation Dose?</h2>
+    <h2>What about radiation dose?</h2>
 
     <p>
       Fluoroscopy uses ionizing radiation, just like conventional X-rays.
     </p>
 
     <p>
-      Because images may be acquired for a longer period, radiation
-      exposure can be higher than with a single radiograph, especially
-      during longer or more complex procedures.
+      Because images may be acquired for a longer period, radiation exposure can be higher than with a single radiograph, especially during longer or more complex procedures.
     </p>
 
     <p>
@@ -679,16 +664,18 @@
     </p>
 
     <p>
-      The imaging team aims to use the radiation needed to obtain useful
-      images while avoiding unnecessary exposure. Modern systems can also
-      provide radiation-dose information and features such as
-      <strong>last-image hold</strong>, which allows the most recent image
-      to be reviewed without continuing the X-ray exposure.
+      The imaging team aims to use the radiation needed to obtain useful images while avoiding unnecessary exposure. Modern systems can also provide radiation-dose information and features such as <strong>last-image hold</strong>, which allows the most recent image to be reviewed without continuing the X-ray exposure.
     </p>
 
 
-    <h2>Fluoroscopy vs. Conventional X-ray</h2>
+    <h2>Fluoroscopy vs. a normal X-ray</h2>
 
+    <p>
+      The easiest way to remember the difference is:
+    </p>
+
+
+    <!-- COMPARISON TABLE -->
     <div class="table-wrapper">
 
       <table class="article-table">
@@ -703,44 +690,23 @@
         <tbody>
 
           <tr>
-            <td>
-              Mainly gives a still image
-            </td>
-
-            <td>
-              Shows a moving sequence of images
-            </td>
+            <td>Mainly gives a still image</td>
+            <td>Shows a moving sequence of images</td>
           </tr>
 
           <tr>
-            <td>
-              Useful for looking at anatomy at one point in time
-            </td>
-
-            <td>
-              Useful when movement needs to be observed
-            </td>
+            <td>Useful for looking at anatomy at one point in time</td>
+            <td>Useful when movement needs to be observed</td>
           </tr>
 
           <tr>
-            <td>
-              Commonly used for chest and bone examinations
-            </td>
-
-            <td>
-              Commonly used for contrast studies and image-guided
-              procedures
-            </td>
+            <td>Commonly used for chest and bone examinations</td>
+            <td>Commonly used for contrast studies and image-guided procedures</td>
           </tr>
 
           <tr>
-            <td>
-              Usually involves a short exposure
-            </td>
-
-            <td>
-              May require repeated exposure during the examination
-            </td>
+            <td>Usually involves a short exposure</td>
+            <td>May require repeated exposure during the examination</td>
           </tr>
 
         </tbody>
@@ -749,46 +715,46 @@
 
     </div>
 
+
     <p>
-      Both use X-rays. The main difference is <strong>how the images are
-      acquired and displayed.</strong>
+      Both use X-rays. The main difference is <strong>how the images are acquired and displayed</strong>.
     </p>
 
 
-    <h2>The Main Idea</h2>
+    <h2>The main idea</h2>
 
     <p>
       Fluoroscopy is useful when we need more than a picture.
     </p>
 
     <p>
-      It allows us to follow <strong>movement over time</strong> — whether
-      that is contrast passing through the digestive tract, a patient
-      swallowing, or an instrument being guided during a procedure.
+      It allows us to follow <strong>movement over time</strong> — whether that is contrast passing through the digestive tract, a patient swallowing, or an instrument being guided during a procedure.
+    </p>
+
+    <p>
+      So, a simple way to remember it is:
     </p>
 
     <div class="highlight">
 
       <strong>Radiography mainly shows us what is there.</strong>
-
       <br>
-
-      Fluoroscopy helps us see <strong>what is happening.</strong>
+      <strong>Fluoroscopy helps us see what is happening.</strong>
 
     </div>
 
 
-    <!-- TAKEAWAY -->
-    <div class="takeaway">
+    <!-- SOURCES -->
+    <div class="sources">
 
-      <h3>Key Takeaway</h3>
+      <h3>Sources</h3>
 
-      <p>
-        Fluoroscopy is an X-ray imaging technique that produces images
-        repeatedly and displays them as a moving sequence. This makes it
-        especially useful when clinicians need to observe movement,
-        follow contrast material, or guide instruments during a procedure.
-      </p>
+      <ul>
+        <li>U.S. Food and Drug Administration (FDA) — <em>Fluoroscopy</em></li>
+        <li>U.S. Food and Drug Administration (FDA) — <em>Medical X-ray Imaging</em></li>
+        <li>RadiologyInfo.org — <em>Video Fluoroscopic Swallowing Exam (VFSE)</em></li>
+        <li>RadiologyInfo.org — <em>Upper GI X-ray / Barium Swallow</em></li>
+      </ul>
 
     </div>
 
