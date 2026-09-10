@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>What Is Mammography and How Does It Work? | Med Imaging Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2937;
+      background: #ffffff;
+      line-height: 1.75;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 700;
+      color: #111827;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b5563;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 75px 8% 60px;
+      background:
+        radial-gradient(circle at top left, #eff6ff 0%, transparent 45%),
+        radial-gradient(circle at top right, #f8fafc 0%, transparent 45%),
+        #ffffff;
+    }
+
+    .label {
+      display: inline-block;
+      padding: 6px 13px;
+      margin-bottom: 18px;
+      background: #eff6ff;
+      color: #2563eb;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 48px;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      color: #111827;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 20px auto 0;
+      font-size: 17px;
+      color: #667085;
+      line-height: 1.65;
+    }
+
+    /* ARTICLE */
+    .article {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 65px 25px 90px;
+    }
+
+    .article p {
+      font-size: 16px;
+      color: #374151;
+      margin-bottom: 22px;
+    }
+
+    .article h2 {
+      margin-top: 48px;
+      margin-bottom: 18px;
+      font-size: 29px;
+      line-height: 1.3;
+      color: #111827;
+      letter-spacing: -0.5px;
+    }
+
+    .article h3 {
+      margin-top: 28px;
+      margin-bottom: 12px;
+      font-size: 21px;
+      color: #111827;
+    }
+
+    .article strong {
+      color: #111827;
+    }
+
+    /* LISTS */
+    .article ul {
+      margin: 8px 0 25px 24px;
+      padding-left: 10px;
+    }
+
+    .article li {
+      margin-bottom: 8px;
+      padding-left: 4px;
+      color: #374151;
+      font-size: 16px;
+    }
+
+    /* HIGHLIGHT */
+    .highlight {
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      padding: 22px 25px;
+      margin: 28px 0 32px;
+    }
+
+    .highlight p {
+      margin-bottom: 0;
+    }
+
+    /* IMAGE */
+    .article-image {
+      margin: 35px auto 40px;
+      text-align: center;
+    }
+
+    .article-image img {
+      display: block;
+      width: 100%;
+      max-width: 620px;
+      max-height: 390px;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 12px;
+      border: 1px solid #e8edf2;
+    }
+
+    .image-credit {
+      max-width: 620px;
+      margin: 10px auto 0;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #7b8491;
+    }
+
+    .image-credit a {
+      color: #667085;
+      text-decoration: underline;
+    }
+
+    /* PROCESS BOX */
+    .process-box {
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 15px;
+      padding: 24px;
+      margin: 28px 0 35px;
+      text-align: center;
+    }
+
+    .process {
+      font-size: 17px;
+      font-weight: 600;
+      color: #1f2937;
+      letter-spacing: 0.2px;
+    }
+
+    .arrow {
+      color: #2563eb;
+      padding: 0 7px;
+    }
+
+    /* TAKEAWAY */
+    .takeaway {
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 15px;
+      padding: 28px;
+      margin-top: 40px;
+    }
+
+    .takeaway h2 {
+      margin-top: 0;
+    }
+
+    /* SOURCES */
+    .sources {
+      margin-top: 55px;
+      padding-top: 30px;
+      border-top: 1px solid #e8edf2;
+    }
+
+    .sources h2 {
+      margin-top: 0;
+      font-size: 25px;
+    }
+
+    .sources ul {
+      margin-top: 10px;
+    }
+
+    .sources a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .sources a:hover {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 30px 8%;
+      border-top: 1px solid #e8edf2;
+      text-align: center;
+      font-size: 13px;
+      color: #7b8491;
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 6%;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px 20px;
+      }
+
+      .hero {
+        padding: 55px 6% 45px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .article {
+        padding: 45px 20px 70px;
+      }
+
+      .article h2 {
+        font-size: 25px;
+        margin-top: 42px;
+      }
+
+      .article h3 {
+        font-size: 20px;
+      }
+
+      .article p,
+      .article li {
+        font-size: 15.5px;
+      }
+
+      .process-box {
+        padding: 20px 15px;
+      }
+
+      .process {
+        line-height: 2;
+      }
+
+      .arrow {
+        display: inline-block;
+        padding: 0 3px;
+      }
+
+      .article-image img {
+        max-height: none;
+      }
+
+      .image-credit {
+        font-size: 11.5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+
+    <a href="index.html" class="logo">
+      Med Imaging <span>Hub</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="insights.html">Insights</a>
+      <a href="projects.html">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="label">Mammography</div>
+
+    <h1>What Is Mammography and How Does It Work?</h1>
+
+    <p>
+      A simple, student-friendly introduction to mammography,
+      breast compression, digital imaging, and the basics of mammographic technique.
+    </p>
+
+  </section>
+
+
+  <!-- ARTICLE -->
+  <main class="article">
+
+    <p>
+      If you have studied general X-ray imaging, you already know
+      the basic idea: X-rays pass through the body, and different tissues absorb
+      different amounts of radiation.
+    </p>
+
+    <p>
+      But when we image the breast, we need a technique that can
+      show <strong>very small differences in soft tissue</strong>.
+    </p>
+
+    <p>
+      This is where mammography comes in.
+    </p>
+
+    <p>
+      Mammography is a specialized type of X-ray imaging used to
+      produce detailed images of the breast. It can help detect breast abnormalities,
+      including some cancers, at an early stage.
+    </p>
+
+    <p>
+      So, how is mammography different from an ordinary X-ray?
+    </p>
+
+    <p>
+      Let's break it down.
+    </p>
+
+
+    <!-- WHAT IS A MAMMOGRAM -->
+    <h2>What is a mammogram?</h2>
+
+    <p>
+      A <strong>mammogram</strong> is an X-ray image of the breast.
+    </p>
+
+    <p>
+      <strong>Mammography</strong> is the technique used to produce that
+      image.
+    </p>
+
+    <p>
+      A mammography system is specifically designed for breast
+      imaging. It uses a low-dose X-ray beam and a specialized detector to produce
+      images with the detail needed to evaluate breast tissue.
+    </p>
+
+    <p>
+      Mammography can be performed as <strong>screening mammography</strong>
+      or <strong>diagnostic mammography</strong>, depending on the reason for the examination.
+    </p>
+
+
+    <!-- HOW IT WORKS -->
+    <h2>How does mammography work?</h2>
+
+    <p>
+      The basic principle is similar to other X-ray examinations.
+    </p>
+
+    <p>
+      The X-ray tube produces X-rays and directs them toward the
+      breast.
+    </p>
+
+    <p>
+      As the X-rays pass through the breast, different tissues
+      absorb the radiation differently. The X-rays that pass through the breast reach
+      the detector, which converts the information into an image.
+    </p>
+
+    <p>
+      In modern <strong>digital mammography</strong>, the detector converts
+      the X-ray information into electrical signals that are processed into a digital
+      image. The image can then be displayed on a computer for the radiologist to
+      review.
+    </p>
+
+    <div class="process-box">
+      <div class="process">
+        X-ray tube
+        <span class="arrow">→</span>
+        Breast
+        <span class="arrow">→</span>
+        Detector
+        <span class="arrow">→</span>
+        Digital image
+      </div>
+    </div>
+
+    <p>
+      But mammography has one important step that deserves a
+      closer look:
+    </p>
+
+    <p>
+      <strong>breast compression.</strong>
+    </p>
+
+
+    <!-- COMPRESSION -->
+    <h2>Why is the breast compressed?</h2>
+
+    <p>
+      During mammography, the breast is gently positioned between
+      two plates and compressed.
+    </p>
+
+    <p>
+      This can be uncomfortable, but compression is an important
+      part of the examination.
+    </p>
+
+    <p>
+      It helps to:
+    </p>
+
+    <ul>
+      <li>spread the breast tissue</li>
+      <li>reduce overlapping of structures</li>
+      <li>reduce movement and image blur</li>
+      <li>make the breast thinner</li>
+      <li>reduce scattered radiation</li>
+      <li>help obtain a useful image with an appropriate radiation dose</li>
+    </ul>
+
+    <p>
+      By making the breast thinner and more evenly spread,
+      compression helps the imaging system produce a clearer representation of the
+      breast tissue.
+    </p>
+
+
+    <!-- WHAT HAPPENS -->
+    <h2>What happens during a mammogram?</h2>
+
+    <p>
+      The examination is performed by a specially trained
+      radiologic technologist.
+    </p>
+
+    <p>
+      The breast is placed on the imaging platform and carefully
+      positioned. A compression paddle is then used to compress the breast.
+    </p>
+
+
+    <!-- IMAGE -->
+    <div class="article-image">
+
+      <img
+        src="images/mammography-positioning-diagram.svg"
+        alt="Diagram showing a woman having a mammogram with breast positioning and compression"
+      >
+
+      <div class="image-credit">
+        Image: Cancer Research UK, via
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Diagram_showing_a_woman_having_a_mammogram_CRUK_089.svg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Wikimedia Commons</a>,
+        licensed under
+        <a
+          href="https://creativecommons.org/licenses/by-sa/4.0/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >CC BY-SA 4.0</a>.
+      </div>
+
+    </div>
+
+
+    <p>
+      The patient is asked to remain still while the image is
+      acquired.
+    </p>
+
+    <p>
+      Standard mammography commonly includes two main views of
+      each breast:
+    </p>
+
+    <ul>
+      <li><strong>CC (craniocaudal)</strong> — a top-to-bottom view</li>
+      <li><strong>MLO (mediolateral oblique)</strong> — an angled view</li>
+    </ul>
+
+    <p>
+      These views provide different perspectives of the breast and
+      help include as much breast tissue as possible.
+    </p>
+
+    <p>
+      Additional views may be obtained when needed, particularly
+      during diagnostic examinations.
+    </p>
+
+
+    <!-- FINDINGS -->
+    <h2>What can a mammogram show?</h2>
+
+    <p>
+      Mammograms can show several types of breast findings.
+    </p>
+
+    <p>
+      These may include:
+    </p>
+
+    <ul>
+      <li>masses</li>
+      <li>asymmetries</li>
+      <li>architectural distortion</li>
+      <li>calcifications</li>
+    </ul>
+
+    <p>
+      One particularly important finding is <strong>microcalcifications</strong>
+      — very small calcium deposits that may sometimes be associated with breast
+      cancer.
+    </p>
+
+    <p>
+      However, not every abnormal finding means cancer.
+    </p>
+
+    <p>
+      Some findings are benign, while others may require
+      additional imaging or further evaluation.
+    </p>
+
+    <p>
+      Mammography is an important tool, but it also has
+      limitations and does not detect every breast cancer.
+    </p>
+
+
+    <!-- SCREENING VS DIAGNOSTIC -->
+    <h2>Screening vs. diagnostic mammography</h2>
+
+    <p>
+      The terms <strong>screening</strong> and <strong>diagnostic</strong> describe
+      why the mammogram is being performed.
+    </p>
+
+    <h3>Screening mammography</h3>
+
+    <p>
+      Screening mammography is performed when there are <strong>no
+      signs or symptoms</strong> that have prompted the examination.
+    </p>
+
+    <p>
+      Its purpose is to look for possible abnormalities that may
+      need further assessment.
+    </p>
+
+    <h3>Diagnostic mammography</h3>
+
+    <p>
+      Diagnostic mammography is performed when there is a <strong>specific
+      concern</strong>.
+    </p>
+
+    <p>
+      For example, a patient may have a breast lump, nipple
+      discharge, or a finding that needs further evaluation after a screening
+      mammogram.
+    </p>
+
+    <p>
+      Diagnostic mammography may include additional mammographic
+      views and, when appropriate, other imaging such as ultrasound.
+    </p>
+
+
+    <!-- DIGITAL -->
+    <h2>Is mammography always done with film?</h2>
+
+    <p>
+      No.
+    </p>
+
+    <p>
+      Modern mammography is primarily <strong>digital</strong>.
+    </p>
+
+    <p>
+      In digital mammography, an electronic detector records the
+      X-ray information and the resulting image is processed digitally.
+    </p>
+
+    <p>
+      The image can then be displayed on a workstation for
+      evaluation and stored electronically.
+    </p>
+
+    <p>
+      You may also come across another technology called <strong>Digital
+      Breast Tomosynthesis (DBT)</strong>, often referred to as <strong>3D mammography</strong>.
+    </p>
+
+    <p>
+      Instead of producing only a standard 2D mammographic image,
+      DBT acquires multiple images from different angles as the X-ray tube moves over
+      the breast.
+    </p>
+
+    <p>
+      These images are reconstructed into thin sections, which can
+      help reduce the effect of overlapping breast tissue.
+    </p>
+
+    <p>
+      DBT is an important topic on its own, so we can explore it
+      separately.
+    </p>
+
+
+    <!-- RADIATION DOSE -->
+    <h2>What about radiation dose?</h2>
+
+    <p>
+      Mammography uses <strong>ionizing radiation</strong> because it uses
+      X-rays.
+    </p>
+
+    <p>
+      The examination is designed to obtain the information needed
+      for breast evaluation while using an appropriate radiation dose.
+    </p>
+
+    <p>
+      Radiation dose in mammography depends on factors such as the
+      breast thickness and composition, the imaging system, and the exposure
+      settings.
+    </p>
+
+    <p>
+      This is why mammography requires carefully controlled
+      technique and properly maintained equipment.
+    </p>
+
+    <p>
+      The goal is not simply to use the lowest possible exposure.
+    </p>
+
+    <div class="highlight">
+      <p>
+        The goal is to produce a <strong>diagnostically useful image
+        while keeping radiation exposure appropriately low</strong>.
+      </p>
+    </div>
+
+
+    <!-- TECHNIQUE -->
+    <h2>Why does technique matter?</h2>
+
+    <p>
+      A mammogram is not simply about pressing a button and taking
+      an image.
+    </p>
+
+    <p>
+      <strong>Positioning matters.</strong>
+    </p>
+
+    <p>
+      The breast needs to be positioned correctly so that the
+      relevant tissue is included in the image.
+    </p>
+
+    <p>
+      <strong>Compression matters.</strong>
+    </p>
+
+    <p>
+      It helps reduce tissue overlap and motion.
+    </p>
+
+    <p>
+      <strong>Exposure factors matter.</strong>
+    </p>
+
+    <p>
+      They influence how the X-ray beam interacts with the breast
+      and how much information reaches the detector.
+    </p>
+
+    <p>
+      <strong>Image quality matters.</strong>
+    </p>
+
+    <p>
+      A technically inadequate image may make evaluation more
+      difficult.
+    </p>
+
+    <p>
+      This is why the role of the mammography technologist is so
+      important. Good positioning and technique are essential parts of producing
+      useful mammographic images.
+    </p>
+
+
+    <!-- MAIN IDEA -->
+    <div class="takeaway">
+
+      <h2>The main idea</h2>
+
+      <p>
+        Mammography is a specialized form of X-ray imaging designed
+        specifically for the breast.
+      </p>
+
+      <p>
+        The process can be simplified to:
+      </p>
+
+      <div class="process-box">
+        <div class="process">
+          X-ray tube
+          <span class="arrow">→</span>
+          Breast
+          <span class="arrow">→</span>
+          Detector
+          <span class="arrow">→</span>
+          Digital image
+        </div>
+      </div>
+
+      <p>
+        But producing a useful mammogram involves much more than
+        this basic sequence.
+      </p>
+
+      <p>
+        <strong>Positioning, compression, exposure, detector technology,
+        and image quality all work together</strong> to produce an image that can be
+        evaluated by the radiologist.
+      </p>
+
+      <p>
+        Mammography can help detect breast abnormalities, but an
+        abnormal finding does not automatically mean cancer, and a normal mammogram
+        does not guarantee that cancer is absent.
+      </p>
+
+      <p>
+        That is why mammography is best understood as an important
+        part of breast imaging and evaluation, rather than a test that gives every
+        answer by itself.
+      </p>
+
+    </div>
+
+
+    <!-- SOURCES -->
+    <section class="sources">
+
+      <h2>Sources</h2>
+
+      <ul>
+
+        <li>
+          U.S. Food and Drug Administration (FDA) —
+          <a
+            href="https://www.fda.gov/radiation-emitting-products/medical-x-ray-imaging/mammography"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Mammography</a>
+        </li>
+
+        <li>
+          U.S. Food and Drug Administration (FDA) —
+          <a
+            href="https://www.fda.gov/radiation-emitting-products/mammography-information-patients/frequently-asked-questions-about-digital-mammography"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Frequently Asked Questions About Digital Mammography</a>
+        </li>
+
+        <li>
+          RadiologyInfo.org —
+          <a
+            href="https://www.radiologyinfo.org/en/info/mammo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Mammography</a>
+        </li>
+
+        <li>
+          RadiologyInfo.org —
+          <a
+            href="https://www.radiologyinfo.org/en/info/screening-breast"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Breast Cancer Screening</a>
+        </li>
+
+      </ul>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Med Imaging Hub · Student-led educational platform
+  </footer>
+
+</body>
+</html>
