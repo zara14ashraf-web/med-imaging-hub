@@ -1,1 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>What Is Nuclear Medicine? | Med Imaging Hub</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #17202a;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b5563;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* ARTICLE HEADER */
+    .article-header {
+      text-align: center;
+      padding: 75px 8% 60px;
+      background:
+        radial-gradient(circle at top left, #eff6ff 0%, #f8fafc 38%, #ffffff 75%);
+    }
+
+    .article-label {
+      display: inline-block;
+      padding: 6px 13px;
+      border-radius: 20px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.7px;
+      margin-bottom: 20px;
+    }
+
+    .article-header h1 {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      font-size: 48px;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+    }
+
+    .article-header p {
+      max-width: 720px;
+      margin: auto;
+      color: #667085;
+      font-size: 17px;
+    }
+
+    /* ARTICLE */
+    .article {
+      max-width: 820px;
+      margin: auto;
+      padding: 65px 25px 90px;
+    }
+
+    .article h2 {
+      margin-top: 48px;
+      margin-bottom: 18px;
+      font-size: 29px;
+      line-height: 1.25;
+    }
+
+    .article h3 {
+      font-size: 21px;
+      margin-top: 38px;
+      margin-bottom: 16px;
+    }
+
+    .article p {
+      font-size: 16px;
+      color: #374151;
+      margin-bottom: 18px;
+    }
+
+    .article ul {
+      margin: 10px 0 20px 22px;
+      color: #374151;
+    }
+
+    .article li {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .article strong {
+      color: #17202a;
+    }
+
+    /* IMAGES */
+    .article-image {
+      margin: 35px auto 42px;
+      text-align: center;
+    }
+
+    .article-image img {
+      display: block;
+      width: 100%;
+      max-width: 620px;
+      max-height: 390px;
+      object-fit: contain;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid #e8edf2;
+      background: #f8fafc;
+    }
+
+    .image-caption {
+      margin-top: 10px;
+      color: #667085;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .image-credit {
+      margin-top: 4px;
+      color: #98a2b3;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .image-credit a {
+      color: #667085;
+      text-decoration: underline;
+    }
+
+    /* HIGHLIGHT */
+    .highlight {
+      margin: 25px 0;
+      padding: 22px 25px;
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      font-size: 17px;
+    }
+
+    .highlight strong {
+      color: #2563eb;
+    }
+
+    /* WORKFLOW */
+    .nuclear-visual {
+      margin: 35px 0 45px;
+      padding: 28px;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 16px;
+    }
+
+    .visual-heading {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 22px;
+    }
+
+    .workflow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .workflow-box {
+      width: 135px;
+      min-height: 105px;
+      padding: 17px 12px;
+      background: #ffffff;
+      border: 1px solid #e8edf2;
+      border-radius: 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .workflow-number {
+      width: 29px;
+      height: 29px;
+      border-radius: 50%;
+      background: #eff6ff;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 9px;
+    }
+
+    .workflow-box strong {
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .workflow-arrow {
+      font-size: 22px;
+      color: #98a2b3;
+    }
+
+    /* SOURCES */
+    .sources {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid #e8edf2;
+    }
+
+    .sources h3 {
+      color: #17202a;
+      font-size: 21px;
+      margin-bottom: 15px;
+    }
+
+    .sources ul {
+      margin-left: 20px;
+    }
+
+    .sources li {
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    .sources a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .sources a:hover {
+      text-decoration: underline;
+    }
+
+    /* TAKEAWAY */
+    .takeaway {
+      margin-top: 50px;
+      padding: 28px;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 15px;
+    }
+
+    .takeaway p {
+      margin-bottom: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 30px 8%;
+      border-top: 1px solid #e8edf2;
+      text-align: center;
+      color: #667085;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 7%;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .article-header {
+        padding: 55px 7% 45px;
+      }
+
+      .article-header h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+      }
+
+      .article-header p {
+        font-size: 15px;
+      }
+
+      .article {
+        padding: 45px 20px 70px;
+      }
+
+      .article h2 {
+        font-size: 25px;
+      }
+
+      .article p,
+      .article li {
+        font-size: 15.5px;
+      }
+
+      .highlight {
+        font-size: 16px;
+        padding: 20px;
+      }
+
+      .article-image img {
+        max-width: 100%;
+        max-height: 330px;
+      }
+
+      .nuclear-visual {
+        padding: 20px;
+      }
+
+      .workflow {
+        flex-direction: column;
+      }
+
+      .workflow-box {
+        width: 200px;
+      }
+
+      .workflow-arrow {
+        transform: rotate(90deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+
+    <a href="../index.html" class="logo">
+      Med Imaging <span>Hub</span>
+    </a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../articles.html">Articles</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <!-- ARTICLE HEADER -->
+  <section class="article-header">
+
+    <div class="article-label">
+      NUCLEAR MEDICINE
+    </div>
+
+    <h1>
+      What Is Nuclear Medicine?
+    </h1>
+
+    <p>
+      How radioactive tracers help us study function as well as structure.
+    </p>
+
+  </section>
+
+
+  <!-- ARTICLE CONTENT -->
+  <main class="article">
+
+    <p>
+      Most medical imaging techniques help us see what the body
+      <strong>looks like</strong>.
+    </p>
+
+    <p>
+      X-rays show bones and other structures.
+      CT provides detailed cross-sectional images.
+      MRI gives excellent images of soft tissues.
+      Ultrasound lets us see structures in real time.
+    </p>
+
+    <p>
+      But sometimes, looking at structure is not enough.
+    </p>
+
+    <p>
+      We may also want to know:
+    </p>
+
+    <div class="highlight">
+
+      <strong>How is an organ working?</strong><br>
+      <strong>How active is a tissue?</strong><br>
+      <strong>Where is a particular biological process happening?</strong>
+
+    </div>
+
+    <p>
+      This is where <strong>nuclear medicine</strong> becomes especially useful.
+    </p>
+
+    <p>
+      Nuclear medicine uses small amounts of radioactive material to study
+      processes happening inside the body. Depending on the examination,
+      it can provide information about <strong>organ function, blood flow,
+      metabolism, bone activity, and other biological processes</strong>.
+    </p>
+
+
+    <!-- MAIN IMAGE -->
+    <div class="article-image">
+
+      <img
+        src="../images/nuclear-medicine-machine.jpg"
+        alt="Nuclear medicine imaging equipment in a hospital"
+      >
+
+      <div class="image-caption">
+        Nuclear medicine imaging equipment used in a hospital.
+      </div>
+
+      <div class="image-credit">
+        Image by Harrison Keely via
+        <a
+          href="https://commons.wikimedia.org/wiki/File:A_nuclear_medicine_machine_is_used_for_medical_imaging_in_a_hospital_in_North_Carolina_10.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wikimedia Commons
+        </a>,
+        licensed under
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CC BY 4.0
+        </a>.
+      </div>
+
+    </div>
+
+
+    <h2>What is nuclear medicine?</h2>
+
+    <p>
+      Nuclear medicine is a type of medical imaging that uses small amounts
+      of radioactive material to study the body.
+    </p>
+
+    <p>
+      The radioactive material is usually part of a
+      <strong>radiopharmaceutical</strong>, often called a
+      <strong>radiotracer</strong> when it is being used to trace a
+      biological process.
+    </p>
+
+    <p>
+      The tracer is given to the patient and travels to the part of the body
+      being studied. Special equipment then detects the radiation coming
+      from the tracer and uses this information to create an image.
+    </p>
+
+    <p>
+      The basic idea is:
+    </p>
+
+    <div class="highlight">
+      <strong>
+        Radiotracer → Body → Radiation detected → Image
+      </strong>
+    </div>
+
+    <p>
+      There is an important difference between nuclear medicine and a
+      conventional X-ray.
+    </p>
+
+    <p>
+      In an X-ray examination, the imaging system sends X-rays
+      <strong>through the body</strong> and measures how much radiation
+      reaches the detector.
+    </p>
+
+    <p>
+      In nuclear medicine, the radioactive material is
+      <strong>inside the body</strong>, and the scanner detects radiation
+      emitted from it.
+    </p>
+
+    <p>
+      That difference is one of the key ideas behind nuclear medicine.
+    </p>
+
+
+    <h2>What is a radiotracer?</h2>
+
+    <p>
+      A <strong>radiotracer</strong> is a radioactive substance used to
+      follow a particular process inside the body.
+    </p>
+
+    <p>
+      The radioactive part allows the imaging system to detect it.
+    </p>
+
+    <p>
+      The tracer is designed so that it is taken up by, or behaves in a way
+      related to, a particular organ, tissue, or biological process.
+    </p>
+
+    <p>
+      You can think of it as a tiny <strong>marker</strong> that allows us
+      to follow something happening inside the body.
+    </p>
+
+    <p>
+      Different tracers are used for different examinations because each
+      one behaves differently in the body.
+    </p>
+
+    <p>
+      Depending on the examination, a radiotracer may be:
+    </p>
+
+    <ul>
+      <li>injected into a vein</li>
+      <li>swallowed</li>
+      <li>or inhaled</li>
+    </ul>
+
+    <p>
+      The method depends on the type of study being performed.
+    </p>
+
+
+    <!-- EDUCATIONAL INFOGRAPHIC -->
+    <div class="article-image">
+
+      <img
+        src="../images/how-nuclear-medicine-works.png"
+        alt="Educational diagram showing how nuclear medicine works from radiotracer to image"
+      >
+
+      <div class="image-caption">
+        A simplified overview of how a radiotracer becomes the basis
+        for a nuclear medicine image.
+      </div>
+
+      <div class="image-credit">
+        Educational illustration created for Med Imaging Hub.
+      </div>
+
+    </div>
+
+
+    <h2>How does a nuclear medicine scan work?</h2>
+
+    <p>
+      The exact procedure depends on the examination, but the basic process
+      is quite simple.
+    </p>
+
+
+    <h3>1. The tracer is given</h3>
+
+    <p>
+      The patient receives the radiotracer in the way required for that
+      examination.
+    </p>
+
+
+    <h3>2. The tracer travels through the body</h3>
+
+    <p>
+      The tracer moves through the body and reaches the area being studied.
+    </p>
+
+    <p>
+      Sometimes, the patient needs to wait before imaging. This gives the
+      tracer time to distribute or accumulate in the tissues of interest.
+    </p>
+
+
+    <h3>3. The scanner detects the radiation</h3>
+
+    <p>
+      A specialized imaging system detects radiation emitted from the tracer.
+    </p>
+
+    <p>
+      Different nuclear medicine examinations use different equipment,
+      including <strong>gamma cameras</strong> and
+      <strong>PET scanners</strong>.
+    </p>
+
+
+    <h3>4. The image is created</h3>
+
+    <p>
+      The detected signals are processed by a computer to create an image
+      showing the distribution of the tracer.
+    </p>
+
+    <p>
+      So, unlike a conventional photograph of the body, a nuclear medicine
+      image represents <strong>where the tracer is distributed and how it
+      behaves</strong>.
+    </p>
+
+
+    <h2>What can nuclear medicine tell us?</h2>
+
+    <p>
+      This is one of the most important things to understand about nuclear
+      medicine.
+    </p>
+
+    <p>
+      Because different tracers follow different biological processes,
+      nuclear medicine can provide information about how certain parts of
+      the body are functioning.
+    </p>
+
+    <p>
+      Depending on the examination, it can help study:
+    </p>
+
+    <ul>
+      <li><strong>blood flow</strong></li>
+      <li><strong>organ function</strong></li>
+      <li><strong>metabolism</strong></li>
+      <li><strong>bone activity</strong></li>
+      <li><strong>specific biological processes</strong></li>
+    </ul>
+
+    <p>
+      For example, some tracers are taken up by cells that use more glucose.
+    </p>
+
+    <p>
+      This means that instead of looking only at the shape of an organ,
+      nuclear medicine can also provide information about
+      <strong>what is happening within it</strong>.
+    </p>
+
+
+    <h2>What are PET and SPECT?</h2>
+
+    <p>
+      Two important types of nuclear medicine imaging are
+      <strong>PET</strong> and <strong>SPECT</strong>.
+    </p>
+
+    <p>
+      Both use radioactive tracers, but they detect radiation in different
+      ways.
+    </p>
+
+
+    <h3>SPECT</h3>
+
+    <p>
+      <strong>SPECT</strong> stands for
+      <strong>Single-Photon Emission Computed Tomography</strong>.
+    </p>
+
+    <p>
+      A gamma camera rotates around the patient and detects gamma rays
+      emitted from the tracer.
+    </p>
+
+    <p>
+      The computer uses these measurements to reconstruct
+      <strong>3D images</strong> showing the distribution of the tracer.
+    </p>
+
+    <p>
+      SPECT can be used to study processes such as blood flow, bone
+      activity, and the function of certain organs.
+    </p>
+
+
+    <h3>PET</h3>
+
+    <p>
+      <strong>PET</strong> stands for
+      <strong>Positron Emission Tomography</strong>.
+    </p>
+
+    <p>
+      PET uses radiotracers that emit <strong>positrons</strong>.
+    </p>
+
+    <p>
+      One commonly used PET tracer is <strong>FDG</strong>, a radioactive
+      form of a glucose-related molecule. Because many tissues use glucose,
+      FDG can provide information about glucose metabolism.
+    </p>
+
+    <p>
+      PET is commonly used in areas such as
+      <strong>cancer imaging, heart imaging, and brain imaging</strong>.
+    </p>
+
+
+    <h2>Why is PET often combined with CT?</h2>
+
+    <p>
+      You may have heard of <strong>PET/CT</strong>.
+    </p>
+
+    <p>
+      Why combine two different imaging techniques?
+    </p>
+
+    <p>
+      Because they provide complementary information.
+    </p>
+
+    <div class="highlight">
+
+      <strong>PET</strong> provides information about the distribution of
+      the radiotracer and related biological activity.
+
+      <br><br>
+
+      <strong>CT</strong> provides detailed anatomical information.
+
+    </div>
+
+    <p>
+      When the images are combined, clinicians can better relate areas of
+      tracer uptake to specific anatomical structures.
+    </p>
+
+    <p>
+      A simple way to remember it is:
+    </p>
+
+    <p>
+      <strong>PET → What biological activity is being shown?</strong>
+    </p>
+
+    <p>
+      <strong>CT → Where is it anatomically?</strong>
+    </p>
+
+    <p>
+      <strong>PET/CT → Biological information + anatomical information</strong>
+    </p>
+
+    <p>
+      The same general idea is used with <strong>SPECT/CT</strong>.
+    </p>
+
+    <p>
+      This combination of functional and anatomical imaging is known as
+      <strong>hybrid imaging</strong>.
+    </p>
+
+
+    <h2>What does a “hot spot” mean?</h2>
+
+    <p>
+      When looking at some nuclear medicine images, you may hear terms such
+      as <strong>hot spot</strong> and <strong>cold spot</strong>.
+    </p>
+
+    <p>
+      A hot spot generally refers to an area showing
+      <strong>greater tracer uptake or activity relative to surrounding
+      tissue</strong>.
+    </p>
+
+    <p>
+      A cold spot generally refers to an area showing
+      <strong>less tracer uptake or activity</strong>.
+    </p>
+
+    <div class="highlight">
+
+      <strong>A hot spot does not automatically mean cancer.</strong>
+
+      <br><br>
+
+      Its meaning depends on the type of scan, the tracer being used,
+      the organ being examined, and the overall pattern seen on the images.
+
+    </div>
+
+    <p>
+      So nuclear medicine images cannot be interpreted simply by looking
+      for the brightest area.
+    </p>
+
+    <p>
+      The entire image, the patient's clinical information, and other
+      relevant examinations may all be important.
+    </p>
+
+
+    <h2>Where is nuclear medicine used?</h2>
+
+    <p>
+      Nuclear medicine can be used to study many different parts of the body.
+    </p>
+
+    <p>
+      <strong>Bones</strong><br>
+      Bone scans can show areas of increased bone turnover or activity.
+    </p>
+
+    <p>
+      <strong>Heart</strong><br>
+      Nuclear medicine studies can provide information about blood flow to
+      the heart and how the heart muscle is functioning.
+    </p>
+
+    <p>
+      <strong>Brain</strong><br>
+      Some PET and SPECT studies provide information about brain function
+      and blood flow.
+    </p>
+
+    <p>
+      <strong>Thyroid</strong><br>
+      Nuclear medicine can be used to evaluate thyroid function and the
+      distribution of thyroid tissue.
+    </p>
+
+    <p>
+      <strong>Cancer</strong><br>
+      Certain nuclear medicine examinations can help detect, stage,
+      characterize, or monitor certain cancers.
+    </p>
+
+    <p>
+      These are only some examples. The radiotracer and imaging technique
+      are selected according to the biological process doctors need to
+      investigate.
+    </p>
+
+
+    <h2>Why does the patient sometimes have to wait?</h2>
+
+    <p>
+      One thing that can seem unusual about nuclear medicine is the
+      waiting time.
+    </p>
+
+    <p>
+      After the tracer is given, the patient may have to wait before the
+      scan begins.
+    </p>
+
+    <p>
+      This is because the tracer needs time to travel through the body and
+      reach the tissues being studied.
+    </p>
+
+    <p>
+      The waiting time is different for different examinations.
+    </p>
+
+    <p>
+      For example, some PET examinations require the patient to rest for
+      a period after the tracer is administered before imaging begins.
+    </p>
+
+    <p>
+      So the process is not always:
+    </p>
+
+    <div class="highlight">
+      <strong>Tracer → Immediately scan</strong>
+    </div>
+
+    <p>
+      It can be:
+    </p>
+
+    <div class="highlight">
+      <strong>Tracer → Waiting period → Imaging</strong>
+    </div>
+
+
+    <h2>What about radiation?</h2>
+
+    <p>
+      Nuclear medicine uses <strong>ionizing radiation</strong> because
+      radioactive materials are involved.
+    </p>
+
+    <p>
+      The amount of radiopharmaceutical used is carefully selected for the
+      examination. The goal is to obtain the required diagnostic information
+      while keeping radiation exposure appropriately low.
+    </p>
+
+    <p>
+      Radiation safety is an important part of nuclear medicine practice.
+    </p>
+
+    <p>
+      You may also come across the term <strong>ALARA</strong>, which
+      stands for:
+    </p>
+
+    <div class="highlight">
+
+      <strong>As Low As Reasonably Achievable</strong>
+
+      <br><br>
+
+      It is a fundamental radiation-safety principle used to help minimize
+      unnecessary radiation exposure.
+
+    </div>
+
+
+    <h2>Is nuclear medicine only used for imaging?</h2>
+
+    <p>
+      No.
+    </p>
+
+    <p>
+      Nuclear medicine can also be used for <strong>treatment</strong>.
+    </p>
+
+    <p>
+      Some radiopharmaceuticals are designed to target particular cells or
+      tissues and deliver radiation to them.
+    </p>
+
+    <p>
+      In this situation, the radiation is not mainly being used to create
+      an image.
+    </p>
+
+    <p>
+      It is being used as part of the treatment.
+    </p>
+
+    <p>
+      So nuclear medicine can have two broad roles:
+    </p>
+
+    <div class="highlight">
+
+      <strong>Diagnosis</strong> → using radiopharmaceuticals to study
+      biological processes
+
+      <br><br>
+
+      <strong>Treatment</strong> → using radiopharmaceuticals to deliver
+      radiation to a target
+
+    </div>
+
+    <p>
+      This is known as <strong>radionuclide therapy</strong> or
+      <strong>radiopharmaceutical therapy</strong>, depending on the
+      context.
+    </p>
+
+
+    <h2>The main idea</h2>
+
+    <p>
+      Nuclear medicine gives us a different way to look inside the body.
+    </p>
+
+    <p>
+      Instead of asking only:
+    </p>
+
+    <p>
+      <strong>“What does this structure look like?”</strong>
+    </p>
+
+    <p>
+      we can also ask:
+    </p>
+
+    <p>
+      <strong>“What is happening there?”</strong>
+    </p>
+
+    <p>
+      A radiotracer acts as a marker that can be followed inside the body.
+      A specialized scanner detects radiation emitted from the tracer, and
+      a computer processes this information into an image.
+    </p>
+
+    <div class="highlight">
+
+      <strong>
+        Radiotracer → Body → Radiation detected → Image
+      </strong>
+
+    </div>
+
+    <p>
+      PET and SPECT can provide information about biological processes and
+      tracer distribution, while CT can add detailed anatomical information.
+    </p>
+
+    <p>
+      That is why combining these techniques can be so useful.
+    </p>
+
+    <p>
+      <strong>
+        Nuclear medicine is not only about seeing the body's structure.
+        It also helps us understand what is happening inside it.
+      </strong>
+    </p>
+
+
+    <!-- SOURCES -->
+    <div class="sources">
+
+      <h3>Sources</h3>
+
+      <ul>
+
+        <li>
+          RadiologyInfo.org —
+          <a
+            href="https://www.radiologyinfo.org/en/info/gennuclear"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            General Nuclear Medicine
+          </a>
+        </li>
+
+        <li>
+          RadiologyInfo.org —
+          <a
+            href="https://www.radiologyinfo.org/en/info/pet"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PET/CT
+          </a>
+        </li>
+
+        <li>
+          Society of Nuclear Medicine and Molecular Imaging (SNMMI) —
+          <a
+            href="https://snmmi.org/AM/Patients/Fact-Sheets/Fact-Sheet--Nuclear-Medicine-and-Radiation-Safety.aspx"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Nuclear Medicine and Radiation Safety
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <!-- TAKEAWAY -->
+    <div class="takeaway">
+
+      <p>
+        <strong>Quick takeaway:</strong>
+        Nuclear medicine uses radiopharmaceuticals to provide information
+        about processes happening inside the body. A scanner detects the
+        radiation emitted from the tracer, and the resulting information
+        is used to create an image. Unlike imaging methods that mainly show
+        anatomy, nuclear medicine can also provide information about
+        function and biological activity.
+      </p>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Med Imaging Hub · Created & curated by
+    <strong>Zara Ashraf</strong>
+  </footer>
+
+</body>
+</html>
