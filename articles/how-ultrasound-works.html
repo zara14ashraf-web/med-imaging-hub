@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,162 +14,294 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f7f9;
-      color: #263238;
+      font-family: Arial, sans-serif;
+      color: #17202a;
+      background: #ffffff;
       line-height: 1.7;
     }
 
-    .article-container {
-      max-width: 900px;
-      margin: 50px auto;
-      background: #ffffff;
-      padding: 45px;
-      border-radius: 16px;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
-    }
-
-    .article-header {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-
-    .article-header h1 {
-      font-size: 38px;
-      line-height: 1.2;
-      color: #173b57;
-      margin-bottom: 15px;
-    }
-
-    .subtitle {
-      font-size: 18px;
-      color: #607d8b;
-      max-width: 720px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #173b57;
-      font-size: 26px;
-      margin-top: 42px;
-      margin-bottom: 15px;
-    }
-
-    h3 {
-      color: #245b78;
-      margin-top: 25px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 17px;
-      margin-bottom: 18px;
-    }
-
-    strong {
-      color: #173b57;
-    }
-
-    .main-image {
-      display: block;
-      width: 100%;
-      max-width: 700px;
-      max-height: 520px;
-      object-fit: contain;
-      margin: 0 auto 10px;
-      border-radius: 12px;
-    }
-
-    .transducer-image {
-      display: block;
-      width: 75%;
-      max-width: 560px;
-      max-height: 400px;
-      object-fit: contain;
-      margin: 20px auto 10px;
-      border-radius: 12px;
-    }
-
-    .image-credit {
-      text-align: center;
-      font-size: 13px;
-      color: #78909c;
-      margin-bottom: 25px;
-    }
-
-    .simple-flow {
-      margin: 30px 0;
-      padding: 25px;
-      background: #eef6fa;
-      border-radius: 12px;
-      text-align: center;
-      font-weight: bold;
-      color: #245b78;
-    }
-
-    .flow-line {
-      font-size: 17px;
-      line-height: 2;
-    }
-
-    .key-point {
-      margin: 25px 0;
-      padding: 20px 22px;
-      background: #f2f8fb;
-      border-left: 5px solid #4c8aa8;
-      border-radius: 8px;
-    }
-
-    .key-point p {
-      margin-bottom: 0;
-    }
-
-    .send-receive {
-      margin: 30px 0;
+    /* HEADER */
+    header {
       display: flex;
-      gap: 15px;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid #e8edf2;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #17202a;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
       flex-wrap: wrap;
     }
 
-    .step {
-      flex: 1;
-      min-width: 150px;
-      padding: 18px;
-      background: #f6f9fa;
-      border-radius: 10px;
+    nav a {
+      text-decoration: none;
+      color: #4b5563;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* ARTICLE HEADER */
+    .article-header {
       text-align: center;
-      border: 1px solid #e1eaee;
+      padding: 75px 8% 60px;
+      background:
+        radial-gradient(circle at top left, #eff6ff 0%, #f8fafc 38%, #ffffff 75%);
     }
 
-    .step strong {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 5px;
+    .article-label {
+      display: inline-block;
+      padding: 6px 13px;
+      border-radius: 20px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.7px;
+      margin-bottom: 20px;
     }
 
-    .sources {
-      margin-top: 45px;
-      padding-top: 25px;
-      border-top: 1px solid #dce5e9;
+    .article-header h1 {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      font-size: 48px;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
     }
 
-    .sources h2 {
+    .article-header p {
+      max-width: 720px;
+      margin: auto;
+      color: #667085;
+      font-size: 17px;
+    }
+
+    /* ARTICLE */
+    .article {
+      max-width: 820px;
+      margin: auto;
+      padding: 65px 25px 90px;
+    }
+
+    .article h2 {
+      margin-top: 48px;
+      margin-bottom: 18px;
+      font-size: 29px;
+      line-height: 1.25;
+    }
+
+    .article h2:first-child {
       margin-top: 0;
-      font-size: 24px;
+    }
+
+    .article h3 {
+      font-size: 21px;
+      margin-top: 45px;
+      margin-bottom: 18px;
+    }
+
+    .article p {
+      font-size: 16px;
+      color: #374151;
+      margin-bottom: 18px;
+    }
+
+    .article ul {
+      margin: 10px 0 20px 22px;
+      color: #374151;
+    }
+
+    .article li {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .article strong {
+      color: #17202a;
+    }
+
+    /* IMAGE */
+    .article-image {
+      margin: 35px auto 42px;
+      text-align: center;
+    }
+
+    .article-image img {
+      display: block;
+      width: 100%;
+      max-width: 620px;
+      max-height: 390px;
+      object-fit: contain;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid #e8edf2;
+      background: #f8fafc;
+    }
+
+    .image-caption {
+      margin-top: 10px;
+      color: #667085;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .image-credit {
+      margin-top: 4px;
+      color: #98a2b3;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .image-credit a {
+      color: #667085;
+      text-decoration: underline;
+    }
+
+    /* HIGHLIGHT */
+    .highlight {
+      margin: 25px 0;
+      padding: 22px 25px;
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      font-size: 17px;
+    }
+
+    .highlight strong {
+      color: #2563eb;
+    }
+
+    /* WORKFLOW */
+    .ultrasound-visual {
+      margin: 35px 0 45px;
+      padding: 28px;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 16px;
+    }
+
+    .visual-heading {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 22px;
+    }
+
+    .workflow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .workflow-box {
+      width: 135px;
+      min-height: 105px;
+      padding: 17px 12px;
+      background: #ffffff;
+      border: 1px solid #e8edf2;
+      border-radius: 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .workflow-number {
+      width: 29px;
+      height: 29px;
+      border-radius: 50%;
+      background: #eff6ff;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 9px;
+    }
+
+    .workflow-box strong {
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .workflow-arrow {
+      font-size: 22px;
+      color: #98a2b3;
+    }
+
+    /* TABLE */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 25px 0 35px;
+    }
+
+    .article-table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .article-table th,
+    .article-table td {
+      padding: 14px 15px;
+      border: 1px solid #e8edf2;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .article-table th {
+      background: #f8fafc;
+      font-weight: bold;
+    }
+
+    .article-table td {
+      color: #374151;
+    }
+
+    /* SOURCES */
+    .sources {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid #e8edf2;
+    }
+
+    .sources h3 {
+      color: #17202a;
+      font-size: 21px;
+      margin-bottom: 15px;
     }
 
     .sources ul {
-      padding-left: 22px;
+      margin-left: 20px;
     }
 
     .sources li {
-      margin-bottom: 10px;
-      font-size: 15px;
+      font-size: 14px;
+      margin-bottom: 7px;
     }
 
     .sources a {
-      color: #28769a;
+      color: #2563eb;
       text-decoration: none;
     }
 
@@ -178,42 +309,92 @@
       text-decoration: underline;
     }
 
-    .back-link {
-      display: inline-block;
-      margin-top: 30px;
-      color: #28769a;
-      text-decoration: none;
-      font-weight: bold;
+    /* TAKEAWAY */
+    .takeaway {
+      margin-top: 50px;
+      padding: 28px;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 15px;
     }
 
-    .back-link:hover {
-      text-decoration: underline;
+    .takeaway p {
+      margin-bottom: 0;
     }
 
+    /* FOOTER */
+    footer {
+      padding: 30px 8%;
+      border-top: 1px solid #e8edf2;
+      text-align: center;
+      color: #667085;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
     @media (max-width: 700px) {
-      .article-container {
-        margin: 20px 12px;
-        padding: 25px 20px;
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 7%;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .article-header {
+        padding: 55px 7% 45px;
       }
 
       .article-header h1 {
-        font-size: 30px;
+        font-size: 36px;
+        letter-spacing: -1px;
       }
 
-      .subtitle {
+      .article-header p {
+        font-size: 15px;
+      }
+
+      .article {
+        padding: 45px 20px 70px;
+      }
+
+      .article h2 {
+        font-size: 25px;
+      }
+
+      .article p,
+      .article li {
+        font-size: 15.5px;
+      }
+
+      .highlight {
         font-size: 16px;
+        padding: 20px;
       }
 
-      p {
-        font-size: 16px;
+      .article-image img {
+        max-width: 100%;
+        max-height: 330px;
       }
 
-      h2 {
-        font-size: 23px;
+      .ultrasound-visual {
+        padding: 20px;
       }
 
-      .transducer-image {
-        width: 100%;
+      .workflow {
+        flex-direction: column;
+      }
+
+      .workflow-box {
+        width: 200px;
+      }
+
+      .workflow-arrow {
+        transform: rotate(90deg);
       }
     }
   </style>
@@ -221,92 +402,186 @@
 
 <body>
 
-  <main class="article-container">
+  <!-- HEADER -->
+  <header>
 
-    <header class="article-header">
-      <h1>How Does Ultrasound Create an Image?</h1>
+    <a href="../index.html" class="logo">
+      Med Imaging <span>Hub</span>
+    </a>
 
-      <p class="subtitle">
-        See how sound waves travel through the body and return information
-        that becomes an ultrasound image.
-      </p>
-    </header>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../articles.html">Articles</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+
+  </header>
 
 
-    <!-- Main Image -->
-    <img
-      src="images/ultrasound-machine.jpg"
-      alt="Modern medical ultrasound scanner"
-      class="main-image"
-    >
+  <!-- ARTICLE HEADER -->
+  <section class="article-header">
 
-    <p class="image-credit">
-      Image: Harrison Keely, Wikimedia Commons, CC BY 4.0.
-    </p>
+    <div class="article-label">
+      ULTRASOUND
+    </div>
 
+    <h1>
+      How Does Ultrasound Create an Image?
+    </h1>
 
     <p>
-      When we look at an ultrasound image, it can seem almost like the machine
-      is simply taking a picture of the inside of the body. But that is not
+      See how sound waves travel through the body and return information
+      that becomes an ultrasound image.
+    </p>
+
+  </section>
+
+
+  <!-- ARTICLE CONTENT -->
+  <main class="article">
+
+    <p>
+      When we look at an ultrasound image, it can seem like the machine is
+      simply taking a picture of the inside of the body. But that is not
       actually what happens.
     </p>
 
     <p>
-      Ultrasound creates an image by sending <strong>high-frequency sound
-      waves</strong> into the body and listening for the echoes that come back.
-      The machine then uses information from those echoes to build an image.
+      Ultrasound creates an image by sending
+      <strong>high-frequency sound waves</strong> into the body and listening
+      for the echoes that come back.
     </p>
 
     <p>
-      So, in a simple way, ultrasound imaging can be thought of as:
+      The machine then uses information from these echoes to build the image
+      we see on the screen.
     </p>
 
 
-    <div class="simple-flow">
-      <div class="flow-line">
-        Sound waves → Body tissues → Echoes → Computer processing → Image
+    <!-- MAIN ULTRASOUND IMAGE -->
+    <div class="article-image">
+
+      <img
+        src="../images/ultrasound-machine.jpg"
+        alt="Modern medical ultrasound scanner"
+      >
+
+      <div class="image-caption">
+        A modern medical ultrasound scanner.
       </div>
+
+      <div class="image-credit">
+        Image by Harrison Keely via
+        <a
+          href="https://commons.wikimedia.org/wiki/File:A_modern_medical_ultrasound_scanner.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wikimedia Commons
+        </a>,
+        licensed under
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CC BY 4.0
+        </a>.
+      </div>
+
     </div>
 
 
-    <h2>1. It Starts With the Transducer</h2>
+    <h2>How does it work?</h2>
 
     <p>
-      The handheld part of an ultrasound machine is called the
-      <strong>transducer</strong>, or probe.
+      The basic idea is quite simple.
     </p>
 
     <p>
-      The transducer has special materials inside it called
-      <strong>piezoelectric elements</strong>. These elements can convert
-      electrical energy into mechanical vibrations and can also convert
-      returning vibrations back into electrical signals.
+      The handheld part of the ultrasound machine is called a
+      <strong>transducer</strong>, or probe. It sends sound waves into the
+      body and receives the echoes that return.
     </p>
 
     <p>
-      This is what allows the same transducer to both <strong>send</strong>
-      sound waves and <strong>receive</strong> echoes.
+      The system then processes these returning signals and uses them to
+      create an image.
     </p>
 
 
-    <!-- Transducer Image -->
-    <img
-      src="images/ultrasound-transducer.jpg"
-      alt="Medical ultrasound transducer probe"
-      class="transducer-image"
-    >
+    <!-- ULTRASOUND WORKFLOW -->
+    <div class="ultrasound-visual">
 
-    <p class="image-credit">
-      Image: Harrison Keely, Wikimedia Commons, CC BY 4.0.
-    </p>
+      <div class="visual-heading">
+        How Ultrasound Creates an Image
+      </div>
 
+      <div class="workflow">
 
-    <h2>2. The Probe Sends Sound Waves Into the Body</h2>
+        <div class="workflow-box">
+          <div class="workflow-number">1</div>
+          <strong>Transducer</strong>
+          Sends sound waves
+        </div>
+
+        <div class="workflow-arrow">→</div>
+
+        <div class="workflow-box">
+          <div class="workflow-number">2</div>
+          <strong>Body Tissues</strong>
+          Reflect some sound
+        </div>
+
+        <div class="workflow-arrow">→</div>
+
+        <div class="workflow-box">
+          <div class="workflow-number">3</div>
+          <strong>Echoes</strong>
+          Return to the probe
+        </div>
+
+        <div class="workflow-arrow">→</div>
+
+        <div class="workflow-box">
+          <div class="workflow-number">4</div>
+          <strong>Computer</strong>
+          Creates the image
+        </div>
+
+      </div>
+
+    </div>
+
 
     <p>
-      The ultrasound machine sends electrical signals to the transducer.
-      The piezoelectric elements respond by vibrating and producing
-      <strong>high-frequency sound waves</strong>.
+      <strong>Transducer → Body tissues → Echoes → Computer → Image</strong>
+    </p>
+
+    <p>
+      That is the basic idea behind ultrasound image formation.
+    </p>
+
+
+    <h2>1. The probe sends sound waves</h2>
+
+    <p>
+      The process begins when the ultrasound machine sends an electrical
+      signal to the transducer.
+    </p>
+
+    <p>
+      Inside the transducer are special materials called
+      <strong>piezoelectric elements</strong>. These elements can change
+      electrical energy into mechanical vibrations.
+    </p>
+
+    <p>
+      These vibrations produce high-frequency sound waves that travel into
+      the body.
     </p>
 
     <p>
@@ -314,107 +589,132 @@
       which is why they are called <strong>ultrasound</strong>.
     </p>
 
-    <p>
-      The sound waves travel from the transducer into the body.
-    </p>
 
+    <!-- TRANSDUCER IMAGE -->
+    <div class="article-image">
 
-    <h2>3. Why Do Echoes Come Back?</h2>
+      <img
+        src="../images/ultrasound-transducer.jpg"
+        alt="Medical ultrasound transducer probe"
+      >
 
-    <p>
-      As the sound waves travel through the body, they encounter boundaries
-      between different tissues.
-    </p>
-
-    <p>
-      Different tissues have different acoustic properties. When the sound
-      wave reaches a boundary where the tissue properties change, part of the
-      sound energy can be reflected back toward the transducer.
-    </p>
-
-    <p>
-      This returning sound is called an <strong>echo</strong>.
-    </p>
-
-    <p>
-      Some tissues produce stronger echoes, while others produce weaker
-      echoes. This difference is one of the reasons ultrasound images contain
-      different shades of black, gray, and white.
-    </p>
-
-
-    <div class="key-point">
-      <p>
-        <strong>Think of it like this:</strong> the ultrasound probe sends
-        sound into the body, and the returning echoes carry information about
-        the tissues the sound encountered.
-      </p>
-    </div>
-
-
-    <h2>4. The Echo Comes Back to the Probe</h2>
-
-    <p>
-      After sending a sound pulse, the transducer switches to receiving mode
-      and listens for returning echoes.
-    </p>
-
-    <p>
-      The returning mechanical vibrations affect the piezoelectric elements
-      inside the transducer. These vibrations are converted back into
-      <strong>electrical signals</strong>.
-    </p>
-
-    <p>
-      The ultrasound system can then analyze those signals.
-    </p>
-
-
-    <div class="send-receive">
-
-      <div class="step">
-        <strong>Send</strong>
-        Sound pulse enters the body
+      <div class="image-caption">
+        An ultrasound transducer, also known as an ultrasound probe.
       </div>
 
-      <div class="step">
-        <strong>Receive</strong>
-        Echoes return to the probe
-      </div>
-
-      <div class="step">
-        <strong>Process</strong>
-        Machine analyzes the signals
+      <div class="image-credit">
+        Image by Harrison Keely via
+        <a
+          href="https://commons.wikimedia.org/wiki/File:A_medical_ultrasound_linear_array_probe,_scan_head,_transducer.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wikimedia Commons
+        </a>,
+        licensed under
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CC BY 4.0
+        </a>.
       </div>
 
     </div>
 
 
-    <h2>5. Time Helps Determine Depth</h2>
+    <h2>2. The sound waves travel through the body</h2>
 
     <p>
-      One important piece of information is <strong>how long it takes for an
-      echo to return</strong>.
+      Once the sound waves enter the body, they travel through different
+      tissues.
     </p>
 
     <p>
-      If an echo returns quickly, it generally came from a structure closer
-      to the transducer. If it takes longer to return, the reflecting
-      structure is generally deeper.
+      As the waves move through the body, they can encounter boundaries
+      between tissues with different acoustic properties.
     </p>
 
     <p>
-      The ultrasound system uses the travel time of the sound pulse and its
-      returning echo to estimate the depth of structures.
+      At these boundaries, some of the sound energy can be reflected back
+      toward the transducer.
     </p>
 
     <p>
-      This information helps the machine decide where to place the
-      information in the image.
+      These returning waves are called <strong>echoes</strong>.
     </p>
 
 
-    <h2>6. Echo Strength Helps Create Bright and Dark Areas</h2>
+    <h2>3. Why do echoes come back?</h2>
+
+    <p>
+      Different tissues do not interact with ultrasound in exactly the same
+      way.
+    </p>
+
+    <p>
+      When an ultrasound wave reaches a boundary between tissues with
+      different acoustic properties, part of the sound can be reflected.
+    </p>
+
+    <p>
+      The amount of sound that returns depends on the properties of the
+      tissues and the boundary between them.
+    </p>
+
+    <div class="highlight">
+
+      <strong>Simple idea:</strong>
+      The probe sends sound into the body, and the returning echoes carry
+      information about the tissues the sound encountered.
+
+    </div>
+
+
+    <h2>4. The probe receives the echoes</h2>
+
+    <p>
+      After sending a sound pulse, the transducer can receive the returning
+      echoes.
+    </p>
+
+    <p>
+      The same piezoelectric elements that helped produce the sound waves
+      can also respond to returning mechanical vibrations.
+    </p>
+
+    <p>
+      These vibrations are converted into electrical signals that the
+      ultrasound system can process.
+    </p>
+
+
+    <h2>5. Time helps determine depth</h2>
+
+    <p>
+      One of the most important pieces of information is
+      <strong>how long it takes for an echo to return</strong>.
+    </p>
+
+    <p>
+      An echo returning sooner generally comes from a structure closer to
+      the transducer, while an echo returning later generally comes from
+      a deeper structure.
+    </p>
+
+    <p>
+      The ultrasound system uses the travel time of the sound pulse and
+      its returning echo to estimate the depth of the reflecting structure.
+    </p>
+
+    <p>
+      This helps the machine determine where the information should appear
+      in the image.
+    </p>
+
+
+    <h2>6. Echo strength creates different shades</h2>
 
     <p>
       The machine also looks at the <strong>strength of the returning
@@ -422,244 +722,255 @@
     </p>
 
     <p>
-      A stronger echo can appear brighter on the image, while a weaker echo
-      can appear darker.
+      Stronger echoes are displayed as brighter areas, while weaker echoes
+      are displayed as darker areas.
     </p>
 
     <p>
-      This creates different shades of gray and allows structures with
-      different echo characteristics to appear differently on the screen.
+      This produces the familiar black, white, and gray appearance of a
+      standard ultrasound image.
     </p>
 
     <p>
-      For example, simple fluid-filled areas often produce very few internal
-      echoes and therefore appear relatively dark. Highly reflective
-      structures such as bone surfaces can appear very bright, often with
-      a darker acoustic shadow behind them.
+      For example, simple fluid-filled areas often produce very few
+      internal echoes and therefore appear relatively dark.
     </p>
-
-
-    <h2>7. The Machine Turns Echo Information Into Pixels</h2>
 
     <p>
-      At this point, the machine has a large amount of information:
+      Highly reflective structures, such as bone surfaces, can appear very
+      bright and may produce a darker acoustic shadow behind them.
     </p>
 
-    <ul style="padding-left: 25px; margin-bottom: 20px;">
-      <li>When an echo returned</li>
-      <li>How strong the echo was</li>
-      <li>Where the sound pulse was sent</li>
+
+    <h2>7. The computer turns the information into an image</h2>
+
+    <p>
+      By this stage, the ultrasound system has information about the
+      returning echoes.
+    </p>
+
+    <p>
+      It knows things such as:
+    </p>
+
+    <ul>
+      <li>when an echo returned</li>
+      <li>how strong the echo was</li>
+      <li>where the sound pulse was sent</li>
     </ul>
 
     <p>
       The system processes this information and assigns brightness values
-      to different locations in the image.
+      to different locations.
     </p>
 
     <p>
-      These values are displayed as pixels, producing the familiar
-      <strong>black, white, and gray ultrasound image</strong>.
+      These values are displayed on the monitor as pixels, producing the
+      ultrasound image.
     </p>
 
 
-    <h2>8. And This Happens Again and Again</h2>
+    <h2>8. Why can ultrasound show movement?</h2>
 
     <p>
-      Ultrasound does not send just one sound wave and create one image.
-      The system sends many pulses and receives many echoes.
+      Ultrasound does not create just one image and stop.
     </p>
 
     <p>
-      The transducer scans across the region of interest, collecting echo
-      information from different locations.
+      The system repeatedly sends sound pulses, receives echoes, processes
+      the information, and updates the display.
     </p>
 
     <p>
-      The machine processes these signals very quickly and continuously
-      updates the display.
+      This happens very quickly, allowing ultrasound to provide
+      <strong>real-time imaging</strong>.
     </p>
 
     <p>
-      This is why ultrasound can provide <strong>real-time imaging</strong>.
-      We can watch structures move while the examination is happening.
+      Because of this, we can observe moving structures while the
+      examination is taking place.
     </p>
 
 
-    <h2>The Whole Process in One Simple Flow</h2>
-
-    <div class="simple-flow">
-
-      <div class="flow-line">
-        Electrical signal
-        → Transducer
-        → Sound waves
-        → Body tissues
-        → Returning echoes
-        → Electrical signals
-        → Computer processing
-        → Ultrasound image
-      </div>
-
-    </div>
-
+    <h2>What does the gel actually do?</h2>
 
     <p>
-      Another simple way to remember it is:
-    </p>
-
-    <div class="send-receive">
-
-      <div class="step">
-        <strong>1. Send</strong>
-        The probe sends sound waves.
-      </div>
-
-      <div class="step">
-        <strong>2. Receive</strong>
-        The probe receives echoes.
-      </div>
-
-      <div class="step">
-        <strong>3. Measure</strong>
-        The system analyzes timing and echo strength.
-      </div>
-
-      <div class="step">
-        <strong>4. Display</strong>
-        The information becomes an image.
-      </div>
-
-    </div>
-
-
-    <h2>What Does the Gel Actually Do?</h2>
-
-    <p>
-      The gel placed on the skin is not just there to make the probe move
-      smoothly.
+      The gel placed on the skin has an important job.
     </p>
 
     <p>
-      Air is a major problem for ultrasound because a layer of air between
-      the transducer and skin can greatly reduce the transmission of
-      ultrasound into the body.
+      Air between the transducer and the skin can greatly reduce the
+      transmission of ultrasound into the body.
     </p>
 
     <p>
-      Ultrasound gel helps remove that air gap and provides better acoustic
+      The gel helps remove this air gap and provides better acoustic
       coupling between the transducer and the skin.
     </p>
 
-    <div class="key-point">
-      <p>
-        <strong>Simple idea:</strong> the gel helps the ultrasound waves move
-        efficiently from the probe into the body and back toward the probe.
-      </p>
+    <div class="highlight">
+
+      <strong>Think of the gel as a bridge:</strong>
+      it helps ultrasound waves move efficiently between the transducer
+      and the patient's skin.
+
     </div>
 
 
-    <h2>Why Do Different Tissues Look Different?</h2>
+    <h2>Why do different tissues look different?</h2>
 
     <p>
-      Different tissues interact with ultrasound in different ways.
+      Different tissues have different physical and acoustic properties.
     </p>
 
     <p>
-      Their physical properties affect how much sound is reflected, scattered,
-      transmitted, or attenuated as the ultrasound wave travels through them.
+      These properties affect how ultrasound travels through the tissue and
+      how much sound is reflected or scattered back toward the transducer.
     </p>
 
     <p>
-      Because the returning echoes are different, the ultrasound system
-      displays different areas with different brightness levels.
+      Because the returning echoes are different, the machine displays
+      different parts of the image with different brightness levels.
     </p>
 
     <p>
-      This is why an ultrasound image is not simply a photograph of anatomy.
-      It is a visual representation created from the interaction between
-      sound waves and tissues.
-    </p>
-
-
-    <h2>One More Important Point: Ultrasound Does Not “See” Like a Camera</h2>
-
-    <p>
-      This is one of the easiest ways to understand ultrasound.
+      This is why an ultrasound image is not simply a photograph of the
+      anatomy.
     </p>
 
     <p>
-      A camera records visible light reflected from objects. An ultrasound
-      system works differently.
-    </p>
-
-    <p>
-      It sends sound pulses into the body, receives the returning echoes,
-      measures their characteristics, and uses that information to construct
-      the image.
-    </p>
-
-    <p>
-      So the image on the screen is essentially a
-      <strong>map of ultrasound echo information</strong>.
+      It is an image created from information carried by returning
+      ultrasound echoes.
     </p>
 
 
-    <h2>What About Doppler?</h2>
+    <h2>Ultrasound does not “see” like a camera</h2>
 
     <p>
-      The same basic ultrasound system can also be used for
-      <strong>Doppler ultrasound</strong>.
+      This is an important idea to remember.
     </p>
 
     <p>
-      Doppler techniques use changes in the frequency of returning ultrasound
-      caused by moving blood cells to provide information about blood flow.
+      A camera creates an image from visible light. Ultrasound works
+      differently.
     </p>
 
     <p>
-      This is why Doppler can help assess things such as the
+      It sends sound waves into the body, receives the returning echoes,
+      measures their characteristics, and uses that information to
+      construct the image.
+    </p>
+
+    <p>
+      So, in simple terms, an ultrasound image is a
+      <strong>visual representation of information obtained from
+      ultrasound echoes</strong>.
+    </p>
+
+
+    <h2>What about Doppler?</h2>
+
+    <p>
+      Ultrasound can also provide information about movement using
+      <strong>Doppler techniques</strong>.
+    </p>
+
+    <p>
+      Doppler ultrasound uses changes in the frequency of returning
+      ultrasound caused by moving blood cells to provide information about
+      blood flow.
+    </p>
+
+    <p>
+      This can help assess things such as the
       <strong>direction and velocity of blood flow</strong>.
     </p>
 
     <p>
-      So while standard B-mode ultrasound mainly creates a grayscale
-      anatomical image, Doppler adds information about motion and blood flow.
+      So, while standard B-mode ultrasound mainly provides a grayscale
+      anatomical image, Doppler can add information about motion and blood
+      flow.
     </p>
 
 
-    <h2>The Big Picture</h2>
+    <h2>Ultrasound image formation in one simple flow</h2>
+
+    <div class="ultrasound-visual">
+
+      <div class="visual-heading">
+        From Sound Waves to an Image
+      </div>
+
+      <div class="workflow">
+
+        <div class="workflow-box">
+          <div class="workflow-number">1</div>
+          <strong>Send</strong>
+          Sound waves enter the body
+        </div>
+
+        <div class="workflow-arrow">→</div>
+
+        <div class="workflow-box">
+          <div class="workflow-number">2</div>
+          <strong>Reflect</strong>
+          Tissues return echoes
+        </div>
+
+        <div class="workflow-arrow">→</div>
+
+        <div class="workflow-box">
+          <div class="workflow-number">3</div>
+          <strong>Receive</strong>
+          Probe detects echoes
+        </div>
+
+        <div class="workflow-arrow">→</div>
+
+        <div class="workflow-box">
+          <div class="workflow-number">4</div>
+          <strong>Display</strong>
+          Computer creates image
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <h2>The main idea</h2>
 
     <p>
-      Ultrasound image formation may seem complicated at first, but the basic
-      idea is quite simple:
+      Ultrasound image formation may sound complicated at first, but the
+      basic process can be remembered quite easily.
     </p>
 
-    <div class="key-point">
-      <p>
-        <strong>
-          The transducer sends sound waves → tissues produce echoes →
-          the transducer receives those echoes → the machine analyzes them →
-          the information is displayed as an image.
-        </strong>
-      </p>
+    <div class="highlight">
+
+      <strong>
+        The transducer sends sound waves → tissues produce echoes →
+        the transducer receives those echoes → the machine processes
+        the information → an image appears on the screen.
+      </strong>
+
     </div>
 
     <p>
-      Once this basic process is clear, many ultrasound concepts become easier
-      to understand — including echogenicity, acoustic shadowing, posterior
-      enhancement, B-mode imaging, and Doppler.
+      Once this basic process is clear, other ultrasound concepts such as
+      echogenicity, acoustic shadowing, posterior enhancement, B-mode
+      imaging, and Doppler become much easier to understand.
     </p>
 
 
-    <!-- Sources -->
-    <section class="sources">
+    <!-- SOURCES -->
+    <div class="sources">
 
-      <h2>Sources & Further Reading</h2>
+      <h3>Sources</h3>
 
       <ul>
 
         <li>
-          U.S. Food and Drug Administration (FDA).
+          U.S. Food and Drug Administration (FDA) —
           <a
             href="https://www.fda.gov/radiation-emitting-products/medical-imaging/ultrasound-imaging"
             target="_blank"
@@ -670,7 +981,7 @@
         </li>
 
         <li>
-          RadiologyInfo.org.
+          RadiologyInfo.org —
           <a
             href="https://www.radiologyinfo.org/en/ultrasound"
             target="_blank"
@@ -681,7 +992,7 @@
         </li>
 
         <li>
-          StatPearls, NCBI Bookshelf.
+          StatPearls, NCBI Bookshelf —
           <a
             href="https://www.ncbi.nlm.nih.gov/books/NBK570593/"
             target="_blank"
@@ -692,7 +1003,7 @@
         </li>
 
         <li>
-          NCBI Bookshelf.
+          NCBI Bookshelf —
           <a
             href="https://www.ncbi.nlm.nih.gov/books/NBK546144/"
             target="_blank"
@@ -703,7 +1014,7 @@
         </li>
 
         <li>
-          Clinical Ultrasound Physics.
+          Clinical Ultrasound Physics —
           <a
             href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3214508/"
             target="_blank"
@@ -714,7 +1025,7 @@
         </li>
 
         <li>
-          Intensive Care Ultrasound: I. Physics, Equipment, and Image Quality.
+          Intensive Care Ultrasound: Physics, Equipment, and Image Quality —
           <a
             href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5475422/"
             target="_blank"
@@ -724,39 +1035,31 @@
           </a>
         </li>
 
-        <li>
-          Wikimedia Commons:
-          <a
-            href="https://commons.wikimedia.org/wiki/File:A_modern_medical_ultrasound_scanner.jpg"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            A modern medical ultrasound scanner
-          </a>
-        </li>
-
-        <li>
-          Wikimedia Commons:
-          <a
-            href="https://commons.wikimedia.org/wiki/File:A_medical_ultrasound_linear_array_probe,_scan_head,_transducer.jpg"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Medical ultrasound transducer
-          </a>
-        </li>
-
       </ul>
 
-    </section>
+    </div>
 
 
-    <a href="insights.html" class="back-link">
-      ← Back to Insights
-    </a>
+    <!-- TAKEAWAY -->
+    <div class="takeaway">
+
+      <p>
+        <strong>Quick takeaway:</strong>
+        Ultrasound does not take a photograph of the inside of the body.
+        It sends sound waves, receives the echoes returning from tissues,
+        and uses that information to create the image we see on the screen.
+      </p>
+
+    </div>
 
   </main>
 
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Med Imaging Hub · Created & curated by
+    <strong>Zara Ashraf</strong>
+  </footer>
+
 </body>
 </html>
-```
