@@ -105,6 +105,8 @@
     .article-subtitle {
       max-width: 720px;
       margin: 0 auto;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #e8edf2;
       color: #667085;
       font-size: 17px;
       line-height: 1.6;
@@ -123,9 +125,21 @@
     article h2 {
       font-size: 29px;
       line-height: 1.3;
-      margin: 48px 0 18px;
+      margin: 55px 0 24px;
+      padding-bottom: 12px;
       color: #17202a;
       letter-spacing: -0.5px;
+      position: relative;
+    }
+
+    article h2::after {
+      content: "";
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: #2563eb;
+      border-radius: 3px;
+      margin-top: 10px;
     }
 
     article h3 {
@@ -355,6 +369,7 @@
 
       .article-subtitle {
         font-size: 15px;
+        padding-bottom: 20px;
       }
 
       article {
@@ -363,6 +378,12 @@
 
       article h2 {
         font-size: 25px;
+        margin-top: 45px;
+      }
+
+      article h2::after {
+        width: 42px;
+        height: 3px;
       }
 
       article p,
@@ -476,10 +497,6 @@
     </p>
 
 
-    <!-- =========================
-         T1 / T2 MEANING
-    ========================= -->
-
     <h2>
       First, what do T1 and T2 mean?
     </h2>
@@ -522,10 +539,6 @@
       different tissue characteristics.
     </p>
 
-
-    <!-- =========================
-         T1
-    ========================= -->
 
     <h2>
       T1-weighted MRI
@@ -576,10 +589,6 @@
     </p>
 
 
-    <!-- =========================
-         MAIN IMAGE
-    ========================= -->
-
     <div class="article-image">
 
       <img
@@ -604,10 +613,6 @@
 
     </div>
 
-
-    <!-- =========================
-         T2
-    ========================= -->
 
     <h2>
       T2-weighted MRI
@@ -653,10 +658,6 @@
       T2-weighted image.
     </p>
 
-
-    <!-- =========================
-         T1 VS T2 TABLE
-    ========================= -->
 
     <h2>
       The easiest way to tell T1 and T2 apart
@@ -739,10 +740,6 @@
     </p>
 
 
-    <!-- =========================
-         FLUID
-    ========================= -->
-
     <h2>
       Why does fluid behave differently?
     </h2>
@@ -796,10 +793,6 @@
     </div>
 
 
-    <!-- =========================
-         CSF
-    ========================= -->
-
     <h2>
       A simple example: CSF
     </h2>
@@ -839,10 +832,6 @@
     </p>
 
 
-    <!-- =========================
-         T1 USES
-    ========================= -->
-
     <h2>
       What are T1 images mainly useful for?
     </h2>
@@ -876,10 +865,6 @@
       whether contrast or other techniques are used.
     </p>
 
-
-    <!-- =========================
-         T2 USES
-    ========================= -->
 
     <h2>
       What are T2 images mainly useful for?
@@ -920,10 +905,6 @@
     </p>
 
 
-    <!-- =========================
-         FAT ON T2
-    ========================= -->
-
     <h2>
       What about fat on T2?
     </h2>
@@ -950,10 +931,6 @@
       That is why MRI can use <strong>fat-suppression techniques</strong>.
     </p>
 
-
-    <!-- =========================
-         T2 FAT SAT
-    ========================= -->
 
     <h2>
       What is T2 fat-sat?
@@ -1028,10 +1005,6 @@
 
     </div>
 
-
-    <!-- =========================
-         FLAIR
-    ========================= -->
 
     <h2>
       And what is FLAIR?
@@ -1125,10 +1098,6 @@
 
     </div>
 
-
-    <!-- =========================
-         T1 VS FLAIR
-    ========================= -->
 
     <h2>
       T1 vs FLAIR — Why Can They Look Similar?
@@ -1255,10 +1224,6 @@
     </p>
 
 
-    <!-- =========================
-         CONTRAST
-    ========================= -->
-
     <h2>
       T1 vs T2 after contrast
     </h2>
@@ -1301,10 +1266,6 @@
       important information, depending on the clinical situation.
     </p>
 
-
-    <!-- =========================
-         VISUAL TRICK
-    ========================= -->
 
     <h2>
       A quick visual trick for students
@@ -1367,10 +1328,6 @@
     </p>
 
 
-    <!-- =========================
-         LIMITATION
-    ========================= -->
-
     <h2>
       One important limitation
     </h2>
@@ -1398,10 +1355,6 @@
       sequence.
     </p>
 
-
-    <!-- =========================
-         EASIEST WAY TO REMEMBER
-    ========================= -->
 
     <h2>
       The easiest way to remember it
@@ -1433,10 +1386,6 @@
       T2-type sequence</strong>.
     </p>
 
-
-    <!-- =========================
-         QUICK RECAP
-    ========================= -->
 
     <h2>
       Quick recap
@@ -1499,10 +1448,6 @@
     </div>
 
 
-    <!-- =========================
-         TAKEAWAY
-    ========================= -->
-
     <div class="takeaway">
 
       <p>
@@ -1525,10 +1470,6 @@
 
     </div>
 
-
-    <!-- =========================
-         SOURCES
-    ========================= -->
 
     <section class="sources">
 
@@ -1568,10 +1509,6 @@
 
   </article>
 
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
 
   <footer>
     © 2026 Med Imaging Hub · Created &amp; curated by <strong>Zara Ashraf</strong>
