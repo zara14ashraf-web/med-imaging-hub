@@ -1,1 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Acoustic Shadowing vs Posterior Enhancement | Med Imaging Hub</title>
+
+  <meta name="description"
+        content="Understand acoustic shadowing and posterior acoustic enhancement in ultrasound with simple explanations, practical examples, and a clear comparison.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 8%;
+      border-bottom: 1px solid #eef1f4;
+      background: #ffffff;
+    }
+
+    .logo {
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 700;
+      color: #17202a;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #17202a;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .article-header {
+      max-width: 820px;
+      margin: 70px auto 35px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .article-label {
+      display: inline-block;
+      color: #2563eb;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      letter-spacing: 0.3px;
+    }
+
+    .article-header h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      margin: 0 0 18px;
+      letter-spacing: -1px;
+    }
+
+    .article-subtitle {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #667085;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    article {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 20px 70px;
+    }
+
+    article h2 {
+      font-size: 29px;
+      line-height: 1.3;
+      margin: 48px 0 18px;
+    }
+
+    article h3 {
+      font-size: 21px;
+      line-height: 1.4;
+      margin: 32px 0 12px;
+    }
+
+    article p {
+      font-size: 17px;
+      margin: 0 0 20px;
+    }
+
+    article ul {
+      padding-left: 24px;
+      margin: 0 0 22px;
+    }
+
+    article li {
+      font-size: 17px;
+      margin-bottom: 9px;
+    }
+
+    article strong {
+      font-weight: 700;
+    }
+
+    .highlight {
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      padding: 20px 22px;
+      margin: 28px 0;
+      border-radius: 6px;
+    }
+
+    .highlight p {
+      margin-bottom: 0;
+    }
+
+    .flow {
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 10px;
+      padding: 22px;
+      margin: 28px 0;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .flow span {
+      color: #2563eb;
+      margin: 0 8px;
+    }
+
+    .article-image {
+      margin: 34px 0 38px;
+      text-align: center;
+    }
+
+    .article-image img {
+      display: block;
+      max-width: 620px;
+      max-height: 390px;
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 8px;
+      border: 1px solid #e8edf2;
+    }
+
+    .image-caption {
+      max-width: 680px;
+      margin: 11px auto 0;
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .image-credit {
+      margin-top: 5px;
+      font-size: 13px;
+      color: #667085;
+    }
+
+    .image-credit a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .image-credit a:hover {
+      text-decoration: underline;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 28px 0 32px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+      font-size: 16px;
+    }
+
+    th,
+    td {
+      border: 1px solid #e8edf2;
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .takeaway {
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 10px;
+      padding: 24px;
+      margin: 40px 0 35px;
+    }
+
+    .takeaway h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .takeaway p {
+      margin-bottom: 0;
+    }
+
+    .sources {
+      border-top: 1px solid #e8edf2;
+      padding-top: 28px;
+      margin-top: 45px;
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .sources ul {
+      padding-left: 22px;
+    }
+
+    .sources li {
+      margin-bottom: 10px;
+    }
+
+    .sources a {
+      color: #2563eb;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .sources a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid #eef1f4;
+      text-align: center;
+      padding: 28px 20px;
+      color: #667085;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      nav {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      .article-header {
+        margin-top: 48px;
+      }
+
+      .article-header h1 {
+        font-size: 36px;
+      }
+
+      .article-subtitle {
+        font-size: 16px;
+      }
+
+      article h2 {
+        font-size: 25px;
+      }
+
+      article p,
+      article li {
+        font-size: 16px;
+      }
+
+      .article-image img {
+        max-width: 100%;
+      }
+
+      .flow {
+        line-height: 2;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="../index.html" class="logo">
+      Med Imaging <span>Hub</span>
+    </a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../articles.html">Articles</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+
+
+  <div class="article-header">
+
+    <div class="article-label">Ultrasound</div>
+
+    <h1>Acoustic Shadowing vs Posterior Enhancement</h1>
+
+    <p class="article-subtitle">
+      Two common ultrasound appearances explained with simple and practical examples.
+    </p>
+
+  </div>
+
+
+  <article>
+
+    <p>
+      Ultrasound images contain more than just anatomical structures.
+      Sometimes, the way the ultrasound beam interacts with a structure changes
+      how the area behind it looks.
+    </p>
+
+    <p>
+      Two common examples are <strong>acoustic shadowing</strong> and
+      <strong>posterior acoustic enhancement</strong>.
+      One produces a darker area behind a structure, while the other produces
+      a relatively brighter area.
+    </p>
+
+    <p>
+      The easiest way to understand the difference is to follow the
+      <strong>ultrasound beam</strong> and ask:
+      <strong>How much sound energy is reaching the tissue behind the structure?</strong>
+    </p>
+
+
+    <h2>First, What Does “Posterior” Mean?</h2>
+
+    <p>
+      In ultrasound, <strong>posterior</strong> simply means
+      <strong>deeper than the structure being examined</strong>.
+    </p>
+
+    <p>
+      So when we say “posterior enhancement,” we are talking about the area
+      located deeper than the cyst or other structure.
+    </p>
+
+    <div class="flow">
+      Ultrasound probe
+      <span>→</span>
+      Structure
+      <span>→</span>
+      Tissue behind it
+    </div>
+
+
+    <h2>Acoustic Shadowing</h2>
+
+    <p>
+      <strong>Acoustic shadowing</strong> occurs when a structure greatly reduces
+      the amount of ultrasound energy that continues deeper into the body.
+    </p>
+
+    <p>
+      This can happen because of strong reflection, absorption, attenuation,
+      or a combination of these interactions.
+    </p>
+
+    <p>
+      As a result, less sound reaches the tissues behind the structure.
+      With less returning echo information from that deeper region, the area
+      appears <strong>darker</strong> on the ultrasound image.
+    </p>
+
+    <div class="highlight">
+      <p>
+        <strong>Think:</strong> Strong interaction with the ultrasound beam
+        → less sound reaches deeper tissues
+        → fewer useful returning echoes
+        → darker area behind.
+      </p>
+    </div>
+
+
+    <h2>What Can Cause Acoustic Shadowing?</h2>
+
+    <p>
+      Shadowing is commonly associated with structures that strongly reflect
+      or attenuate ultrasound.
+    </p>
+
+    <ul>
+      <li>Gallstones or other stones</li>
+      <li>Calcifications</li>
+      <li>Bone</li>
+      <li>Some highly attenuating structures</li>
+      <li>Gas or air, which can produce a characteristic “dirty” shadow</li>
+    </ul>
+
+    <p>
+      The exact appearance depends on how the ultrasound beam interacts with
+      the structure.
+    </p>
+
+
+    <h2>A Classic Example: A Stone</h2>
+
+    <p>
+      A stone can act as a strong reflector and attenuator.
+      A large portion of the ultrasound energy is reflected or otherwise
+      prevented from producing useful information from deeper tissues.
+    </p>
+
+    <p>
+      The result is a relatively dark region immediately behind the stone.
+      This is the classic appearance of <strong>posterior acoustic shadowing</strong>.
+    </p>
+
+
+    <div class="article-image">
+
+      <img
+        src="../images/acoustic-shadowing-stone.jpg"
+        alt="Ultrasound image showing a renal stone with posterior acoustic shadowing"
+        loading="lazy"
+      >
+
+      <div class="image-caption">
+        <strong>Acoustic shadowing behind a renal stone.</strong>
+        The stone produces strong interaction with the ultrasound beam,
+        reducing the ultrasound energy that reaches tissues deeper to it.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Ultrasonography_of_centrally-located_stone_with_posterior_shadowing.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wikimedia Commons
+        </a>
+        — Kristoffer Lindskov Hansen, Michael Bachmann Nielsen &
+        Caroline Ewertsen, CC BY 4.0.
+      </div>
+
+    </div>
+
+
+    <h2>Why Does the Shadow Look Dark?</h2>
+
+    <p>
+      Ultrasound systems form images using returning echoes.
+      When much less sound reaches the deeper tissues, there is less returning
+      information from that region.
+    </p>
+
+    <p>
+      The system therefore displays the area behind the strongly attenuating
+      structure as relatively dark.
+    </p>
+
+    <p>
+      It does <strong>not</strong> mean that the tissue behind the structure
+      has disappeared. It means that the ultrasound beam has not provided
+      the usual amount of information from that region.
+    </p>
+
+
+    <h2>Clean Shadowing vs Dirty Shadowing</h2>
+
+    <p>
+      Not every acoustic shadow looks exactly the same.
+    </p>
+
+    <h3>Clean Shadowing</h3>
+
+    <p>
+      A clean, sharply defined shadow is commonly seen behind structures such
+      as stones, calcifications, and bone.
+    </p>
+
+    <h3>Dirty Shadowing</h3>
+
+    <p>
+      Gas or air can produce a more irregular or “dirty” shadowing pattern.
+      Multiple reflections and scattering around gas can contribute to this
+      appearance.
+    </p>
+
+    <p>
+      So the appearance of the shadow can itself provide useful information
+      about the type of structure producing it.
+    </p>
+
+
+    <h2>Posterior Acoustic Enhancement</h2>
+
+    <p>
+      Posterior acoustic enhancement is almost the opposite situation.
+    </p>
+
+    <p>
+      Here, the ultrasound beam passes through a structure that causes
+      relatively little attenuation, such as simple fluid.
+    </p>
+
+    <p>
+      Because less of the beam is lost while passing through the structure,
+      more ultrasound energy reaches the tissues behind it.
+    </p>
+
+    <p>
+      Those deeper tissues can therefore produce stronger returning echoes,
+      making the region behind the structure appear
+      <strong>relatively brighter</strong>.
+    </p>
+
+    <div class="highlight">
+      <p>
+        <strong>Think:</strong> Low attenuation
+        → more sound reaches deeper tissues
+        → stronger returning echoes
+        → relatively brighter area behind.
+      </p>
+    </div>
+
+
+    <h2>A Classic Example: A Simple Cyst</h2>
+
+    <p>
+      A simple cyst contains fluid and usually has very little internal
+      structure to produce echoes.
+    </p>
+
+    <p>
+      Ultrasound can pass through the fluid with relatively low attenuation.
+      More of the beam can therefore continue beyond the cyst and interact
+      with the tissue deeper to it.
+    </p>
+
+    <p>
+      This produces the characteristic <strong>posterior acoustic enhancement</strong>
+      seen behind many simple cysts.
+    </p>
+
+
+    <div class="article-image">
+
+      <img
+        src="../images/posterior-enhancement-cyst.jpg"
+        alt="Ultrasound image showing a simple renal cyst with posterior acoustic enhancement"
+        loading="lazy"
+      >
+
+      <div class="image-caption">
+        <strong>Posterior acoustic enhancement behind a simple renal cyst.</strong>
+        Relatively low attenuation through the fluid allows more ultrasound
+        energy to reach the tissues deeper to the cyst.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Simple_cyst_with_posterior_enhancement.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wikimedia Commons
+        </a>
+        — Kristoffer Lindskov Hansen, Michael Bachmann Nielsen &
+        Caroline Ewertsen, CC BY 4.0.
+      </div>
+
+    </div>
+
+
+    <h2>Why Is the Cyst Itself Black?</h2>
+
+    <p>
+      This is an important point because two things are happening at the same
+      time.
+    </p>
+
+    <p>
+      A simple cyst usually appears <strong>anechoic</strong>, meaning that
+      there are very few internal echoes returning from the fluid itself.
+      That is why the cyst appears black.
+    </p>
+
+    <p>
+      But the ultrasound beam can still travel through the fluid.
+      More of the beam reaches the tissue beyond the cyst, producing the
+      brighter appearance behind it.
+    </p>
+
+    <div class="flow">
+      Simple fluid
+      <span>→</span>
+      Few internal echoes
+      <span>→</span>
+      Black cyst
+      <br>
+      +
+      <br>
+      Low attenuation
+      <span>→</span>
+      More sound reaches deeper tissue
+      <span>→</span>
+      Posterior enhancement
+    </div>
+
+
+    <h2>Shadowing vs Enhancement — The Main Difference</h2>
+
+    <div class="table-wrapper">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Acoustic Shadowing</th>
+            <th>Posterior Enhancement</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td><strong>Typical appearance behind structure</strong></td>
+            <td>Darker</td>
+            <td>Brighter</td>
+          </tr>
+
+          <tr>
+            <td><strong>What happens to the beam?</strong></td>
+            <td>Much of the ultrasound energy is reflected, absorbed, or attenuated</td>
+            <td>Relatively little energy is lost through the structure</td>
+          </tr>
+
+          <tr>
+            <td><strong>What reaches deeper tissue?</strong></td>
+            <td>Less ultrasound energy</td>
+            <td>More ultrasound energy</td>
+          </tr>
+
+          <tr>
+            <td><strong>Typical example</strong></td>
+            <td>Stone or calcification</td>
+            <td>Simple cyst</td>
+          </tr>
+
+          <tr>
+            <td><strong>Effect on deeper echoes</strong></td>
+            <td>Reduced</td>
+            <td>Relatively increased</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <h2>Think of the Ultrasound Beam Like a Journey</h2>
+
+    <p>
+      A simple way to remember both artifacts is to imagine the ultrasound
+      beam travelling through the body.
+    </p>
+
+    <h3>With Shadowing</h3>
+
+    <div class="flow">
+      Beam
+      <span>→</span>
+      Strong reflector / attenuator
+      <span>→</span>
+      Less energy continues
+      <span>→</span>
+      Darker region behind
+    </div>
+
+    <h3>With Enhancement</h3>
+
+    <div class="flow">
+      Beam
+      <span>→</span>
+      Low-attenuating fluid
+      <span>→</span>
+      More energy continues
+      <span>→</span>
+      Brighter region behind
+    </div>
+
+
+    <h2>Why Does Enhancement Look “Brighter” Than the Surrounding Tissue?</h2>
+
+    <p>
+      Ultrasound systems use assumptions about how sound energy decreases as
+      it travels through tissue.
+    </p>
+
+    <p>
+      When sound passes through a relatively low-attenuating structure,
+      such as simple fluid, more energy can reach deeper tissues than the
+      system may expect based on surrounding tissue.
+    </p>
+
+    <p>
+      The deeper echoes can therefore appear relatively brighter.
+      This is part of why the area behind a cyst may look brighter than the
+      corresponding tissue beside it.
+    </p>
+
+    <p>
+      This brightness is an imaging appearance caused by the interaction
+      between the ultrasound beam and the tissues. It is not a separate
+      tissue or structure that has suddenly become brighter.
+    </p>
+
+
+    <h2>Are These Really “Artifacts”?</h2>
+
+    <p>
+      Yes. Both shadowing and enhancement are commonly described as
+      <strong>ultrasound artifacts</strong> because the displayed image is
+      influenced by the assumptions and physics used to create the image.
+    </p>
+
+    <p>
+      But “artifact” does not mean “useless.”
+    </p>
+
+    <p>
+      In fact, these appearances can provide useful clues about what the
+      ultrasound beam encountered.
+    </p>
+
+
+    <h2>Why Shadowing Can Actually Be Helpful</h2>
+
+    <p>
+      When a strong, characteristic shadow is seen behind a structure,
+      it can support the recognition of structures such as stones or
+      calcifications.
+    </p>
+
+    <p>
+      The shadow therefore gives information about how the structure interacts
+      with ultrasound, rather than simply being an unwanted problem.
+    </p>
+
+
+    <h2>Why Enhancement Can Be Helpful</h2>
+
+    <p>
+      Posterior enhancement is commonly associated with fluid-containing
+      structures because fluid usually produces relatively low attenuation.
+    </p>
+
+    <p>
+      A simple cyst is a classic example.
+      However, enhancement should be interpreted together with the rest of
+      the ultrasound appearance rather than used as a diagnosis by itself.
+    </p>
+
+
+    <h2>What About the Edges of a Cyst?</h2>
+
+    <p>
+      Sometimes a cyst can show a thin dark line or shadow near its lateral
+      edges. This is called <strong>edge shadowing</strong>.
+    </p>
+
+    <p>
+      It is different from the broad posterior shadowing seen behind a stone.
+      Edge shadowing can occur because the curved boundary of a structure
+      changes the direction of the ultrasound beam through refraction.
+    </p>
+
+    <p>
+      So when looking at a cyst, you may encounter both
+      <strong>posterior enhancement</strong> and subtle
+      <strong>edge shadowing</strong>.
+    </p>
+
+
+    <h2>A Practical Comparison</h2>
+
+    <p>
+      Imagine two structures placed in the path of the ultrasound beam.
+    </p>
+
+    <p>
+      The first strongly interferes with the beam. Less sound reaches the
+      tissue behind it, so the deeper region becomes darker.
+    </p>
+
+    <p>
+      The second allows the beam to pass through with relatively little
+      attenuation. More sound reaches the tissue behind it, so the deeper
+      region becomes relatively brighter.
+    </p>
+
+    <p>
+      The key difference is therefore not simply
+      <strong>“stone versus cyst.”</strong>
+      The deeper concept is what happens to the
+      <strong>ultrasound energy as it travels through the structure.</strong>
+    </p>
+
+
+    <h2>A Common Student Mistake</h2>
+
+    <p>
+      A common shortcut is to memorize:
+    </p>
+
+    <div class="highlight">
+      <p>
+        “Stone = shadow” and “cyst = enhancement.”
+      </p>
+    </div>
+
+    <p>
+      These examples are useful, but memorizing only the examples can make
+      the concept harder when a different structure appears.
+    </p>
+
+    <p>
+      A better approach is to ask:
+    </p>
+
+    <ul>
+      <li>How strongly is the ultrasound beam being attenuated or reflected?</li>
+      <li>How much sound is reaching the deeper tissues?</li>
+      <li>What kind of returning echoes should I expect from that deeper region?</li>
+    </ul>
+
+    <p>
+      Once you understand those three questions, the appearance becomes much
+      easier to reason through.
+    </p>
+
+
+    <h2>One Important Point: Enhancement Does Not Automatically Mean “Benign”</h2>
+
+    <p>
+      Posterior enhancement can be a useful clue for fluid-containing
+      structures, but it is <strong>not a diagnosis</strong> and is not
+      specific to benign lesions.
+    </p>
+
+    <p>
+      Similarly, acoustic shadowing does not automatically mean that a
+      structure is malignant. Shadowing can occur in a range of benign
+      conditions as well.
+    </p>
+
+    <p>
+      In clinical ultrasound, these findings are interpreted together with
+      the shape, margins, internal characteristics, location, clinical
+      context, and other imaging features.
+    </p>
+
+
+    <h2>The Opposite Relationship</h2>
+
+    <p>
+      The easiest way to connect both concepts is to remember their opposite
+      effect on the tissues behind the structure.
+    </p>
+
+    <div class="flow">
+      <strong>More attenuation / reflection</strong>
+      <span>→</span>
+      less sound reaches deeper tissue
+      <span>→</span>
+      <strong>shadowing</strong>
+    </div>
+
+    <div class="flow">
+      <strong>Less attenuation</strong>
+      <span>→</span>
+      more sound reaches deeper tissue
+      <span>→</span>
+      <strong>enhancement</strong>
+    </div>
+
+
+    <h2>A Simple Example to Remember</h2>
+
+    <p>
+      If you see a <strong>stone</strong>, think about what happens when the
+      ultrasound beam encounters a strong reflector or attenuator:
+    </p>
+
+    <p>
+      <strong>Less sound gets through → less information from behind → shadow.</strong>
+    </p>
+
+    <p>
+      If you see a <strong>simple cyst</strong>, think about what happens when
+      the beam travels through low-attenuating fluid:
+    </p>
+
+    <p>
+      <strong>More sound gets through → stronger deeper echoes → enhancement.</strong>
+    </p>
+
+
+    <h2>Quick Recap</h2>
+
+    <ul>
+      <li>
+        <strong>Acoustic shadowing</strong> is a relatively dark region behind
+        a structure that greatly reduces the ultrasound energy reaching deeper tissues.
+      </li>
+
+      <li>
+        Stones, calcifications, and bone are common examples associated with
+        shadowing.
+      </li>
+
+      <li>
+        <strong>Posterior acoustic enhancement</strong> is increased brightness
+        behind a relatively low-attenuating structure.
+      </li>
+
+      <li>
+        A simple fluid-filled cyst is a classic example of posterior enhancement.
+      </li>
+
+      <li>
+        The key concept is how much ultrasound energy reaches the tissue behind
+        the structure.
+      </li>
+
+      <li>
+        Neither shadowing nor enhancement should be interpreted in isolation;
+        they are imaging clues that must be considered with the complete
+        ultrasound appearance.
+      </li>
+    </ul>
+
+
+    <div class="takeaway">
+
+      <h3>The Easiest Way to Remember It</h3>
+
+      <p>
+        <strong>Shadowing:</strong>
+        the structure blocks or greatly reduces the beam
+        → less sound reaches behind
+        → darker.
+      </p>
+
+      <p style="margin-top: 12px;">
+        <strong>Enhancement:</strong>
+        the structure allows relatively more sound through
+        → more sound reaches behind
+        → brighter.
+      </p>
+
+      <p style="margin-top: 16px;">
+        The real concept is not simply
+        <strong>“stone = shadow”</strong> or
+        <strong>“cyst = enhancement.”</strong>
+        It is understanding what happened to the ultrasound beam.
+      </p>
+
+    </div>
+
+
+    <div class="sources">
+
+      <h2>Sources</h2>
+
+      <ul>
+
+        <li>
+          <a
+            href="https://pubs.rsna.org/doi/10.1148/rg.2017160175"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Clinical Significance of US Artifacts
+          </a>
+          — Radiographics, RSNA.
+        </li>
+
+        <li>
+          <a
+            href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5475422/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Intensive Care Ultrasound: I. Physics, Equipment, and Image Quality
+          </a>
+          — PMC.
+        </li>
+
+        <li>
+          <a
+            href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5207351/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Practical and illustrated summary of updated BI-RADS for ultrasonography
+          </a>
+          — PMC.
+        </li>
+
+        <li>
+          <a
+            href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4808817/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ultrasonography of the Kidney: A Pictorial Review
+          </a>
+          — Diagnostics / PMC.
+        </li>
+
+        <li>
+          <a
+            href="https://integration.sempa.org/sonoguide/basic/ultrasound-physics-and-technical-facts-for-the-beginner"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ultrasound Physics and Technical Facts for the Beginner
+          </a>
+          — SEMPA Sonoguide.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </article>
+
+
+  <footer>
+    © 2026 Med Imaging Hub · Created &amp; curated by
+    <strong>Zara Ashraf</strong>
+  </footer>
+
+</body>
+</html>
