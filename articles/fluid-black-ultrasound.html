@@ -6,6 +6,8 @@
 
   <title>Why Does Fluid Look Black on Ultrasound? | Med Imaging Hub</title>
 
+  <meta name="description" content="Understand why simple fluid appears black on ultrasound, how echoes and attenuation affect image appearance, and why posterior acoustic enhancement occurs.">
+
   <style>
     * {
       box-sizing: border-box;
@@ -14,35 +16,30 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f7f9fc;
-      color: #222;
-      line-height: 1.75;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.7;
     }
+
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #e6e9ef;
-      padding: 18px 30px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      padding: 22px 8%;
+      border-bottom: 1px solid #eef1f4;
+      background: #ffffff;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 700;
-      color: #1f2937;
+      color: #17202a;
       text-decoration: none;
-      white-space: nowrap;
+      letter-spacing: -0.4px;
     }
 
     .logo span {
@@ -51,312 +48,331 @@
 
     nav {
       display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      align-items: center;
+      gap: 26px;
     }
 
     nav a {
       text-decoration: none;
-      color: #374151;
-      font-size: 15px;
+      color: #475467;
+      font-size: 14px;
       font-weight: 500;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
       color: #2563eb;
     }
 
+    /* =========================
+       ARTICLE HEADER
+    ========================= */
+
     .article-header {
       text-align: center;
-      max-width: 850px;
-      margin: 65px auto 35px;
-      padding: 0 20px;
+      padding: 75px 25px 60px;
+      background:
+        radial-gradient(
+          circle at top left,
+          #eff6ff 0%,
+          #f8fafc 38%,
+          #ffffff 75%
+        );
     }
 
     .article-label {
       display: inline-block;
-      background: #eaf2ff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #eff6ff;
       color: #2563eb;
-      padding: 6px 13px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
       margin-bottom: 18px;
     }
 
     .article-header h1 {
-      font-size: 42px;
-      line-height: 1.2;
-      margin: 0 0 18px;
-      color: #172033;
+      max-width: 900px;
+      margin: 0 auto 16px;
+      font-size: 48px;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      color: #17202a;
     }
 
-    .article-header p {
-      font-size: 18px;
-      color: #667085;
+    .article-subtitle {
+      max-width: 720px;
       margin: 0 auto;
-      max-width: 700px;
+      color: #667085;
+      font-size: 17px;
+      line-height: 1.6;
     }
+
+    /* =========================
+       ARTICLE
+    ========================= */
 
     article {
       max-width: 820px;
-      margin: 0 auto 70px;
-      padding: 0 20px;
-    }
-
-    article p {
-      font-size: 16px;
-      margin: 0 0 22px;
+      margin: 0 auto;
+      padding: 65px 25px 90px;
     }
 
     article h2 {
-      font-size: 27px;
-      line-height: 1.35;
-      color: #172033;
+      font-size: 29px;
+      line-height: 1.3;
       margin: 48px 0 18px;
+      color: #17202a;
+      letter-spacing: -0.5px;
     }
 
     article h3 {
       font-size: 21px;
-      color: #172033;
-      margin: 32px 0 15px;
+      line-height: 1.4;
+      margin: 38px 0 16px;
+      color: #17202a;
     }
 
-    strong {
-      color: #172033;
+    article p {
+      margin: 0 0 18px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.75;
     }
+
+    article ul {
+      margin: 10px 0 20px 22px;
+      padding: 0;
+    }
+
+    article li {
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.65;
+    }
+
+    article strong {
+      color: #17202a;
+    }
+
+    /* =========================
+       HIGHLIGHT BOX
+    ========================= */
 
     .highlight {
-      background: #eef5ff;
-      border-left: 4px solid #2563eb;
-      padding: 18px 20px;
-      border-radius: 8px;
       margin: 25px 0;
+      padding: 22px 25px;
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #374151;
     }
 
-    .highlight p {
-      margin-bottom: 8px;
+    .highlight strong {
+      color: #2563eb;
     }
 
-    .highlight p:last-child {
-      margin-bottom: 0;
-    }
+    /* =========================
+       SIMPLE BOX
+    ========================= */
 
     .simple-box {
-      background: #ffffff;
-      border: 1px solid #e1e6ee;
-      border-radius: 10px;
-      padding: 20px 22px;
       margin: 25px 0;
+      padding: 22px 25px;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 10px;
     }
 
     .simple-box p:last-child {
       margin-bottom: 0;
     }
 
+    /* =========================
+       FLOW
+    ========================= */
+
     .flow {
-      background: #ffffff;
-      border: 1px solid #e1e6ee;
-      border-radius: 12px;
+      margin: 28px 0;
       padding: 25px;
-      margin: 30px 0;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
       text-align: center;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+      font-size: 16px;
+      line-height: 2;
+      color: #374151;
     }
 
-    .flow-step {
-      font-weight: 600;
-      color: #1f2937;
-      margin: 8px 0;
+    .flow strong {
+      color: #17202a;
     }
 
-    .arrow {
-      color: #2563eb;
-      font-size: 22px;
-      font-weight: bold;
-      margin: 2px 0;
-    }
+    /* =========================
+       IMAGES
+    ========================= */
 
     .article-image {
+      margin: 35px auto 42px;
+      text-align: center;
+    }
+
+    .article-image img {
       display: block;
       width: 100%;
       max-width: 620px;
       max-height: 390px;
       object-fit: contain;
-      margin: 32px auto 10px;
-      border-radius: 10px;
-      background: #ffffff;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid #e8edf2;
+      background: #f8fafc;
     }
 
     .image-caption {
-      text-align: center;
-      font-size: 14px;
+      margin-top: 10px;
       color: #667085;
-      margin: 0 auto 6px;
-    }
-
-    .image-credit {
-      text-align: center;
-      font-size: 12px;
-      color: #7a8494;
-      margin: 0 auto 30px;
+      font-size: 13px;
       line-height: 1.5;
     }
 
-    .image-credit a {
+    .image-credit {
+      margin-top: 4px;
+      color: #98a2b3;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .image-credit a,
+    .sources a {
       color: #2563eb;
-      text-decoration: none;
+      text-decoration: underline;
     }
 
-    ul {
-      padding-left: 25px;
-      margin: 10px 0 25px;
-    }
-
-    li {
-      margin-bottom: 9px;
-    }
-
-    .comparison {
-      background: #ffffff;
-      border: 1px solid #e1e6ee;
-      border-radius: 10px;
-      overflow: hidden;
-      margin: 25px 0 30px;
-    }
-
-    .comparison table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .comparison th,
-    .comparison td {
-      padding: 14px 16px;
-      border-bottom: 1px solid #e8ebf0;
-      text-align: left;
-    }
-
-    .comparison th {
-      background: #f1f5f9;
-      color: #172033;
-    }
-
-    .comparison tr:last-child td {
-      border-bottom: none;
-    }
+    /* =========================
+       TAKEAWAY
+    ========================= */
 
     .takeaway {
-      background: #172033;
-      color: #ffffff;
-      border-radius: 12px;
-      padding: 25px;
-      margin: 45px 0 35px;
+      margin-top: 50px;
+      padding: 28px;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 15px;
     }
 
-    .takeaway h2 {
-      color: #ffffff;
+    .takeaway h3 {
       margin-top: 0;
-      margin-bottom: 15px;
-    }
-
-    .takeaway p {
-      color: #f3f4f6;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
 
     .takeaway p:last-child {
       margin-bottom: 0;
     }
 
+    /* =========================
+       SOURCES
+    ========================= */
+
     .sources {
-      border-top: 1px solid #e1e6ee;
-      margin-top: 50px;
-      padding-top: 25px;
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid #e8edf2;
     }
 
-    .sources h2 {
+    .sources h3 {
       margin-top: 0;
-      font-size: 24px;
+      font-size: 21px;
     }
 
     .sources ol {
-      padding-left: 25px;
+      margin: 15px 0 0 20px;
+      padding: 0;
     }
 
     .sources li {
-      margin-bottom: 12px;
+      margin-bottom: 15px;
       font-size: 14px;
+      color: #667085;
+      line-height: 1.6;
     }
 
-    .sources a {
-      color: #2563eb;
-      text-decoration: none;
+    .sources strong {
+      color: #17202a;
     }
 
-    .sources a:hover {
-      text-decoration: underline;
-    }
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
-      background: #ffffff;
-      border-top: 1px solid #e6e9ef;
+      padding: 30px 8%;
+      border-top: 1px solid #eef1f4;
       text-align: center;
-      padding: 25px 20px;
-      color: #7a8494;
-      font-size: 14px;
+      color: #667085;
+      font-size: 13px;
+      background: #ffffff;
     }
 
-    @media (max-width: 700px) {
-      header {
-        padding: 15px 18px;
-      }
+    /* =========================
+       MOBILE
+    ========================= */
 
-      .header-inner {
+    @media (max-width: 700px) {
+
+      header {
         flex-direction: column;
-        align-items: center;
+        gap: 15px;
+        padding: 20px;
       }
 
       nav {
         justify-content: center;
-        gap: 13px;
+        flex-wrap: wrap;
+        gap: 15px;
       }
 
       .article-header {
-        margin-top: 45px;
+        padding: 55px 20px 45px;
       }
 
       .article-header h1 {
-        font-size: 32px;
+        font-size: 36px;
+        letter-spacing: -1px;
       }
 
-      .article-header p {
-        font-size: 16px;
+      .article-subtitle {
+        font-size: 15px;
       }
 
       article {
-        padding: 0 17px;
+        padding: 45px 20px 70px;
       }
 
       article h2 {
-        font-size: 24px;
+        font-size: 25px;
       }
 
-      article p {
+      article p,
+      article li {
         font-size: 15.5px;
       }
 
+      .highlight,
+      .simple-box,
       .flow {
-        padding: 20px 15px;
+        padding: 20px;
+        font-size: 16px;
       }
 
-      .comparison {
-        overflow-x: auto;
-      }
-
-      .comparison table {
-        min-width: 520px;
+      .article-image img {
+        max-width: 100%;
+        max-height: 330px;
       }
     }
   </style>
@@ -364,164 +380,174 @@
 
 <body>
 
+  <!-- =========================
+       HEADER
+  ========================= -->
+
   <header>
-    <div class="header-inner">
 
-      <a href="../index.html" class="logo">
-        Med Imaging <span>Hub</span>
-      </a>
+    <a href="../index.html" class="logo">
+      Med Imaging <span>Hub</span>
+    </a>
 
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="../articles.html">Articles</a>
-        <a href="../insights.html">Insights</a>
-        <a href="../projects.html">Projects</a>
-        <a href="../resources.html">Resources</a>
-        <a href="../about.html">About</a>
-      </nav>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../articles.html">Articles</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
 
-    </div>
   </header>
 
 
+  <!-- =========================
+       ARTICLE HEADER
+  ========================= -->
+
   <section class="article-header">
 
-    <div class="article-label">Ultrasound</div>
+    <div class="article-label">
+      Ultrasound
+    </div>
 
-    <h1>Why Does Fluid Look Black on Ultrasound?</h1>
+    <h1>
+      Why Does Fluid Look Black on Ultrasound?
+    </h1>
 
-    <p>
-      Understand why simple fluid often appears completely dark
-      on an ultrasound image.
+    <p class="article-subtitle">
+      Understand why simple fluid often appears completely dark on an ultrasound image.
     </p>
 
   </section>
 
 
+  <!-- =========================
+       ARTICLE CONTENT
+  ========================= -->
+
   <article>
 
     <p>
-      If you look at an ultrasound image of a urinary bladder, a
-      simple cyst, or another fluid-filled structure, you may notice something
-      interesting:
+      When you look at an ultrasound image, you may notice that
+      simple fluid-filled structures such as the urinary bladder or a simple cyst
+      often appear almost completely black.
     </p>
 
     <p>
-      <strong>the fluid often looks completely black.</strong>
+      At first, this can seem strange. If there is fluid inside
+      the structure, why does the ultrasound image show almost nothing there?
     </p>
 
     <p>
-      At first, this can seem strange.
+      The answer becomes much easier once you understand that an
+      ultrasound image is mainly created from <strong>returning echoes</strong>.
+    </p>
+
+
+    <!-- =========================
+         MAIN IMAGE
+    ========================= -->
+
+    <div class="article-image">
+
+      <img
+        src="../images/simple-cyst-posterior-enhancement.jpg"
+        alt="Simple renal cyst with posterior acoustic enhancement on ultrasound"
+      >
+
+      <div class="image-caption">
+        A simple cyst appears anechoic, with increased brightness behind it due to posterior acoustic enhancement.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Simple_cyst_with_posterior_enhancement.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wikimedia Commons — Simple cyst with posterior enhancement
+        </a>
+        · CC BY 4.0
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         ECHOES
+    ========================= -->
+
+    <h2>
+      Ultrasound Images Are Made From Echoes
+    </h2>
+
+    <p>
+      An ultrasound transducer sends high-frequency sound waves
+      into the body.
     </p>
 
     <p>
-      The ultrasound machine is sending sound waves into the body,
-      so why does a fluid-filled area appear as if there is nothing there?
+      When those sound waves encounter boundaries between tissues,
+      some of the sound is reflected back toward the transducer.
     </p>
 
     <p>
-      The answer becomes much easier once we understand what the
-      ultrasound machine is actually displaying.
-    </p>
-
-
-    <!-- MAIN IMAGE -->
-
-    <img
-      src="../images/simple-cyst-posterior-enhancement.jpg"
-      alt="Ultrasound image showing a simple renal cyst with posterior acoustic enhancement"
-      class="article-image"
-    >
-
-    <p class="image-caption">
-      A simple renal cyst appears anechoic with posterior acoustic enhancement.
-    </p>
-
-    <p class="image-credit">
-      Image: Kristoffer Lindskov Hansen, Michael Bachmann Nielsen and Caroline Ewertsen,
-      CC BY 4.0, via
-      <a href="https://commons.wikimedia.org/wiki/File:Simple_cyst_with_posterior_enhancement.jpg"
-         target="_blank" rel="noopener noreferrer">
-        Wikimedia Commons
-      </a>.
-    </p>
-
-
-    <h2>Ultrasound Images Are Made From Echoes</h2>
-
-    <p>
-      An ultrasound transducer sends sound waves into the body.
-    </p>
-
-    <p>
-      As the waves travel through different tissues, some of the
-      sound is reflected or scattered back toward the transducer.
-    </p>
-
-    <p>
-      These returning signals are called <strong>echoes</strong>.
-    </p>
-
-    <p>
-      The ultrasound machine uses these echoes to build the image.
+      The ultrasound system uses these returning echoes to create
+      the image.
     </p>
 
     <div class="highlight">
 
       <p>
-        <strong>More returning echoes → brighter image</strong>
+        <strong>More returning echoes → brighter appearance</strong>
       </p>
 
       <p>
-        <strong>Fewer returning echoes → darker image</strong>
+        <strong>Fewer returning echoes → darker appearance</strong>
       </p>
 
     </div>
 
     <p>
-      So when an area appears black, the important question is
-      not:
+      So when a structure appears black, it does
+      <strong>not</strong> mean that there is nothing there.
     </p>
 
     <p>
-      <strong>“Is there nothing there?”</strong>
+      It means that very little ultrasound energy is returning
+      from that region to produce image brightness.
     </p>
 
     <p>
-      Instead, ask:
+      When a structure produces essentially no internal echoes, it
+      is described as <strong>anechoic</strong>.
     </p>
 
     <p>
-      <strong>“How many echoes are coming back from this area?”</strong>
-    </p>
-
-    <p>
-      When there are essentially no internal echoes, the area is
-      described as <strong>anechoic</strong>.
-    </p>
-
-    <p>
-      And on a typical grayscale ultrasound image, anechoic areas
-      appear black.
+      Anechoic structures therefore appear black on the ultrasound
+      image.
     </p>
 
 
-    <h2>So, What Is Different About Simple Fluid?</h2>
+    <!-- =========================
+         SIMPLE FLUID
+    ========================= -->
+
+    <h2>
+      So, What Is Different About Simple Fluid?
+    </h2>
 
     <p>
-      Now imagine the ultrasound beam entering a simple
-      fluid-filled structure.
+      Many solid tissues contain small structures and interfaces
+      that can scatter or reflect ultrasound in different directions.
     </p>
 
     <p>
-      Inside many solid tissues, there are numerous small
-      structures and interfaces that can scatter or reflect some of the ultrasound
-      energy back toward the transducer.
-    </p>
-
-    <p>
-      That produces the different shades of gray and the familiar
-      <strong>speckled appearance</strong> seen in many tissues.
+      These interactions create returning echoes, which contribute
+      to the gray-scale appearance of the image.
     </p>
 
     <p>
@@ -529,178 +555,166 @@
     </p>
 
     <p>
-      It is relatively uniform and contains very few internal
-      structures that produce significant echoes.
+      A simple fluid-filled space is relatively uniform and has
+      very few internal structures that produce significant echoes.
     </p>
 
     <p>
-      So as the ultrasound travels through the fluid,
-      <strong>very little of it is scattered back toward the transducer from
-      inside the fluid</strong>.
-    </p>
-
-    <p>
-      The machine therefore receives very little signal from that
-      region.
-    </p>
-
-    <p>
-      And the result is:
+      As a result, very little sound is scattered back from inside
+      the fluid toward the transducer.
     </p>
 
     <div class="highlight">
 
       <p>
-        <strong>very few echoes → very dark appearance</strong>
+        <strong>Few internal echoes → dark / anechoic appearance</strong>
       </p>
 
     </div>
 
     <p>
-      That is why simple fluid is often called
-      <strong>anechoic</strong>.
+      This is the main reason simple fluid often looks completely
+      black on ultrasound.
     </p>
 
 
-    <h2>But Is the Ultrasound Sound Actually Stopping There?</h2>
+    <!-- =========================
+         SOUND THROUGH FLUID
+    ========================= -->
+
+    <h2>
+      But Is the Ultrasound Sound Actually Stopping There?
+    </h2>
 
     <p>
       <strong>No.</strong>
     </p>
 
     <p>
-      This is probably the most important part to understand.
+      This is one of the most important points to understand.
     </p>
 
     <p>
-      The fluid looks black, but that does <strong>not</strong> mean the
-      ultrasound beam cannot pass through it.
+      The fact that fluid looks black does not mean that the
+      ultrasound beam cannot travel through it.
     </p>
 
     <p>
-      In fact, ultrasound can travel through simple fluid quite
-      well.
+      In fact, ultrasound generally travels through simple fluid
+      quite well.
     </p>
 
     <p>
-      The reason the fluid looks black is mainly that
-      <strong>very little sound is returning from inside the fluid as an echo</strong>.
-    </p>
-
-    <p>
-      So there are actually two different things happening:
-    </p>
-
-    <div class="simple-box">
-
-      <p><strong>Sound going through the fluid</strong></p>
-
-      <p><strong>and</strong></p>
-
-      <p><strong>sound returning from the fluid</strong></p>
-
-    </div>
-
-    <p>
-      The first can happen quite effectively.
-    </p>
-
-    <p>
-      The second is what is relatively limited.
-    </p>
-
-    <p>
-      That distinction explains why a fluid-filled structure can
-      look black while still allowing the ultrasound beam to continue deeper into the
-      body.
-    </p>
-
-
-    <h2>What Happens When the Sound Reaches the Other Side?</h2>
-
-    <p>
-      This is where the story gets even more interesting.
-    </p>
-
-    <p>
-      Suppose the ultrasound beam enters a simple cyst.
-    </p>
-
-    <p>
-      Inside the cyst, there are very few internal echoes, so the
-      cyst appears black.
-    </p>
-
-    <p>
-      But the ultrasound beam continues travelling through it.
-    </p>
-
-    <p>
-      When the beam reaches the tissue <strong>behind the cyst</strong>, it
-      encounters structures that can produce echoes.
-    </p>
-
-    <p>
-      Because the sound has travelled through the fluid with
-      relatively little attenuation, more of its energy can reach those deeper
-      tissues.
-    </p>
-
-    <p>
-      The returning echoes from those tissues can therefore be
-      stronger than the echoes from nearby tissue that the beam travelled through
-      directly.
-    </p>
-
-    <p>
-      The area <strong>behind the fluid-filled structure can appear
-      brighter</strong>.
+      There is an important difference between:
     </p>
 
     <div class="highlight">
 
       <p>
-        This is called:
+        <strong>Sound travelling through the fluid</strong>
       </p>
 
       <p>
-        <strong>Posterior Acoustic Enhancement</strong>
+        and
       </p>
 
       <p>
-        It is a very useful ultrasound finding associated with
-        fluid-filled structures.
+        <strong>Sound returning from inside the fluid.</strong>
       </p>
 
     </div>
 
     <p>
-      So you can think of a simple fluid-filled structure as
-      having two visual clues:
+      Simple fluid produces very few internal echoes, so it looks
+      black. But the ultrasound beam can continue travelling through the fluid.
     </p>
 
-    <div class="simple-box">
 
-      <p>
-        <strong>Inside the fluid → black</strong>
-      </p>
+    <!-- =========================
+         OTHER SIDE
+    ========================= -->
 
-      <p>
-        <strong>Behind the fluid → may look brighter</strong>
-      </p>
+    <h2>
+      What Happens When the Sound Reaches the Other Side?
+    </h2>
+
+    <p>
+      Now we get to the interesting part.
+    </p>
+
+    <p>
+      Imagine an ultrasound beam entering a simple cyst.
+    </p>
+
+    <p>
+      Inside the cyst, there are very few structures to reflect or
+      scatter the sound.
+    </p>
+
+    <p>
+      Therefore:
+    </p>
+
+    <div class="flow">
+
+      Ultrasound enters the cyst
+      <br>
+      ↓
+      <br>
+      Very few internal echoes are produced
+      <br>
+      ↓
+      <br>
+      Very little sound returns from inside the cyst
+      <br>
+      ↓
+      <br>
+      The cyst appears black
+      <br>
+      ↓
+      <br>
+      Sound continues through the fluid
+      <br>
+      ↓
+      <br>
+      The beam reaches the tissue behind the cyst
+      <br>
+      ↓
+      <br>
+      More sound reaches the deeper tissue
+      <br>
+      ↓
+      <br>
+      Stronger returning echoes may be produced
+      <br>
+      ↓
+      <br>
+      The region behind the cyst may appear brighter
 
     </div>
 
+    <p>
+      This increased brightness behind a fluid-filled structure is
+      called <strong>posterior acoustic enhancement</strong>.
+    </p>
 
-    <h2>Why Does Fluid Allow More Sound Through?</h2>
+
+    <!-- =========================
+         ATTENUATION
+    ========================= -->
+
+    <h2>
+      Why Does Fluid Allow More Sound Through?
+    </h2>
 
     <p>
-      This is related to <strong>attenuation</strong>.
+      To understand this, we need one important ultrasound concept:
+      <strong>attenuation</strong>.
     </p>
 
     <p>
-      As ultrasound travels through the body, its energy
-      decreases.
+      Attenuation means that the energy of the ultrasound beam
+      decreases as it travels through tissue.
     </p>
 
     <p>
@@ -708,531 +722,591 @@
     </p>
 
     <p>
-      Simple fluid generally causes less attenuation than many
-      surrounding soft tissues.
+      Simple fluid generally causes relatively little attenuation
+      compared with many soft tissues.
     </p>
 
     <p>
-      So when the beam passes through a fluid-filled structure, it
-      loses relatively little energy compared with travelling through an equivalent
-      thickness of more attenuating tissue.
-    </p>
-
-    <p>
-      More of the beam can therefore reach structures deeper to
-      the fluid.
-    </p>
-
-    <p>
-      This is why posterior acoustic enhancement can occur.
+      This means that more of the ultrasound beam can reach
+      structures deeper than the fluid-filled space.
     </p>
 
     <div class="highlight">
 
       <p>
-        <strong>
-          More sound reaches deeper tissue → stronger returning
-          echoes → brighter appearance behind the fluid
-        </strong>
+        <strong>Less attenuation → more sound reaches deeper tissue</strong>
       </p>
 
     </div>
 
-
-    <h2>A Simple Cyst Is a Good Example</h2>
-
     <p>
-      A simple cyst is one of the easiest examples for
-      understanding this concept.
+      Because more sound reaches the tissue behind the fluid, the
+      returning echoes from that deeper tissue can be stronger than expected.
     </p>
 
     <p>
-      On ultrasound, a typical simple cyst has:
+      The deeper region may therefore appear brighter.
+    </p>
+
+
+    <!-- =========================
+         SIMPLE CYST
+    ========================= -->
+
+    <h2>
+      A Simple Cyst Is a Good Example
+    </h2>
+
+    <p>
+      A simple cyst is one of the clearest examples of this
+      phenomenon.
+    </p>
+
+    <p>
+      On ultrasound, a typical simple cyst commonly has:
     </p>
 
     <ul>
-      <li>a well-defined margin</li>
-      <li>an <strong>anechoic</strong> interior</li>
-      <li>no internal echoes</li>
-      <li>and often <strong>posterior acoustic enhancement</strong></li>
+
+      <li>
+        <strong>Well-defined margins</strong>
+      </li>
+
+      <li>
+        <strong>Anechoic interior</strong>
+      </li>
+
+      <li>
+        <strong>No internal echoes</strong>
+      </li>
+
+      <li>
+        <strong>Posterior acoustic enhancement</strong>
+      </li>
+
     </ul>
 
     <p>
-      So instead of seeing a gray, speckled structure inside the
-      cyst, you see a dark area.
-    </p>
-
-    <p>
-      Then, immediately deeper to it, the tissues may appear
-      brighter.
-    </p>
-
-    <p>
-      These features are part of the characteristic ultrasound
-      appearance of a simple cyst.
+      The combination of a black interior and increased brightness
+      behind the cyst is therefore a useful ultrasound finding.
     </p>
 
 
-    <!-- SECOND IMAGE -->
+    <!-- =========================
+         SECOND IMAGE
+    ========================= -->
 
-    <img
-      src="../images/simple-renal-cyst.jpg"
-      alt="Ultrasound image of a small simple renal cyst"
-      class="article-image"
-    >
+    <div class="article-image">
 
-    <p class="image-caption">
-      A small simple renal cyst seen on abdominal ultrasound.
-    </p>
+      <img
+        src="../images/simple-renal-cyst.jpg"
+        alt="Small simple renal cyst seen on abdominal ultrasound"
+      >
 
-    <p class="image-credit">
-      Image: Ptrump16, CC BY-SA 4.0, via
-      <a href="https://commons.wikimedia.org/wiki/File:Small_simple_renal_cyst.jpg"
-         target="_blank" rel="noopener noreferrer">
-        Wikimedia Commons
-      </a>.
-    </p>
+      <div class="image-caption">
+        Example of a small simple renal cyst on abdominal ultrasound.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Small_simple_renal_cyst.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wikimedia Commons — Small simple renal cyst
+        </a>
+        · CC BY-SA 4.0
+      </div>
+
+    </div>
 
 
-    <h2>What About the Urinary Bladder?</h2>
+    <!-- =========================
+         URINARY BLADDER
+    ========================= -->
+
+    <h2>
+      What About the Urinary Bladder?
+    </h2>
 
     <p>
       The urinary bladder provides another familiar example.
     </p>
 
     <p>
-      When the bladder is filled with urine, the urine can appear
-      <strong>anechoic</strong>, producing a dark appearance on ultrasound.
+      When the bladder contains relatively simple urine, the urine
+      can appear <strong>anechoic</strong>, producing a dark or black appearance.
     </p>
 
     <p>
-      The tissues behind the bladder may appear brighter because
-      the ultrasound beam has travelled through the relatively low-attenuation fluid
-      before reaching them.
+      The ultrasound beam can continue through the urine and reach
+      tissues deeper to the bladder.
     </p>
 
     <p>
-      This is a classic example of <strong>posterior acoustic
-      enhancement</strong>.
+      As a result, the tissues behind the bladder may appear
+      relatively brighter.
     </p>
 
     <p>
-      So when you see a black bladder on ultrasound, you are not
-      looking at an area where ultrasound has disappeared.
-    </p>
-
-    <p>
-      You are seeing an area from which <strong>very few internal
-      echoes are returning</strong>.
+      Again, the black appearance does not mean that the ultrasound
+      beam has stopped.
     </p>
 
 
-    <h2>Does All Fluid Look Completely Black?</h2>
+    <!-- =========================
+         NOT ALL FLUID
+    ========================= -->
+
+    <h2>
+      Does All Fluid Look Completely Black?
+    </h2>
 
     <p>
       <strong>No.</strong>
     </p>
 
     <p>
-      This is an important point.
+      The classic black appearance mainly describes
+      <strong>simple fluid</strong>.
     </p>
 
     <p>
-      When we say that fluid looks black, we are mainly talking
-      about <strong>simple fluid</strong>.
-    </p>
-
-    <p>
-      Real fluid collections can contain other material.
-    </p>
-
-    <p>
-      For example, a fluid collection may contain:
+      Fluid can contain things such as:
     </p>
 
     <ul>
-      <li>blood</li>
-      <li>protein</li>
-      <li>pus</li>
-      <li>cells</li>
-      <li>debris</li>
+
+      <li>Blood</li>
+
+      <li>Protein</li>
+
+      <li>Pus</li>
+
+      <li>Cells</li>
+
+      <li>Debris</li>
+
     </ul>
 
     <p>
-      These materials can create internal echoes.
+      These components can create internal echoes.
     </p>
 
     <p>
-      As a result, the fluid may no longer look completely black.
+      Therefore, a fluid collection may appear gray or have a
+      more complex internal appearance instead of being completely anechoic.
     </p>
 
-    <p>
-      It may appear <strong>gray, contain internal echoes, or have a
-      more complex appearance</strong> instead.
-    </p>
-
-    <div class="simple-box">
+    <div class="highlight">
 
       <p>
-        <strong>Simple fluid → often anechoic</strong>
+        <strong>Simple fluid → usually anechoic</strong>
       </p>
 
       <p>
-        <strong>Fluid containing internal material → may become
-        echogenic or complex</strong>
+        <strong>Complex fluid → may contain internal echoes</strong>
       </p>
 
     </div>
 
-    <p>
-      This is why simply seeing something that is “dark” is not
-      enough to describe every fluid-containing structure.
-    </p>
 
+    <!-- =========================
+         BLACK DOES NOT ALWAYS MEAN FLUID
+    ========================= -->
 
-    <h2>Black Does Not Always Mean Fluid</h2>
-
-    <p>
-      There is another useful lesson here.
-    </p>
+    <h2>
+      Black Does Not Always Mean Fluid
+    </h2>
 
     <p>
-      A black area on ultrasound does not automatically mean:
-    </p>
-
-    <p>
-      <strong>“This must be fluid.”</strong>
+      Another important point is that a black area on an ultrasound
+      image does not automatically mean that it contains fluid.
     </p>
 
     <p>
-      Different ultrasound phenomena can produce dark
-      appearances.
+      Different ultrasound phenomena can produce dark appearances
+      for different reasons.
     </p>
 
     <p>
-      For example, <strong>acoustic shadowing</strong> can create a dark
-      area behind a strong attenuator or reflector such as a stone.
+      For example, <strong>acoustic shadowing</strong> behind a highly
+      attenuating or strongly reflecting structure, such as a stone, can produce a
+      dark region.
     </p>
 
     <p>
-      But that darkness has a completely different cause.
+      That dark region is produced by a different mechanism from
+      the anechoic appearance of simple fluid.
     </p>
 
     <p>
-      With simple fluid, the important idea is:
+      So when looking at an ultrasound image, it is better to ask:
     </p>
 
-    <div class="simple-box">
+    <div class="highlight">
 
-      <p>
-        <strong>very few internal echoes + relatively low attenuation</strong>
-      </p>
+      <strong>
+        “Why is this area dark?”
+      </strong>
 
     </div>
-
-    <p>
-      With acoustic shadowing, the problem is that little useful
-      sound reaches the structures beyond the strong attenuating or reflecting
-      object.
-    </p>
-
-    <p>
-      So when interpreting an ultrasound image, it is better to
-      ask:
-    </p>
-
-    <p>
-      <strong>“Why is this area dark?”</strong>
-    </p>
 
     <p>
       rather than automatically assuming:
     </p>
 
+    <div class="highlight">
+
+      <strong>
+        “Black means fluid.”
+      </strong>
+
+    </div>
+
+
+    <!-- =========================
+         ANECHOIC VS HYPOECHOIC
+    ========================= -->
+
+    <h2>
+      Anechoic vs Hypoechoic
+    </h2>
+
     <p>
-      <strong>“Black means fluid.”</strong>
+      These two terms are commonly used when describing ultrasound
+      appearance.
     </p>
 
-
-    <h2>Anechoic vs Hypoechoic</h2>
-
     <p>
-      These two terms are worth separating.
+      <strong>Anechoic</strong> means that essentially no internal
+      echoes are detected from the structure.
     </p>
 
     <p>
-      <strong>Anechoic</strong> means essentially no internal echoes, so the
-      structure appears black.
+      It therefore appears black.
     </p>
 
     <p>
-      <strong>Hypoechoic</strong> means the structure produces fewer echoes
-      than the surrounding tissue, so it appears darker — but it may still contain
-      visible gray echoes.
+      <strong>Hypoechoic</strong> means that a structure produces
+      fewer echoes than the surrounding tissue.
+    </p>
+
+    <p>
+      A hypoechoic structure can therefore look darker than its
+      surroundings, but it may still contain visible gray-level echoes.
     </p>
 
     <div class="simple-box">
 
       <p>
-        <strong>Anechoic → black</strong>
+        <strong>Anechoic → essentially no internal echoes → black</strong>
       </p>
 
       <p>
-        <strong>Hypoechoic → darker than surrounding tissue</strong>
+        <strong>Hypoechoic → fewer echoes than surrounding tissue → darker gray</strong>
       </p>
 
     </div>
 
-    <p>
-      This distinction becomes very useful when describing
-      ultrasound images accurately.
-    </p>
 
+    <!-- =========================
+         INTERESTING PART
+    ========================= -->
 
-    <h2>The Interesting Part: Black Inside, Bright Behind</h2>
-
-    <p>
-      At this point, the whole idea can be put together.
-    </p>
+    <h2>
+      The Interesting Part: Black Inside, Bright Behind
+    </h2>
 
     <p>
-      Imagine the ultrasound beam travelling through a simple
-      cyst:
+      This is probably the most useful concept to take away from
+      this article.
     </p>
 
     <div class="flow">
 
-      <div class="flow-step">
-        Ultrasound enters the cyst
-      </div>
-
-      <div class="arrow">↓</div>
-
-      <div class="flow-step">
-        Very few internal structures produce echoes
-      </div>
-
-      <div class="arrow">↓</div>
-
-      <div class="flow-step">
-        Very little sound returns from inside
-      </div>
-
-      <div class="arrow">↓</div>
-
-      <div class="flow-step">
-        The cyst appears black
-      </div>
-
-      <div class="arrow">↓</div>
-
-      <div class="flow-step">
-        The sound continues through the fluid with relatively
-        little attenuation
-      </div>
-
-      <div class="arrow">↓</div>
-
-      <div class="flow-step">
-        More sound reaches the tissue behind the cyst
-      </div>
-
-      <div class="arrow">↓</div>
-
-      <div class="flow-step">
-        Stronger echoes return from that deeper tissue
-      </div>
-
-      <div class="arrow">↓</div>
-
-      <div class="flow-step">
-        The area behind the cyst may appear brighter
-      </div>
+      <strong>Ultrasound enters cyst</strong>
+      <br>
+      ↓
+      <br>
+      Very few internal structures produce echoes
+      <br>
+      ↓
+      <br>
+      Very little sound returns
+      <br>
+      ↓
+      <br>
+      <strong>Cyst appears black</strong>
+      <br>
+      ↓
+      <br>
+      Sound continues through the fluid with relatively little attenuation
+      <br>
+      ↓
+      <br>
+      More sound reaches the tissue behind
+      <br>
+      ↓
+      <br>
+      Stronger echoes return
+      <br>
+      ↓
+      <br>
+      <strong>Area behind may appear brighter</strong>
 
     </div>
 
     <p>
-      This combination is one of the reasons fluid-filled
-      structures can be recognized on ultrasound.
-    </p>
-
-
-    <h2>The Whole Idea in One Simple Example</h2>
-
-    <p>
-      Think about a <strong>simple cyst</strong>.
+      That last part is called <strong>posterior acoustic
+      enhancement</strong>.
     </p>
 
     <p>
-      The cyst itself is black because there are very few internal
+      Once you understand this, the black appearance of simple
+      fluid becomes much less mysterious.
+    </p>
+
+
+    <!-- =========================
+         WHOLE IDEA
+    ========================= -->
+
+    <h2>
+      The Whole Idea in One Simple Example
+    </h2>
+
+    <p>
+      Imagine a simple cyst inside soft tissue.
+    </p>
+
+    <p>
+      The cyst appears black because there are very few internal
       echoes.
     </p>
 
     <p>
-      But the tissue behind it can become brighter because the
-      ultrasound beam has travelled through the low-attenuation fluid before reaching
-      that tissue.
+      But the sound does not simply disappear at the cyst.
     </p>
 
     <p>
-      So the image is not simply telling you:
+      It continues travelling through the fluid, which generally
+      has relatively low attenuation.
     </p>
 
     <p>
-      <strong>“There is nothing here.”</strong>
+      This allows more sound to reach the tissue behind the cyst.
     </p>
 
     <p>
-      It is giving you information about <strong>how ultrasound is
-      travelling through the structure</strong>.
+      The deeper tissue can therefore produce stronger returning
+      echoes, making the region behind the cyst appear brighter.
     </p>
 
-    <p>
-      That is what makes the black appearance useful.
-    </p>
+    <div class="highlight">
 
+      <p>
+        <strong>Black inside → very few internal echoes</strong>
+      </p>
 
-    <div class="takeaway">
-
-      <h2>Quick Recap</h2>
-
-      <ul>
-        <li>
-          Ultrasound images are created from <strong>returning echoes</strong>.
-        </li>
-
-        <li>
-          Simple fluid produces very few internal echoes.
-        </li>
-
-        <li>
-          Very few returning echoes make the fluid appear
-          <strong>black</strong>.
-        </li>
-
-        <li>
-          This black appearance is called <strong>anechoic</strong>.
-        </li>
-
-        <li>
-          Ultrasound can still travel through the fluid; the beam
-          is not simply stopping there.
-        </li>
-
-        <li>
-          Simple fluid generally causes relatively little attenuation.
-        </li>
-
-        <li>
-          More ultrasound can therefore reach tissues behind the
-          fluid.
-        </li>
-
-        <li>
-          Those deeper tissues may produce stronger echoes and
-          appear brighter.
-        </li>
-
-        <li>
-          This is called <strong>posterior acoustic enhancement</strong>.
-        </li>
-
-        <li>
-          Not every fluid collection is completely black because
-          blood, cells, protein, pus, or debris can produce internal echoes.
-        </li>
-
-        <li>
-          A black area on ultrasound does not automatically mean
-          fluid; the reason for the darkness must be considered.
-        </li>
-      </ul>
+      <p>
+        <strong>Bright behind → more sound reaches deeper tissue</strong>
+      </p>
 
     </div>
 
+    <p>
+      The image is therefore showing us something about how
+      ultrasound interacts with the structure, not simply whether the structure
+      contains something or not.
+    </p>
 
-    <h2>The Key Idea</h2>
+
+    <!-- =========================
+         QUICK RECAP
+    ========================= -->
+
+    <h2>
+      Quick Recap
+    </h2>
+
+    <ul>
+
+      <li>
+        Ultrasound images are created mainly from returning echoes.
+      </li>
+
+      <li>
+        Simple fluid produces very few internal echoes.
+      </li>
+
+      <li>
+        Very few echoes produce a dark or <strong>anechoic</strong> appearance.
+      </li>
+
+      <li>
+        The ultrasound beam can still travel through the fluid.
+      </li>
+
+      <li>
+        Simple fluid generally causes relatively low attenuation.
+      </li>
+
+      <li>
+        More sound can therefore reach the tissue behind the fluid.
+      </li>
+
+      <li>
+        The deeper tissue may appear brighter.
+      </li>
+
+      <li>
+        This increased brightness is called <strong>posterior acoustic enhancement</strong>.
+      </li>
+
+      <li>
+        Not every fluid collection is completely black.
+      </li>
+
+      <li>
+        A black area does not automatically mean that it is fluid.
+      </li>
+
+    </ul>
+
+
+    <!-- =========================
+         KEY IDEA
+    ========================= -->
+
+    <h2>
+      The Key Idea
+    </h2>
+
+    <p>
+      Simple fluid looks black on ultrasound because it produces
+      very few internal returning echoes.
+    </p>
+
+    <p>
+      The ultrasound beam is still able to travel through the
+      fluid.
+    </p>
+
+    <p>
+      Because simple fluid generally causes relatively little
+      attenuation, more sound can reach deeper tissue, which can make the region
+      behind the fluid appear brighter.
+    </p>
 
     <div class="highlight">
 
       <p>
         <strong>
-          Simple fluid looks black on ultrasound because it
-          produces very few internal returning echoes.
+          Simple fluid → few echoes → black appearance
         </strong>
-      </p>
-
-      <p>
-        The ultrasound beam is still travelling through the fluid.
-        Because simple fluid also causes relatively little attenuation, more sound can
-        reach the tissues behind it, which can make that deeper region appear brighter.
-      </p>
-
-    </div>
-
-    <p>
-      So the pattern to remember is:
-    </p>
-
-    <div class="simple-box">
-
-      <p>
-        <strong>Simple fluid → few echoes → black appearance</strong>
       </p>
 
       <p>
         <strong>
-          Low attenuation → more sound reaches deeper tissue →
-          posterior acoustic enhancement
+          Low attenuation → more sound reaches deeper tissue → posterior acoustic enhancement
         </strong>
       </p>
 
     </div>
 
     <p>
-      Once you understand this, the black appearance of a simple
-      cyst or fluid-filled structure stops being just something to memorize — it
-      becomes a direct result of how ultrasound waves interact with the body.
+      Once you understand this relationship, the appearance of
+      simple fluid on ultrasound becomes something you can reason through rather
+      than simply memorize.
     </p>
 
 
+    <!-- =========================
+         TAKEAWAY
+    ========================= -->
+
+    <div class="takeaway">
+
+      <h3>
+        Takeaway
+      </h3>
+
+      <p>
+        When simple fluid looks black on an ultrasound image, it
+        does not mean that there is “nothing” inside.
+      </p>
+
+      <p>
+        It means that the fluid produces very few internal echoes,
+        so little sound returns to the transducer from inside the fluid.
+      </p>
+
+      <p>
+        At the same time, the ultrasound beam can continue through
+        the fluid and reach deeper tissue.
+      </p>
+
+      <p>
+        That combination explains why a simple fluid-filled
+        structure can look <strong>black inside but brighter behind</strong>.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         SOURCES
+    ========================= -->
+
     <section class="sources">
 
-      <h2>Sources</h2>
+      <h3>
+        Sources &amp; Further Reading
+      </h3>
 
       <ol>
 
         <li>
-          <strong>Clinical Ultrasound Physics</strong> —
-          overview of ultrasound echoes, fluid appearance,
-          attenuation, and posterior enhancement.
+          <strong>NCBI / PMC</strong>
+          — <em>Clinical Ultrasound Physics</em><br>
+          Basic ultrasound physics, echoes, attenuation and image formation.
           <br>
-          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3214508/"
-             target="_blank" rel="noopener noreferrer">
-            PubMed Central (PMC)
+          <a
+            href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3214508/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read the article
           </a>
         </li>
 
         <li>
-          <strong>Ultrasound Physics and Instrumentation —
-          StatPearls, NCBI Bookshelf</strong> —
-          ultrasound echogenicity, anechoic structures,
-          attenuation, and posterior acoustic enhancement.
+          <strong>NCBI Bookshelf / StatPearls</strong>
+          — <em>Ultrasound Physics and Instrumentation</em><br>
+          Ultrasound wave propagation, attenuation, reflection and image formation.
           <br>
-          <a href="https://www.ncbi.nlm.nih.gov/books/NBK570593/"
-             target="_blank" rel="noopener noreferrer">
-            NCBI Bookshelf
+          <a
+            href="https://www.ncbi.nlm.nih.gov/books/NBK570593/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read the chapter
           </a>
         </li>
 
         <li>
-          <strong>Society of Radiologists in Ultrasound Consensus</strong> —
-          sonographic features of simple cysts, including
-          anechoic appearance and posterior acoustic enhancement.
+          <strong>Society of Radiologists in Ultrasound Consensus</strong>
+          — <em>Consensus terminology and characterization of cystic lesions</em><br>
+          Ultrasound appearance and terminology related to simple and complex cystic structures.
           <br>
-          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6939954/"
-             target="_blank" rel="noopener noreferrer">
-            PubMed Central (PMC)
+          <a
+            href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6939954/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read the article
           </a>
         </li>
 
@@ -1243,8 +1317,12 @@
   </article>
 
 
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
   <footer>
-    © 2026 Med Imaging Hub · Created &amp; curated by Zara Ashraf
+    © 2026 Med Imaging Hub · Created &amp; curated by <strong>Zara Ashraf</strong>
   </footer>
 
 </body>
