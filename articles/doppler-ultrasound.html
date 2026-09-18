@@ -1,1 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>What Is Doppler Ultrasound and How Does It Work? | Med Imaging Hub</title>
+
+  <meta name="description" content="Learn how Doppler ultrasound evaluates blood flow, including the Doppler effect, Color Doppler, Power Doppler, Spectral Doppler, Doppler angle, and common clinical applications.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 8%;
+      border-bottom: 1px solid #eef1f4;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #17202a;
+      text-decoration: none;
+      letter-spacing: -0.4px;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475467;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* =========================
+       ARTICLE HEADER
+    ========================= */
+
+    .article-header {
+      text-align: center;
+      padding: 75px 25px 60px;
+      background:
+        radial-gradient(
+          circle at top left,
+          #eff6ff 0%,
+          #f8fafc 38%,
+          #ffffff 75%
+        );
+    }
+
+    .article-label {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .article-header h1 {
+      max-width: 900px;
+      margin: 0 auto 16px;
+      font-size: 48px;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      color: #17202a;
+    }
+
+    .article-subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #667085;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       ARTICLE
+    ========================= */
+
+    article {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 65px 25px 90px;
+    }
+
+    article h2 {
+      font-size: 29px;
+      line-height: 1.3;
+      margin: 48px 0 18px;
+      color: #17202a;
+      letter-spacing: -0.5px;
+    }
+
+    article h3 {
+      font-size: 21px;
+      line-height: 1.4;
+      margin: 38px 0 16px;
+      color: #17202a;
+    }
+
+    article p {
+      margin: 0 0 18px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.75;
+    }
+
+    article ul {
+      margin: 10px 0 20px 22px;
+      padding: 0;
+    }
+
+    article li {
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.65;
+    }
+
+    article strong {
+      color: #17202a;
+    }
+
+    /* =========================
+       HIGHLIGHT BOX
+    ========================= */
+
+    .highlight {
+      margin: 25px 0;
+      padding: 22px 25px;
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .highlight strong {
+      color: #2563eb;
+    }
+
+    /* =========================
+       IMAGES
+    ========================= */
+
+    .article-image {
+      margin: 35px auto 42px;
+      text-align: center;
+    }
+
+    .article-image img {
+      display: block;
+      width: 100%;
+      max-width: 620px;
+      max-height: 390px;
+      object-fit: contain;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid #e8edf2;
+      background: #f8fafc;
+    }
+
+    .image-caption {
+      margin-top: 10px;
+      color: #667085;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .image-credit {
+      margin-top: 4px;
+      color: #98a2b3;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .image-credit a,
+    .sources a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    /* =========================
+       TABLES
+    ========================= */
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 25px 0 35px;
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+      background: #ffffff;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e8edf2;
+      vertical-align: top;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    th {
+      background: #f8fafc;
+      color: #17202a;
+      font-weight: 700;
+    }
+
+    td {
+      color: #374151;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* =========================
+       TAKEAWAY
+    ========================= */
+
+    .takeaway {
+      margin-top: 50px;
+      padding: 28px;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 15px;
+    }
+
+    .takeaway h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    .takeaway p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       SOURCES
+    ========================= */
+
+    .sources {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid #e8edf2;
+    }
+
+    .sources h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .sources ol {
+      margin: 15px 0 0 20px;
+      padding: 0;
+    }
+
+    .sources li {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #667085;
+      line-height: 1.6;
+    }
+
+    .sources strong {
+      color: #17202a;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 8%;
+      border-top: 1px solid #eef1f4;
+      text-align: center;
+      color: #667085;
+      font-size: 13px;
+      background: #ffffff;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .article-header {
+        padding: 55px 20px 45px;
+      }
+
+      .article-header h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+      }
+
+      .article-subtitle {
+        font-size: 15px;
+      }
+
+      article {
+        padding: 45px 20px 70px;
+      }
+
+      article h2 {
+        font-size: 25px;
+      }
+
+      article p,
+      article li {
+        font-size: 15.5px;
+      }
+
+      .highlight {
+        padding: 20px;
+        font-size: 16px;
+      }
+
+      .article-image img {
+        max-width: 100%;
+        max-height: 330px;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <a href="../index.html" class="logo">
+      Med Imaging <span>Hub</span>
+    </a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../articles.html">Articles</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       ARTICLE HEADER
+  ========================= -->
+
+  <section class="article-header">
+
+    <div class="article-label">
+      Ultrasound
+    </div>
+
+    <h1>
+      What Is Doppler Ultrasound and How Does It Work?
+    </h1>
+
+    <p class="article-subtitle">
+      Learn how Doppler helps us assess blood flow and movement inside the body.
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       ARTICLE CONTENT
+  ========================= -->
+
+  <article>
+
+    <p>
+      Ultrasound allows us to see structures inside the body using
+      sound waves. But sometimes, looking at anatomy alone is not enough. We also
+      need to understand how blood is moving through blood vessels.
+    </p>
+
+    <p>
+      This is where <strong>Doppler ultrasound</strong> becomes useful.
+    </p>
+
+    <p>
+      Doppler ultrasound is a technique that evaluates blood flow by
+      detecting changes in sound waves reflected from moving blood cells. It helps
+      assess the direction and speed of blood flow through arteries, veins, and
+      other parts of the circulatory system.
+    </p>
+
+    <p>
+      In this article, we'll explore how Doppler ultrasound works and
+      why it is an important part of medical imaging.
+    </p>
+
+
+    <!-- =========================
+         WHAT IS DOPPLER
+    ========================= -->
+
+    <h2>
+      What Is Doppler Ultrasound?
+    </h2>
+
+    <p>
+      Doppler ultrasound is a specialized ultrasound technique that
+      uses the <strong>Doppler effect</strong> to assess the movement of blood,
+      particularly red blood cells, within blood vessels.
+    </p>
+
+    <p>
+      A conventional ultrasound examination primarily provides images
+      of anatomical structures, such as organs, tissues, and blood vessels.
+      Doppler adds information about blood movement that cannot be obtained from
+      a conventional grayscale image alone.
+    </p>
+
+    <p>
+      It can help assess:
+    </p>
+
+    <ul>
+      <li>Direction of blood flow</li>
+      <li>Velocity of blood flow</li>
+      <li>Changes in blood flow associated with narrowing or obstruction</li>
+      <li>Blood supply to organs and tissues</li>
+    </ul>
+
+    <p>
+      Doppler can be performed alongside conventional ultrasound,
+      allowing anatomical information and blood-flow information to be assessed
+      during the same examination.
+    </p>
+
+
+    <!-- =========================
+         MAIN IMAGE
+    ========================= -->
+
+    <div class="article-image">
+
+      <img
+        src="../images/doppler-ultrasound.jpg"
+        alt="Color Doppler ultrasound examination of a carotid artery"
+      >
+
+      <div class="image-caption">
+        Color Doppler ultrasound showing blood flow in a carotid artery.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:CarotidDoppler1.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Etan J. Tal / Wikimedia Commons, CC BY 3.0
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         DOPPLER EFFECT
+    ========================= -->
+
+    <h2>
+      The Basic Principle: The Doppler Effect
+    </h2>
+
+    <p>
+      To understand how Doppler ultrasound works, we first need to
+      understand the <strong>Doppler effect</strong>.
+    </p>
+
+    <p>
+      The Doppler effect means that the frequency of a wave changes
+      when there is movement between the source of the wave and the person
+      receiving it.
+    </p>
+
+    <p>
+      A simple example is an ambulance siren.
+    </p>
+
+    <ul>
+      <li>
+        <strong>When the ambulance comes toward you:</strong> the siren sounds higher.
+      </li>
+
+      <li>
+        <strong>When the ambulance moves away:</strong> the siren sounds lower.
+      </li>
+    </ul>
+
+    <p>
+      This happens because the movement of the ambulance changes the
+      frequency of the sound waves reaching your ears.
+    </p>
+
+    <p>
+      Doppler ultrasound uses a similar principle, but instead of an
+      ambulance, we are interested in <strong>moving red blood cells</strong>.
+    </p>
+
+    <p>
+      The ultrasound transducer sends sound waves into the body. These
+      waves interact with moving blood cells and return to the transducer as
+      echoes.
+    </p>
+
+    <p>
+      Because the blood cells are moving, the frequency of the returning
+      echoes can be different from the frequency of the transmitted sound waves.
+    </p>
+
+    <div class="highlight">
+
+      The ultrasound system analyzes this frequency change to obtain
+      information about blood flow.
+
+    </div>
+
+
+    <!-- =========================
+         HOW IT WORKS
+    ========================= -->
+
+    <h2>
+      How Does Doppler Ultrasound Work?
+    </h2>
+
+    <h3>
+      Step 1 — The transducer sends sound waves
+    </h3>
+
+    <p>
+      The ultrasound transducer sends high-frequency sound waves into
+      the body.
+    </p>
+
+    <h3>
+      Step 2 — The waves interact with moving blood
+    </h3>
+
+    <p>
+      The sound waves interact with moving blood cells. Some of the
+      sound energy is reflected back toward the transducer.
+    </p>
+
+    <h3>
+      Step 3 — The system detects a frequency shift
+    </h3>
+
+    <p>
+      The system compares the returning echoes with the transmitted
+      sound waves.
+    </p>
+
+    <p>
+      A <strong>positive or negative frequency shift</strong> can indicate
+      motion relative to the ultrasound beam, while the magnitude of the shift is
+      related to the velocity of blood flow.
+    </p>
+
+    <p>
+      However, the measurement also depends on the <strong>angle between
+      the ultrasound beam and the direction of blood flow</strong>.
+    </p>
+
+    <h3>
+      Step 4 — The computer displays the blood-flow information
+    </h3>
+
+    <p>
+      Depending on the Doppler technique being used, the system can
+      display blood-flow information in different ways:
+    </p>
+
+    <ul>
+      <li><strong>Color Doppler</strong> → displays flow information as colors</li>
+      <li><strong>Spectral Doppler</strong> → displays velocity as a waveform</li>
+      <li><strong>Power Doppler</strong> → displays the strength of Doppler signals</li>
+    </ul>
+
+    <p>
+      This allows the examiner to assess blood flow in addition to the
+      grayscale anatomy seen on conventional ultrasound.
+    </p>
+
+
+    <!-- =========================
+         WHAT INFORMATION
+    ========================= -->
+
+    <h2>
+      What Information Does Doppler Ultrasound Provide?
+    </h2>
+
+    <h3>
+      1. Direction of Blood Flow
+    </h3>
+
+    <p>
+      Doppler can show whether blood is moving toward or away from the
+      transducer.
+    </p>
+
+    <p>
+      A commonly used color map is known as <strong>BART</strong>:
+    </p>
+
+    <div class="highlight">
+
+      <p><strong>Blue → Away</strong></p>
+
+      <p><strong>Red → Toward</strong></p>
+
+    </div>
+
+    <p>
+      BART stands for <strong>Blue Away, Red Toward</strong>.
+    </p>
+
+    <p>
+      However, red does not automatically mean artery and blue does not
+      automatically mean vein. The colors show the direction of flow relative to
+      the transducer, not the type of blood vessel.
+    </p>
+
+    <p>
+      The color map can also be changed on the ultrasound system, so
+      the examiner should always check the color scale displayed on the screen.
+    </p>
+
+
+    <h3>
+      2. Blood-Flow Velocity
+    </h3>
+
+    <p>
+      Doppler can help estimate how fast blood is moving.
+    </p>
+
+    <p>
+      Velocity is commonly expressed in <strong>cm/s</strong> or
+      <strong>m/s</strong>.
+    </p>
+
+    <p>
+      Doppler can identify changes in velocity, such as increased
+      velocity through a narrowed blood vessel.
+    </p>
+
+    <p>
+      The measured velocity is affected by the Doppler angle, so the
+      ultrasound beam must be positioned appropriately.
+    </p>
+
+
+    <h3>
+      3. Flow Patterns
+    </h3>
+
+    <p>
+      Blood velocity changes during the cardiac cycle because the heart
+      contracts and relaxes.
+    </p>
+
+    <p>
+      Spectral Doppler can display these changes as a waveform over
+      time.
+    </p>
+
+    <p>
+      Measurements such as <strong>peak systolic velocity (PSV)</strong>
+      can be obtained from the waveform.
+    </p>
+
+    <p>
+      Normal waveform patterns differ between vessels, so measurements
+      should be interpreted according to the vessel being examined, the scanning
+      protocol, and the clinical situation.
+    </p>
+
+
+    <!-- =========================
+         TYPES
+    ========================= -->
+
+    <h2>
+      Main Types of Doppler Ultrasound
+    </h2>
+
+    <h3>
+      1. Color Doppler
+    </h3>
+
+    <p>
+      Color Doppler displays blood-flow information as colors
+      superimposed on the grayscale ultrasound image.
+    </p>
+
+    <p>
+      It can help assess:
+    </p>
+
+    <ul>
+      <li>Direction of flow relative to the transducer</li>
+      <li>Distribution of blood flow within a vessel</li>
+      <li>Areas of abnormal or disturbed flow</li>
+    </ul>
+
+    <p>
+      Remember that the colors are measurements of flow information.
+      They do not automatically identify a vessel as an artery or vein.
+    </p>
+
+
+    <h3>
+      2. Power Doppler
+    </h3>
+
+    <p>
+      Power Doppler displays the <strong>strength of Doppler signals</strong>
+      rather than their direction or velocity.
+    </p>
+
+    <p>
+      It is generally more sensitive than conventional Color Doppler
+      for detecting weak or slow blood flow, depending on the equipment and
+      settings being used.
+    </p>
+
+    <p>
+      Its main limitation is that it does not provide reliable
+      directional information like Color Doppler.
+    </p>
+
+
+    <h3>
+      3. Spectral Doppler
+    </h3>
+
+    <p>
+      Spectral Doppler displays blood-flow velocity as a graph over
+      time.
+    </p>
+
+    <p>
+      The <strong>horizontal axis</strong> generally represents time,
+      while the <strong>vertical axis</strong> represents velocity.
+    </p>
+
+    <p>
+      There are two important types of Spectral Doppler:
+    </p>
+
+    <h3>
+      Pulsed-Wave Doppler (PW)
+    </h3>
+
+    <p>
+      PW Doppler sends short pulses of ultrasound and allows the
+      examiner to choose where the measurement is taken.
+    </p>
+
+    <p>
+      A small <strong>sample gate</strong> can be placed at a specific
+      location inside the vessel, allowing the system to measure flow at a
+      particular depth.
+    </p>
+
+    <p>
+      The limitation is that very high velocities can exceed the
+      sampling limit and produce <strong>aliasing</strong>.
+    </p>
+
+    <h3>
+      Continuous-Wave Doppler (CW)
+    </h3>
+
+    <p>
+      CW Doppler continuously sends and receives ultrasound signals.
+      It is useful for measuring very high velocities because it does not have the
+      same pulsed-wave aliasing limitation.
+    </p>
+
+    <p>
+      However, CW Doppler receives signals along the ultrasound beam,
+      so it cannot identify the exact depth from which a particular high-velocity
+      signal originated.
+    </p>
+
+    <div class="highlight">
+
+      <p>
+        <strong>PW Doppler:</strong> “I can tell you where the blood-flow
+        measurement is coming from, but very high velocities can cause aliasing.”
+      </p>
+
+      <p>
+        <strong>CW Doppler:</strong> “I can measure very high velocities, but I
+        cannot tell you the exact depth where that velocity occurred.”
+      </p>
+
+    </div>
+
+    <p>
+      Spectral Doppler is commonly used in vascular ultrasound and
+      echocardiography.
+    </p>
+
+
+    <div class="article-image">
+
+      <img
+        src="../images/spectral-doppler.jpg"
+        alt="Spectral Doppler ultrasound waveform"
+      >
+
+      <div class="image-caption">
+        Example of a spectral Doppler waveform used to display blood-flow velocity over time.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:SpectralDopplerA.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wikimedia Commons — SpectralDopplerA.jpg
+        </a>
+      </div>
+
+    </div>
+
+
+    <h3>
+      4. Duplex Ultrasound
+    </h3>
+
+    <p>
+      Duplex ultrasound combines <strong>grayscale imaging and Doppler</strong>
+      in the same examination.
+    </p>
+
+    <p>
+      This means the examiner can see the structure of a blood vessel
+      on the grayscale image while also assessing blood flow with Doppler.
+    </p>
+
+    <p>
+      If spectral Doppler is also included, the examination is often
+      called a <strong>triplex ultrasound or triplex study</strong>. Terminology
+      can vary between hospitals and clinical settings.
+    </p>
+
+
+    <div class="article-image">
+
+      <img
+        src="../images/duplex-ultrasound.jpg"
+        alt="Duplex carotid ultrasound showing anatomy, color Doppler and waveform"
+      >
+
+      <div class="image-caption">
+        Duplex carotid ultrasound showing vessel anatomy with Doppler flow information and waveform.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Carotid_ultrasound.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          National Heart, Lung and Blood Institute (NIH) / Wikimedia Commons, Public Domain
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         DOPPLER ANGLE
+    ========================= -->
+
+    <h2>
+      What Is the Doppler Angle and Why Does It Matter?
+    </h2>
+
+    <p>
+      The <strong>Doppler angle</strong> is the angle between the ultrasound
+      beam and the direction in which blood is flowing.
+    </p>
+
+    <p>
+      This angle is important because Doppler ultrasound uses the
+      change in frequency of the returning sound waves to estimate how fast blood
+      is moving.
+    </p>
+
+    <p>
+      If the ultrasound beam is positioned at a suitable angle to the
+      blood flow, the machine can make a more reliable estimate of blood velocity.
+    </p>
+
+    <p>
+      In vascular ultrasound, examiners commonly use an angle of
+      <strong>60° or less</strong> when measuring blood velocity with angle
+      correction.
+    </p>
+
+    <p>
+      An incorrect angle can make the measured velocity inaccurate.
+    </p>
+
+    <p>
+      To obtain a reliable measurement, the examiner needs to:
+    </p>
+
+    <ul>
+      <li>Identify the correct blood vessel</li>
+      <li>Position the Doppler sample correctly inside the vessel</li>
+      <li>Align the ultrasound beam appropriately with the direction of flow</li>
+      <li>Apply the correct angle correction</li>
+      <li>Follow the appropriate scanning protocol</li>
+    </ul>
+
+    <div class="highlight">
+
+      <strong>Student takeaway:</strong> Doppler velocity does not depend only on
+      the frequency change. The angle between the ultrasound beam and blood flow
+      also affects the velocity measurement.
+
+    </div>
+
+
+    <!-- =========================
+         ALIASING
+    ========================= -->
+
+    <h2>
+      What Is Aliasing in Doppler?
+    </h2>
+
+    <p>
+      Aliasing is a limitation that can occur particularly with
+      <strong>PW Doppler and Color Doppler</strong> when the Doppler frequency
+      shift is too high for the system to sample correctly.
+    </p>
+
+    <p>
+      In simple terms, the machine cannot accurately represent a very
+      high velocity, so the displayed velocity can appear incorrectly.
+    </p>
+
+    <p>
+      In Color Doppler, aliasing may appear as a sudden change or
+      mixture of colors, even though the blood has not actually changed direction.
+    </p>
+
+    <div class="highlight">
+
+      <strong>Simple idea:</strong> Aliasing can make very fast blood flow look
+      incorrectly represented on the Doppler display.
+
+    </div>
+
+
+    <!-- =========================
+         CLINICAL APPLICATIONS
+    ========================= -->
+
+    <h2>
+      Clinical Applications of Doppler Ultrasound
+    </h2>
+
+    <h3>
+      Vascular Ultrasound
+    </h3>
+
+    <p>
+      Doppler is widely used to examine blood vessels in areas such as
+      the neck, arms, and legs.
+    </p>
+
+    <p>
+      It can help assess blood flow and identify changes associated
+      with narrowing, obstruction, or other vascular abnormalities.
+    </p>
+
+    <p>
+      Venous ultrasound can also be used to evaluate blood flow and
+      investigate possible clots in deep veins. Assessment of suspected deep vein
+      thrombosis usually combines Doppler information with other ultrasound
+      findings, including vein compression.
+    </p>
+
+
+    <h3>
+      Carotid Doppler
+    </h3>
+
+    <p>
+      The carotid arteries supply blood to the brain. Carotid
+      ultrasound commonly includes Doppler to assess blood flow and characteristics
+      associated with narrowing of these arteries.
+    </p>
+
+    <p>
+      These findings can contribute to the assessment of conditions
+      related to stroke risk, together with the patient's clinical information and
+      other investigations.
+    </p>
+
+
+    <h3>
+      Cardiac Doppler
+    </h3>
+
+    <p>
+      Doppler is an important part of <strong>echocardiography</strong>.
+      It can assess blood flow through the heart chambers and across the heart
+      valves.
+    </p>
+
+    <p>
+      This helps evaluate abnormal flow patterns and conditions
+      involving the heart valves.
+    </p>
+
+
+    <h3>
+      Obstetric Doppler
+    </h3>
+
+    <p>
+      In pregnancy, Doppler may be used when clinically indicated to
+      assess blood flow in the fetus and placenta.
+    </p>
+
+    <p>
+      For example, Doppler measurements can be obtained from vessels
+      such as the <strong>umbilical artery</strong>.
+    </p>
+
+    <p>
+      These measurements are interpreted together with other ultrasound
+      findings and the clinical situation.
+    </p>
+
+
+    <h3>
+      Organ and Transplant Imaging
+    </h3>
+
+    <p>
+      Doppler can also be used to assess blood supply to organs,
+      including transplanted organs.
+    </p>
+
+    <p>
+      It can help evaluate whether blood is reaching the organ and
+      whether there are abnormalities in the vessels or blood flow.
+    </p>
+
+
+    <div class="article-image">
+
+      <img
+        src="../images/doppler-dvt.jpg"
+        alt="Ultrasound image showing deep vein thrombosis in the femoral vein"
+      >
+
+      <div class="image-caption">
+        Ultrasound example of deep vein thrombosis involving the femoral vein.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Ultrasonography_of_deep_vein_thrombosis_of_the_femoral_vein_-annotated.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Mikael Häggström / Wikimedia Commons, CC0
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         DOPPLER VS CONVENTIONAL
+    ========================= -->
+
+    <h2>
+      Doppler vs Conventional Ultrasound
+    </h2>
+
+    <p>
+      Conventional grayscale ultrasound and Doppler ultrasound are
+      not completely separate imaging technologies.
+    </p>
+
+    <p>
+      Doppler is a specialized technique that can be integrated with
+      conventional ultrasound to provide additional information about movement,
+      particularly blood flow.
+    </p>
+
+    <div class="table-wrapper">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Conventional Ultrasound</th>
+            <th>Doppler Ultrasound</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td><strong>Main purpose</strong></td>
+            <td>Shows anatomy and tissue structures</td>
+            <td>Assesses movement, especially blood flow</td>
+          </tr>
+
+          <tr>
+            <td><strong>Sound-wave information</strong></td>
+            <td>Uses reflected echoes to create an image</td>
+            <td>Analyzes echoes from moving structures to obtain Doppler information</td>
+          </tr>
+
+          <tr>
+            <td><strong>Blood-flow information</strong></td>
+            <td>Not directly measured with standard grayscale imaging</td>
+            <td>Can assess flow direction and velocity depending on the technique</td>
+          </tr>
+
+          <tr>
+            <td><strong>Display</strong></td>
+            <td>Primarily grayscale</td>
+            <td>May include color maps and/or waveforms</td>
+          </tr>
+
+          <tr>
+            <td><strong>Clinical use</strong></td>
+            <td>Organs, tissues, and anatomical structures</td>
+            <td>Vascular flow and other movement-related information</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <!-- =========================
+         LIMITATIONS
+    ========================= -->
+
+    <h2>
+      Limitations of Doppler Ultrasound
+    </h2>
+
+    <p>
+      Doppler ultrasound is very useful, but it also has limitations.
+    </p>
+
+    <ul>
+      <li>
+        <strong>Angle dependence:</strong> velocity measurements are affected by
+        the angle between the ultrasound beam and blood flow.
+      </li>
+
+      <li>
+        <strong>Slow-flow detection:</strong> very slow blood flow can be difficult
+        to detect depending on the equipment and settings.
+      </li>
+
+      <li>
+        <strong>Aliasing:</strong> very high velocities can exceed the sampling
+        limit of PW Doppler and affect the display.
+      </li>
+
+      <li>
+        <strong>Deep or difficult-to-access vessels:</strong> image quality and
+        Doppler signals can become limited when vessels are very deep or difficult
+        to insonate.
+      </li>
+
+      <li>
+        <strong>Operator dependence:</strong> correct vessel identification,
+        probe positioning, Doppler angle, settings, and technique all affect the
+        quality of the examination.
+      </li>
+    </ul>
+
+    <p>
+      If ultrasound does not provide enough information for a particular
+      clinical question, other imaging techniques may be considered depending on
+      the situation.
+    </p>
+
+
+    <!-- =========================
+         SAFETY
+    ========================= -->
+
+    <h2>
+      Is Doppler Ultrasound Safe?
+    </h2>
+
+    <p>
+      Ultrasound, including Doppler ultrasound, uses <strong>sound waves
+      rather than ionizing radiation</strong>.
+    </p>
+
+    <p>
+      This means it does not use the type of radiation associated with
+      X-ray or CT imaging.
+    </p>
+
+    <p>
+      However, ultrasound energy can produce thermal and mechanical
+      effects in tissue. For this reason, ultrasound examinations should be
+      performed appropriately and using the lowest output necessary to obtain the
+      required diagnostic information.
+    </p>
+
+
+    <!-- =========================
+         EASIEST WAY TO REMEMBER
+    ========================= -->
+
+    <h2>
+      The Easiest Way to Remember Doppler
+    </h2>
+
+    <p>
+      If you're just starting to learn Doppler, remember the basic
+      sequence:
+    </p>
+
+    <div class="highlight">
+
+      <p><strong>Transducer → sends sound waves</strong></p>
+
+      <p><strong>Moving blood cells → reflect sound waves</strong></p>
+
+      <p><strong>Frequency changes → are detected by the system</strong></p>
+
+      <p><strong>Computer → displays information about blood flow</strong></p>
+
+    </div>
+
+    <p>
+      The Doppler information can then be displayed as <strong>colors,
+      waveforms, or signal strength</strong>, depending on the Doppler technique
+      being used.
+    </p>
+
+
+    <!-- =========================
+         KEY TAKEAWAYS
+    ========================= -->
+
+    <h2>
+      Key Takeaways
+    </h2>
+
+    <div class="table-wrapper">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Concept</th>
+            <th>Remember</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td><strong>Doppler ultrasound</strong></td>
+            <td>Assesses blood flow and movement using the Doppler effect.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Doppler effect</strong></td>
+            <td>Movement causes a change in the frequency of returning sound waves.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Color Doppler</strong></td>
+            <td>Displays flow information using colors.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Power Doppler</strong></td>
+            <td>Displays Doppler signal strength and is useful for weak or slow flow.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Spectral Doppler</strong></td>
+            <td>Displays blood-flow velocity as a waveform over time.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Doppler angle</strong></td>
+            <td>Affects velocity measurement and is important for accurate angle-corrected measurements.</td>
+          </tr>
+
+          <tr>
+            <td><strong>PW Doppler</strong></td>
+            <td>Allows measurement at a selected depth but can show aliasing at high velocities.</td>
+          </tr>
+
+          <tr>
+            <td><strong>CW Doppler</strong></td>
+            <td>Measures very high velocities but does not provide exact depth information.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Duplex ultrasound</strong></td>
+            <td>Combines grayscale anatomy with Doppler information.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Safety</strong></td>
+            <td>Uses sound waves rather than ionizing radiation.</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <!-- =========================
+         TAKEAWAY
+    ========================= -->
+
+    <div class="takeaway">
+
+      <p>
+        Doppler ultrasound adds something important to conventional
+        ultrasound: <strong>information about movement and blood flow</strong>.
+      </p>
+
+      <p>
+        Instead of only asking, “What does this structure look like?”
+        Doppler also helps us ask:
+      </p>
+
+      <p>
+        <strong>“How is blood moving through it?”</strong>
+      </p>
+
+      <p>
+        Understanding the Doppler effect, flow direction, velocity,
+        Doppler angle, and the different Doppler techniques makes vascular and
+        other ultrasound examinations much easier to understand.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         SOURCES
+    ========================= -->
+
+    <section class="sources">
+
+      <h3>
+        Sources &amp; Further Reading
+      </h3>
+
+      <ol>
+
+        <li>
+          <strong>RadiologyInfo.org</strong>
+          — <em>General Ultrasound</em><br>
+          Basic principles, uses, and safety information for diagnostic ultrasound.
+        </li>
+
+        <li>
+          <strong>RadiologyInfo.org</strong>
+          — <em>Vascular Ultrasound</em><br>
+          Information about ultrasound and Doppler assessment of blood vessels.
+        </li>
+
+        <li>
+          <strong>MedlinePlus</strong>
+          — <em>Doppler Ultrasound</em><br>
+          Basic information about Doppler ultrasound and blood-flow assessment.
+        </li>
+
+        <li>
+          <strong>U.S. Food and Drug Administration (FDA)</strong>
+          — <em>Ultrasound Imaging</em><br>
+          Information about ultrasound imaging, benefits, and safety considerations.
+        </li>
+
+      </ol>
+
+    </section>
+
+  </article>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+    © 2026 Med Imaging Hub · Created &amp; curated by <strong>Zara Ashraf</strong>
+  </footer>
+
+</body>
+</html>
