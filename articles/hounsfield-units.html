@@ -1,1 +1,910 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>What Are Hounsfield Units (HU)? | Med Imaging Hub</title>
+
+  <meta name="description" content="A simple explanation of Hounsfield Units, CT numbers, X-ray attenuation, and what HU values tell us about different tissues on CT images.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 8%;
+      border-bottom: 1px solid #eef1f4;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #17202a;
+      text-decoration: none;
+      letter-spacing: -0.4px;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475467;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* =========================
+       ARTICLE HEADER
+    ========================= */
+
+    .article-header {
+      text-align: center;
+      padding: 75px 25px 60px;
+      background:
+        radial-gradient(
+          circle at top left,
+          #eff6ff 0%,
+          #f8fafc 38%,
+          #ffffff 75%
+        );
+    }
+
+    .article-label {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .article-header h1 {
+      max-width: 900px;
+      margin: 0 auto 16px;
+      font-size: 48px;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      color: #17202a;
+    }
+
+    .article-subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #667085;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       ARTICLE
+    ========================= */
+
+    article {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 65px 25px 90px;
+    }
+
+    article h2 {
+      font-size: 29px;
+      line-height: 1.3;
+      margin: 48px 0 18px;
+      color: #17202a;
+      letter-spacing: -0.5px;
+    }
+
+    article h3 {
+      font-size: 21px;
+      line-height: 1.4;
+      margin: 38px 0 16px;
+      color: #17202a;
+    }
+
+    article p {
+      margin: 0 0 18px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.75;
+    }
+
+    article ul {
+      margin: 10px 0 20px 22px;
+      padding: 0;
+    }
+
+    article li {
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.65;
+    }
+
+    article strong {
+      color: #17202a;
+    }
+
+    /* =========================
+       HIGHLIGHT BOX
+    ========================= */
+
+    .highlight {
+      margin: 25px 0;
+      padding: 22px 25px;
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .highlight strong {
+      color: #2563eb;
+    }
+
+    /* =========================
+       IMAGES
+    ========================= */
+
+    .article-image {
+      margin: 35px auto 42px;
+      text-align: center;
+    }
+
+    .article-image img {
+      display: block;
+      width: 100%;
+      max-width: 620px;
+      max-height: 390px;
+      object-fit: contain;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid #e8edf2;
+      background: #f8fafc;
+    }
+
+    .image-caption {
+      margin-top: 10px;
+      color: #667085;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .image-credit {
+      margin-top: 4px;
+      color: #98a2b3;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .image-credit a,
+    .sources a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    /* =========================
+       TABLES
+    ========================= */
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 25px 0 35px;
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+      background: #ffffff;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e8edf2;
+      vertical-align: top;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    th {
+      background: #f8fafc;
+      color: #17202a;
+      font-weight: 700;
+    }
+
+    td {
+      color: #374151;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* =========================
+       TAKEAWAY
+    ========================= */
+
+    .takeaway {
+      margin-top: 50px;
+      padding: 28px;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 15px;
+    }
+
+    .takeaway h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    .takeaway p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       SOURCES
+    ========================= */
+
+    .sources {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid #e8edf2;
+    }
+
+    .sources h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .sources ol {
+      margin: 15px 0 0 20px;
+      padding: 0;
+    }
+
+    .sources li {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #667085;
+      line-height: 1.6;
+    }
+
+    .sources strong {
+      color: #17202a;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 8%;
+      border-top: 1px solid #eef1f4;
+      text-align: center;
+      color: #667085;
+      font-size: 13px;
+      background: #ffffff;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .article-header {
+        padding: 55px 20px 45px;
+      }
+
+      .article-header h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+      }
+
+      .article-subtitle {
+        font-size: 15px;
+      }
+
+      article {
+        padding: 45px 20px 70px;
+      }
+
+      article h2 {
+        font-size: 25px;
+      }
+
+      article p,
+      article li {
+        font-size: 15.5px;
+      }
+
+      .highlight {
+        padding: 20px;
+        font-size: 16px;
+      }
+
+      .article-image img {
+        max-width: 100%;
+        max-height: 330px;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <a href="../index.html" class="logo">
+      Med Imaging <span>Hub</span>
+    </a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../articles.html">Articles</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       ARTICLE HEADER
+  ========================= -->
+
+  <section class="article-header">
+
+    <div class="article-label">
+      CT Basics
+    </div>
+
+    <h1>
+      What Are Hounsfield Units (HU)?
+    </h1>
+
+    <p class="article-subtitle">
+      A simple explanation of CT numbers and what they tell us about different tissues.
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       ARTICLE CONTENT
+  ========================= -->
+
+  <article>
+
+    <h2>
+      What Are Hounsfield Units?
+    </h2>
+
+    <p>
+      When a CT scan is reconstructed, the tissues inside the body
+      are represented by different shades of gray. But CT images are not based only
+      on how light or dark a tissue looks.
+    </p>
+
+    <p>
+      Each part of the image is assigned a numerical value based
+      on how much it attenuates X-rays. These values are called <strong>Hounsfield Units
+      (HU)</strong>.
+    </p>
+
+    <p>
+      In simple words, <strong>HU are numbers that help describe the
+      X-ray attenuation of different tissues on a CT image.</strong>
+    </p>
+
+
+    <!-- =========================
+         WHY HU ARE USED
+    ========================= -->
+
+    <h2>
+      Why Are HU Used?
+    </h2>
+
+    <p>
+      Different tissues attenuate X-rays by different amounts.
+    </p>
+
+    <p>
+      For example, air allows most X-rays to pass through, while
+      bone attenuates much more. Because of these differences, the tissues receive
+      different CT numbers.
+    </p>
+
+    <p>
+      The HU scale gives these differences a standard numerical
+      reference.
+    </p>
+
+    <p>
+      The scale is based on <strong>water</strong>, which is assigned a
+      value of approximately <strong>0 HU</strong>.
+    </p>
+
+
+    <!-- =========================
+         HU SCALE IMAGE
+    ========================= -->
+
+    <div class="article-image">
+
+      <img
+        src="../images/hounsfield-units-scale.png"
+        alt="Hounsfield Units scale showing approximate CT attenuation values for air, fat, water, soft tissue, and bone"
+      >
+
+      <div class="image-caption">
+        Approximate Hounsfield Unit values for commonly encountered materials and tissues.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        Created for Med Imaging Hub.
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         HU TABLE
+    ========================= -->
+
+    <div class="table-wrapper">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Material / Tissue</th>
+            <th>Approximate HU</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td><strong>Air</strong></td>
+            <td>−1000</td>
+          </tr>
+
+          <tr>
+            <td><strong>Fat</strong></td>
+            <td>−100 to −50</td>
+          </tr>
+
+          <tr>
+            <td><strong>Water</strong></td>
+            <td>0</td>
+          </tr>
+
+          <tr>
+            <td><strong>Soft tissue</strong></td>
+            <td>+20 to +80</td>
+          </tr>
+
+          <tr>
+            <td><strong>Bone</strong></td>
+            <td>+300 to +1000 or more</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <p>
+      These values are approximate rather than fixed numbers. The
+      measured HU of a tissue can vary depending on factors such as the CT scanner,
+      scanning technique, reconstruction method, and the particular tissue being
+      measured.
+    </p>
+
+
+    <!-- =========================
+         HOW CT PRODUCES NUMBERS
+    ========================= -->
+
+    <h2>
+      How Does CT Produce These Numbers?
+    </h2>
+
+    <p>
+      The CT scanner measures how much the X-ray beam is
+      attenuated as it passes through the body.
+    </p>
+
+    <p>
+      The reconstruction process uses measurements collected from
+      many different directions to estimate the attenuation within the scanned
+      region.
+    </p>
+
+    <p>
+      The resulting values are converted into CT numbers on the
+      Hounsfield scale.
+    </p>
+
+    <div class="highlight">
+
+      <strong>
+        X-ray attenuation → reconstruction → CT number (HU)
+      </strong>
+
+    </div>
+
+    <p>
+      The HU value is then displayed as part of the CT image,
+      where different ranges of values appear as different shades of gray.
+    </p>
+
+
+    <!-- =========================
+         WATER
+    ========================= -->
+
+    <h2>
+      Why Does Water Have a Value of 0 HU?
+    </h2>
+
+    <p>
+      Water is used as the reference point for the Hounsfield
+      scale.
+    </p>
+
+    <p>
+      By convention:
+    </p>
+
+    <div class="highlight">
+
+      <strong>
+        Water ≈ 0 HU
+      </strong>
+
+    </div>
+
+    <p>
+      Materials that attenuate X-rays less than water generally
+      have negative values, while materials that attenuate X-rays more strongly
+      generally have positive values.
+    </p>
+
+    <p>
+      That is why:
+    </p>
+
+    <ul>
+
+      <li>
+        <strong>Air</strong> has a very low, negative HU value.
+      </li>
+
+      <li>
+        <strong>Fat</strong> has a negative HU value.
+      </li>
+
+      <li>
+        <strong>Water</strong> is around 0 HU.
+      </li>
+
+      <li>
+        Most <strong>soft tissues</strong> have positive values.
+      </li>
+
+      <li>
+        <strong>Bone</strong> has much higher positive values.
+      </li>
+
+    </ul>
+
+    <p>
+      This gives us a way to relate the numbers on a CT image to
+      the physical properties of the tissues being examined.
+    </p>
+
+
+    <!-- =========================
+         HU AND IMAGE APPEARANCE
+    ========================= -->
+
+    <h2>
+      HU and the Appearance of a CT Image
+    </h2>
+
+    <p>
+      HU values are closely related to the gray-scale appearance
+      of a CT image.
+    </p>
+
+    <p>
+      In general:
+    </p>
+
+    <div class="highlight">
+
+      <p><strong>Lower HU → darker</strong></p>
+
+      <p><strong>Higher HU → brighter</strong></p>
+
+    </div>
+
+    <p>
+      For example, air inside the lungs has a very low attenuation
+      value, so it appears very dark on a CT image.
+    </p>
+
+    <p>
+      Bone has a much higher attenuation value, so it appears
+      bright.
+    </p>
+
+    <p>
+      Soft tissues fall between these extremes and appear in
+      different shades of gray.
+    </p>
+
+    <p>
+      However, the way these values appear on the screen also
+      depends on the <strong>window width and window level</strong> selected for viewing the CT
+      image.
+    </p>
+
+    <p>
+      This is why the same tissue can look different when
+      different CT windows are used.
+    </p>
+
+
+    <!-- =========================
+         CLINICAL IMPORTANCE
+    ========================= -->
+
+    <h2>
+      Why Are HU Important in Clinical CT?
+    </h2>
+
+    <p>
+      HU values help radiologists and other healthcare
+      professionals distinguish between tissues and characterize structures on CT.
+    </p>
+
+    <p>
+      They can also be useful when assessing certain findings.
+    </p>
+
+    <p>
+      For example, measuring the attenuation of a structure can
+      provide information that is difficult to determine from visual appearance
+      alone.
+    </p>
+
+    <p>
+      HU can be used when evaluating things such as:
+    </p>
+
+    <ul>
+
+      <li>
+        Fat-containing lesions
+      </li>
+
+      <li>
+        Fluid
+      </li>
+
+      <li>
+        Calcification
+      </li>
+
+      <li>
+        Bone
+      </li>
+
+      <li>
+        Blood
+      </li>
+
+      <li>
+        Certain types of stones
+      </li>
+
+    </ul>
+
+    <p>
+      However, HU values should not be interpreted in isolation.
+      The patient's clinical information, the appearance of the structure, the CT
+      technique, and the appropriate imaging window all matter when interpreting a
+      finding.
+    </p>
+
+
+    <!-- =========================
+         SIMPLE MEMORY
+    ========================= -->
+
+    <h2>
+      A Simple Way to Remember HU
+    </h2>
+
+    <p>
+      Think of HU as a <strong>number assigned to the X-ray attenuation
+      of a material or tissue</strong>.
+    </p>
+
+    <p>
+      The basic reference points are:
+    </p>
+
+    <div class="highlight">
+
+      <p><strong>Air → around −1000 HU</strong></p>
+
+      <p><strong>Water → 0 HU</strong></p>
+
+      <p><strong>Bone → high positive HU</strong></p>
+
+    </div>
+
+    <p>
+      So when you see a CT image, the gray shades are not random.
+      They are related to the attenuation values calculated during image
+      reconstruction.
+    </p>
+
+
+    <!-- =========================
+         TAKEAWAY
+    ========================= -->
+
+    <div class="takeaway">
+
+      <h3>
+        Key Takeaway
+      </h3>
+
+      <p>
+        <strong>Hounsfield Units (HU) are numerical values used in CT to
+        represent X-ray attenuation.</strong>
+      </p>
+
+      <p>
+        Water is approximately <strong>0 HU</strong>, air is around
+        <strong>−1000 HU</strong>, and materials such as bone have much higher positive
+        values.
+      </p>
+
+      <p>
+        These numbers help describe the tissues seen on CT images
+        and can provide useful information when interpreting different structures.
+      </p>
+
+      <p>
+        In one line:
+      </p>
+
+      <p>
+        <strong>HU = a numerical way of describing X-ray attenuation on a CT image.</strong>
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         SOURCES
+    ========================= -->
+
+    <section class="sources">
+
+      <h3>
+        Sources &amp; Further Reading
+      </h3>
+
+      <ol>
+
+        <li>
+          <strong>Radiopaedia</strong>
+          — <em>Hounsfield unit</em><br>
+          Overview of Hounsfield Units and CT attenuation values.
+        </li>
+
+        <li>
+          <strong>NCBI Bookshelf</strong>
+          — <em>Computed Tomography</em><br>
+          CT image formation, attenuation and CT numbers.
+        </li>
+
+        <li>
+          <strong>National Institute of Biomedical Imaging and Bioengineering (NIBIB)</strong>
+          — <em>Computed Tomography (CT)</em><br>
+          Basic principles of CT imaging and image reconstruction.
+        </li>
+
+      </ol>
+
+    </section>
+
+  </article>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+    © 2026 Med Imaging Hub · Created &amp; curated by <strong>Zara Ashraf</strong>
+  </footer>
+
+</body>
+</html>
+```
