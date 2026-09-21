@@ -6,7 +6,7 @@
 
   <title>Why Is Contrast Used in CT? | Med Imaging Hub</title>
 
-  <meta name="description" content="Understand why contrast helps certain structures and abnormalities become easier to see in CT. Learn about IV, oral, and rectal contrast in simple terms.">
+  <meta name="description" content="Understand why contrast helps certain structures and abnormalities become easier to see.">
 
   <style>
     * {
@@ -15,196 +15,375 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #222;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17202a;
       background: #ffffff;
       line-height: 1.7;
     }
 
+    /* =========================
+       HEADER
+    ========================= */
+
     header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 18px 6%;
-      border-bottom: 1px solid #eee;
-      background: #fff;
+      justify-content: space-between;
+      padding: 22px 8%;
+      border-bottom: 1px solid #eef1f4;
+      background: #ffffff;
     }
 
     .logo {
       font-size: 22px;
-      font-weight: bold;
-      color: #123c69;
+      font-weight: 700;
+      color: #17202a;
+      text-decoration: none;
+      letter-spacing: -0.4px;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
     }
 
     nav a {
-      margin-left: 20px;
       text-decoration: none;
-      color: #333;
-      font-size: 15px;
+      color: #475467;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
-      color: #123c69;
+      color: #2563eb;
     }
+
+    /* =========================
+       ARTICLE HEADER
+    ========================= */
 
     .article-header {
       text-align: center;
-      padding: 55px 20px 35px;
-      max-width: 900px;
-      margin: auto;
+      padding: 75px 25px 60px;
+      background:
+        radial-gradient(
+          circle at top left,
+          #eff6ff 0%,
+          #f8fafc 38%,
+          #ffffff 75%
+        );
     }
 
     .article-label {
       display: inline-block;
-      font-size: 13px;
-      font-weight: bold;
-      color: #123c69;
-      margin-bottom: 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      margin-bottom: 18px;
     }
 
     .article-header h1 {
-      font-size: 40px;
-      margin: 0 0 15px;
-      color: #123c69;
+      max-width: 900px;
+      margin: 0 auto 16px;
+      font-size: 48px;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      color: #17202a;
     }
 
-    .article-header p {
-      font-size: 18px;
-      color: #666;
-      margin: 0;
+    .article-subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #667085;
+      font-size: 17px;
+      line-height: 1.6;
     }
+
+    /* =========================
+       ARTICLE
+    ========================= */
 
     article {
       max-width: 820px;
       margin: 0 auto;
-      padding: 10px 20px 60px;
+      padding: 65px 25px 90px;
     }
 
     article h2 {
-      font-size: 27px;
-      margin-top: 42px;
-      margin-bottom: 15px;
-      color: #123c69;
+      font-size: 29px;
+      line-height: 1.3;
+      margin: 48px 0 18px;
+      color: #17202a;
+      letter-spacing: -0.5px;
     }
 
     article h3 {
       font-size: 21px;
-      margin-top: 28px;
-      margin-bottom: 10px;
-      color: #333;
+      line-height: 1.4;
+      margin: 38px 0 16px;
+      color: #17202a;
     }
 
     article p {
-      font-size: 16px;
       margin: 0 0 18px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.75;
     }
 
     article ul {
-      margin-bottom: 22px;
-      padding-left: 25px;
+      margin: 10px 0 20px 22px;
+      padding: 0;
     }
 
     article li {
       margin-bottom: 8px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.65;
     }
+
+    article strong {
+      color: #17202a;
+    }
+
+    /* =========================
+       HIGHLIGHT BOX
+    ========================= */
 
     .highlight {
-      background: #f4f8fb;
-      border-left: 4px solid #123c69;
-      padding: 18px 20px;
       margin: 25px 0;
-      border-radius: 4px;
+      padding: 22px 25px;
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #374151;
     }
 
+    .highlight strong {
+      color: #2563eb;
+    }
+
+    /* =========================
+       IMAGES
+    ========================= */
+
     .article-image {
+      margin: 35px auto 42px;
+      text-align: center;
+    }
+
+    .article-image img {
       display: block;
       width: 100%;
       max-width: 620px;
       max-height: 390px;
       object-fit: contain;
-      margin: 30px auto 10px;
-      border-radius: 6px;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid #e8edf2;
+      background: #f8fafc;
     }
 
     .image-caption {
-      text-align: center;
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 5px;
+      margin-top: 10px;
+      color: #667085;
+      font-size: 13px;
+      line-height: 1.5;
     }
 
     .image-credit {
-      text-align: center;
+      margin-top: 4px;
+      color: #98a2b3;
       font-size: 12px;
-      color: #888;
-      margin-bottom: 30px;
+      line-height: 1.5;
     }
 
-    .takeaway {
-      background: #f4f8fb;
-      padding: 22px;
-      margin-top: 40px;
-      border-radius: 6px;
-    }
-
-    .takeaway h2 {
-      margin-top: 0;
-    }
-
-    .sources {
-      margin-top: 45px;
-      padding-top: 25px;
-      border-top: 1px solid #eee;
-    }
-
-    .sources h2 {
-      margin-top: 0;
-    }
-
-    .sources ul {
-      padding-left: 22px;
-    }
-
+    .image-credit a,
     .sources a {
-      color: #123c69;
-      text-decoration: none;
-    }
-
-    .sources a:hover {
+      color: #2563eb;
       text-decoration: underline;
     }
 
-    footer {
-      text-align: center;
-      padding: 25px 20px;
-      border-top: 1px solid #eee;
-      color: #777;
-      font-size: 14px;
+    /* =========================
+       TABLES
+    ========================= */
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 25px 0 35px;
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+      background: #ffffff;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e8edf2;
+      vertical-align: top;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    th {
+      background: #f8fafc;
+      color: #17202a;
+      font-weight: 700;
+    }
+
+    td {
+      color: #374151;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* =========================
+       TAKEAWAY
+    ========================= */
+
+    .takeaway {
+      margin-top: 50px;
+      padding: 28px;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 15px;
+    }
+
+    .takeaway h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    .takeaway p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       SOURCES
+    ========================= */
+
+    .sources {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid #e8edf2;
+    }
+
+    .sources h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .sources ol {
+      margin: 15px 0 0 20px;
+      padding: 0;
+    }
+
+    .sources li {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #667085;
+      line-height: 1.6;
+    }
+
+    .sources strong {
+      color: #17202a;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 8%;
+      border-top: 1px solid #eef1f4;
+      text-align: center;
+      color: #667085;
+      font-size: 13px;
+      background: #ffffff;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 700px) {
+
       header {
         flex-direction: column;
-        gap: 12px;
+        gap: 15px;
+        padding: 20px;
       }
 
-      nav a {
-        margin: 0 7px;
-        font-size: 14px;
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .article-header {
+        padding: 55px 20px 45px;
       }
 
       .article-header h1 {
-        font-size: 32px;
+        font-size: 36px;
+        letter-spacing: -1px;
       }
 
-      .article-header p {
-        font-size: 16px;
+      .article-subtitle {
+        font-size: 15px;
+      }
+
+      article {
+        padding: 45px 20px 70px;
       }
 
       article h2 {
-        font-size: 24px;
+        font-size: 25px;
+      }
+
+      article p,
+      article li {
+        font-size: 15.5px;
+      }
+
+      .highlight {
+        padding: 20px;
+        font-size: 16px;
+      }
+
+      .article-image img {
+        max-width: 100%;
+        max-height: 330px;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        font-size: 14px;
       }
     }
   </style>
@@ -212,439 +391,552 @@
 
 <body>
 
-<header>
-  <div class="logo">Med Imaging Hub</div>
+  <!-- =========================
+       HEADER
+  ========================= -->
 
-  <nav>
-    <a href="../index.html">Home</a>
-    <a href="../articles.html">Articles</a>
-    <a href="../insights.html">Insights</a>
-    <a href="../projects.html">Projects</a>
-    <a href="../resources.html">Resources</a>
-    <a href="../about.html">About</a>
-  </nav>
-</header>
+  <header>
 
+    <a href="../index.html" class="logo">
+      Med Imaging <span>Hub</span>
+    </a>
 
-<section class="article-header">
-  <div class="article-label">CT Basics</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../articles.html">Articles</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
 
-  <h1>Why Is Contrast Used in CT?</h1>
+  </header>
 
-  <p>Understand why contrast helps certain structures and abnormalities become easier to see.</p>
-</section>
 
+  <!-- =========================
+       ARTICLE HEADER
+  ========================= -->
 
-<article>
+  <section class="article-header">
 
-  <h2>What Is Contrast in CT?</h2>
+    <div class="article-label">
+      CT Basics
+    </div>
 
-  <p>
-    A CT scan can show many body structures without any contrast. But sometimes, two structures may look very similar on a normal CT image, making them difficult to tell apart.
-  </p>
+    <h1>
+      Why Is Contrast Used in CT?
+    </h1>
 
-  <p>
-    <strong>Contrast</strong> is a special substance given to the patient to make certain organs, blood vessels, or areas of the body easier to see on CT.
-  </p>
+    <p class="article-subtitle">
+      Understand why contrast helps certain structures and abnormalities become easier to see.
+    </p>
 
-  <p>
-    The most common contrast used for CT is <strong>iodine-based contrast</strong>. Iodine absorbs X-rays strongly, so areas containing iodine can appear brighter on the CT image.
-  </p>
+  </section>
 
 
-  <h2>Why Is Contrast Used?</h2>
+  <!-- =========================
+       ARTICLE CONTENT
+  ========================= -->
 
-  <p>
-    The main purpose of contrast is to create a clearer difference between different structures.
-  </p>
+  <article>
 
-  <p>
-    For example, a blood vessel may be difficult to distinguish from the tissues around it on a non-contrast CT. After IV contrast is given, the contrast travels through the blood, making the blood vessels much easier to see.
-  </p>
-
-  <p>Contrast can also help show:</p>
-
-  <ul>
-    <li>Blood vessels</li>
-    <li>Certain organs and their blood supply</li>
-    <li>Tumors and other abnormal areas</li>
-    <li>Inflammation or infection</li>
-    <li>Some areas of active bleeding</li>
-  </ul>
-
-  <p>
-    Contrast does <strong>not</strong> make every abnormal area bright. Its effect depends on the type of tissue, the type of contrast used, and when the CT image is taken.
-  </p>
-
-
-  <img
-    src="../images/ct-without-and-with-contrast.jpg"
-    alt="CT images without and with IV contrast"
-    class="article-image"
-  >
-
-  <div class="image-caption">
-    CT images showing the difference before and after IV contrast.
-  </div>
-
-  <div class="image-credit">
-    Image: Wikimedia Commons, CC BY 4.0
-  </div>
-
-
-  <h2>How Is Contrast Given?</h2>
-
-  <p>
-    Contrast can be given in different ways depending on what part of the body needs to be examined.
-  </p>
-
-
-  <h3>1. IV Contrast</h3>
-
-  <p>
-    <strong>IV</strong> means <strong>intravenous</strong>, which means the contrast is injected into a vein.
-  </p>
-
-  <p>
-    This is the most common route for contrast in many CT examinations.
-  </p>
-
-  <p>
-    After injection, the contrast travels through the bloodstream and can make:
-  </p>
-
-  <ul>
-    <li>Blood vessels easier to see</li>
-    <li>Organs more clearly visible</li>
-    <li>Some abnormal areas easier to detect</li>
-  </ul>
-
-  <p>
-    For example, in a CT angiography (CTA), IV contrast is used to make blood vessels stand out clearly.
-  </p>
-
-
-  <h3>2. Oral Contrast</h3>
-
-  <p>
-    <strong>Oral contrast</strong> is taken by mouth as a liquid.
-  </p>
-
-  <p>
-    It is mainly used when the <strong>stomach or intestines</strong> need to be seen more clearly.
-  </p>
-
-  <p>
-    For example, in some abdominal CT examinations, oral contrast helps separate the bowel from nearby structures.
-  </p>
-
-
-  <img
-    src="../images/oral-contrast-ct.jpg"
-    alt="Abdominal CT with oral and IV contrast"
-    class="article-image"
-  >
-
-  <div class="image-caption">
-    Abdominal CT showing the use of oral and IV contrast.
-  </div>
-
-  <div class="image-credit">
-    Image: Wikimedia Commons, CC BY 4.0
-  </div>
-
-
-  <h3>3. Rectal Contrast</h3>
-
-  <p>
-    <strong>Rectal contrast</strong> is given through the rectum.
-  </p>
-
-  <p>
-    It is used when the <strong>large intestine (colon)</strong> needs to be outlined more clearly.
-  </p>
-
-  <p>
-    This can be useful in selected CT examinations of the bowel.
-  </p>
-
-
-  <h2>What Happens After IV Contrast Is Given?</h2>
-
-  <p>
-    Once IV contrast enters the bloodstream, it travels around the body.
-  </p>
-
-  <p>
-    When a CT scan is taken while the contrast is passing through a particular organ or blood vessel, that structure may appear <strong>brighter than it did before contrast</strong>.
-  </p>
-
-  <p>
-    This increase in brightness is called <strong>enhancement</strong>.
-  </p>
-
-  <p>
-    For example:
-  </p>
-
-  <div class="highlight">
-    <strong>Without contrast →</strong> blood vessels may be less obvious<br>
-    <strong>With IV contrast →</strong> blood vessels can become much easier to see
-  </div>
-
-  <p>
-    So, when you hear that a structure <strong>“enhances”</strong> on CT, it simply means that it becomes more visible after contrast reaches it.
-  </p>
-
-
-  <h2>Why Is Timing Important?</h2>
-
-  <p>
-    IV contrast does not stay in the same place all the time.
-  </p>
-
-  <p>
-    After injection, it moves through the blood vessels and then through different organs. Because of this, the same organ can look different depending on <strong>when the CT image is taken</strong>.
-  </p>
-
-  <p>
-    This is why CT examinations can include different <strong>phases</strong>.
-  </p>
-
-
-  <h3>Arterial Phase</h3>
-
-  <p>
-    Images are taken when the contrast is mainly in the arteries.
-  </p>
-
-  <p>
-    This phase is useful for looking at <strong>arteries and structures that receive a strong arterial blood supply</strong>.
-  </p>
-
-
-  <h3>Portal Venous Phase</h3>
-
-  <p>
-    Images are taken later, when contrast has reached the portal venous system and is well distributed through many abdominal organs.
-  </p>
-
-  <p>
-    This phase is commonly used for <strong>abdominal imaging</strong>, including the liver.
-  </p>
-
-
-  <h3>Delayed Phase</h3>
-
-  <p>
-    Images are taken later still.
-  </p>
-
-  <p>
-    Delayed images can provide additional information about certain organs or abnormal areas.
-  </p>
-
-  <p>
-    <strong>Important:</strong> The exact timing of each phase depends on the CT examination and the information the radiologist needs. The phases are not simply different scans of the same thing—they are taken at different times to show how contrast moves through the body.
-  </p>
-
-
-  <h2>A Simple Liver Example</h2>
-
-  <p>
-    Imagine a small abnormal area in the liver.
-  </p>
-
-  <p>
-    On a non-contrast CT, it may be difficult to distinguish from the normal liver tissue.
-  </p>
-
-  <p>
-    After IV contrast is given, the area and the surrounding liver may take up contrast differently.
-  </p>
-
-  <p>
-    By looking at images taken at different times, the radiologist can see <strong>how the area changes compared with the normal liver</strong>.
-  </p>
-
-  <p>
-    This can provide useful information about the abnormal area.
-  </p>
-
-
-  <h2>Does Every CT Need Contrast?</h2>
-
-  <p>
-    <strong>No.</strong>
-  </p>
-
-  <p>
-    Many CT scans can be performed without contrast, and sometimes a non-contrast CT is exactly what is needed.
-  </p>
-
-  <p>For example, non-contrast CT is commonly useful for:</p>
-
-  <ul>
-    <li>Many kidney-stone examinations</li>
-    <li>Seeing calcifications</li>
-    <li>Looking at bone</li>
-    <li>Detecting certain types of bleeding</li>
-    <li>Assessing areas where contrast is not needed</li>
-  </ul>
-
-  <p>
-    In some examinations, both <strong>non-contrast and contrast-enhanced images</strong> may be taken because each provides different information.
-  </p>
-
-
-  <h2>Contrast and CT Numbers (HU)</h2>
-
-  <p>
-    You may already know that every CT pixel has a number called a <strong>Hounsfield Unit (HU)</strong>.
-  </p>
-
-  <p>
-    Contrast can change the HU of the area where it is present because iodine absorbs X-rays strongly.
-  </p>
-
-  <p>
-    For example, a blood vessel containing IV contrast can have a much higher HU than the same vessel before contrast.
-  </p>
-
-  <p>
-    This is one reason contrast makes blood vessels and some other structures appear brighter on CT.
-  </p>
-
-
-  <h2>Does Contrast Always Mean Something Is Abnormal?</h2>
-
-  <p>
-    No.
-  </p>
-
-  <p>
-    If an area becomes brighter after contrast, it means that the area has <strong>enhanced</strong>.
-  </p>
-
-  <p>
-    Enhancement alone does not tell us exactly what the area is.
-  </p>
-
-  <p>
-    Radiologists look at enhancement together with the <strong>shape, location, CT appearance, patient history, and other imaging findings</strong> to understand what an abnormal area may represent.
-  </p>
-
-
-  <h2>What Might the Patient Feel?</h2>
-
-  <p>
-    When IV iodine contrast is injected, some people may briefly feel:
-  </p>
-
-  <ul>
-    <li>Warmth spreading through the body</li>
-    <li>A metallic taste in the mouth</li>
-    <li>A feeling similar to needing to urinate</li>
-  </ul>
-
-  <p>
-    These sensations usually pass quickly.
-  </p>
-
-  <p>
-    Contrast is generally used when the expected information from the examination is worth the risks. Before giving contrast, the healthcare team considers relevant factors such as previous contrast reactions and kidney function.
-  </p>
-
-
-  <h2>The Big Picture</h2>
-
-  <p>
-    The easiest way to understand contrast CT is:
-  </p>
-
-  <div class="highlight">
-    <strong>Contrast is given → it reaches the area being examined → it changes how that area appears on CT → important structures or abnormalities may become easier to see.</strong>
-  </div>
-
-  <p>The route depends on the examination:</p>
-
-  <p>
-    <strong>IV → blood vessels and organs</strong><br>
-    <strong>Oral → stomach and intestines</strong><br>
-    <strong>Rectal → large intestine</strong>
-  </p>
-
-
-  <h2>Easy Way to Remember</h2>
-
-  <p>
-    <strong>Contrast = better separation</strong>
-  </p>
-
-  <p>
-    It does not create a CT image by itself. Instead, it helps certain structures stand out from the tissues around them.
-  </p>
-
-
-  <div class="takeaway">
-    <h2>Key Takeaway</h2>
+    <h2>
+      What Is Contrast in CT?
+    </h2>
 
     <p>
-      Contrast is used in CT when it can provide extra information that may not be clear on a non-contrast scan. IV contrast is mainly used to show blood vessels and improve the visibility of organs and some abnormal areas, while oral and rectal contrast help outline parts of the digestive tract.
+      A CT scan can show many body structures without any contrast. But sometimes, two structures may look very similar on a normal CT image, making them difficult to tell apart.
     </p>
 
     <p>
-      The important idea is simple:
+      <strong>Contrast</strong> is a special substance given to the patient to make certain organs, blood vessels, or areas of the body easier to see on CT.
     </p>
 
     <p>
-      <strong>Contrast helps us see the difference between structures more clearly.</strong>
+      The most common contrast used for CT is <strong>iodine-based contrast</strong>. Iodine absorbs X-rays strongly, so areas containing iodine can appear brighter on the CT image.
     </p>
-  </div>
 
 
-  <div class="sources">
+    <h2>
+      Why Is Contrast Used?
+    </h2>
 
-    <h2>Sources</h2>
+    <p>
+      The main purpose of contrast is to create a clearer difference between different structures.
+    </p>
+
+    <p>
+      For example, a blood vessel may be difficult to distinguish from the tissues around it on a non-contrast CT. After IV contrast is given, the contrast travels through the blood, making the blood vessels much easier to see.
+    </p>
+
+    <p>
+      Contrast can also help show:
+    </p>
 
     <ul>
-      <li>
-        <a href="https://develop.acr.org/Clinical-Resources/Clinical-Tools-and-Reference/Contrast-Manual" target="_blank" rel="noopener">
-          American College of Radiology (ACR) — ACR Manual on Contrast Media
-        </a>
-      </li>
-
-      <li>
-        <a href="https://www.radiologyinfo.org/en/info/safety-contrast" target="_blank" rel="noopener">
-          RadiologyInfo — Contrast Materials
-        </a>
-      </li>
-
-      <li>
-        <a href="https://www.radiologyinfo.org/en/info/angiocoroct" target="_blank" rel="noopener">
-          RadiologyInfo — Coronary CT Angiography (CCTA)
-        </a>
-      </li>
-
-      <li>
-        <a href="https://www.radiologyinfo.org/en/info/abdominct" target="_blank" rel="noopener">
-          RadiologyInfo — Abdominal and Pelvic CT
-        </a>
-      </li>
-
-      <li>
-        Clinical literature on iodinated contrast and CT enhancement
-      </li>
+      <li>Blood vessels</li>
+      <li>Certain organs and their blood supply</li>
+      <li>Tumors and other abnormal areas</li>
+      <li>Inflammation or infection</li>
+      <li>Some areas of active bleeding</li>
     </ul>
 
-  </div>
+    <p>
+      Contrast does <strong>not</strong> make every abnormal area bright. Its effect depends on the type of tissue, the type of contrast used, and when the CT image is taken.
+    </p>
 
-</article>
+
+    <!-- =========================
+         MAIN IMAGE
+    ========================= -->
+
+    <div class="article-image">
+
+      <img
+        src="../images/ct-without-and-with-contrast.jpg"
+        alt="CT images without and with IV contrast"
+      >
+
+      <div class="image-caption">
+        CT images showing the difference before and after IV contrast.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:CT_scan_of_hepatocellular_carcinoma,_without_and_with_IV_contrast.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wikimedia Commons
+        </a>
+      </div>
+
+    </div>
 
 
-<footer>
-  © 2026 Med Imaging Hub · Created & curated by <strong>Zara Ashraf</strong>
-</footer>
+    <h2>
+      How Is Contrast Given?
+    </h2>
+
+    <p>
+      Contrast can be given in different ways depending on what part of the body needs to be examined.
+    </p>
+
+
+    <h3>
+      1. IV Contrast
+    </h3>
+
+    <p>
+      <strong>IV</strong> means <strong>intravenous</strong>, which means the contrast is injected into a vein.
+    </p>
+
+    <p>
+      This is the most common route for contrast in many CT examinations.
+    </p>
+
+    <p>
+      After injection, the contrast travels through the bloodstream and can make:
+    </p>
+
+    <ul>
+      <li>Blood vessels easier to see</li>
+      <li>Organs more clearly visible</li>
+      <li>Some abnormal areas easier to detect</li>
+    </ul>
+
+    <p>
+      For example, in a CT angiography (CTA), IV contrast is used to make blood vessels stand out clearly.
+    </p>
+
+
+    <h3>
+      2. Oral Contrast
+    </h3>
+
+    <p>
+      <strong>Oral contrast</strong> is taken by mouth as a liquid.
+    </p>
+
+    <p>
+      It is mainly used when the <strong>stomach or intestines</strong> need to be seen more clearly.
+    </p>
+
+    <p>
+      For example, in some abdominal CT examinations, oral contrast helps separate the bowel from nearby structures.
+    </p>
+
+
+    <!-- =========================
+         ORAL + IV CONTRAST IMAGE
+    ========================= -->
+
+    <div class="article-image">
+
+      <img
+        src="../images/oral-contrast-ct.jpg"
+        alt="Abdominal and pelvic CT with intravenous and oral contrast"
+      >
+
+      <div class="image-caption">
+        Abdominal and pelvic CT performed with intravenous and oral contrast.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Sagittal_CT_scan_reconstruction_of_abdomen_and_pelvis_with_intravenous_and_oral_contrast_red_arrow_supposed_urachal_cyst;_yellow_arrow_urinary_bladder.png"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wikimedia Commons
+        </a>
+      </div>
+
+    </div>
+
+
+    <h3>
+      3. Rectal Contrast
+    </h3>
+
+    <p>
+      <strong>Rectal contrast</strong> is given through the rectum.
+    </p>
+
+    <p>
+      It is used when the <strong>large intestine (colon)</strong> needs to be outlined more clearly.
+    </p>
+
+    <p>
+      This can be useful in selected CT examinations of the bowel.
+    </p>
+
+
+    <h2>
+      What Happens After IV Contrast Is Given?
+    </h2>
+
+    <p>
+      Once IV contrast enters the bloodstream, it travels around the body.
+    </p>
+
+    <p>
+      When a CT scan is taken while the contrast is passing through a particular organ or blood vessel, that structure may appear <strong>brighter than it did before contrast</strong>.
+    </p>
+
+    <p>
+      This increase in brightness is called <strong>enhancement</strong>.
+    </p>
+
+    <p>
+      For example:
+    </p>
+
+    <p>
+      <strong>Without contrast →</strong> blood vessels may be less obvious<br>
+      <strong>With IV contrast →</strong> blood vessels can become much easier to see
+    </p>
+
+    <p>
+      So, when you hear that a structure <strong>“enhances”</strong> on CT, it simply means that it becomes more visible after contrast reaches it.
+    </p>
+
+
+    <h2>
+      Why Is Timing Important?
+    </h2>
+
+    <p>
+      IV contrast does not stay in the same place all the time.
+    </p>
+
+    <p>
+      After injection, it moves through the blood vessels and then through different organs. Because of this, the same organ can look different depending on <strong>when the CT image is taken</strong>.
+    </p>
+
+    <p>
+      This is why CT examinations can include different <strong>phases</strong>.
+    </p>
+
+
+    <h3>
+      Arterial Phase
+    </h3>
+
+    <p>
+      Images are taken when the contrast is mainly in the arteries.
+    </p>
+
+    <p>
+      This phase is useful for looking at <strong>arteries and structures that receive a strong arterial blood supply</strong>.
+    </p>
+
+
+    <h3>
+      Portal Venous Phase
+    </h3>
+
+    <p>
+      Images are taken later, when contrast has reached the portal venous system and is well distributed through many abdominal organs.
+    </p>
+
+    <p>
+      This phase is commonly used for <strong>abdominal imaging</strong>, including the liver.
+    </p>
+
+
+    <h3>
+      Delayed Phase
+    </h3>
+
+    <p>
+      Images are taken later still.
+    </p>
+
+    <p>
+      Delayed images can provide additional information about certain organs or abnormal areas.
+    </p>
+
+    <p>
+      <strong>Important:</strong> The exact timing of each phase depends on the CT examination and the information the radiologist needs. The phases are not simply different scans of the same thing—they are taken at different times to show how contrast moves through the body.
+    </p>
+
+
+    <h2>
+      A Simple Liver Example
+    </h2>
+
+    <p>
+      Imagine a small abnormal area in the liver.
+    </p>
+
+    <p>
+      On a non-contrast CT, it may be difficult to distinguish from the normal liver tissue.
+    </p>
+
+    <p>
+      After IV contrast is given, the area and the surrounding liver may take up contrast differently.
+    </p>
+
+    <p>
+      By looking at images taken at different times, the radiologist can see <strong>how the area changes compared with the normal liver</strong>.
+    </p>
+
+    <p>
+      This can provide useful information about the abnormal area.
+    </p>
+
+
+    <h2>
+      Does Every CT Need Contrast?
+    </h2>
+
+    <p>
+      <strong>No.</strong>
+    </p>
+
+    <p>
+      Many CT scans can be performed without contrast, and sometimes a non-contrast CT is exactly what is needed.
+    </p>
+
+    <p>
+      For example, non-contrast CT is commonly useful for:
+    </p>
+
+    <ul>
+      <li>Many kidney-stone examinations</li>
+      <li>Seeing calcifications</li>
+      <li>Looking at bone</li>
+      <li>Detecting certain types of bleeding</li>
+      <li>Assessing areas where contrast is not needed</li>
+    </ul>
+
+    <p>
+      In some examinations, both <strong>non-contrast and contrast-enhanced images</strong> may be taken because each provides different information.
+    </p>
+
+
+    <h2>
+      Contrast and CT Numbers (HU)
+    </h2>
+
+    <p>
+      You may already know that every CT pixel has a number called a <strong>Hounsfield Unit (HU)</strong>.
+    </p>
+
+    <p>
+      Contrast can change the HU of the area where it is present because iodine absorbs X-rays strongly.
+    </p>
+
+    <p>
+      For example, a blood vessel containing IV contrast can have a much higher HU than the same vessel before contrast.
+    </p>
+
+    <p>
+      This is one reason contrast makes blood vessels and some other structures appear brighter on CT.
+    </p>
+
+
+    <h2>
+      Does Contrast Always Mean Something Is Abnormal?
+    </h2>
+
+    <p>
+      No.
+    </p>
+
+    <p>
+      If an area becomes brighter after contrast, it means that the area has <strong>enhanced</strong>.
+    </p>
+
+    <p>
+      Enhancement alone does not tell us exactly what the area is.
+    </p>
+
+    <p>
+      Radiologists look at enhancement together with the <strong>shape, location, CT appearance, patient history, and other imaging findings</strong> to understand what an abnormal area may represent.
+    </p>
+
+
+    <h2>
+      What Might the Patient Feel?
+    </h2>
+
+    <p>
+      When IV iodine contrast is injected, some people may briefly feel:
+    </p>
+
+    <ul>
+      <li>Warmth spreading through the body</li>
+      <li>A metallic taste in the mouth</li>
+      <li>A feeling similar to needing to urinate</li>
+    </ul>
+
+    <p>
+      These sensations usually pass quickly.
+    </p>
+
+    <p>
+      Contrast is generally used when the expected information from the examination is worth the risks. Before giving contrast, the healthcare team considers relevant factors such as previous contrast reactions and kidney function.
+    </p>
+
+
+    <h2>
+      The Big Picture
+    </h2>
+
+    <p>
+      The easiest way to understand contrast CT is:
+    </p>
+
+    <div class="highlight">
+
+      <strong>Contrast is given → it reaches the area being examined → it changes how that area appears on CT → important structures or abnormalities may become easier to see.</strong>
+
+    </div>
+
+    <p>
+      The route depends on the examination:
+    </p>
+
+    <p>
+      <strong>IV → blood vessels and organs</strong><br>
+      <strong>Oral → stomach and intestines</strong><br>
+      <strong>Rectal → large intestine</strong>
+    </p>
+
+
+    <h2>
+      Easy Way to Remember
+    </h2>
+
+    <p>
+      <strong>Contrast = better separation</strong>
+    </p>
+
+    <p>
+      It does not create a CT image by itself. Instead, it helps certain structures stand out from the tissues around them.
+    </p>
+
+
+    <!-- =========================
+         TAKEAWAY
+    ========================= -->
+
+    <div class="takeaway">
+
+      <h3>
+        Key Takeaway
+      </h3>
+
+      <p>
+        Contrast is used in CT when it can provide extra information that may not be clear on a non-contrast scan. IV contrast is mainly used to show blood vessels and improve the visibility of organs and some abnormal areas, while oral and rectal contrast help outline parts of the digestive tract.
+      </p>
+
+      <p>
+        The important idea is simple:
+      </p>
+
+      <p>
+        <strong>Contrast helps us see the difference between structures more clearly.</strong>
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         SOURCES
+    ========================= -->
+
+    <section class="sources">
+
+      <h3>
+        Sources
+      </h3>
+
+      <ol>
+
+        <li>
+          <strong>American College of Radiology (ACR)</strong>
+          — <em>ACR Manual on Contrast Media</em>
+        </li>
+
+        <li>
+          <strong>RadiologyInfo</strong>
+          — <em>Contrast Materials</em>
+        </li>
+
+        <li>
+          <strong>RadiologyInfo</strong>
+          — <em>Coronary CT Angiography (CCTA)</em>
+        </li>
+
+        <li>
+          <strong>RadiologyInfo</strong>
+          — <em>Abdominal and Pelvic CT</em>
+        </li>
+
+        <li>
+          <strong>Clinical literature</strong>
+          — Iodinated contrast and CT enhancement
+        </li>
+
+      </ol>
+
+    </section>
+
+  </article>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+    © 2026 Med Imaging Hub · Created &amp; curated by <strong>Zara Ashraf</strong>
+  </footer>
 
 </body>
 </html>
