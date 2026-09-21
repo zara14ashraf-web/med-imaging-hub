@@ -1,1 +1,1803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>How Does CT Create Cross-Sectional Images? | Med Imaging Hub</title>
+
+  <meta name="description" content="Discover how rotating X-ray beams and computer processing create detailed cross-sectional images in CT.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 8%;
+      border-bottom: 1px solid #eef1f4;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #17202a;
+      text-decoration: none;
+      letter-spacing: -0.4px;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475467;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* =========================
+       ARTICLE HEADER
+    ========================= */
+
+    .article-header {
+      text-align: center;
+      padding: 75px 25px 60px;
+      background:
+        radial-gradient(
+          circle at top left,
+          #eff6ff 0%,
+          #f8fafc 38%,
+          #ffffff 75%
+        );
+    }
+
+    .article-label {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .article-header h1 {
+      max-width: 900px;
+      margin: 0 auto 16px;
+      font-size: 48px;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      color: #17202a;
+    }
+
+    .article-subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #667085;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       ARTICLE
+    ========================= */
+
+    article {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 65px 25px 90px;
+    }
+
+    article h2 {
+      font-size: 29px;
+      line-height: 1.3;
+      margin: 48px 0 18px;
+      color: #17202a;
+      letter-spacing: -0.5px;
+    }
+
+    article h3 {
+      font-size: 21px;
+      line-height: 1.4;
+      margin: 38px 0 16px;
+      color: #17202a;
+    }
+
+    article p {
+      margin: 0 0 18px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.75;
+    }
+
+    article ul {
+      margin: 10px 0 20px 22px;
+      padding: 0;
+    }
+
+    article li {
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.65;
+    }
+
+    article strong {
+      color: #17202a;
+    }
+
+    /* =========================
+       HIGHLIGHT BOX
+    ========================= */
+
+    .highlight {
+      margin: 25px 0;
+      padding: 22px 25px;
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .highlight strong {
+      color: #2563eb;
+    }
+
+    /* =========================
+       IMAGES
+    ========================= */
+
+    .article-image {
+      margin: 35px auto 42px;
+      text-align: center;
+    }
+
+    .article-image img {
+      display: block;
+      width: 100%;
+      max-width: 620px;
+      max-height: 390px;
+      object-fit: contain;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid #e8edf2;
+      background: #f8fafc;
+    }
+
+    .image-caption {
+      margin-top: 10px;
+      color: #667085;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .image-credit {
+      margin-top: 4px;
+      color: #98a2b3;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .image-credit a,
+    .sources a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    /* =========================
+       TABLES
+    ========================= */
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 25px 0 35px;
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+      background: #ffffff;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e8edf2;
+      vertical-align: top;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    th {
+      background: #f8fafc;
+      color: #17202a;
+      font-weight: 700;
+    }
+
+    td {
+      color: #374151;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* =========================
+       TAKEAWAY
+    ========================= */
+
+    .takeaway {
+      margin-top: 50px;
+      padding: 28px;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 15px;
+    }
+
+    .takeaway h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    .takeaway p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       SOURCES
+    ========================= */
+
+    .sources {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid #e8edf2;
+    }
+
+    .sources h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .sources ol {
+      margin: 15px 0 0 20px;
+      padding: 0;
+    }
+
+    .sources li {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #667085;
+      line-height: 1.6;
+    }
+
+    .sources strong {
+      color: #17202a;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 8%;
+      border-top: 1px solid #eef1f4;
+      text-align: center;
+      color: #667085;
+      font-size: 13px;
+      background: #ffffff;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .article-header {
+        padding: 55px 20px 45px;
+      }
+
+      .article-header h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+      }
+
+      .article-subtitle {
+        font-size: 15px;
+      }
+
+      article {
+        padding: 45px 20px 70px;
+      }
+
+      article h2 {
+        font-size: 25px;
+      }
+
+      article p,
+      article li {
+        font-size: 15.5px;
+      }
+
+      .highlight {
+        padding: 20px;
+        font-size: 16px;
+      }
+
+      .article-image img {
+        max-width: 100%;
+        max-height: 330px;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <a href="../index.html" class="logo">
+      Med Imaging <span>Hub</span>
+    </a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../articles.html">Articles</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       ARTICLE HEADER
+  ========================= -->
+
+  <section class="article-header">
+
+    <div class="article-label">
+      CT Basics
+    </div>
+
+    <h1>
+      How Does CT Create Cross-Sectional Images?
+    </h1>
+
+    <p class="article-subtitle">
+      Discover how rotating X-ray beams and computer processing create
+      detailed cross-sectional images.
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       ARTICLE CONTENT
+  ========================= -->
+
+  <article>
+
+    <h2>
+      Introduction
+    </h2>
+
+    <p>
+      You already know that a conventional X-ray creates an image by
+      passing X-rays through the body and recording the radiation that reaches
+      the detector.
+    </p>
+
+    <p>
+      But there is one important limitation:
+      <strong>a conventional X-ray gives us a view of the body from a particular direction.</strong>
+    </p>
+
+    <p>
+      Because the body contains many structures at different depths,
+      these structures can overlap on the same image.
+    </p>
+
+    <p>
+      For example, on a chest X-ray, the heart, ribs, blood vessels,
+      lungs, and other structures are all represented in one projection.
+    </p>
+
+
+    <h3>
+      What is a projection?
+    </h3>
+
+    <p>
+      In simple words, a <strong>projection is an image or set of X-ray
+      measurements obtained from one direction through the body</strong>.
+    </p>
+
+    <p>
+      Imagine placing your hand in front of a light. You see its shadow
+      on the wall. The shadow gives you a 2D representation of your hand from
+      that particular direction.
+    </p>
+
+    <p>
+      A conventional X-ray works on a much more complex version of this
+      idea. X-rays pass through the body, and the detector records the X-ray
+      pattern that comes through.
+    </p>
+
+    <div class="highlight">
+
+      <strong>One direction of X-rays → one projection</strong>
+
+    </div>
+
+    <p>
+      But one projection cannot tell us everything about where structures
+      are located inside the body.
+    </p>
+
+    <p>
+      This is where <strong>CT becomes different</strong>.
+    </p>
+
+
+    <!-- =========================
+         HOW CT IS DIFFERENT
+    ========================= -->
+
+    <h2>
+      How Is CT Different?
+    </h2>
+
+    <p>
+      Instead of collecting information from only one direction, CT
+      collects <strong>many X-ray measurements from different directions around
+      the patient</strong>.
+    </p>
+
+    <p>
+      The X-ray tube rotates around the patient while detectors measure
+      the X-rays that pass through the body.
+    </p>
+
+    <p>
+      A computer then combines these measurements and reconstructs them
+      into a <strong>cross-sectional image</strong>, often called a CT slice.
+    </p>
+
+    <div class="highlight">
+
+      <p>
+        <strong>Conventional X-ray</strong>
+      </p>
+
+      <p>
+        One direction → projection image
+      </p>
+
+      <p>
+        <strong>CT</strong>
+      </p>
+
+      <p>
+        Many directions → many measurements → computer reconstruction →
+        cross-sectional image
+      </p>
+
+    </div>
+
+    <p>
+      This is the basic idea behind CT.
+    </p>
+
+    <p>
+      Now let's follow the process step by step.
+    </p>
+
+
+    <!-- =========================
+         MAIN IMAGE
+    ========================= -->
+
+    <div class="article-image">
+
+      <img
+        src="../images/ct-scanner-working-principle.png"
+        alt="Schematic illustration showing the basic working principle of computed tomography"
+      >
+
+      <div class="image-caption">
+        Basic schematic showing the arrangement of the X-ray source,
+        patient, and detector system in CT.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wikimedia Commons
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         MAIN PARTS
+    ========================= -->
+
+    <h2>
+      1. The Main Parts of a CT Scanner
+    </h2>
+
+    <p>
+      Before understanding how the image is created, let's look at the
+      main components involved.
+    </p>
+
+    <h3>
+      X-ray tube
+    </h3>
+
+    <p>
+      The <strong>X-ray tube</strong> produces the X-rays used to scan the
+      patient.
+    </p>
+
+    <h3>
+      Detectors
+    </h3>
+
+    <p>
+      The <strong>detectors</strong> are positioned opposite the X-ray tube.
+      They measure the X-rays that reach them after passing through the
+      patient's body.
+    </p>
+
+    <h3>
+      Gantry
+    </h3>
+
+    <p>
+      The <strong>gantry</strong> is the large circular part of the CT scanner.
+    </p>
+
+    <p>
+      It contains the X-ray tube and detector system and allows them to
+      rotate around the patient.
+    </p>
+
+    <h3>
+      Patient table
+    </h3>
+
+    <p>
+      The table moves the patient through the opening of the gantry.
+    </p>
+
+    <h3>
+      Computer
+    </h3>
+
+    <p>
+      The computer receives the measurements collected by the detectors
+      and uses mathematical reconstruction methods to create the CT images.
+    </p>
+
+    <p>
+      So, in very simple terms:
+    </p>
+
+    <div class="highlight">
+
+      <p><strong>X-ray tube → produces X-rays</strong></p>
+
+      <p><strong>Patient → changes the X-ray beam</strong></p>
+
+      <p><strong>Detectors → measure what comes through</strong></p>
+
+      <p><strong>Computer → reconstructs the image</strong></p>
+
+    </div>
+
+    <p>
+      In modern CT systems, the X-ray source and detector assembly rotate
+      around the patient while measurements are collected from many angles.
+    </p>
+
+
+    <!-- =========================
+         ATTENUATION
+    ========================= -->
+
+    <h2>
+      2. X-rays Pass Through the Patient
+    </h2>
+
+    <p>
+      Now let's follow what happens when the scan begins.
+    </p>
+
+    <p>
+      The X-ray tube produces an X-ray beam that passes through the
+      patient's body.
+    </p>
+
+    <p>
+      As the X-rays travel through the body, they interact with different
+      tissues.
+    </p>
+
+    <p>
+      Some X-rays are absorbed or scattered, while others continue through
+      the body and reach the detectors.
+    </p>
+
+    <p>
+      The reduction in the intensity of the X-ray beam as it passes
+      through the body is called <strong>attenuation</strong>.
+    </p>
+
+    <h3>
+      What does attenuation mean?
+    </h3>
+
+    <p>
+      Think about shining a flashlight through different materials.
+    </p>
+
+    <p>
+      If you shine it through a thin curtain, a lot of light may pass
+      through.
+    </p>
+
+    <p>
+      If you shine it through a thick book, much less light will come
+      through.
+    </p>
+
+    <p>
+      Different materials affect how much light reaches the other side.
+    </p>
+
+    <p>
+      CT uses X-rays rather than visible light, but the basic idea is
+      similar:
+    </p>
+
+    <div class="highlight">
+
+      <strong>Different tissues reduce the intensity of the X-ray beam
+      by different amounts.</strong>
+
+    </div>
+
+    <p>
+      For example:
+    </p>
+
+    <ul>
+      <li>Air attenuates X-rays very little.</li>
+      <li>Soft tissues attenuate X-rays to varying degrees.</li>
+      <li>Bone attenuates X-rays much more strongly than most soft tissues.</li>
+    </ul>
+
+    <p>
+      The detectors measure the X-rays that remain after passing through
+      the body.
+    </p>
+
+    <p>
+      These measurements provide information about the tissues along the
+      X-ray path.
+    </p>
+
+
+    <!-- =========================
+         ROTATION
+    ========================= -->
+
+    <h2>
+      3. Why Does the X-ray Tube Rotate?
+    </h2>
+
+    <p>
+      This is one of the most important ideas in CT.
+    </p>
+
+    <p>
+      A conventional X-ray usually gives us information from a particular
+      direction.
+    </p>
+
+    <p>
+      But the human body is three-dimensional.
+    </p>
+
+    <p>
+      If we want more information about where structures are located inside
+      the body, we need measurements from <strong>different directions</strong>.
+    </p>
+
+    <p>
+      That is why the X-ray tube and detector system rotate around the
+      patient.
+    </p>
+
+    <h3>
+      A simple example
+    </h3>
+
+    <p>
+      Imagine you have a closed box containing several objects.
+    </p>
+
+    <p>
+      If you could only look at the box from the front, some objects might
+      be hidden behind others.
+    </p>
+
+    <p>
+      Now imagine looking at the box from many different directions.
+    </p>
+
+    <p>
+      You would collect much more information about the objects inside.
+    </p>
+
+    <p>
+      CT works on a similar principle.
+    </p>
+
+    <p>
+      The scanner collects X-ray measurements while rotating around the
+      patient.
+    </p>
+
+    <p>
+      The measurements from all these different directions are later used
+      by the computer to reconstruct the image.
+    </p>
+
+
+    <!-- =========================
+         PROJECTION IN CT
+    ========================= -->
+
+    <h2>
+      4. What Is a Projection in CT?
+    </h2>
+
+    <p>
+      Now that we understand why the scanner uses different directions,
+      the word <strong>projection</strong> becomes easier.
+    </p>
+
+    <p>
+      A <strong>projection</strong> is basically a set of X-ray measurements
+      collected from one particular direction.
+    </p>
+
+    <p>
+      For example, imagine the scanner collecting measurements while the
+      X-ray beam passes through the body from one angle.
+    </p>
+
+    <p>
+      That gives one set of information.
+    </p>
+
+    <p>
+      As the tube rotates to another angle, another set of measurements is
+      collected.
+    </p>
+
+    <p>
+      The scanner continues this process around the patient.
+    </p>
+
+    <div class="highlight">
+
+      <p><strong>One direction → one projection</strong></p>
+
+      <p><strong>Many directions → many projections</strong></p>
+
+    </div>
+
+    <p>
+      The computer uses all of these projections together to reconstruct
+      the cross-sectional image.
+    </p>
+
+    <div class="highlight">
+
+      <strong>Student tip:</strong> A projection is <strong>not</strong> the
+      final CT slice. It is the X-ray measurement information collected from
+      a particular direction. The CT slice is created later through computer
+      reconstruction.
+
+    </div>
+
+
+    <!-- =========================
+         DETECTORS
+    ========================= -->
+
+    <h2>
+      5. What Do the Detectors Actually Measure?
+    </h2>
+
+    <p>
+      The detectors do not directly produce a ready-made picture of the
+      patient's organs.
+    </p>
+
+    <p>
+      Instead, they measure <strong>how much X-ray radiation reaches them
+      after the beam has passed through the body</strong>.
+    </p>
+
+    <p>
+      Imagine two X-ray beams travelling through different paths.
+    </p>
+
+    <p>
+      One path may pass mainly through air.
+    </p>
+
+    <p>
+      Another may pass through bone and soft tissue.
+    </p>
+
+    <p>
+      The amount of X-ray radiation reaching the detector will be different
+      because the tissues along those paths attenuate the X-rays differently.
+    </p>
+
+    <p>
+      The detector records these differences.
+    </p>
+
+    <p>
+      During the rotation, the scanner collects a very large number of
+      measurements from different angles.
+    </p>
+
+    <p>
+      These measurements are the information that the computer needs for
+      reconstruction.
+    </p>
+
+    <p>
+      Modern CT scanners use multiple rows of detectors, allowing data from
+      several sections of the body to be acquired during a rotation.
+    </p>
+
+
+    <!-- =========================
+         COMPUTER RECONSTRUCTION
+    ========================= -->
+
+    <h2>
+      6. How Does the Computer Turn These Measurements Into an Image?
+    </h2>
+
+    <p>
+      This is the step that gives CT its name: <strong>Computed Tomography</strong>.
+    </p>
+
+    <p>
+      The detectors have collected measurements, but those measurements are
+      not yet a normal-looking CT image.
+    </p>
+
+    <p>
+      So how does the computer know what is inside the body?
+    </p>
+
+    <p>
+      It uses a mathematical process called <strong>image reconstruction</strong>.
+    </p>
+
+    <h3>
+      Think of it like solving a puzzle
+    </h3>
+
+    <p>
+      Imagine you have many pieces of information about an object, but you
+      cannot see the complete object directly.
+    </p>
+
+    <p>
+      Each piece tells you something useful.
+    </p>
+
+    <p>
+      When all the information is combined, you can work out what the
+      complete object looks like.
+    </p>
+
+    <p>
+      CT reconstruction works on a similar idea, although the actual
+      mathematics is much more complex.
+    </p>
+
+    <p>
+      The scanner collects measurements from many directions.
+    </p>
+
+    <p>
+      The reconstruction algorithm processes these measurements and
+      calculates the distribution of X-ray attenuation within the scanned
+      region.
+    </p>
+
+    <p>
+      The result is a cross-sectional CT image.
+    </p>
+
+    <h3>
+      The basic process
+    </h3>
+
+    <div class="highlight">
+
+      <p><strong>X-rays pass through the body</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Detectors measure the radiation</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Measurements are collected from many directions</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Computer processes the measurements</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Reconstruction algorithm creates the CT image</strong></p>
+
+    </div>
+
+
+    <!-- =========================
+         IMAGE RECONSTRUCTION
+    ========================= -->
+
+    <h2>
+      7. What Is Image Reconstruction?
+    </h2>
+
+    <p>
+      <strong>Image reconstruction</strong> is the mathematical process of
+      converting the measurements collected by the CT scanner into an image
+      representing the internal structures of the scanned region.
+    </p>
+
+    <p>
+      Different reconstruction methods can be used.
+    </p>
+
+    <h3>
+      Filtered Back Projection
+    </h3>
+
+    <p>
+      One traditional method is <strong>Filtered Back Projection (FBP)</strong>.
+    </p>
+
+    <p>
+      In simplified terms, information from the different projections is
+      mathematically processed and then used to build the image.
+    </p>
+
+    <p>
+      The "back projection" part means that information from each projection
+      is mathematically distributed back across the image area.
+    </p>
+
+    <p>
+      However, simple back projection by itself would produce a blurred
+      image.
+    </p>
+
+    <p>
+      A filtering step is therefore applied before the back-projection
+      process to improve the image.
+    </p>
+
+    <p>
+      That is why it is called <strong>filtered back projection</strong>.
+    </p>
+
+    <h3>
+      Iterative Reconstruction
+    </h3>
+
+    <p>
+      Modern CT scanners can also use <strong>iterative reconstruction (IR)</strong>
+      techniques.
+    </p>
+
+    <p>
+      Instead of producing the final image in one direct calculation, these
+      methods repeatedly compare an estimated image with the measured data
+      and make corrections.
+    </p>
+
+    <p>
+      A very simplified way to remember it is:
+    </p>
+
+    <div class="highlight">
+
+      <strong>Estimate → compare → correct → repeat</strong>
+
+    </div>
+
+    <p>
+      Different iterative reconstruction methods work differently, but they
+      can reduce image noise and help maintain image quality, particularly in
+      lower-dose CT examinations.
+    </p>
+
+    <p>
+      For a beginner, the most important thing to remember is:
+    </p>
+
+    <div class="highlight">
+
+      <strong>The detectors collect the information, but the reconstruction
+      algorithm turns that information into the CT image.</strong>
+
+    </div>
+
+
+    <!-- =========================
+         TISSUE APPEARANCE
+    ========================= -->
+
+    <h2>
+      8. How Does the Reconstructed Image Show Different Tissues?
+    </h2>
+
+    <p>
+      After reconstruction, the image contains numerical information related
+      to how strongly the tissues attenuated the X-rays.
+    </p>
+
+    <p>
+      These differences are displayed as different shades of gray.
+    </p>
+
+    <p>
+      Generally:
+    </p>
+
+    <div class="highlight">
+
+      <p><strong>Lower attenuation → darker appearance</strong></p>
+
+      <p><strong>Higher attenuation → brighter appearance</strong></p>
+
+    </div>
+
+    <p>
+      This is why:
+    </p>
+
+    <ul>
+      <li>Air appears very dark.</li>
+      <li>Fat is relatively dark.</li>
+      <li>Soft tissues appear in different shades of gray.</li>
+      <li>Bone generally appears bright.</li>
+    </ul>
+
+    <p>
+      CT can also represent attenuation numerically using
+      <strong>Hounsfield Units (HU)</strong>.
+    </p>
+
+    <p>
+      For example:
+    </p>
+
+    <ul>
+      <li>Air ≈ <strong>−1000 HU</strong></li>
+      <li>Water = <strong>0 HU</strong></li>
+      <li>Dense bone = usually several hundred HU or more</li>
+    </ul>
+
+    <p>
+      These are approximate reference values, and actual measurements can
+      vary.
+    </p>
+
+    <p>
+      You don't need to memorize these values to understand how CT creates
+      an image. The important point is that <strong>different tissues produce
+      different attenuation measurements, and these differences help the
+      computer create the image.</strong>
+    </p>
+
+
+    <!-- =========================
+         CROSS SECTIONAL IMAGE
+    ========================= -->
+
+    <h2>
+      9. How Does One CT Slice Represent the Body?
+    </h2>
+
+    <p>
+      A reconstructed CT image represents a <strong>cross-section</strong>
+      through the body.
+    </p>
+
+    <p>
+      This is similar to cutting a loaf of bread into slices.
+    </p>
+
+    <p>
+      If you look at one slice of the loaf, you see only the structures
+      present in that particular section.
+    </p>
+
+    <p>
+      A CT slice works in a similar way.
+    </p>
+
+    <p>
+      Instead of seeing all the structures of the body projected onto one
+      image, we can examine a particular section.
+    </p>
+
+    <p>
+      This reduces the overlap that is common in conventional projection
+      radiography.
+    </p>
+
+
+    <div class="article-image">
+
+      <img
+        src="../images/ct-cross-sectional-image.jpg"
+        alt="Example of a CT cross-sectional image"
+      >
+
+      <div class="image-caption">
+        Example of a CT cross-sectional image.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wikimedia Commons
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         MULTIPLE SLICES
+    ========================= -->
+
+    <h2>
+      10. How Does CT Create Many Slices?
+    </h2>
+
+    <p>
+      A CT examination usually produces a <strong>series of images</strong>,
+      not just one slice.
+    </p>
+
+    <p>
+      The scanner collects data through a region of the body, and the
+      computer can reconstruct images at different positions along that region.
+    </p>
+
+    <p>
+      In <strong>helical (spiral) CT</strong>, the patient table moves
+      continuously through the gantry while the X-ray tube rotates.
+    </p>
+
+    <p>
+      This allows data to be acquired along a spiral path around the patient.
+    </p>
+
+    <p>
+      Modern multidetector CT scanners have multiple rows of detectors,
+      allowing a larger volume of anatomy to be acquired efficiently.
+    </p>
+
+    <h3>
+      Think of a loaf of bread again
+    </h3>
+
+    <p>
+      One slice tells you about one section of the loaf.
+    </p>
+
+    <p>
+      Many slices placed together represent the whole loaf.
+    </p>
+
+    <p>
+      Similarly:
+    </p>
+
+    <div class="highlight">
+
+      <p><strong>One CT slice → one cross-sectional view</strong></p>
+
+      <p><strong>Many CT slices → a volume of the scanned body region</strong></p>
+
+    </div>
+
+    <p>
+      The collection of CT data therefore gives us much more information
+      than a single projection image.
+    </p>
+
+
+    <!-- =========================
+         3D DATASET
+    ========================= -->
+
+    <h2>
+      11. From CT Slices to a 3D Dataset
+    </h2>
+
+    <p>
+      Because CT collects information through a volume of the body, the
+      resulting data can be treated as a <strong>3D dataset</strong>.
+    </p>
+
+    <p>
+      This means the same acquired data can be used to create images in
+      different orientations.
+    </p>
+
+    <p>
+      For example, CT data can be reconstructed or reformatted into:
+    </p>
+
+    <ul>
+      <li><strong>Axial images</strong> — horizontal sections</li>
+      <li><strong>Coronal images</strong> — front-to-back sections</li>
+      <li><strong>Sagittal images</strong> — side-to-side sections</li>
+    </ul>
+
+    <p>
+      This process is called <strong>multiplanar reconstruction (MPR)</strong>.
+    </p>
+
+    <p>
+      The important idea is that these different views come from the same
+      CT dataset. The patient does not need to be scanned separately for each
+      plane.
+    </p>
+
+
+    <!-- =========================
+         PUTTING EVERYTHING TOGETHER
+    ========================= -->
+
+    <h2>
+      Putting Everything Together
+    </h2>
+
+    <p>
+      Let's follow one CT examination from beginning to end.
+    </p>
+
+    <h3>
+      Step 1 — X-rays are produced
+    </h3>
+
+    <p>
+      The X-ray tube produces an X-ray beam.
+    </p>
+
+    <h3>
+      Step 2 — X-rays pass through the body
+    </h3>
+
+    <p>
+      The tissues attenuate the X-rays by different amounts.
+    </p>
+
+    <h3>
+      Step 3 — The tube rotates
+    </h3>
+
+    <p>
+      The X-ray tube and detector system rotate around the patient.
+    </p>
+
+    <h3>
+      Step 4 — Detectors measure the transmitted X-rays
+    </h3>
+
+    <p>
+      The detectors record how much radiation reaches them.
+    </p>
+
+    <h3>
+      Step 5 — Measurements are collected from many directions
+    </h3>
+
+    <p>
+      Each direction provides another set of measurements, or projection data.
+    </p>
+
+    <h3>
+      Step 6 — The computer receives the data
+    </h3>
+
+    <p>
+      The measurements are sent to the computer for processing.
+    </p>
+
+    <h3>
+      Step 7 — Reconstruction takes place
+    </h3>
+
+    <p>
+      A reconstruction algorithm uses the projection data to calculate the
+      internal distribution of X-ray attenuation.
+    </p>
+
+    <h3>
+      Step 8 — A cross-sectional image is produced
+    </h3>
+
+    <p>
+      The result is a CT slice showing a section through the body.
+    </p>
+
+    <h3>
+      Step 9 — More images are reconstructed
+    </h3>
+
+    <p>
+      Additional sections can be reconstructed to create a volumetric dataset.
+    </p>
+
+    <h3>
+      Step 10 — The dataset can be viewed in different ways
+    </h3>
+
+    <p>
+      The data can be displayed as axial, coronal, sagittal, or other
+      reconstructed images and can also be used for appropriate 3D visualization.
+    </p>
+
+
+    <!-- =========================
+         SIMPLE DIAGRAM
+    ========================= -->
+
+    <h2>
+      The Whole Process in One Simple Diagram
+    </h2>
+
+    <div class="highlight">
+
+      <p><strong>X-ray tube produces X-rays</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>X-rays pass through the patient</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Different tissues attenuate X-rays differently</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Detectors measure the X-rays that come through</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Tube and detectors rotate around the patient</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Measurements are collected from many directions</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Computer processes the projection data</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Reconstruction algorithm creates the image</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Cross-sectional CT slice</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Multiple slices → volumetric CT dataset</strong></p>
+
+    </div>
+
+
+    <!-- =========================
+         CONVENTIONAL X-RAY VS CT
+    ========================= -->
+
+    <h2>
+      Why Can't a Conventional X-ray Do the Same Thing?
+    </h2>
+
+    <p>
+      This is an important question.
+    </p>
+
+    <p>
+      A conventional X-ray also sends X-rays through the body.
+    </p>
+
+    <p>
+      So why does it not normally produce a CT slice?
+    </p>
+
+    <p>
+      The main difference is <strong>how the information is collected and
+      processed</strong>.
+    </p>
+
+    <p>
+      A conventional radiograph records a projection of the body from a
+      particular direction.
+    </p>
+
+    <p>
+      CT collects many measurements around the patient and uses mathematical
+      reconstruction to determine the distribution of X-ray attenuation within
+      a cross-section.
+    </p>
+
+    <div class="table-wrapper">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Imaging method</th>
+            <th>How information is collected</th>
+            <th>Final result</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td><strong>Conventional radiography</strong></td>
+            <td>X-rays recorded from a particular direction</td>
+            <td>Projection image</td>
+          </tr>
+
+          <tr>
+            <td><strong>CT</strong></td>
+            <td>Many X-ray measurements collected from different angles</td>
+            <td>Computer-reconstructed cross-sectional images</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <p>
+      So the difference is not simply:
+    </p>
+
+    <div class="highlight">
+
+      <p><strong>X-ray = X-rays</strong></p>
+
+      <p><strong>CT = more X-rays</strong></p>
+
+    </div>
+
+    <p>
+      Both use X-rays.
+    </p>
+
+    <p>
+      The important difference is:
+    </p>
+
+    <div class="highlight">
+
+      <p>
+        <strong>Conventional radiography → projection image</strong>
+      </p>
+
+      <p>
+        <strong>CT → many measurements from different angles + computer
+        reconstruction → cross-sectional image</strong>
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         SIMPLE EXAMPLE
+    ========================= -->
+
+    <h2>
+      A Simple Example to Remember CT
+    </h2>
+
+    <p>
+      Imagine you have a <strong>sealed box containing several objects</strong>.
+    </p>
+
+    <p>
+      If you look at the box from only one side, some objects may overlap
+      and hide each other.
+    </p>
+
+    <p>
+      Now imagine that you could collect information about the box from many
+      different directions.
+    </p>
+
+    <p>
+      Each direction gives you additional information.
+    </p>
+
+    <p>
+      If you combine all of that information using a mathematical method,
+      you can work out where the objects are located inside the box.
+    </p>
+
+    <p>
+      CT works on a similar principle.
+    </p>
+
+    <p>
+      It does not directly "photograph" the inside of the body.
+    </p>
+
+    <div class="highlight">
+
+      <strong>
+        measures X-ray transmission from many directions → processes those
+        measurements → reconstructs a cross-sectional image
+      </strong>
+
+    </div>
+
+
+    <!-- =========================
+         KEY TAKEAWAY
+    ========================= -->
+
+    <div class="takeaway">
+
+      <h3>
+        Key Takeaway
+      </h3>
+
+      <p>
+        CT creates cross-sectional images by combining
+        <strong>X-ray measurements from many different directions</strong>
+        with <strong>computer-based image reconstruction</strong>.
+      </p>
+
+      <p>
+        The X-ray tube rotates around the patient while detectors measure
+        the radiation that passes through the body.
+      </p>
+
+      <p>
+        Because different tissues attenuate X-rays differently, the
+        measurements collected at different angles contain information about
+        the structures inside the body.
+      </p>
+
+      <p>
+        The computer then uses reconstruction algorithms to combine this
+        information and create a cross-sectional image.
+      </p>
+
+      <p>
+        Multiple reconstructed sections can be combined into a volumetric
+        dataset that can also be viewed in different planes.
+      </p>
+
+      <p>
+        <strong>
+          In one line:
+        </strong>
+      </p>
+
+      <p>
+        <strong>
+          Many X-ray measurements from different directions + computer
+          reconstruction = cross-sectional CT images.
+        </strong>
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         SOURCES
+    ========================= -->
+
+    <section class="sources">
+
+      <h3>
+        Sources &amp; Further Reading
+      </h3>
+
+      <ol>
+
+        <li>
+          <strong>U.S. Food and Drug Administration (FDA)</strong>
+          —
+          <a
+            href="https://www.fda.gov/radiation-emitting-products/medical-x-ray-imaging/computed-tomography-ct"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Computed Tomography (CT)
+          </a>
+          <br>
+          Useful for understanding the basic CT system, rotating X-ray source
+          and detectors, projection measurements, and reconstruction of
+          cross-sectional slices.
+        </li>
+
+        <li>
+          <strong>U.S. Food and Drug Administration (FDA)</strong>
+          —
+          <a
+            href="https://www.fda.gov/radiation-emitting-products/medical-imaging/medical-x-ray-imaging"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Medical X-ray Imaging
+          </a>
+          <br>
+          Explains the basic difference between conventional radiography and
+          CT, including the use of multiple X-ray measurements and computer
+          reconstruction.
+        </li>
+
+        <li>
+          <strong>Stiller W.</strong> —
+          <em>Basics of iterative reconstruction methods in computed tomography:
+          A vendor-independent overview.</em>
+          <em>European Journal of Radiology.</em>
+          <br>
+          Useful background on CT image reconstruction and iterative
+          reconstruction methods.
+          <br>
+          <a
+            href="https://pubmed.ncbi.nlm.nih.gov/30527298/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PubMed
+          </a>
+        </li>
+
+        <li>
+          <strong>Koetzier LR, et al.</strong> —
+          <em>Deep Learning Image Reconstruction for CT: Technical Principles
+          and Clinical Prospects.</em>
+          <em>Radiology.</em>
+          <br>
+          Provides background on CT reconstruction methods including filtered
+          back projection, iterative reconstruction, and newer deep-learning
+          approaches.
+          <br>
+          <a
+            href="https://pubmed.ncbi.nlm.nih.gov/36719287/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PubMed
+          </a>
+        </li>
+
+      </ol>
+
+    </section>
+
+  </article>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+    © 2026 Med Imaging Hub · Created &amp; curated by <strong>Zara Ashraf</strong>
+  </footer>
+
+</body>
+</html>
