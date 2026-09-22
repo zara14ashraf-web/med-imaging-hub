@@ -1,1 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>What Is Radiation Attenuation? | Med Imaging Hub</title>
+
+  <meta name="description" content="Learn what radiation attenuation means, how X-rays are absorbed, scattered, and transmitted through the body, and why attenuation is important in radiography and CT imaging.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 8%;
+      border-bottom: 1px solid #eef1f4;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #17202a;
+      text-decoration: none;
+      letter-spacing: -0.4px;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475467;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* =========================
+       ARTICLE HEADER
+    ========================= */
+
+    .article-header {
+      text-align: center;
+      padding: 75px 25px 60px;
+      background:
+        radial-gradient(
+          circle at top left,
+          #eff6ff 0%,
+          #f8fafc 38%,
+          #ffffff 75%
+        );
+    }
+
+    .article-label {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .article-header h1 {
+      max-width: 900px;
+      margin: 0 auto 16px;
+      font-size: 48px;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      color: #17202a;
+    }
+
+    .article-subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #667085;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       ARTICLE
+    ========================= */
+
+    article {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 65px 25px 90px;
+    }
+
+    article h2 {
+      font-size: 29px;
+      line-height: 1.3;
+      margin: 48px 0 18px;
+      color: #17202a;
+      letter-spacing: -0.5px;
+    }
+
+    article h3 {
+      font-size: 21px;
+      line-height: 1.4;
+      margin: 38px 0 16px;
+      color: #17202a;
+    }
+
+    article p {
+      margin: 0 0 18px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.75;
+    }
+
+    article ul {
+      margin: 10px 0 20px 22px;
+      padding: 0;
+    }
+
+    article li {
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.65;
+    }
+
+    article strong {
+      color: #17202a;
+    }
+
+    /* =========================
+       HIGHLIGHT BOX
+    ========================= */
+
+    .highlight {
+      margin: 25px 0;
+      padding: 22px 25px;
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .highlight strong {
+      color: #2563eb;
+    }
+
+    /* =========================
+       IMAGES
+    ========================= */
+
+    .article-image {
+      margin: 35px auto 42px;
+      text-align: center;
+    }
+
+    .article-image img {
+      display: block;
+      width: 100%;
+      max-width: 620px;
+      max-height: 390px;
+      object-fit: contain;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid #e8edf2;
+      background: #f8fafc;
+    }
+
+    .image-caption {
+      margin-top: 10px;
+      color: #667085;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .image-credit {
+      margin-top: 4px;
+      color: #98a2b3;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .image-credit a,
+    .sources a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    /* =========================
+       TABLES
+    ========================= */
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 25px 0 35px;
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+      background: #ffffff;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e8edf2;
+      vertical-align: top;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    th {
+      background: #f8fafc;
+      color: #17202a;
+      font-weight: 700;
+    }
+
+    td {
+      color: #374151;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* =========================
+       TAKEAWAY
+    ========================= */
+
+    .takeaway {
+      margin-top: 50px;
+      padding: 28px;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 15px;
+    }
+
+    .takeaway h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    .takeaway p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       SOURCES
+    ========================= */
+
+    .sources {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid #e8edf2;
+    }
+
+    .sources h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .sources ol {
+      margin: 15px 0 0 20px;
+      padding: 0;
+    }
+
+    .sources li {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #667085;
+      line-height: 1.6;
+    }
+
+    .sources strong {
+      color: #17202a;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 8%;
+      border-top: 1px solid #eef1f4;
+      text-align: center;
+      color: #667085;
+      font-size: 13px;
+      background: #ffffff;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .article-header {
+        padding: 55px 20px 45px;
+      }
+
+      .article-header h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+      }
+
+      .article-subtitle {
+        font-size: 15px;
+      }
+
+      article {
+        padding: 45px 20px 70px;
+      }
+
+      article h2 {
+        font-size: 25px;
+      }
+
+      article p,
+      article li {
+        font-size: 15.5px;
+      }
+
+      .highlight {
+        padding: 20px;
+        font-size: 16px;
+      }
+
+      .article-image img {
+        max-width: 100%;
+        max-height: 330px;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <a href="../index.html" class="logo">
+      Med Imaging <span>Hub</span>
+    </a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../articles.html">Articles</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       ARTICLE HEADER
+  ========================= -->
+
+  <section class="article-header">
+
+    <div class="article-label">
+      X-ray Basics
+    </div>
+
+    <h1>
+      What Is Radiation Attenuation?
+    </h1>
+
+    <p class="article-subtitle">
+      Learn why X-rays lose intensity as they pass through the
+      human body and why this matters in imaging.
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       ARTICLE CONTENT
+  ========================= -->
+
+  <article>
+
+    <p>
+      When X-rays enter the body, they do not all pass straight through to the detector.
+    </p>
+
+    <p>
+      Some X-rays are <strong>absorbed</strong> by the tissues, while others are
+      <strong>scattered</strong> in different directions. The rest continue through
+      the body and may reach the detector.
+    </p>
+
+    <p>
+      Because of these interactions, the X-ray beam becomes weaker as it passes through the body.
+    </p>
+
+    <p>
+      This reduction in the intensity of the X-ray beam is called <strong>radiation attenuation</strong>.
+    </p>
+
+    <div class="highlight">
+
+      <strong>Attenuation = the reduction in X-ray beam intensity as it passes through matter.</strong>
+
+    </div>
+
+
+    <!-- =========================
+         WHAT HAPPENS
+    ========================= -->
+
+    <h2>
+      What Happens to an X-ray Photon Inside the Body?
+    </h2>
+
+    <p>
+      Imagine that <strong>100 X-ray photons</strong> enter the patient's body.
+    </p>
+
+    <p>
+      As they travel through the tissues, different things can happen:
+    </p>
+
+    <ul>
+
+      <li>
+        Some photons are <strong>absorbed</strong> by the tissue.
+      </li>
+
+      <li>
+        Some photons are <strong>scattered</strong> and change direction.
+      </li>
+
+      <li>
+        Some photons pass through the body without interacting and continue toward the detector.
+      </li>
+
+    </ul>
+
+    <p>
+      So, if only <strong>60 photons</strong> continue toward the detector, the beam has been attenuated.
+    </p>
+
+    <p>
+      The important idea is that attenuation means that <strong>fewer useful photons remain in the original X-ray beam</strong>
+      after it has passed through the body.
+    </p>
+
+
+    <!-- =========================
+         MAIN IMAGE
+    ========================= -->
+
+    <div class="article-image">
+
+      <img
+        src="../images/xray-beam-attenuation.jpg"
+        alt="Diagram showing X-ray beam attenuation as photons pass through a material"
+      >
+
+      <div class="image-caption">
+        Attenuation of an X-ray beam as it passes through a material.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:NarrowBeamGeometry.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Kieranmaher, via Wikimedia Commons — Public Domain
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         DIFFERENT TISSUES
+    ========================= -->
+
+    <h2>
+      Why Don't All Tissues Attenuate X-rays the Same Way?
+    </h2>
+
+    <p>
+      This is one of the most important parts of attenuation.
+    </p>
+
+    <p>
+      Different tissues interact with X-rays differently. The amount of attenuation depends on factors such as the
+      <strong>composition and density of the tissue</strong>, the <strong>thickness of the material</strong>,
+      and the <strong>energy of the X-ray photons</strong>.
+    </p>
+
+    <p>
+      For example, think about three different areas:
+    </p>
+
+    <p>
+      <strong>Air → very little attenuation</strong>
+    </p>
+
+    <p>
+      <strong>Soft tissue → more attenuation</strong>
+    </p>
+
+    <p>
+      <strong>Bone → much greater attenuation</strong>
+    </p>
+
+    <p>
+      This means that an X-ray beam passing through the chest does not lose the same number of photons everywhere.
+    </p>
+
+    <p>
+      It may pass through a large amount of air in the lungs with relatively little attenuation, while the ribs attenuate the beam much more.
+    </p>
+
+
+    <!-- =========================
+         SIMPLE EXAMPLE
+    ========================= -->
+
+    <h2>
+      A Simple Example
+    </h2>
+
+    <p>
+      Imagine shining a light through three objects:
+    </p>
+
+    <ul>
+
+      <li>A clear glass</li>
+
+      <li>A thick piece of plastic</li>
+
+      <li>A thick wooden board</li>
+
+    </ul>
+
+    <p>
+      The light would pass through the glass easily, but much less light would get through the wood.
+    </p>
+
+    <p>
+      X-rays behave in a similar way when they pass through different materials.
+    </p>
+
+    <p>
+      The important difference is that X-rays can pass through the body, allowing us to record the differences on a detector.
+    </p>
+
+    <div class="highlight">
+
+      <p>
+        <strong>Less attenuation → more X-rays reach the detector.</strong>
+      </p>
+
+      <p>
+        <strong>More attenuation → fewer X-rays reach the detector.</strong>
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         ABSORPTION / SCATTER / TRANSMISSION
+    ========================= -->
+
+    <h2>
+      Absorption, Scatter, and Transmission
+    </h2>
+
+    <p>
+      You may come across these three terms when studying attenuation.
+    </p>
+
+    <h3>
+      1. Absorption
+    </h3>
+
+    <p>
+      The X-ray photon interacts with matter and is <strong>absorbed rather than continuing through the patient</strong>.
+    </p>
+
+    <p>
+      One important example is the <strong>photoelectric effect</strong>, in which the X-ray photon is completely absorbed.
+    </p>
+
+    <h3>
+      2. Scatter
+    </h3>
+
+    <p>
+      The X-ray photon interacts with the body and changes direction.
+    </p>
+
+    <p>
+      In diagnostic imaging, <strong>Compton scattering</strong> is an important source of scattered radiation.
+      Scattered photons can move away from the original beam and may also contribute unwanted radiation reaching the detector.
+    </p>
+
+    <h3>
+      3. Transmission
+    </h3>
+
+    <p>
+      Some photons pass through the patient and reach the detector.
+    </p>
+
+    <p>
+      These transmitted photons carry information about the tissues the beam has passed through and help form the radiographic image.
+    </p>
+
+    <p>
+      So you can think of it like this:
+    </p>
+
+    <div class="highlight">
+
+      <strong>
+        X-rays enter the body → some are absorbed → some are scattered → some are transmitted → transmitted photons reach the detector.
+      </strong>
+
+    </div>
+
+
+    <!-- =========================
+         IMAGE FORMATION
+    ========================= -->
+
+    <h2>
+      How Does Attenuation Create an X-ray Image?
+    </h2>
+
+    <p>
+      Now we reach the part that makes attenuation really important.
+    </p>
+
+    <p>
+      Suppose an X-ray beam passes through two different parts of the body.
+    </p>
+
+    <p>
+      One area may cause <strong>more attenuation</strong>, while another causes <strong>less attenuation</strong>.
+    </p>
+
+    <p>
+      Therefore, different numbers of X-ray photons reach the detector from those two areas.
+    </p>
+
+    <p>
+      The detector records these differences, and they contribute to the differences we see in the X-ray image.
+      The amount of attenuation between different tissues is therefore an important part of <strong>subject contrast</strong>.
+    </p>
+
+    <p>
+      For example, bone attenuates X-rays much more than the air inside the lungs.
+    </p>
+
+    <p>
+      That is why the detector receives very different signals from these areas, allowing them to appear differently on the radiograph.
+    </p>
+
+
+    <!-- =========================
+         DIFFERENTIAL ATTENUATION IMAGE
+    ========================= -->
+
+    <div class="article-image">
+
+      <img
+        src="../images/xray-differential-attenuation.png"
+        alt="Diagram showing differential attenuation of X-rays through different tissues"
+      >
+
+      <div class="image-caption">
+        Different tissues attenuate X-rays by different amounts, contributing to differences in the radiographic image.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Principe_radiographie.png"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wikimedia Commons — Principe radiographie.png, CC BY-SA 3.0
+        </a>
+      </div>
+
+    </div>
+
+    <div class="highlight">
+
+      <strong>
+        Different attenuation → different numbers of photons reaching the detector → differences in the image.
+      </strong>
+
+    </div>
+
+
+    <!-- =========================
+         THICKNESS
+    ========================= -->
+
+    <h2>
+      What Happens If the Body Part Is Thicker?
+    </h2>
+
+    <p>
+      Thickness also matters.
+    </p>
+
+    <p>
+      Imagine taking an X-ray through a thin part of the body and then through a much thicker part.
+    </p>
+
+    <p>
+      The X-rays travelling through the thicker part have <strong>more tissue to pass through</strong>,
+      so there are more opportunities for interaction.
+    </p>
+
+    <p>
+      As a result, fewer photons may reach the detector.
+    </p>
+
+    <p>
+      So, in simple terms:
+    </p>
+
+    <div class="highlight">
+
+      <strong>
+        More thickness → more attenuation → fewer transmitted photons
+      </strong>
+
+    </div>
+
+    <p>
+      This is one reason why exposure factors may need to be adjusted for different body parts and patient sizes.
+    </p>
+
+
+    <!-- =========================
+         X-RAY ENERGY
+    ========================= -->
+
+    <h2>
+      Does X-ray Energy Affect Attenuation?
+    </h2>
+
+    <p>
+      Yes.
+    </p>
+
+    <p>
+      The energy of the X-ray photons affects how they interact with matter.
+      In diagnostic imaging, the relative contribution of different interactions changes with photon energy.
+    </p>
+
+    <p>
+      This connects attenuation to <strong>kVp</strong>, which controls the energy of the X-ray beam.
+    </p>
+
+    <p>
+      A higher-energy beam generally has greater penetrating ability, meaning a greater proportion of photons can pass through the patient.
+    </p>
+
+    <div class="highlight">
+
+      <strong>
+        Higher penetration does not mean there is no attenuation.
+      </strong>
+
+    </div>
+
+    <p>
+      The X-ray beam is still attenuated as it travels through the body.
+    </p>
+
+
+    <!-- =========================
+         IMPORTANCE
+    ========================= -->
+
+    <h2>
+      Why Is Attenuation Important in Medical Imaging?
+    </h2>
+
+    <p>
+      Without attenuation, the X-ray detector would not receive useful differences between different parts of the body.
+    </p>
+
+    <p>
+      If every part of the body allowed exactly the same amount of radiation to reach the detector,
+      there would be very little information to create a useful image.
+    </p>
+
+    <p>
+      Attenuation gives us those differences.
+    </p>
+
+    <p>
+      It helps us distinguish structures because different tissues reduce the X-ray beam by different amounts.
+    </p>
+
+    <p>
+      This principle is important not only in <strong>plain radiography</strong>, but also in
+      <strong>CT imaging</strong>, where measurements of X-ray attenuation from many directions are used to reconstruct cross-sectional images.
+    </p>
+
+
+    <!-- =========================
+         CT
+    ========================= -->
+
+    <h2>
+      Attenuation in CT
+    </h2>
+
+    <p>
+      You will hear the word <strong>attenuation</strong> especially often when studying CT.
+    </p>
+
+    <p>
+      In CT, the scanner measures how much the X-ray beam is attenuated as it passes through the body from different directions.
+    </p>
+
+    <p>
+      These measurements are then used to reconstruct the image.
+    </p>
+
+    <p>
+      The attenuation properties of tissues are represented using <strong>Hounsfield Units (HU)</strong>.
+    </p>
+
+    <p>
+      For example:
+    </p>
+
+    <ul>
+
+      <li>
+        <strong>Air</strong> has a very low attenuation value and is around <strong>−1000 HU</strong>.
+      </li>
+
+      <li>
+        <strong>Water</strong> is defined as <strong>0 HU</strong>.
+      </li>
+
+      <li>
+        <strong>Dense bone</strong> has much higher positive values.
+      </li>
+
+    </ul>
+
+    <p>
+      This is why attenuation is such an important concept for understanding CT images.
+    </p>
+
+
+    <!-- =========================
+         IMPORTANT POINT
+    ========================= -->
+
+    <h2>
+      One Important Point About Attenuation
+    </h2>
+
+    <p>
+      Attenuation does <strong>not</strong> simply mean that X-rays are "absorbed."
+    </p>
+
+    <p>
+      Absorption is one way photons are removed from the original beam, but <strong>scattering also contributes to attenuation</strong>.
+    </p>
+
+    <p>
+      So, when we say that an X-ray beam is attenuated, we are talking about the overall reduction of the original beam as it passes through matter.
+    </p>
+
+    <div class="highlight">
+
+      <strong>
+        Attenuation = reduction of the original X-ray beam due to interactions with matter.
+      </strong>
+
+    </div>
+
+
+    <!-- =========================
+         SIMPLE WAY
+    ========================= -->
+
+    <h2>
+      A Simple Way to Remember It
+    </h2>
+
+    <p>
+      Think of the X-ray beam as a group of photons travelling toward the detector.
+    </p>
+
+    <p>
+      When they enter the body:
+    </p>
+
+    <p>
+      <strong>Some are absorbed.</strong>
+    </p>
+
+    <p>
+      <strong>Some are scattered.</strong>
+    </p>
+
+    <p>
+      <strong>Some pass through.</strong>
+    </p>
+
+    <p>
+      The number of photons remaining in the original beam decreases.
+    </p>
+
+    <p>
+      That decrease is <strong>attenuation</strong>.
+    </p>
+
+    <h3>
+      In one simple flow:
+    </h3>
+
+    <div class="highlight">
+
+      <p><strong>X-ray beam</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Enters the body</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Interacts with tissues</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Some photons are absorbed or scattered</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Fewer photons continue toward the detector</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>The beam is attenuated</strong></p>
+
+      <p>↓</p>
+
+      <p><strong>Differences in attenuation help create the image</strong></p>
+
+    </div>
+
+
+    <!-- =========================
+         KEY TAKEAWAY
+    ========================= -->
+
+    <h2>
+      Key Takeaway
+    </h2>
+
+    <p>
+      Radiation attenuation is simply the <strong>reduction in the intensity of an X-ray beam as it passes through matter</strong>.
+    </p>
+
+    <p>
+      Different tissues attenuate X-rays by different amounts because their properties, thickness, and the X-ray energy all affect how the photons interact with them.
+    </p>
+
+    <p>
+      Some photons are absorbed, some are scattered, and some are transmitted to the detector.
+    </p>
+
+    <p>
+      The differences in the number of transmitted photons are what allow different structures to appear differently on an X-ray image.
+    </p>
+
+    <div class="takeaway">
+
+      <p>
+        So if you remember only one thing:
+      </p>
+
+      <p>
+        <strong>
+          Attenuation means X-rays are reduced as they pass through the body — and the differences in this reduction help create the image.
+        </strong>
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         SOURCES
+    ========================= -->
+
+    <section class="sources">
+
+      <h3>
+        Sources
+      </h3>
+
+      <ol>
+
+        <li>
+          <strong>Medical Imaging Systems — NCBI Bookshelf</strong><br>
+          X-ray interactions with matter, attenuation, absorption, scattering, transmission, and image formation.
+          <br>
+          <a
+            href="https://www.ncbi.nlm.nih.gov/books/NBK546155/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read source
+          </a>
+        </li>
+
+        <li>
+          <strong>Bushberg JT. The AAPM/RSNA Physics Tutorial for Residents: X-ray Interactions. RadioGraphics.</strong><br>
+          Explanation of X-ray interactions, attenuation, absorption, scattering, and their relationship to image formation.
+          <br>
+          <a
+            href="https://pubs.rsna.org/doi/10.1148/radiographics.18.2.9536489"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read source
+          </a>
+        </li>
+
+        <li>
+          <strong>McKetty MH. The AAPM/RSNA Physics Tutorial for Residents: X-ray Attenuation. RadioGraphics.</strong><br>
+          Definition of attenuation and discussion of absorption, scatter, beam energy, and attenuation coefficients.
+          <br>
+          <a
+            href="https://pubs.rsna.org/doi/10.1148/radiographics.18.1.9460114"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read source
+          </a>
+        </li>
+
+        <li>
+          <strong>International Atomic Energy Agency (IAEA). Diagnostic Radiology Physics: A Handbook for Teachers and Students.</strong><br>
+          Detailed discussion of X-ray interactions, attenuation coefficients, and diagnostic radiology physics.
+          <br>
+          <a
+            href="https://pub.iaea.org/MTCD/Publications/PDF/Pub1564webNew-74666420.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read source
+          </a>
+        </li>
+
+        <li>
+          <strong>Hounsfield Unit — StatPearls / NCBI Bookshelf.</strong><br>
+          Explanation of attenuation values and the use of Hounsfield Units in CT.
+          <br>
+          <a
+            href="https://www.ncbi.nlm.nih.gov/books/NBK547721/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read source
+          </a>
+        </li>
+
+      </ol>
+
+    </section>
+
+  </article>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+    © 2026 Med Imaging Hub · Created &amp; curated by <strong>Zara Ashraf</strong>
+  </footer>
+
+</body>
+</html>
