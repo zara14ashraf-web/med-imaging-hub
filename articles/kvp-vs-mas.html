@@ -1,1 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>kVp vs mAs — What’s the Difference? | Med Imaging Hub</title>
+
+  <meta name="description" content="Understand what kVp and mAs control and how they affect X-ray beam energy, penetration, photon quantity, image contrast, and quantum noise.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17202a;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 8%;
+      border-bottom: 1px solid #eef1f4;
+      background: #ffffff;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #17202a;
+      text-decoration: none;
+      letter-spacing: -0.4px;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475467;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* =========================
+       ARTICLE HEADER
+    ========================= */
+
+    .article-header {
+      text-align: center;
+      padding: 75px 25px 60px;
+      background:
+        radial-gradient(
+          circle at top left,
+          #eff6ff 0%,
+          #f8fafc 38%,
+          #ffffff 75%
+        );
+    }
+
+    .article-label {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .article-header h1 {
+      max-width: 900px;
+      margin: 0 auto 16px;
+      font-size: 48px;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      color: #17202a;
+    }
+
+    .article-subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #667085;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       ARTICLE
+    ========================= */
+
+    article {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 65px 25px 90px;
+    }
+
+    article h2 {
+      font-size: 29px;
+      line-height: 1.3;
+      margin: 48px 0 18px;
+      color: #17202a;
+      letter-spacing: -0.5px;
+    }
+
+    article h3 {
+      font-size: 21px;
+      line-height: 1.4;
+      margin: 38px 0 16px;
+      color: #17202a;
+    }
+
+    article p {
+      margin: 0 0 18px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.75;
+    }
+
+    article ul {
+      margin: 10px 0 20px 22px;
+      padding: 0;
+    }
+
+    article li {
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.65;
+    }
+
+    article strong {
+      color: #17202a;
+    }
+
+    /* =========================
+       HIGHLIGHT BOX
+    ========================= */
+
+    .highlight {
+      margin: 25px 0;
+      padding: 22px 25px;
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .highlight strong {
+      color: #2563eb;
+    }
+
+    /* =========================
+       IMAGES
+    ========================= */
+
+    .article-image {
+      margin: 35px auto 42px;
+      text-align: center;
+    }
+
+    .article-image img {
+      display: block;
+      width: 100%;
+      max-width: 620px;
+      max-height: 390px;
+      object-fit: contain;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid #e8edf2;
+      background: #f8fafc;
+    }
+
+    .image-caption {
+      margin-top: 10px;
+      color: #667085;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .image-credit {
+      margin-top: 4px;
+      color: #98a2b3;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .image-credit a,
+    .sources a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    /* =========================
+       TABLES
+    ========================= */
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 25px 0 35px;
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+      background: #ffffff;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e8edf2;
+      vertical-align: top;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    th {
+      background: #f8fafc;
+      color: #17202a;
+      font-weight: 700;
+    }
+
+    td {
+      color: #374151;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* =========================
+       TAKEAWAY
+    ========================= */
+
+    .takeaway {
+      margin-top: 50px;
+      padding: 28px;
+      background: #f8fafc;
+      border: 1px solid #e8edf2;
+      border-radius: 15px;
+    }
+
+    .takeaway h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    .takeaway p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       SOURCES
+    ========================= */
+
+    .sources {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid #e8edf2;
+    }
+
+    .sources h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .sources ol {
+      margin: 15px 0 0 20px;
+      padding: 0;
+    }
+
+    .sources li {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #667085;
+      line-height: 1.6;
+    }
+
+    .sources strong {
+      color: #17202a;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 8%;
+      border-top: 1px solid #eef1f4;
+      text-align: center;
+      color: #667085;
+      font-size: 13px;
+      background: #ffffff;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .article-header {
+        padding: 55px 20px 45px;
+      }
+
+      .article-header h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+      }
+
+      .article-subtitle {
+        font-size: 15px;
+      }
+
+      article {
+        padding: 45px 20px 70px;
+      }
+
+      article h2 {
+        font-size: 25px;
+      }
+
+      article p,
+      article li {
+        font-size: 15.5px;
+      }
+
+      .highlight {
+        padding: 20px;
+        font-size: 16px;
+      }
+
+      .article-image img {
+        max-width: 100%;
+        max-height: 330px;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <a href="../index.html" class="logo">
+      Med Imaging <span>Hub</span>
+    </a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../articles.html">Articles</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       ARTICLE HEADER
+  ========================= -->
+
+  <section class="article-header">
+
+    <div class="article-label">
+      X-ray Basics
+    </div>
+
+    <h1>
+      kVp vs mAs — What’s the Difference?
+    </h1>
+
+    <p class="article-subtitle">
+      Understand what kVp and mAs actually control and how they affect an X-ray image.
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       ARTICLE CONTENT
+  ========================= -->
+
+  <article>
+
+    <p>
+      When you start learning X-ray imaging, two exposure factors appear almost everywhere:
+      <strong>kVp and mAs.</strong>
+    </p>
+
+    <p>
+      They can seem confusing at first because changing either one can affect the radiation
+      reaching the detector. But they do not control the same thing.
+    </p>
+
+    <div class="highlight">
+
+      The easiest way to remember the basic difference is:
+
+      <p>
+        <strong>kVp mainly controls the energy of the X-ray beam, while mAs mainly controls
+        the quantity of X-rays produced.</strong>
+      </p>
+
+    </div>
+
+    <p>
+      Let's understand why.
+    </p>
+
+
+    <!-- =========================
+         KVP
+    ========================= -->
+
+    <h2>
+      What Does kVp Mean?
+    </h2>
+
+    <p>
+      <strong>kVp stands for kilovolt peak.</strong>
+    </p>
+
+    <p>
+      It is the peak voltage applied between the cathode and anode of the X-ray tube.
+    </p>
+
+    <p>
+      Inside the tube, electrons are released from the heated filament at the cathode and
+      accelerated toward the anode. The tube voltage determines how much kinetic energy
+      these electrons can gain before hitting the target.
+    </p>
+
+    <p>
+      When we increase the kVp, the electrons can reach the target with greater kinetic
+      energy. This allows X-ray photons with higher energies to be produced.
+    </p>
+
+    <div class="highlight">
+
+      <strong>Higher kVp → higher-energy, more penetrating X-ray beam</strong>
+
+    </div>
+
+    <p>
+      For example, an exposure made at <strong>80 kVp</strong> produces a more energetic
+      and penetrating beam than one made at <strong>60 kVp</strong>, assuming the other
+      relevant factors are unchanged.
+    </p>
+
+    <p>
+      Remember that an X-ray beam contains photons with a range of energies, not photons
+      that all have exactly the same energy.
+    </p>
+
+
+    <!-- =========================
+         X-RAY TUBE IMAGE
+    ========================= -->
+
+    <div class="article-image">
+
+      <img
+        src="../images/xray-tube-kvp-mas.png"
+        alt="Basic X-ray tube showing the cathode, anode, and electron flow"
+      >
+
+      <div class="image-caption">
+        Basic X-ray tube showing the cathode, anode, and electron flow toward the target.
+      </div>
+
+      <div class="image-credit">
+        Image:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:OpenStax_CPhysics2e_29.11_X-ray_tube_sketch.webp"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          OpenStax, via Wikimedia Commons — CC BY 4.0
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         KVP IMAGE EFFECT
+    ========================= -->
+
+    <h2>
+      How Does kVp Affect the Image?
+    </h2>
+
+    <p>
+      Because a higher-kVp beam is more penetrating, a greater proportion of the beam can
+      pass through the patient and reach the detector.
+    </p>
+
+    <p>
+      kVp also affects <strong>subject contrast</strong>.
+    </p>
+
+    <div class="highlight">
+
+      <p><strong>Lower kVp → higher subject contrast</strong></p>
+
+      <p><strong>Higher kVp → lower subject contrast</strong></p>
+
+    </div>
+
+    <p>
+      So, increasing kVp generally gives a more penetrating beam and tends to reduce
+      subject contrast.
+    </p>
+
+    <p>
+      There is one important detail: increasing kVp also generally increases X-ray tube
+      output. So kVp is not a completely separate "energy-only" control.
+    </p>
+
+    <p>
+      For learning the basic difference, however, think of <strong>kVp primarily as the
+      factor controlling beam energy and penetration.</strong>
+    </p>
+
+
+    <!-- =========================
+         MAS
+    ========================= -->
+
+    <h2>
+      What Does mAs Mean?
+    </h2>
+
+    <p>
+      <strong>mAs stands for milliampere-seconds.</strong>
+    </p>
+
+    <p>
+      It is calculated as:
+    </p>
+
+    <div class="highlight">
+
+      <strong>mAs = mA × exposure time</strong>
+
+      <p>
+        For example:
+      </p>
+
+      <p>
+        <strong>200 mA × 0.5 seconds = 100 mAs</strong>
+      </p>
+
+    </div>
+
+    <p>
+      mA represents the tube current and is related to the flow of electrons through the
+      X-ray tube.
+    </p>
+
+    <p>
+      When we consider both tube current and exposure time, mAs represents the total tube
+      current-time product. Under otherwise unchanged conditions, increasing mAs generally
+      means more electrons strike the target and therefore more X-ray photons are produced.
+    </p>
+
+    <div class="highlight">
+
+      <strong>Higher mAs → more X-ray photons</strong>
+
+    </div>
+
+    <p>
+      Unlike kVp, increasing mAs does not make each photon more energetic. It mainly changes
+      the <strong>number of photons produced.</strong>
+    </p>
+
+
+    <!-- =========================
+         SAME EXAMPLE
+    ========================= -->
+
+    <h2>
+      Let's Use One Simple Example
+    </h2>
+
+    <p>
+      Imagine we are taking the same chest X-ray.
+    </p>
+
+    <p>
+      Our original exposure is:
+    </p>
+
+    <div class="highlight">
+
+      <strong>80 kVp + 5 mAs</strong>
+
+    </div>
+
+    <p>
+      Now we will change only one factor at a time.
+    </p>
+
+
+    <!-- =========================
+         INCREASE KVP
+    ========================= -->
+
+    <h3>
+      If We Increase kVp
+    </h3>
+
+    <p>
+      Suppose we change:
+    </p>
+
+    <p>
+      <strong>80 kVp + 5 mAs</strong>
+    </p>
+
+    <p>
+      to:
+    </p>
+
+    <p>
+      <strong>90 kVp + 5 mAs</strong>
+    </p>
+
+    <p>
+      The mAs stays the same, but the tube voltage increases.
+    </p>
+
+    <p>
+      The electrons can gain more kinetic energy before hitting the target, so the resulting
+      X-ray beam has higher-energy photons and greater penetrating ability.
+    </p>
+
+    <div class="highlight">
+
+      <strong>Higher kVp → more penetrating beam</strong>
+
+    </div>
+
+    <p>
+      Because kVp also generally increases X-ray output, the detector may receive more
+      radiation as well.
+    </p>
+
+
+    <!-- =========================
+         INCREASE MAS
+    ========================= -->
+
+    <h3>
+      If We Increase mAs
+    </h3>
+
+    <p>
+      Now go back to:
+    </p>
+
+    <p>
+      <strong>80 kVp + 5 mAs</strong>
+    </p>
+
+    <p>
+      and change only the mAs:
+    </p>
+
+    <p>
+      <strong>80 kVp + 10 mAs</strong>
+    </p>
+
+    <p>
+      The kVp has not changed, so we have not increased the maximum energy of the electrons
+      by changing the tube voltage.
+    </p>
+
+    <p>
+      Instead, we increased the total tube current-time product.
+    </p>
+
+    <p>
+      More electrons pass through the tube, so more X-ray photons are produced.
+    </p>
+
+    <div class="highlight">
+
+      <strong>Higher mAs → more X-ray photons</strong>
+
+    </div>
+
+
+    <!-- =========================
+         QUANTITY AND NOISE
+    ========================= -->
+
+    <h2>
+      What Does More mAs Do to the Image?
+    </h2>
+
+    <p>
+      When more X-ray photons reach the detector, there is more useful signal available.
+    </p>
+
+    <p>
+      If an exposure has too few detected photons, the image can contain more
+      <strong>quantum noise</strong>, which may make it look grainy.
+    </p>
+
+    <p>
+      Increasing mAs generally increases the number of detected photons and therefore
+      reduces relative quantum noise.
+    </p>
+
+    <div class="highlight">
+
+      <p><strong>More mAs → more photons → less quantum noise</strong></p>
+
+      <p><strong>More mAs → greater radiation exposure</strong></p>
+
+    </div>
+
+    <p>
+      That is why the goal is not to use as much mAs as possible. The aim is to use an
+      appropriate exposure for the examination.
+    </p>
+
+
+    <!-- =========================
+         COMPARISON TABLE
+    ========================= -->
+
+    <h2>
+      kVp vs mAs — Side by Side
+    </h2>
+
+    <div class="table-wrapper">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Exposure factor</th>
+            <th>Mainly affects</th>
+            <th>Main effect</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td><strong>kVp</strong></td>
+            <td>X-ray beam energy</td>
+            <td>Penetration and subject contrast</td>
+          </tr>
+
+          <tr>
+            <td><strong>mAs</strong></td>
+            <td>X-ray photon quantity</td>
+            <td>Detector exposure and quantum noise</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <p>
+      This is a useful way to learn the difference, but remember that the two factors are
+      not completely independent.
+    </p>
+
+    <p>
+      <strong>kVp also generally affects X-ray output</strong>, while mAs mainly changes
+      the number of photons.
+    </p>
+
+    <div class="highlight">
+
+      <p><strong>kVp primarily affects energy and penetration.</strong></p>
+
+      <p><strong>mAs primarily affects photon quantity.</strong></p>
+
+    </div>
+
+
+    <!-- =========================
+         EXPOSURE TIME
+    ========================= -->
+
+    <h2>
+      Why Is Exposure Time Part of mAs?
+    </h2>
+
+    <p>
+      Because:
+    </p>
+
+    <div class="highlight">
+
+      <strong>mAs = mA × time</strong>
+
+    </div>
+
+    <p>
+      For example:
+    </p>
+
+    <p>
+      <strong>200 mA × 0.5 s = 100 mAs</strong>
+    </p>
+
+    <p>
+      and:
+    </p>
+
+    <p>
+      <strong>400 mA × 0.25 s = 100 mAs</strong>
+    </p>
+
+    <p>
+      Both have the same mAs.
+    </p>
+
+    <p>
+      Under otherwise equivalent conditions, they produce approximately the same total
+      tube current-time product. However, the shorter exposure time can be useful when
+      patient movement is a concern because it can reduce the time available for motion
+      during the exposure.
+    </p>
+
+    <p>
+      So mAs tells us the <strong>total tube current-time product</strong>, while the
+      choice of mA and exposure time can still have practical importance.
+    </p>
+
+
+    <!-- =========================
+         DIGITAL RADIOGRAPHY
+    ========================= -->
+
+    <h2>
+      What About Digital X-ray Images?
+    </h2>
+
+    <p>
+      In digital radiography, image processing can adjust the displayed brightness.
+    </p>
+
+    <p>
+      This means an image can <strong>look acceptable even when the exposure was higher
+      than necessary.</strong>
+    </p>
+
+    <p>
+      So, a good-looking digital image does not automatically mean that the exposure was
+      appropriate.
+    </p>
+
+    <p>
+      Technologists also consider factors such as exposure indicators, image noise,
+      positioning, collimation, artifacts, and the clinical purpose of the examination.
+    </p>
+
+    <p>
+      The goal is to obtain the required image information while avoiding unnecessary
+      radiation exposure.
+    </p>
+
+
+    <!-- =========================
+         MEMORY TRICK
+    ========================= -->
+
+    <h2>
+      A Simple Way to Remember It
+    </h2>
+
+    <p>
+      Think about the X-ray beam as a stream of photons.
+    </p>
+
+    <p>
+      <strong>kVp asks:</strong>
+    </p>
+
+    <p>
+      “How energetic is the beam?”
+    </p>
+
+    <p>
+      <strong>mAs asks:</strong>
+    </p>
+
+    <p>
+      “How many photons are we producing?”
+    </p>
+
+    <div class="highlight">
+
+      <p><strong>kVp → Energy</strong></p>
+
+      <p><strong>mAs → Quantity</strong></p>
+
+    </div>
+
+    <p>
+      For example:
+    </p>
+
+    <p>
+      <strong>80 kVp + 5 mAs</strong>
+    </p>
+
+    <p>
+      Think:
+    </p>
+
+    <p>
+      <strong>80 kVp → beam energy and penetration</strong>
+    </p>
+
+    <p>
+      <strong>5 mAs → amount of X-ray photons produced</strong>
+    </p>
+
+
+    <!-- =========================
+         TAKEAWAY
+    ========================= -->
+
+    <div class="takeaway">
+
+      <h3>
+        Key Takeaway
+      </h3>
+
+      <p>
+        kVp and mAs are both important exposure factors, but they mainly affect different
+        aspects of X-ray production.
+      </p>
+
+      <p>
+        <strong>kVp</strong> is the peak tube voltage. Increasing it generally produces a
+        more energetic and penetrating X-ray beam and tends to reduce subject contrast.
+        It also generally increases X-ray tube output.
+      </p>
+
+      <p>
+        <strong>mAs</strong> is the product of tube current and exposure time. Increasing
+        it generally produces more X-ray photons, which can reduce quantum noise, but it
+        also increases radiation exposure.
+      </p>
+
+      <p>
+        So when you see an exposure such as:
+      </p>
+
+      <p>
+        <strong>80 kVp + 5 mAs</strong>
+      </p>
+
+      <p>
+        remember:
+      </p>
+
+      <p>
+        <strong>kVp mainly tells you about the energy of the beam.</strong>
+      </p>
+
+      <p>
+        <strong>mAs mainly tells you about the quantity of X-rays produced.</strong>
+      </p>
+
+      <p>
+        Once this basic difference is clear, understanding radiographic exposure factors
+        becomes much easier.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         SOURCES
+    ========================= -->
+
+    <section class="sources">
+
+      <h3>
+        Sources &amp; Further Reading
+      </h3>
+
+      <ol>
+
+        <li>
+          <strong>Radiopaedia</strong>
+          — <em>Peak kilovoltage (kVp)</em><br>
+          Overview of kVp, X-ray beam energy, penetration and image contrast.
+        </li>
+
+        <li>
+          <strong>Radiopaedia</strong>
+          — <em>Milliampere-seconds (mAs)</em><br>
+          Explanation of mAs, tube current, exposure time and X-ray photon quantity.
+        </li>
+
+        <li>
+          <strong>OpenStax</strong>
+          — <em>College Physics 2e: X-ray Production</em><br>
+          Basic principles of X-ray tube operation and X-ray production.
+        </li>
+
+        <li>
+          <strong>International Atomic Energy Agency (IAEA)</strong>
+          — <em>Radiation Protection in Diagnostic and Interventional Radiology</em><br>
+          Principles related to radiographic exposure, image quality and radiation protection.
+        </li>
+
+      </ol>
+
+    </section>
+
+  </article>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+    © 2026 Med Imaging Hub · Created &amp; curated by <strong>Zara Ashraf</strong>
+  </footer>
+
+</body>
+</html>
